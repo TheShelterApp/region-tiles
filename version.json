@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-09-02T01:48:47.186Z",
+  "attribution": "Boundaries © geoBoundaries (CC-BY), Natural Earth.",
+  "source": {
+    "adm2": "geoBoundaries gbOpen ADM2 (commit 9469f09) via NeoFeoda cache, with OSM/ODbL overrides for ITA, DEU, FRA, ESP, PHL, BGD, ARE and RUS (St. Petersburg)",
+    "adm1": "Natural Earth 10m admin-1 (public domain)",
+    "adm0": "Natural Earth 10m admin-0 (public domain)"
+  },
+  "counts": {
+    "adm0": 255,
+    "adm1": 4596,
+    "adm2": 59993
+  },
+  "lookup": {
+    "variant": "country-keyed-bbox",
+    "index": {
+      "adm0": "index/adm0.json",
+      "adm1": "index/adm1/{ISO3}.json",
+      "adm2": "index/adm2/{ISO3}.json"
+    },
+    "geometry": {
+      "adm0": "geo/adm0/{ISO3}.geojson",
+      "adm1": "geo/adm1/{ISO3}/{id}.geojson",
+      "adm2": "geo/adm2/{ISO3}/{id}.geojson"
+    },
+    "indexEntry": "{ id, name, bbox: [minLng, minLat, maxLng, maxLat] }",
+    "shardRule": "ISO3 = id.split('.')[0]",
+    "idScheme": {
+      "adm0": "CUB",
+      "adm1": "CUB.7",
+      "adm2": "CUB.7.3"
+    },
+    "parentRule": "parent id = id.split('.').slice(0, -1).join('.')",
+    "algorithm": "resolveCountry: bbox-prefilter index/adm0.json -> PIP candidate geo/adm0/{ISO3}.geojson -> nearest-edge fallback. resolveRegion(level): resolveCountry, then bbox-prefilter index/adm{level}/{ISO3}.json -> PIP candidate geo -> nearest-edge fallback; if the level has no data for the country, fall back up (adm2->adm1->adm0)."
+  },
+  "magnitudeLevelsReference": {
+    "adm2": "M < 4.0",
+    "adm1": "4.0 <= M < 6.0",
+    "adm0": "M >= 6.0"
+  },
+  "cdn": {
+    "jsdelivr": "https://cdn.jsdelivr.net/gh/TheShelterApp/region-tiles@{ref}",
+    "raw": "https://raw.githubusercontent.com/TheShelterApp/region-tiles/{ref}",
+    "note": "Replace {ref} with a git tag (e.g. v1.0.0) to pin. Replace {ISO3}/{id} per the paths above."
+  }
+}

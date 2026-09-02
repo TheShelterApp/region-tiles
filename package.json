@@ -1,0 +1,22 @@
+{
+  "name": "region-tiles",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pre-baked admin-region GeoJSON + country-keyed point->region index for TheShelter, served via jsDelivr.",
+  "scripts": {
+    "stage": "node pipeline/00-stage-sources.mjs",
+    "normalize": "node pipeline/01-normalize.mjs",
+    "simplify": "node pipeline/02-simplify.mjs",
+    "index": "node pipeline/03-index.mjs",
+    "version": "node pipeline/04-version.mjs",
+    "validate": "node pipeline/05-validate.mjs",
+    "build": "node pipeline/build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "mapshaper": "^0.6.102"
+  }
+}
