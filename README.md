@@ -113,3 +113,61 @@ Repo is ~285 MB (258 MB is ADM2 geometry across ~60k files, sharded by ISO3).
 jsDelivr serves individual files fine (all are KB-sized, well under its 20 MB
 per-file limit) and gzips them in transit. If the repo grows uncomfortable, the
 `geo/` tree can be split to its own tag/release without changing the URL scheme.
+
+## Offline SQLite bundle
+
+An addition to the CDN for fully-offline point→region resolution on-device (the
+per-region CDN files above stay the fallback). One SQLite file bundles all three
+levels + a spatial index; iOS downloads it once and resolves locally.
+
+- **`regions-db.json`** (committed to the repo root — the stable pointer iOS polls):
+  `{ version, url, sizeBytes, sha256 }` where `url` is the direct download of the
+  Release asset and `sizeBytes`/`sha256` are of the **`.gz`**.
+- **`regions.sqlite.gz`** — the gzipped DB, published as a **GitHub Release asset**
+  under tag **`bundle-v1`** (too big for comfortable jsDelivr; Releases handle 20–40 MB).
+
+Schema (fixed — iOS depends on it exactly):
+
+```sql
+CREATE TABLE regions (
+  id TEXT PRIMARY KEY,            -- 'USA' / 'USA.6' / 'USA.6.75'
+  level INTEGER NOT NULL,         -- 0 / 1 / 2
+  name TEXT NOT NULL,
+  min_lng REAL NOT NULL, min_lat REAL NOT NULL, max_lng REAL NOT NULL, max_lat REAL NOT NULL,
+  geometry BLOB NOT NULL          -- gzip of the BARE GeoJSON geometry object, [lng,lat] WGS84
+);
+CREATE INDEX idx_regions_level ON regions(level);
+CREATE VIRTUAL TABLE regions_rtree USING rtree(rowid, min_lng, max_lng, min_lat, max_lat); -- rowid = regions.rowid
+CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT);  -- version, generated, count_adm0/1/2, attribution
+```
+
+`geometry` is `gunzip` → a bare `{"type":"Polygon"|"MultiPolygon","coordinates":…}`
+(no Feature wrapper) — the same simplified polygons as `geo/`. Note the R*Tree
+column order is `(min_lng, max_lng, min_lat, max_lat)` (paired per axis).
+
+iOS flow: read `regions-db.json` → if `version` changed, download `url`, verify
+`sha256`/`sizeBytes`, gunzip → open. Resolve `(lat,lng,level)`:
+
+```sql
+SELECT r.id, r.name, r.geometry
+FROM regions_rtree rt JOIN regions r ON r.rowid = rt.rowid
+WHERE rt.min_lng <= :lng AND rt.max_lng >= :lng
+  AND rt.min_lat <= :lat AND rt.max_lat >= :lat
+  AND r.level = :level;
+```
+
+then gunzip each candidate's `geometry` and point-in-polygon to pick the container;
+offshore/border → nearest by polygon edge; missing level → fall back up
+`adm2→adm1→adm0` (same semantics as `pipeline/lib/resolve.mjs`).
+
+Build + publish the bundle:
+
+```bash
+npm run sqlite                                   # -> dist/regions.sqlite(.gz) + regions-db.json
+node pipeline/verify-sqlite.mjs                  # acceptance checks
+gh release create bundle-v1 dist/regions.sqlite.gz --title "Region SQLite bundle v1" --notes "…"
+git add regions-db.json && git commit -m "…" && git push
+```
+
+Bump `BUNDLE_VERSION` in `config.mjs` on any geometry/composition change (and use
+a new tag, e.g. `bundle-v2`, if you don't want to overwrite the existing asset).

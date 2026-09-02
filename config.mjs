@@ -32,6 +32,14 @@ export const GEO_DIR = join(ROOT, 'geo');
 export const INDEX_DIR = join(ROOT, 'index');
 export const VERSION_JSON = join(ROOT, 'version.json');
 
+// ---- Offline SQLite bundle (published as a GitHub Release asset) ----------
+export const DIST = join(ROOT, 'dist'); // gitignored large artifacts
+export const SQLITE_FILE = join(DIST, 'regions.sqlite');
+export const SQLITE_GZ = join(DIST, 'regions.sqlite.gz');
+export const REGIONS_DB_JSON = join(ROOT, 'regions-db.json'); // committed pointer for iOS
+export const BUNDLE_VERSION = '1.0.0'; // bump on any geometry/composition change
+export const BUNDLE_TAG = 'bundle-v1'; // GitHub Release tag holding regions.sqlite.gz
+
 // ---- Levels ---------------------------------------------------------------
 export const LEVELS = [0, 1, 2];
 

@@ -7,5 +7,8 @@ src-data/
 # Intermediate build artifacts (normalized, pre-simplification).
 .build/
 
+# Large distributable artifacts (SQLite bundle) — published as a GitHub Release.
+dist/
+
 # OS noise
 .DS_Store
