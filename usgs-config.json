@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "submit": false,
+  "note": "Read by the iOS app (USGSContribution.remoteConfig). enabled: the USGS Did You Feel It? contribution is offered after a shaking report; submit: false opens the visible USGS form in Safari instead of submitting it from the app. Keep submit false until the consent text names the precise location that goes to USGS."
+}
