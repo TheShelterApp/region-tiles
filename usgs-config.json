@@ -1,5 +1,5 @@
 {
   "enabled": true,
   "submit": false,
-  "note": "Read by the iOS app (USGSContribution.remoteConfig). enabled: the USGS Did You Feel It? contribution is offered after a shaking report; submit: false opens the visible USGS form in Safari instead of submitting it from the app. Keep submit false until the consent text names the precise location that goes to USGS."
+  "note": "Read by the iOS app (USGSContribution.remoteConfig). enabled: the USGS Did You Feel It? contribution is offered after a shaking report; submit: false opens the event's USGS form inside the app, prefilled from the report, for the user to check and submit (the app never submits it); true allows the app to submit it in the background (the signed config's usgs_submit must allow it too). Keep submit false until the consent text names the precise location that goes to USGS."
 }
