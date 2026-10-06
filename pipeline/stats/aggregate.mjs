@@ -27,11 +27,26 @@ export function histogramYears(sinceMs, untilMs) {
 }
 
 /**
+ * Whether a merged list is provably the one a full run gives. The previous list was the top of every event then, so
+ * an older event it does not hold ranks after its last entry: the merge is exact when the previous list held every
+ * older event, or when the merged list is full and still ends at or ahead of that last entry. Otherwise (events of the
+ * window that were in the previous list were deleted or revised down, and nothing new took their place) an older event
+ * the previous list did not keep may belong in the list, and only a full run can tell.
+ */
+export function mergedListIsExact({ previousList, merged, olderCount, keptOlderCount, order, size }) {
+  if (olderCount <= keptOlderCount) return true;
+  if (merged.length < size || !previousList.length) return false;
+  return order(merged.at(-1), readBack(previousList.at(-1))) <= 0;
+}
+
+/**
  * One country's (or the unassigned bucket's) aggregate over [since, until).
  * - `events`: the events of the window [windowStart, until) assigned here (any order).
  * - `previous`: the same country's previous document (or null): its histogram bins before the window's year and its
  *   largest / recent events before `windowStart` are kept, the rest comes from `events`. `windowStart` must be
  *   1 January of a year, so a bin is never half old, half new.
+ * - `exact` (not published): false when the merged lists may differ from a full run's (`mergedListIsExact`); the
+ *   build then runs in full.
  */
 export function aggregate({ events, previous = null, windowStartMs, sinceMs, untilMs }) {
   const { first, length } = histogramYears(sinceMs, untilMs);
@@ -51,14 +66,30 @@ export function aggregate({ events, previous = null, windowStartMs, sinceMs, unt
   }
 
   const kept = (list) => (previous ? list.map(readBack).filter((e) => e.t < windowStartMs && e.t >= sinceMs) : []);
-  const largest = [...kept(previous?.largest ?? []), ...events].sort(largestOrder).slice(0, TOP_LARGEST);
-  const recent = [...kept(previous?.recent ?? []), ...events].sort(recentOrder).slice(0, TOP_RECENT);
+  const keptLargest = kept(previous?.largest ?? []);
+  const keptRecent = kept(previous?.recent ?? []);
+  const largest = [...keptLargest, ...events].sort(largestOrder).slice(0, TOP_LARGEST);
+  const recent = [...keptRecent, ...events].sort(recentOrder).slice(0, TOP_RECENT);
+
+  let exact = true;
+  if (previous) {
+    // The older events (before the window's year, from the since year on) the previous document counted.
+    const olderCount = counts.slice(0, Math.max(0, Math.min(length, windowYear - first))).reduce((a, b) => a + b, 0);
+    exact = mergedListIsExact({
+      previousList: previous.largest ?? [], merged: largest, olderCount, keptOlderCount: keptLargest.length,
+      order: largestOrder, size: TOP_LARGEST,
+    }) && mergedListIsExact({
+      previousList: previous.recent ?? [], merged: recent, olderCount, keptOlderCount: keptRecent.length,
+      order: recentOrder, size: TOP_RECENT,
+    });
+  }
 
   return {
     total: counts.reduce((a, b) => a + b, 0),
     histogram: { startYear: first, counts },
     largest: largest.map(publicEvent),
     recent: recent.map(publicEvent),
+    exact,
   };
 }
 

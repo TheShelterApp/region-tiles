@@ -85,11 +85,13 @@ export async function build({ full = false, until = null, log = console.log } = 
   const windowStartMs = mode === 'full' ? SINCE_MS : revisionStartMs(Date.parse(previousIndex.until));
   log(`▶ ${mode}${reason ? ` (${reason})` : ''}: ${isoSeconds(windowStartMs)} → ${isoSeconds(untilMs)}`);
 
-  const events = await fetchRange(new Date(windowStartMs).toISOString(), new Date(untilMs).toISOString(), {
+  const fetched = await fetchRange(new Date(windowStartMs).toISOString(), new Date(untilMs).toISOString(), {
     // A full run reuses cached pages that end before this run's own revision window; the recent ones are fetched again.
     reuseCacheBefore: mode === 'full' ? new Date(revisionStartMs(untilMs)).toISOString() : null,
     log,
   });
+  // ComCat's endtime is inclusive: an event at the cutoff's very second belongs to the next run ([since, until)).
+  const events = fetched.filter((e) => e.t >= windowStartMs && e.t < untilMs);
   log(`▶ ${events.length} events in the window (${httpStats().requests} ComCat requests)`);
 
   const regions = loadRegions();
@@ -105,12 +107,22 @@ export async function build({ full = false, until = null, log = console.log } = 
   log(`▶ assigned ${events.length - unassigned.length} (${offshore} offshore), unassigned ${unassigned.length}`);
 
   mkdirSync(STATS_ADM0_DIR, { recursive: true });
-  const totals = {};
+  const aggregates = [];
   for (const c of regions.countries) {
     const file = join(STATS_ADM0_DIR, `${c.id}.json`);
     const previous = mode === 'incremental' && existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : null;
     if (mode === 'incremental' && !previous) throw new Error(`incremental run without ${file}: run with --full`);
-    const agg = aggregate({ events: perCountry.get(c.id), previous, windowStartMs, sinceMs: SINCE_MS, untilMs });
+    aggregates.push({ c, file, agg: aggregate({ events: perCountry.get(c.id), previous, windowStartMs, sinceMs: SINCE_MS, untilMs }) });
+  }
+  // A strongest or latest list the increment cannot prove equal to a full run's (`mergedListIsExact`: events of the
+  // window that were listed were deleted or revised away) — rebuild everything, before any file is written.
+  const inexact = aggregates.filter(({ agg }) => !agg.exact).map(({ c }) => c.id);
+  if (inexact.length) {
+    log(`▶ the increment cannot prove the lists of ${inexact.join(', ')}: full run`);
+    return build({ full: true, until, log });
+  }
+  const totals = {};
+  for (const { c, file, agg } of aggregates) {
     writeAtomic(file, `${formatJSON(countryDocument({ id: c.id, name: c.name, agg, sinceMs: SINCE_MS, untilMs }))}\n`);
     totals[c.id] = agg.total;
   }

@@ -64,7 +64,10 @@ export function eventsFromCSV(text) {
 
 const num = (s) => (s === undefined || s === '' ? NaN : Number(s));
 
-/** One CSV row → `{id, time, t, mag, place, lat, lon, depth}` (`time` ISO 8601 to the second, `t` epoch ms). */
+/**
+ * One CSV row → `{id, time, t, mag, place, lat, lon, depth}` (`time` ISO 8601 to the second, `t` its epoch ms — the
+ * published second, so an event sorts the same whether it was just read or read back from a published file).
+ */
 export function toEvent(row, ix) {
   const id = row[ix.id];
   const t = Date.parse(row[ix.time]);
@@ -74,10 +77,11 @@ export function toEvent(row, ix) {
   if (!id || !Number.isFinite(t) || !Number.isFinite(lat) || !Number.isFinite(lon) || !Number.isFinite(mag)) return null;
   if (row[ix.type] && row[ix.type] !== EVENT_TYPE) return null;
   const depth = num(row[ix.depth]);
+  const second = Math.floor(t / 1000) * 1000;
   return {
     id,
-    time: new Date(Math.floor(t / 1000) * 1000).toISOString().replace('.000Z', 'Z'),
-    t,
+    time: new Date(second).toISOString().replace('.000Z', 'Z'),
+    t: second,
     mag: Math.round(mag * 100) / 100,
     place: (row[ix.place] || '').trim(),
     lat: Math.round(lat * 1000) / 1000,

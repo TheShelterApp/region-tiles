@@ -122,6 +122,70 @@ test('a revised or deleted event inside the window replaces the old one', () => 
   assert.deepEqual(deleted.largest, []);
 });
 
+// The previous run listed events of the window that ComCat then deleted: older events the previous lists did not keep
+// belong in the full run's lists, which the increment cannot know. It says so (`exact: false`), and the build runs in
+// full instead.
+test('an increment whose lists lost listed window events is flagged inexact', () => {
+  const sinceMs = Date.UTC(1936, 0, 1);
+  const oldCutoff = Date.UTC(2025, 9, 6);
+  const newCutoff = Date.UTC(2026, 9, 6);
+  const windowStartMs = yearStart(2024);
+  const ev = (id, y, mag) => {
+    const t = Date.UTC(y, 5, 1);
+    return { id, t, time: new Date(t).toISOString().replace('.000Z', 'Z'), mag, place: id, lat: 0, lon: 0, depth: 10 };
+  };
+  // 25 older events (M5.0..M6.2) and 5 strong window events (M8) that make the previous strongest list.
+  const older = Array.from({ length: 25 }, (_, i) => ev(`old${i}`, 1990 + i, 5 + i * 0.05));
+  const strongWindow = Array.from({ length: 5 }, (_, i) => ev(`win${i}`, 2025, 8));
+  const previous = aggregate({ events: [...older, ...strongWindow], windowStartMs: sinceMs, sinceMs, untilMs: oldCutoff });
+  // ComCat deleted the five window events.
+  const incremental = aggregate({ events: [], previous, windowStartMs, sinceMs, untilMs: newCutoff });
+  const full = aggregate({ events: older, windowStartMs: sinceMs, sinceMs, untilMs: newCutoff });
+  assert.equal(incremental.exact, false);
+  assert.notDeepEqual(incremental.largest, full.largest, 'the merged list misses older events');
+  assert.equal(full.exact, true);
+});
+
+// Random catalogues with random deletions and revisions inside the window: whenever the increment says it is exact it
+// equals the full run, and the check is not vacuous (some increments are inexact, and some of those differ).
+test('an increment that says it is exact equals the full run (randomized)', () => {
+  const sinceMs = Date.UTC(1936, 0, 1);
+  const oldCutoff = Date.UTC(2025, 6, 15);
+  const newCutoff = Date.UTC(2026, 9, 6);
+  const windowStartMs = yearStart(2024);
+  let s = 11;
+  const rnd = () => ((s = (s * 1103515245 + 12345) % 2147483648) / 2147483648);
+  let exactRuns = 0, inexactRuns = 0, inexactDiffering = 0;
+  for (let run = 0; run < 400; run++) {
+    const n = 5 + Math.floor(rnd() * 60);
+    const all = catalogue(n, 1 + run);
+    for (const e of all) if (rnd() < 0.4) { e.t = windowStartMs + Math.floor(rnd() * (oldCutoff - windowStartMs)); e.time = new Date(e.t).toISOString().replace('.000Z', 'Z'); }
+    const before = all.filter((e) => e.t < oldCutoff);
+    const previous = aggregate({ events: before, windowStartMs: sinceMs, sinceMs, untilMs: oldCutoff });
+    // Now: window events deleted or revised (magnitude), new ones after the old cutoff.
+    const now = [];
+    for (const e of all) {
+      if (e.t >= windowStartMs && rnd() < 0.3) continue;
+      now.push(e.t >= windowStartMs && rnd() < 0.3 ? { ...e, mag: Math.round((e.mag - 0.4) * 10) / 10 } : e);
+    }
+    const full = aggregate({ events: now.filter((e) => e.t < newCutoff), windowStartMs: sinceMs, sinceMs, untilMs: newCutoff });
+    const incremental = aggregate({
+      events: now.filter((e) => e.t >= windowStartMs && e.t < newCutoff), previous, windowStartMs, sinceMs, untilMs: newCutoff,
+    });
+    if (incremental.exact) {
+      exactRuns++;
+      assert.deepEqual(incremental, full, `run ${run}`);
+    } else {
+      inexactRuns++;
+      if (JSON.stringify(incremental.largest) !== JSON.stringify(full.largest)
+        || JSON.stringify(incremental.recent) !== JSON.stringify(full.recent)) inexactDiffering++;
+      assert.equal(incremental.total, full.total, 'the counts are exact either way');
+    }
+  }
+  assert.ok(exactRuns > 100, `exact ${exactRuns}`);
+  assert.ok(inexactRuns > 0 && inexactDiffering > 0, `inexact ${inexactRuns}, differing ${inexactDiffering}`);
+});
+
 test('histogram years run from the since year to the last full instant', () => {
   assert.deepEqual(histogramYears(Date.UTC(1936, 0, 1), Date.UTC(2026, 9, 6)), { first: 1936, length: 91 });
   assert.deepEqual(histogramYears(Date.UTC(1936, 0, 1), Date.UTC(2027, 0, 1)), { first: 1936, length: 91 });

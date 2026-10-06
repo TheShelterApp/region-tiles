@@ -238,7 +238,11 @@ request per 1.1 s, cached as CSV under `.cache/comcat/` (never committed; `COMCA
 182 requests (about 3½ minutes, 50 MB). An incremental run replaces whole years from its window start: the old files
 keep the earlier years' bins and events, the window's events (new ones and ComCat's revisions and deletions) are read
 again, so running it twice gives the same files. It falls back to a full run by itself when there is no previous
-`index.json` or it was built with another schema, filter, list size, assignment rule or region set.
+`index.json` or it was built with another schema, filter, list size, assignment rule or region set, and when a
+country's strongest or latest list cannot be proven equal to a full run's (listed events of the window were deleted or
+revised away, so an older event the old file did not list may belong in it; checked before any file is written).
+Checked on real data: a full run to 2026-09-01 followed by an incremental run to 2026-10-06 gives the same files as a
+full run to 2026-10-06.
 
 **Refresh** — `.github/workflows/stats-refresh.yml`: on the 2nd of every month (04:17 UTC) incremental, every January
 (and on a manual run with `full`) the whole catalogue again, so revisions of older events reach the files once a year.
