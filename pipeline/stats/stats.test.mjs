@@ -393,10 +393,11 @@ test('readPublished sums the global histogram of the published files', () => {
 });
 
 // End to end on a copy of the published files (skipped until a build has run): the scenario of the audit. Every page
-// answers 204, or every page holds a single row while ComCat's /count says thousands: the build exits 1 and no
-// published byte changes.
+// answers 204, every page holds a single row while ComCat's /count says thousands, or every page holds a single row and
+// the /count agrees (only the comparison with the published files sees it): the build exits 1 and no published byte
+// changes.
 const buildScript = fileURLToPath(new URL('./build-stats.mjs', import.meta.url));
-function runBuildWithStub(stubSource) {
+function runBuildWithStub(stubSource, args = []) {
   const out = tempDir('stats-copy');
   cpSync(STATS_DIR, out, { recursive: true });
   const stub = join(tempDir('stub'), 'stub.mjs');
@@ -404,7 +405,7 @@ function runBuildWithStub(stubSource) {
   const before = snapshotDir(out);
   // An incremental run four weeks after the published cutoff (3 or 4 half-year pages, whatever the date).
   const until = new Date(Date.parse(JSON.parse(readFileSync(STATS_INDEX, 'utf8')).until) + 28 * 86_400_000).toISOString().slice(0, 10);
-  const r = spawnSync(process.execPath, ['--import', pathToFileURL(stub).href, buildScript, `--until=${until}`], {
+  const r = spawnSync(process.execPath, ['--import', pathToFileURL(stub).href, buildScript, `--until=${until}`, ...args], {
     env: { ...process.env, STATS_OUT_DIR: out, COMCAT_CACHE_DIR: tempDir('cache') }, encoding: 'utf8', timeout: 60_000,
   });
   return { r, unchanged: JSON.stringify(snapshotDir(out)) === JSON.stringify(before) };
@@ -437,4 +438,34 @@ test('build: a window short of ComCat\'s own count fails before any write', { sk
   assert.match(r.stdout, /▶ incremental: /);
   assert.match(r.stderr, /not plausible, nothing written:\n {2}- the download of .* holds [34] events, ComCat's \/count of the same window 15000/);
   assert.ok(unchanged, 'the published files are unchanged');
+});
+
+test('build: a shrunken catalogue that agrees with its /count fails on the drop; --accept-drop publishes it', { skip: !existsSync(STATS_INDEX) }, () => {
+  // One event per half-year page, and a /count that agrees with it: the window check passes, the increment cannot prove
+  // its lists and falls back to a full run, so only the comparison with the published files can stop the build.
+  const stub = `
+    import { halfYearPages, setRequestIntervalForTests } from ${JSON.stringify(new URL('./comcat.mjs', import.meta.url).href)};
+    setRequestIntervalForTests(0);
+    globalThis.fetch = async (url) => {
+      const u = new URL(String(url));
+      const start = u.searchParams.get('starttime');
+      if (u.pathname.endsWith('/count')) {
+        return new Response(JSON.stringify({ count: halfYearPages(start, u.searchParams.get('endtime')).length }), { status: 200 });
+      }
+      return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + start.slice(0, 10) + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
+    };
+  `;
+  const refused = runBuildWithStub(stub);
+  assert.equal(refused.r.status, 1, refused.r.stdout + refused.r.stderr);
+  assert.match(refused.r.stdout, /▶ full \(--full\): /);
+  const counts = [...refused.r.stdout.matchAll(/▶ ComCat \/count of the window: (\d+), downloaded (\d+)/g)];
+  assert.equal(counts.length, 2, 'the increment, then the full run');
+  for (const [, comcat, downloaded] of counts) assert.equal(downloaded, comcat, 'the window check passes');
+  assert.match(refused.r.stderr, /not plausible, nothing written:\n {2}- the global total drops from \d+ to \d+ /);
+  assert.ok(refused.unchanged, 'the published files are unchanged');
+
+  const accepted = runBuildWithStub(stub, ['--accept-drop']);
+  assert.equal(accepted.r.status, 0, accepted.r.stdout + accepted.r.stderr);
+  assert.match(accepted.r.stdout, /⚠ accepted \(--accept-drop\): the global total drops/);
+  assert.equal(accepted.unchanged, false, 'written under --accept-drop');
 });

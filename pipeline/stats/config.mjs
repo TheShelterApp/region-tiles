@@ -72,8 +72,8 @@ export const SOURCE = {
 /**
  * A page spanning at least this many days is never empty: every year since 1936 has at least 127 earthquakes of M4.5+
  * (1945, the fewest; published files of 2026-10-06), and a page is a half-year except the run's last one (from
- * 1 January or 1 July to the cutoff, today's catalogue: about 40 a day) and the halves of a page at the row cap. A 204,
- * an empty body or a header-only CSV for such a page is a wrong answer, never cached.
+ * 1 January or 1 July to the cutoff, today's catalogue: about 20 a day, 8,556 in 2025) and the halves of a page at the
+ * row cap. A 204, an empty body or a header-only CSV for such a page is a wrong answer, never cached.
  */
 export const EMPTY_PAGE_MIN_SPAN_DAYS = 7;
 
