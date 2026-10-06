@@ -229,6 +229,7 @@ equirectangular degrees (longitude scaled by cos latitude), when within 4.5° (a
 npm run stats                 # incremental: from 1 January of the year of (last cutoff − 365 days) to today 00:00 UTC
 npm run stats -- --full       # everything since 1936 (cached pages before the revision window are reused)
 npm run stats -- --until=2026-10-06   # a fixed cutoff: the same cutoff gives the same files
+npm run stats -- --accept-drop        # publish although the plausibility checks fail (below; review the log first)
 npm run test:stats            # unit tests, the real-polygon assignments, the published files' schema and totals
 npm run stats:verify          # compare with ComCat /count (below)
 ```
@@ -244,8 +245,28 @@ revised away, so an older event the old file did not list may belong in it; chec
 Checked on real data: a full run to 2026-09-01 followed by an incremental run to 2026-10-06 gives the same files as a
 full run to 2026-10-06.
 
+**Plausibility** (round 16) — a wrong ComCat answer fails the build (exit 1) before any file is written, so the
+workflow pushes nothing and the app keeps the last good files (a device keeps a fetched file up to jsDelivr's 7-day
+max-age, so a bad publish could not be taken back in time):
+
+- a page of 7 days or more with no events (a 204, an empty body, a header-only CSV) fails: every year since 1936 has at
+  least 127 M4.5+ earthquakes (1945), and a page is a half-year except the run's last one. No empty page is ever
+  cached, and an empty page an older run cached is downloaded again;
+- the run's window must hold events, and its download may fall short of ComCat's `/count` of the same window by at most
+  max(10, 0.5 %) (one extra request; the whole catalogue matched exactly on 2026-10-06): more is a truncated page;
+- against the published files (same filter, a cutoff no earlier): the global total may drop by at most 1 %, a year's
+  global count by at most max(10, 5 %), and, with the same assignment rule and regions, a country's total by at most
+  max(10, 3 %). ComCat's revisions delete duplicates and move a few events across M4.5; the catalogue grows.
+
+The thresholds live in `pipeline/stats/config.mjs`. `--accept-drop` (the workflow's `accept_drop`) turns the window
+count and the comparison into warnings, for a genuine large revision someone has reviewed; an empty page always fails.
+A dry run of the checks on real data (2026-10-06, a copy of the files): the window count matched (306,469 of 306,469)
+and the total moved 306,470 → 306,469 (a Dominican Republic event deleted or revised below M4.5 since the morning's build).
+
 **Refresh** — `.github/workflows/stats-refresh.yml`: on the 2nd of every month (04:17 UTC) incremental, every January
 (and on a manual run with `full`) the whole catalogue again, so revisions of older events reach the files once a year.
+A run that fails the plausibility checks pushes nothing (run it again later, or with `accept_drop` after a review); a
+manual run with `dry_run` builds and tests without committing or pushing.
 The workflow pushes `stats/` to `main` itself with the default `GITHUB_TOKEN` (`contents: write`): `main`'s ruleset
 forbids only deletion and non-fast-forward updates, and the repository does not let Actions open pull requests. No
 other secret. GitHub pauses scheduled workflows of a public repository after 60 days without activity; the monthly

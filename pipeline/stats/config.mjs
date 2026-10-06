@@ -25,8 +25,8 @@ export const MIN_REQUEST_INTERVAL_MS = 1100;
 /** Raw ComCat pages (CSV) are cached here, never in git. Override with COMCAT_CACHE_DIR. */
 export const CACHE_DIR = process.env.COMCAT_CACHE_DIR || join(ROOT, '.cache', 'comcat');
 
-/** Published outputs. */
-export const STATS_DIR = join(ROOT, 'stats');
+/** Published outputs. STATS_OUT_DIR moves them (a dry run on a copy, the end-to-end tests). */
+export const STATS_DIR = process.env.STATS_OUT_DIR || join(ROOT, 'stats');
 export const STATS_ADM0_DIR = join(STATS_DIR, 'adm0');
 export const STATS_INDEX = join(STATS_DIR, 'index.json');
 
@@ -63,3 +63,33 @@ export const SOURCE = {
   licence: 'Public domain (U.S. Geological Survey); see https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits',
   attribution: 'Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).',
 };
+
+// ---- Plausibility (XR-1, round 16) ---------------------------------------------------------------------------------
+// A wrong ComCat answer must fail the build (exit 1: the refresh workflow pushes nothing) instead of publishing it. The
+// checks run before any file is written; `--accept-drop` turns the comparisons with the previous files and the window
+// count into warnings, for a genuine large revision an operator has reviewed. An empty page always fails.
+
+/**
+ * A page spanning at least this many days is never empty: every year since 1936 has at least 127 earthquakes of M4.5+
+ * (1945, the fewest; published files of 2026-10-06), and a page is a half-year except the run's last one (from
+ * 1 January or 1 July to the cutoff, today's catalogue: about 40 a day) and the halves of a page at the row cap. A 204,
+ * an empty body or a header-only CSV for such a page is a wrong answer, never cached.
+ */
+export const EMPTY_PAGE_MIN_SPAN_DAYS = 7;
+
+/** The events downloaded for the run's window may fall short of ComCat's /count of the same window by at most
+ *  max(COUNT_SLACK, COUNT_TOLERANCE x count): more is a truncated page. (The whole catalogue matched exactly on
+ *  2026-10-06; a few events revised between the pages and the count are the slack.) */
+export const COUNT_TOLERANCE = 0.005;
+export const COUNT_SLACK = 10;
+
+/** Against the previous published files (same filter, a cutoff no earlier): the global total may drop by at most
+ *  TOTAL_DROP_TOLERANCE, a year's global count by at most max(YEAR_DROP_SLACK, YEAR_DROP_TOLERANCE x its count), and,
+ *  with the same assignment rule and regions, a country's total by at most max(COUNTRY_DROP_SLACK,
+ *  COUNTRY_DROP_TOLERANCE x its total). ComCat's revisions move a few events across M4.5 or delete duplicates; the
+ *  catalogue grows, so a larger drop is a lost page or a broken answer. */
+export const TOTAL_DROP_TOLERANCE = 0.01;
+export const YEAR_DROP_TOLERANCE = 0.05;
+export const YEAR_DROP_SLACK = 10;
+export const COUNTRY_DROP_TOLERANCE = 0.03;
+export const COUNTRY_DROP_SLACK = 10;

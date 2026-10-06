@@ -5,6 +5,10 @@
 # The result is pushed to main by the workflow's own token: main's ruleset forbids only deletion and non-fast-forward
 # updates, and the repository does not let Actions open pull requests, so a fast-forward push is the compliant path.
 # No secret beyond the default GITHUB_TOKEN.
+# A wrong ComCat answer fails the build before any file is written (XR-1, round 16; README "Refresh"): an empty page, a
+# window short of ComCat's own /count, or counts that drop against the published files. Nothing is pushed then; run it
+# again later, or with `accept_drop` after reviewing a genuine large revision in the log. `dry_run` builds and tests
+# without committing or pushing.
 name: Area history statistics
 
 on:
@@ -14,6 +18,14 @@ on:
     inputs:
       full:
         description: Rebuild everything since 1936 (reads the whole catalogue, about 4 minutes of ComCat requests)
+        type: boolean
+        default: false
+      accept_drop:
+        description: Publish even when the window count or the comparison with the published files fails (review the log first)
+        type: boolean
+        default: false
+      dry_run:
+        description: Build and test only; commit and push nothing
         type: boolean
         default: false
 
@@ -40,15 +52,22 @@ jobs:
       - name: Build the statistics
         env:
           FULL: ${{ inputs.full }}
+          ACCEPT_DROP: ${{ inputs.accept_drop }}
         run: |
-          if [ "$FULL" = "true" ] || [ "$(date -u +%m)" = "01" ]; then
-            node pipeline/stats/build-stats.mjs --full
-          else
-            node pipeline/stats/build-stats.mjs
-          fi
+          args=()
+          if [ "$FULL" = "true" ] || [ "$(date -u +%m)" = "01" ]; then args+=(--full); fi
+          if [ "$ACCEPT_DROP" = "true" ]; then args+=(--accept-drop); fi
+          node pipeline/stats/build-stats.mjs "${args[@]}"
       - name: Test the statistics
         run: node --test pipeline/stats/stats.test.mjs
+      - name: What changed (dry run)
+        if: ${{ inputs.dry_run }}
+        run: |
+          git status --short stats | head -50
+          git diff --stat stats | tail -5
+          echo "Dry run: nothing committed or pushed."
       - name: Commit and push
+        if: ${{ !inputs.dry_run }}
         run: |
           git add stats
           if git diff --cached --quiet; then
