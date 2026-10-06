@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "COM",
+  "name": "Comoros",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 14,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,1,0,1,1,0,0,1,0,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0009t8h","time":"2000-05-21T02:58:42Z","mag":5.2,"place":"5 km N of Hoani, Comoros","lat":-12.206,"lon":43.666,"depth":10},
+    {"id":"usp000hn3b","time":"2010-10-14T10:03:30Z","mag":5.1,"place":"129 km NNW of Mitsamiouli, Comoros","lat":-10.32,"lon":42.783,"depth":10},
+    {"id":"us10006r9h","time":"2016-09-21T01:08:44Z","mag":5.1,"place":"46 km WSW of Nioumachoua, Comoros","lat":-12.47,"lon":43.304,"depth":10},
+    {"id":"usp000fnes","time":"2007-09-16T14:01:47Z","mag":5,"place":"128 km W of Mavingouni, Comoros","lat":-11.812,"lon":42.082,"depth":3.1},
+    {"id":"usp000jg5f","time":"2012-03-13T02:39:55Z","mag":5,"place":"51 km N of Mitsamiouli, Comoros","lat":-10.923,"lon":43.286,"depth":10},
+    {"id":"us70008dg6","time":"2020-03-21T06:42:34Z","mag":5,"place":"38 km E of Mramani, Comoros","lat":-12.334,"lon":44.884,"depth":10},
+    {"id":"usp0006wdw","time":"1995-04-27T02:32:18Z","mag":4.8,"place":"114 km SW of Madjeouéni, Comoros","lat":-12.567,"lon":42.548,"depth":10},
+    {"id":"usc000n9m9","time":"2014-03-12T20:43:32Z","mag":4.8,"place":"1 km WNW of Maraharé, Comoros","lat":-12.228,"lon":44.3,"depth":10},
+    {"id":"usp0002v3a","time":"1986-06-16T05:41:24Z","mag":4.7,"place":"17 km E of Ouanani, Comoros","lat":-12.368,"lon":43.958,"depth":10},
+    {"id":"usp00087ka","time":"1997-09-15T22:38:23Z","mag":4.7,"place":"62 km NNW of Mitsamiouli, Comoros","lat":-10.834,"lon":43.156,"depth":10},
+    {"id":"usb000fpdz","time":"2013-03-20T05:21:57Z","mag":4.7,"place":"112 km W of Mavingouni, Comoros","lat":-11.862,"lon":42.231,"depth":10},
+    {"id":"usp000dadw","time":"2004-12-10T10:54:04Z","mag":4.6,"place":"59 km WNW of Mitsamiouli, Comoros","lat":-11.136,"lon":42.799,"depth":10},
+    {"id":"usp000ev4v","time":"2006-10-13T21:31:02Z","mag":4.6,"place":"20 km SW of Hoani, Comoros","lat":-12.362,"lon":43.519,"depth":10},
+    {"id":"us10003jm3","time":"2015-10-01T21:47:10Z","mag":4.6,"place":"13 km SSE of Antsahé, Comoros","lat":-12.473,"lon":44.551,"depth":14.9}
+  ],
+  "recent": [
+    {"id":"us70008dg6","time":"2020-03-21T06:42:34Z","mag":5,"place":"38 km E of Mramani, Comoros","lat":-12.334,"lon":44.884,"depth":10},
+    {"id":"us10006r9h","time":"2016-09-21T01:08:44Z","mag":5.1,"place":"46 km WSW of Nioumachoua, Comoros","lat":-12.47,"lon":43.304,"depth":10},
+    {"id":"us10003jm3","time":"2015-10-01T21:47:10Z","mag":4.6,"place":"13 km SSE of Antsahé, Comoros","lat":-12.473,"lon":44.551,"depth":14.9},
+    {"id":"usc000n9m9","time":"2014-03-12T20:43:32Z","mag":4.8,"place":"1 km WNW of Maraharé, Comoros","lat":-12.228,"lon":44.3,"depth":10},
+    {"id":"usb000fpdz","time":"2013-03-20T05:21:57Z","mag":4.7,"place":"112 km W of Mavingouni, Comoros","lat":-11.862,"lon":42.231,"depth":10},
+    {"id":"usp000jg5f","time":"2012-03-13T02:39:55Z","mag":5,"place":"51 km N of Mitsamiouli, Comoros","lat":-10.923,"lon":43.286,"depth":10},
+    {"id":"usp000hn3b","time":"2010-10-14T10:03:30Z","mag":5.1,"place":"129 km NNW of Mitsamiouli, Comoros","lat":-10.32,"lon":42.783,"depth":10},
+    {"id":"usp000fnes","time":"2007-09-16T14:01:47Z","mag":5,"place":"128 km W of Mavingouni, Comoros","lat":-11.812,"lon":42.082,"depth":3.1},
+    {"id":"usp000ev4v","time":"2006-10-13T21:31:02Z","mag":4.6,"place":"20 km SW of Hoani, Comoros","lat":-12.362,"lon":43.519,"depth":10},
+    {"id":"usp000dadw","time":"2004-12-10T10:54:04Z","mag":4.6,"place":"59 km WNW of Mitsamiouli, Comoros","lat":-11.136,"lon":42.799,"depth":10},
+    {"id":"usp0009t8h","time":"2000-05-21T02:58:42Z","mag":5.2,"place":"5 km N of Hoani, Comoros","lat":-12.206,"lon":43.666,"depth":10},
+    {"id":"usp00087ka","time":"1997-09-15T22:38:23Z","mag":4.7,"place":"62 km NNW of Mitsamiouli, Comoros","lat":-10.834,"lon":43.156,"depth":10},
+    {"id":"usp0006wdw","time":"1995-04-27T02:32:18Z","mag":4.8,"place":"114 km SW of Madjeouéni, Comoros","lat":-12.567,"lon":42.548,"depth":10},
+    {"id":"usp0002v3a","time":"1986-06-16T05:41:24Z","mag":4.7,"place":"17 km E of Ouanani, Comoros","lat":-12.368,"lon":43.958,"depth":10}
+  ]
+}

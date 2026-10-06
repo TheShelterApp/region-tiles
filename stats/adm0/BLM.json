@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "BLM",
+  "name": "Saint Barthelemy",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 10,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,2,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0004h3a","time":"1990-11-18T20:28:15Z","mag":5.4,"place":"26 km NE of Upper Hell's Gate, Bonaire, Saint Eustatius and Saba","lat":17.8,"lon":-63.036,"depth":91.8},
+    {"id":"usp0006bej","time":"1994-04-21T17:46:41Z","mag":5,"place":"29 km SE of Blowing Point Village, Anguilla","lat":18.002,"lon":-62.885,"depth":75.6},
+    {"id":"usb000prhk","time":"2014-04-19T19:31:34Z","mag":5,"place":"69 km ESE of The Valley, Anguilla","lat":17.992,"lon":-62.448,"depth":53.3},
+    {"id":"us1000bvnl","time":"2017-12-24T15:12:52Z","mag":4.8,"place":"29 km ESE of The Valley, Anguilla","lat":18.107,"lon":-62.804,"depth":73.1},
+    {"id":"usp000h2dw","time":"2009-10-05T16:28:10Z","mag":4.7,"place":"30 km SE of The Valley, Anguilla","lat":18.021,"lon":-62.853,"depth":42.9},
+    {"id":"usp000j6vq","time":"2011-08-22T17:18:07Z","mag":4.6,"place":"38 km NE of Upper Hell's Gate, Bonaire, Saint Eustatius and Saba","lat":17.847,"lon":-62.928,"depth":105},
+    {"id":"usp000jbgt","time":"2011-11-28T05:42:50Z","mag":4.6,"place":"58 km ESE of The Valley, Anguilla","lat":18.015,"lon":-62.552,"depth":24.1},
+    {"id":"us6000c6ya","time":"2020-10-09T04:14:03Z","mag":4.6,"place":"56 km NNE of Nicola Town, Saint Kitts and Nevis","lat":17.831,"lon":-62.497,"depth":14.7},
+    {"id":"usp0007mbv","time":"1996-07-21T09:40:10Z","mag":4.5,"place":"68 km E of The Valley, Anguilla","lat":18.296,"lon":-62.412,"depth":60.7},
+    {"id":"usp000eh4r","time":"2006-05-14T21:02:47Z","mag":4.5,"place":"52 km NNE of Dieppe Bay Town, Saint Kitts and Nevis","lat":17.844,"lon":-62.601,"depth":65}
+  ],
+  "recent": [
+    {"id":"us6000c6ya","time":"2020-10-09T04:14:03Z","mag":4.6,"place":"56 km NNE of Nicola Town, Saint Kitts and Nevis","lat":17.831,"lon":-62.497,"depth":14.7},
+    {"id":"us1000bvnl","time":"2017-12-24T15:12:52Z","mag":4.8,"place":"29 km ESE of The Valley, Anguilla","lat":18.107,"lon":-62.804,"depth":73.1},
+    {"id":"usb000prhk","time":"2014-04-19T19:31:34Z","mag":5,"place":"69 km ESE of The Valley, Anguilla","lat":17.992,"lon":-62.448,"depth":53.3},
+    {"id":"usp000jbgt","time":"2011-11-28T05:42:50Z","mag":4.6,"place":"58 km ESE of The Valley, Anguilla","lat":18.015,"lon":-62.552,"depth":24.1},
+    {"id":"usp000j6vq","time":"2011-08-22T17:18:07Z","mag":4.6,"place":"38 km NE of Upper Hell's Gate, Bonaire, Saint Eustatius and Saba","lat":17.847,"lon":-62.928,"depth":105},
+    {"id":"usp000h2dw","time":"2009-10-05T16:28:10Z","mag":4.7,"place":"30 km SE of The Valley, Anguilla","lat":18.021,"lon":-62.853,"depth":42.9},
+    {"id":"usp000eh4r","time":"2006-05-14T21:02:47Z","mag":4.5,"place":"52 km NNE of Dieppe Bay Town, Saint Kitts and Nevis","lat":17.844,"lon":-62.601,"depth":65},
+    {"id":"usp0007mbv","time":"1996-07-21T09:40:10Z","mag":4.5,"place":"68 km E of The Valley, Anguilla","lat":18.296,"lon":-62.412,"depth":60.7},
+    {"id":"usp0006bej","time":"1994-04-21T17:46:41Z","mag":5,"place":"29 km SE of Blowing Point Village, Anguilla","lat":18.002,"lon":-62.885,"depth":75.6},
+    {"id":"usp0004h3a","time":"1990-11-18T20:28:15Z","mag":5.4,"place":"26 km NE of Upper Hell's Gate, Bonaire, Saint Eustatius and Saba","lat":17.8,"lon":-63.036,"depth":91.8}
+  ]
+}

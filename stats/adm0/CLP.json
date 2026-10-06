@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "CLP",
+  "name": "Clipperton Island",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 3,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000h6eg","time":"2010-01-21T08:03:23Z","mag":5.6,"place":"east central Pacific Ocean","lat":8.268,"lon":-110.357,"depth":12},
+    {"id":"usp0000s6e","time":"1977-12-22T02:57:50Z","mag":4.9,"place":"off the coast of Mexico","lat":10.876,"lon":-107.425,"depth":33},
+    {"id":"usp0006cjx","time":"1994-05-15T00:56:13Z","mag":4.6,"place":"northern East Pacific Rise","lat":9.417,"lon":-105.331,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000h6eg","time":"2010-01-21T08:03:23Z","mag":5.6,"place":"east central Pacific Ocean","lat":8.268,"lon":-110.357,"depth":12},
+    {"id":"usp0006cjx","time":"1994-05-15T00:56:13Z","mag":4.6,"place":"northern East Pacific Rise","lat":9.417,"lon":-105.331,"depth":10},
+    {"id":"usp0000s6e","time":"1977-12-22T02:57:50Z","mag":4.9,"place":"off the coast of Mexico","lat":10.876,"lon":-107.425,"depth":33}
+  ]
+}

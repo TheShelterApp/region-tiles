@@ -101,3 +101,15 @@ SGP
 Derived from the geoBoundaries ADM2 manifest (`gb_adm2_api.json`, boundaryLicense field). geoBoundaries citation:
 
 > Runfola, D. et al. (2020) geoBoundaries: A global database of political administrative boundaries. PLoS ONE 15(4): e0231866.
+
+## Area history statistics (`stats/`)
+
+The earthquake counts and event lists under `stats/` are derived from the **USGS ANSS Comprehensive Earthquake Catalog
+(ComCat)**, U.S. Geological Survey, Earthquake Hazards Program (https://earthquake.usgs.gov/data/comcat/, DOI
+10.5066/F7MS3QZH) — a U.S. Government work in the **public domain**
+(https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits). Credit line used by the app:
+
+> Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).
+
+Each event is assigned to a country with this dataset's ADM0 / ADM1 outlines (Natural Earth, public domain); see the
+README, "Area history statistics".

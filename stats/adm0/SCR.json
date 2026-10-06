@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "SCR",
+  "name": "Scarborough Reef",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 16,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,2,1,0,0,0,0,0,0,1,0,0,0,1,1,1,0,0,1,0,1,2,1,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000bedp","time":"2002-10-12T23:43:12Z","mag":6.1,"place":"155 km WSW of Palauig, Philippines","lat":15.096,"lon":118.504,"depth":33},
+    {"id":"usp0006u6z","time":"1995-03-15T02:31:31Z","mag":5.4,"place":"140 km WSW of Palauig, Philippines","lat":15.057,"lon":118.652,"depth":26.7},
+    {"id":"usp0008ugd","time":"1998-09-06T00:32:57Z","mag":5.3,"place":"288 km W of Cabra, Philippines","lat":14.195,"lon":117.394,"depth":33},
+    {"id":"us70005cag","time":"2019-09-05T13:58:34Z","mag":5.3,"place":"South China Sea","lat":14.726,"lon":116.135,"depth":11.2},
+    {"id":"us7000ggb9","time":"2022-01-30T00:17:12Z","mag":5.3,"place":"167 km WSW of Ilioilio, Philippines","lat":15.626,"lon":118.237,"depth":10},
+    {"id":"us6000dedr","time":"2021-02-04T07:48:10Z","mag":5.2,"place":"142 km WSW of San Nicolas, Philippines","lat":14.632,"lon":118.795,"depth":10},
+    {"id":"us6000k6ck","time":"2023-04-22T11:14:58Z","mag":4.9,"place":"161 km WSW of San Nicolas, Philippines","lat":14.487,"lon":118.65,"depth":10},
+    {"id":"usp000bee0","time":"2002-10-13T02:08:25Z","mag":4.8,"place":"159 km WSW of Palauig, Philippines","lat":15.047,"lon":118.473,"depth":34.5},
+    {"id":"usp00081kx","time":"1997-05-01T23:07:58Z","mag":4.7,"place":"152 km WSW of Palauig, Philippines","lat":15.13,"lon":118.52,"depth":33},
+    {"id":"usp000hky2","time":"2010-09-19T13:33:19Z","mag":4.7,"place":"233 km W of Cabra, Philippines","lat":14.035,"lon":117.894,"depth":35.9},
+    {"id":"usp000bzab","time":"2003-06-07T15:38:44Z","mag":4.6,"place":"167 km WSW of Palauig, Philippines","lat":14.958,"lon":118.428,"depth":33},
+    {"id":"us10001nsw","time":"2015-03-16T22:54:50Z","mag":4.6,"place":"154 km WNW of Cabra, Philippines","lat":14.185,"lon":118.655,"depth":39.6},
+    {"id":"usp00032tr","time":"1987-02-27T00:51:07Z","mag":4.5,"place":"127 km WSW of Palauig, Philippines","lat":15.104,"lon":118.763,"depth":33},
+    {"id":"usb000q6xv","time":"2014-05-02T11:44:01Z","mag":4.5,"place":"146 km WSW of Ilioilio, Philippines","lat":15.695,"lon":118.429,"depth":27.9},
+    {"id":"us20007f36","time":"2016-10-11T15:48:13Z","mag":4.5,"place":"South China Sea","lat":14.474,"lon":116.831,"depth":14.3},
+    {"id":"us7000ghxz","time":"2022-01-30T01:35:32Z","mag":4.5,"place":"169 km WSW of Ilioilio, Philippines","lat":15.519,"lon":118.253,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000k6ck","time":"2023-04-22T11:14:58Z","mag":4.9,"place":"161 km WSW of San Nicolas, Philippines","lat":14.487,"lon":118.65,"depth":10},
+    {"id":"us7000ghxz","time":"2022-01-30T01:35:32Z","mag":4.5,"place":"169 km WSW of Ilioilio, Philippines","lat":15.519,"lon":118.253,"depth":10},
+    {"id":"us7000ggb9","time":"2022-01-30T00:17:12Z","mag":5.3,"place":"167 km WSW of Ilioilio, Philippines","lat":15.626,"lon":118.237,"depth":10},
+    {"id":"us6000dedr","time":"2021-02-04T07:48:10Z","mag":5.2,"place":"142 km WSW of San Nicolas, Philippines","lat":14.632,"lon":118.795,"depth":10},
+    {"id":"us70005cag","time":"2019-09-05T13:58:34Z","mag":5.3,"place":"South China Sea","lat":14.726,"lon":116.135,"depth":11.2},
+    {"id":"us20007f36","time":"2016-10-11T15:48:13Z","mag":4.5,"place":"South China Sea","lat":14.474,"lon":116.831,"depth":14.3},
+    {"id":"us10001nsw","time":"2015-03-16T22:54:50Z","mag":4.6,"place":"154 km WNW of Cabra, Philippines","lat":14.185,"lon":118.655,"depth":39.6},
+    {"id":"usb000q6xv","time":"2014-05-02T11:44:01Z","mag":4.5,"place":"146 km WSW of Ilioilio, Philippines","lat":15.695,"lon":118.429,"depth":27.9},
+    {"id":"usp000hky2","time":"2010-09-19T13:33:19Z","mag":4.7,"place":"233 km W of Cabra, Philippines","lat":14.035,"lon":117.894,"depth":35.9},
+    {"id":"usp000bzab","time":"2003-06-07T15:38:44Z","mag":4.6,"place":"167 km WSW of Palauig, Philippines","lat":14.958,"lon":118.428,"depth":33},
+    {"id":"usp000bee0","time":"2002-10-13T02:08:25Z","mag":4.8,"place":"159 km WSW of Palauig, Philippines","lat":15.047,"lon":118.473,"depth":34.5},
+    {"id":"usp000bedp","time":"2002-10-12T23:43:12Z","mag":6.1,"place":"155 km WSW of Palauig, Philippines","lat":15.096,"lon":118.504,"depth":33},
+    {"id":"usp0008ugd","time":"1998-09-06T00:32:57Z","mag":5.3,"place":"288 km W of Cabra, Philippines","lat":14.195,"lon":117.394,"depth":33},
+    {"id":"usp00081kx","time":"1997-05-01T23:07:58Z","mag":4.7,"place":"152 km WSW of Palauig, Philippines","lat":15.13,"lon":118.52,"depth":33},
+    {"id":"usp0006u6z","time":"1995-03-15T02:31:31Z","mag":5.4,"place":"140 km WSW of Palauig, Philippines","lat":15.057,"lon":118.652,"depth":26.7},
+    {"id":"usp00032tr","time":"1987-02-27T00:51:07Z","mag":4.5,"place":"127 km WSW of Palauig, Philippines","lat":15.104,"lon":118.763,"depth":33}
+  ]
+}

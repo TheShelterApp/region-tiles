@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "BRN",
+  "name": "Brunei",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 1,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp00053ca","time":"1992-02-22T00:39:53Z","mag":5.2,"place":"68 km N of Tutong, Brunei","lat":5.415,"lon":114.546,"depth":40.4}
+  ],
+  "recent": [
+    {"id":"usp00053ca","time":"1992-02-22T00:39:53Z","mag":5.2,"place":"68 km N of Tutong, Brunei","lat":5.415,"lon":114.546,"depth":40.4}
+  ]
+}

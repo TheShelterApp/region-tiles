@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "NLD",
+  "name": "Netherlands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 6,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000htef","time":"2011-01-21T03:37:16Z","mag":5,"place":"35 km SW of Oranjestad, Bonaire, Saint Eustatius and Saba","lat":17.234,"lon":-63.204,"depth":168.2},
+    {"id":"usp000htzp","time":"2011-02-02T12:40:59Z","mag":5,"place":"38 km SW of The Bottom, Bonaire, Saint Eustatius and Saba","lat":17.353,"lon":-63.471,"depth":160.8},
+    {"id":"usp0003b9z","time":"1987-12-15T05:53:06Z","mag":4.9,"place":"75 km WNW of The Bottom, Bonaire, Saint Eustatius and Saba","lat":17.95,"lon":-63.875,"depth":127.8},
+    {"id":"usp000ccyu","time":"2003-11-16T07:22:46Z","mag":4.8,"place":"84 km NNE of Dorp Rincón, Bonaire, Saint Eustatius and Saba","lat":12.924,"lon":-68,"depth":33},
+    {"id":"usp000jzpu","time":"2013-03-09T13:48:08Z","mag":4.7,"place":"2 km WNW of Oranjestad, Bonaire, Saint Eustatius and Saba","lat":17.488,"lon":-63.007,"depth":175.3},
+    {"id":"usp0003upe","time":"1989-04-30T09:30:06Z","mag":4.6,"place":"44 km SSW of Dorp Tera Kora, Bonaire, Saint Eustatius and Saba","lat":11.758,"lon":-68.416,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000jzpu","time":"2013-03-09T13:48:08Z","mag":4.7,"place":"2 km WNW of Oranjestad, Bonaire, Saint Eustatius and Saba","lat":17.488,"lon":-63.007,"depth":175.3},
+    {"id":"usp000htzp","time":"2011-02-02T12:40:59Z","mag":5,"place":"38 km SW of The Bottom, Bonaire, Saint Eustatius and Saba","lat":17.353,"lon":-63.471,"depth":160.8},
+    {"id":"usp000htef","time":"2011-01-21T03:37:16Z","mag":5,"place":"35 km SW of Oranjestad, Bonaire, Saint Eustatius and Saba","lat":17.234,"lon":-63.204,"depth":168.2},
+    {"id":"usp000ccyu","time":"2003-11-16T07:22:46Z","mag":4.8,"place":"84 km NNE of Dorp Rincón, Bonaire, Saint Eustatius and Saba","lat":12.924,"lon":-68,"depth":33},
+    {"id":"usp0003upe","time":"1989-04-30T09:30:06Z","mag":4.6,"place":"44 km SSW of Dorp Tera Kora, Bonaire, Saint Eustatius and Saba","lat":11.758,"lon":-68.416,"depth":10},
+    {"id":"usp0003b9z","time":"1987-12-15T05:53:06Z","mag":4.9,"place":"75 km WNW of The Bottom, Bonaire, Saint Eustatius and Saba","lat":17.95,"lon":-63.875,"depth":127.8}
+  ]
+}

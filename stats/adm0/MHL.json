@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "MHL",
+  "name": "Marshall Islands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 3,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0001k93","time":"1982-03-22T06:04:10Z","mag":5.6,"place":"Marshall Islands region","lat":6.65,"lon":175.064,"depth":33},
+    {"id":"usp000e1xn","time":"2005-10-16T04:14:24Z","mag":5.1,"place":"Marshall Islands region","lat":15.361,"lon":167.29,"depth":10},
+    {"id":"usp0007kd5","time":"1996-06-28T12:06:34Z","mag":5,"place":"Marshall Islands region","lat":13.608,"lon":173.571,"depth":35.3}
+  ],
+  "recent": [
+    {"id":"usp000e1xn","time":"2005-10-16T04:14:24Z","mag":5.1,"place":"Marshall Islands region","lat":15.361,"lon":167.29,"depth":10},
+    {"id":"usp0007kd5","time":"1996-06-28T12:06:34Z","mag":5,"place":"Marshall Islands region","lat":13.608,"lon":173.571,"depth":35.3},
+    {"id":"usp0001k93","time":"1982-03-22T06:04:10Z","mag":5.6,"place":"Marshall Islands region","lat":6.65,"lon":175.064,"depth":33}
+  ]
+}

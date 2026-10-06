@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "CAF",
+  "name": "Central African Republic",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 5,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000683z","time":"1994-02-06T00:14:14Z","mag":4.9,"place":"55 km N of Zemio, Central African Republic","lat":5.524,"lon":25.222,"depth":10},
+    {"id":"usp000dskb","time":"2005-06-09T13:57:08Z","mag":4.7,"place":"40 km N of Boda, Central African Republic","lat":4.683,"lon":17.504,"depth":10},
+    {"id":"usp0000ybr","time":"1979-01-09T00:26:46Z","mag":4.6,"place":"33 km NW of Boda, Central African Republic","lat":4.511,"lon":17.24,"depth":33},
+    {"id":"usp0002v4c","time":"1986-06-17T06:30:12Z","mag":4.5,"place":"19 km SW of Alindao, Central African Republic","lat":4.885,"lon":21.103,"depth":10},
+    {"id":"usp000dsme","time":"2005-06-10T01:07:43Z","mag":4.5,"place":"Central African Republic","lat":4.647,"lon":17.628,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000dsme","time":"2005-06-10T01:07:43Z","mag":4.5,"place":"Central African Republic","lat":4.647,"lon":17.628,"depth":10},
+    {"id":"usp000dskb","time":"2005-06-09T13:57:08Z","mag":4.7,"place":"40 km N of Boda, Central African Republic","lat":4.683,"lon":17.504,"depth":10},
+    {"id":"usp000683z","time":"1994-02-06T00:14:14Z","mag":4.9,"place":"55 km N of Zemio, Central African Republic","lat":5.524,"lon":25.222,"depth":10},
+    {"id":"usp0002v4c","time":"1986-06-17T06:30:12Z","mag":4.5,"place":"19 km SW of Alindao, Central African Republic","lat":4.885,"lon":21.103,"depth":10},
+    {"id":"usp0000ybr","time":"1979-01-09T00:26:46Z","mag":4.6,"place":"33 km NW of Boda, Central African Republic","lat":4.511,"lon":17.24,"depth":33}
+  ]
+}

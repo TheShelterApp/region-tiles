@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "SVN",
+  "name": "Slovenia",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 13,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,1,0,0,3,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0008jyj","time":"1998-04-12T10:55:32Z","mag":5.6,"place":"5 km E of Kobarid, Slovenia","lat":46.245,"lon":13.652,"depth":10},
+    {"id":"iscgemsup872340","time":"1963-05-19T10:00:03Z","mag":5.31,"place":"2 km S of Lukovica pri Domžalah, Slovenia","lat":46.145,"lon":14.698,"depth":10},
+    {"id":"usp0008heh","time":"1998-03-13T15:14:56Z","mag":5.2,"place":"4 km NW of Ilirska Bistrica, Slovenia","lat":45.594,"lon":14.199,"depth":10},
+    {"id":"usp000d00p","time":"2004-07-12T13:04:07Z","mag":5.2,"place":"7 km NE of Kobarid, Slovenia","lat":46.296,"lon":13.641,"depth":7.7},
+    {"id":"usp0005tpc","time":"1993-05-29T08:43:11Z","mag":5.1,"place":"1 km SE of ?rnomelj, Slovenia","lat":45.561,"lon":15.207,"depth":15.2},
+    {"id":"usp0006xuz","time":"1995-05-22T12:50:31Z","mag":4.9,"place":"6 km NNW of Ilirska Bistrica, Slovenia","lat":45.621,"lon":14.23,"depth":27.1},
+    {"id":"usp0004gss","time":"1990-11-11T22:16:24Z","mag":4.7,"place":"5 km ENE of Cerkno, Slovenia","lat":46.136,"lon":14.054,"depth":22.3},
+    {"id":"usp0000prk","time":"1977-07-16T13:13:29Z","mag":4.6,"place":"2 km NW of Naklo, Slovenia","lat":46.29,"lon":14.293,"depth":6},
+    {"id":"usp00022jq","time":"1984-03-11T11:55:31Z","mag":4.6,"place":"5 km ENE of Kostanjevica na Krki, Slovenia","lat":45.867,"lon":15.483,"depth":10},
+    {"id":"usp0008mj6","time":"1998-05-06T02:52:59Z","mag":4.6,"place":"6 km NNW of Tolmin, Slovenia","lat":46.236,"lon":13.708,"depth":10},
+    {"id":"usp000b5du","time":"2002-06-02T13:37:19Z","mag":4.6,"place":"6 km SSE of Pivka, Slovenia","lat":45.628,"lon":14.229,"depth":10},
+    {"id":"usp00006tp","time":"1974-06-20T17:08:27Z","mag":4.5,"place":"2 km ENE of Krško, Slovenia","lat":45.965,"lon":15.529,"depth":47},
+    {"id":"usb000ptk3","time":"2014-04-22T08:58:26Z","mag":4.5,"place":"7 km SE of Pivka, Slovenia","lat":45.634,"lon":14.256,"depth":4.6}
+  ],
+  "recent": [
+    {"id":"usb000ptk3","time":"2014-04-22T08:58:26Z","mag":4.5,"place":"7 km SE of Pivka, Slovenia","lat":45.634,"lon":14.256,"depth":4.6},
+    {"id":"usp000d00p","time":"2004-07-12T13:04:07Z","mag":5.2,"place":"7 km NE of Kobarid, Slovenia","lat":46.296,"lon":13.641,"depth":7.7},
+    {"id":"usp000b5du","time":"2002-06-02T13:37:19Z","mag":4.6,"place":"6 km SSE of Pivka, Slovenia","lat":45.628,"lon":14.229,"depth":10},
+    {"id":"usp0008mj6","time":"1998-05-06T02:52:59Z","mag":4.6,"place":"6 km NNW of Tolmin, Slovenia","lat":46.236,"lon":13.708,"depth":10},
+    {"id":"usp0008jyj","time":"1998-04-12T10:55:32Z","mag":5.6,"place":"5 km E of Kobarid, Slovenia","lat":46.245,"lon":13.652,"depth":10},
+    {"id":"usp0008heh","time":"1998-03-13T15:14:56Z","mag":5.2,"place":"4 km NW of Ilirska Bistrica, Slovenia","lat":45.594,"lon":14.199,"depth":10},
+    {"id":"usp0006xuz","time":"1995-05-22T12:50:31Z","mag":4.9,"place":"6 km NNW of Ilirska Bistrica, Slovenia","lat":45.621,"lon":14.23,"depth":27.1},
+    {"id":"usp0005tpc","time":"1993-05-29T08:43:11Z","mag":5.1,"place":"1 km SE of ?rnomelj, Slovenia","lat":45.561,"lon":15.207,"depth":15.2},
+    {"id":"usp0004gss","time":"1990-11-11T22:16:24Z","mag":4.7,"place":"5 km ENE of Cerkno, Slovenia","lat":46.136,"lon":14.054,"depth":22.3},
+    {"id":"usp00022jq","time":"1984-03-11T11:55:31Z","mag":4.6,"place":"5 km ENE of Kostanjevica na Krki, Slovenia","lat":45.867,"lon":15.483,"depth":10},
+    {"id":"usp0000prk","time":"1977-07-16T13:13:29Z","mag":4.6,"place":"2 km NW of Naklo, Slovenia","lat":46.29,"lon":14.293,"depth":6},
+    {"id":"usp00006tp","time":"1974-06-20T17:08:27Z","mag":4.5,"place":"2 km ENE of Krško, Slovenia","lat":45.965,"lon":15.529,"depth":47},
+    {"id":"iscgemsup872340","time":"1963-05-19T10:00:03Z","mag":5.31,"place":"2 km S of Lukovica pri Domžalah, Slovenia","lat":46.145,"lon":14.698,"depth":10}
+  ]
+}

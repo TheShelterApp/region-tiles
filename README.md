@@ -171,3 +171,101 @@ git add regions-db.json && git commit -m "…" && git push
 
 Bump `BUNDLE_VERSION` in `config.mjs` on any geometry/composition change (and use
 a new tag, e.g. `bundle-v2`, if you don't want to overwrite the existing asset).
+
+## Area history statistics
+
+Per country, the USGS ComCat earthquakes of magnitude 4.5 or more since 1936: the count, a yearly histogram, the
+strongest and the latest events. TheShelter's event page shows the count of the event's country on its Statistics
+card ("90-year area history") and the lists on the Previous earthquakes screen behind it.
+
+> Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat) — public domain
+> (https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits, DOI 10.5066/F7MS3QZH).
+
+```
+stats/
+  index.json            # schema, window, source, assignment rule, totals, {ISO3: count} for every country
+  adm0/<ISO3>.json      # one country (every ADM0 id of index/adm0.json, zero counts included)
+```
+
+Served from `main` (refreshed monthly, so no tag):
+
+```
+https://cdn.jsdelivr.net/gh/TheShelterApp/region-tiles@main/stats/adm0/JPN.json
+https://raw.githubusercontent.com/TheShelterApp/region-tiles/main/stats/adm0/JPN.json
+```
+
+A country file (`schemaVersion` 1; times are UTC, `[since, until)`):
+
+```json
+{
+  "schemaVersion": 1, "id": "JPN", "name": "Japan",
+  "since": "1936-01-01T00:00:00Z", "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5, "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)", "attribution": "…",
+  "total": 25769,
+  "histogram": { "startYear": 1936, "counts": [25, 26, 72, …] },
+  "largest": [ {"id": "official20110311054624120_30", "time": "2011-03-11T05:46:24Z", "mag": 9.1,
+                "place": "2011 Great Tohoku Earthquake, Japan", "lat": 38.297, "lon": 142.373, "depth": 29}, … ],
+  "recent":  [ … ]
+}
+```
+
+`largest` (20, strongest first, equal magnitudes oldest first) and `recent` (20, newest first) carry the ComCat event
+id (its page is `https://earthquake.usgs.gov/earthquakes/eventpage/<id>`), the time to the second, the preferred
+magnitude, ComCat's place text as published (older ISC-GEM places carry `?` for the letters ComCat's text lost), the
+epicentre and the depth in km (`null` when unknown). Every file is under 8 KB.
+
+**Country assignment** — the same rule as the app's region lookup (iOS `RegionTilesDatabase.resolve`), so the card
+counts what the app itself places in the country: the level by magnitude (ADM1 below M6, ADM0 from M6) walking up to
+ADM0, the first region whose box and polygon (`geo/`, the geometry of `regions.sqlite`) contain the epicentre; else,
+offshore, the nearest of the 10 countries nearest by box, measured to the nearest vertex of its outline in
+equirectangular degrees (longitude scaled by cos latitude), when within 4.5° (about 500 km: subduction trenches
+100–300 km out count for their coast); else the event is in open ocean and counts for no country (`unassigned` in
+`index.json`). Most M4.5+ earthquakes are at sea: 69.7 % count offshore for a country, 7.4 % are in open ocean.
+
+**Building** (Node ≥ 20, no dependencies):
+
+```bash
+npm run stats                 # incremental: from 1 January of the year of (last cutoff − 365 days) to today 00:00 UTC
+npm run stats -- --full       # everything since 1936 (cached pages before the revision window are reused)
+npm run stats -- --until=2026-10-06   # a fixed cutoff: the same cutoff gives the same files
+npm run test:stats            # unit tests, the real-polygon assignments, the published files' schema and totals
+npm run stats:verify          # compare with ComCat /count (below)
+```
+
+ComCat is read in half-year pages (`orderby=time-asc`, `limit=20000`; a page at the cap is split in two), at most one
+request per 1.1 s, cached as CSV under `.cache/comcat/` (never committed; `COMCAT_CACHE_DIR` moves it). A full read is
+182 requests (about 3½ minutes, 50 MB). An incremental run replaces whole years from its window start: the old files
+keep the earlier years' bins and events, the window's events (new ones and ComCat's revisions and deletions) are read
+again, so running it twice gives the same files. It falls back to a full run by itself when there is no previous
+`index.json` or it was built with another schema, filter, list size, assignment rule or region set.
+
+**Refresh** — `.github/workflows/stats-refresh.yml`: on the 2nd of every month (04:17 UTC) incremental, every January
+(and on a manual run with `full`) the whole catalogue again, so revisions of older events reach the files once a year.
+The workflow pushes `stats/` to `main` itself with the default `GITHUB_TOKEN` (`contents: write`): `main`'s ruleset
+forbids only deletion and non-fast-forward updates, and the repository does not let Actions open pull requests. No
+other secret. GitHub pauses scheduled workflows of a public repository after 60 days without activity; the monthly
+commit is that activity. `.github/workflows/stats-ci.yml` runs `npm run test:stats` on every change to the pipeline or
+the files.
+
+**Verification** (2026-10-06, cutoff 2026-10-06 00:00 UTC, `npm run stats:verify`): the whole download equals ComCat's
+own count (306,470 events), and inside each sample country's box the download equals ComCat's `/count` (Indonesia: one
+event revised into the box between the download and the count). The published total is the events inside the outline
+plus the offshore events within 4.5°; the last column shows what a tighter 1.8° (about 200 km) cap would keep offshore.
+
+| Country | ComCat /count in its box | Downloaded in the box | Published total | inside the outline | offshore ≤ 4.5° | of the total, in the box | offshore ≤ 1.8° (comparison) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Japan (JPN) | 29168 | 29168 | 25769 | 2640 | 23129 | 24302 | 21032 |
+| Indonesia (IDN) | 41059 | 41058 | 41650 | 7213 | 34437 | 39544 | 33030 |
+| Chile (CHL) | 15004 | 15004 | 10396 | 4875 | 5521 | 9859 | 4987 |
+| Turkey (TUR) | 2073 | 2073 | 1685 | 1430 | 255 | 1653 | 255 |
+| Italy (ITA) | 825 | 825 | 607 | 395 | 212 | 597 | 211 |
+| Iceland (ISL) | 582 | 582 | 797 | 486 | 311 | 582 | 189 |
+| Afghanistan (AFG), landlocked | 4357 | 4357 | 2508 | 2508 | 0 | 2508 | 0 |
+| Vanuatu (VUT), island state | 7146 | 7146 | 9161 | 406 | 8755 | 7058 | 8625 |
+
+A box is a rectangle: Japan's takes in the Kurils (4,736 events assigned to Russia) and a few of Korea's and China's,
+Chile's the Argentine and Bolivian Andes and open ocean, Afghanistan's the Hindu Kush of Pakistan and Tajikistan, so
+the published total is lower; Iceland's and Vanuatu's totals are higher because the ridge and trench events beyond
+their boxes count for them offshore. Earthquakes before the 1960s are the
+large ones only (ComCat's early years come from the ISC-GEM catalogue), so the histogram's first decades are sparse.

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "HUN",
+  "name": "Hungary",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 8,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem902415","time":"1938-03-27T11:16:26Z","mag":5.9,"place":"7 km ESE of Legrad, Croatia","lat":46.277,"lon":16.951,"depth":10},
+    {"id":"iscgem887823","time":"1956-01-12T05:46:13Z","mag":5.79,"place":"3 km W of Ecser, Hungary","lat":47.443,"lon":19.282,"depth":15},
+    {"id":"usp0002hrp","time":"1985-08-15T04:28:46Z","mag":5.2,"place":"2 km ENE of Balatonalmádi, Hungary","lat":47.045,"lon":18.054,"depth":10},
+    {"id":"usp000eyky","time":"2006-11-23T07:15:20Z","mag":4.8,"place":"6 km S of Koson’, Ukraine","lat":48.195,"lon":22.46,"depth":10},
+    {"id":"usp0000v7m","time":"1978-06-22T02:33:24Z","mag":4.6,"place":"5 km NW of Békéscsaba, Hungary","lat":46.716,"lon":21.055,"depth":10},
+    {"id":"usp0000wrg","time":"1978-09-26T16:47:33Z","mag":4.5,"place":"1 km E of Ráckeve, Hungary","lat":47.161,"lon":18.962,"depth":10},
+    {"id":"usp0002hru","time":"1985-08-15T05:29:17Z","mag":4.5,"place":"1 km SSW of Balatonalmádi, Hungary","lat":47.024,"lon":18.013,"depth":8.6},
+    {"id":"us1000jbzu","time":"2019-03-07T19:07:52Z","mag":4.5,"place":"3 km SSW of Böhönye, Hungary","lat":46.383,"lon":17.354,"depth":10}
+  ],
+  "recent": [
+    {"id":"us1000jbzu","time":"2019-03-07T19:07:52Z","mag":4.5,"place":"3 km SSW of Böhönye, Hungary","lat":46.383,"lon":17.354,"depth":10},
+    {"id":"usp000eyky","time":"2006-11-23T07:15:20Z","mag":4.8,"place":"6 km S of Koson’, Ukraine","lat":48.195,"lon":22.46,"depth":10},
+    {"id":"usp0002hru","time":"1985-08-15T05:29:17Z","mag":4.5,"place":"1 km SSW of Balatonalmádi, Hungary","lat":47.024,"lon":18.013,"depth":8.6},
+    {"id":"usp0002hrp","time":"1985-08-15T04:28:46Z","mag":5.2,"place":"2 km ENE of Balatonalmádi, Hungary","lat":47.045,"lon":18.054,"depth":10},
+    {"id":"usp0000wrg","time":"1978-09-26T16:47:33Z","mag":4.5,"place":"1 km E of Ráckeve, Hungary","lat":47.161,"lon":18.962,"depth":10},
+    {"id":"usp0000v7m","time":"1978-06-22T02:33:24Z","mag":4.6,"place":"5 km NW of Békéscsaba, Hungary","lat":46.716,"lon":21.055,"depth":10},
+    {"id":"iscgem887823","time":"1956-01-12T05:46:13Z","mag":5.79,"place":"3 km W of Ecser, Hungary","lat":47.443,"lon":19.282,"depth":15},
+    {"id":"iscgem902415","time":"1938-03-27T11:16:26Z","mag":5.9,"place":"7 km ESE of Legrad, Croatia","lat":46.277,"lon":16.951,"depth":10}
+  ]
+}

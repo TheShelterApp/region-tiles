@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "LBN",
+  "name": "Lebanon",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 6,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem888080","time":"1956-03-16T19:43:31Z","mag":5.5,"place":"11 km WSW of Aanjar, Lebanon","lat":33.687,"lon":35.812,"depth":15},
+    {"id":"iscgemsup888079","time":"1956-03-16T19:32:43Z","mag":5.32,"place":"7 km SSE of Baabda, Lebanon","lat":33.776,"lon":35.575,"depth":15},
+    {"id":"usp000fyyz","time":"2008-02-15T10:36:19Z","mag":5.1,"place":"11 km ENE of Tyre, Lebanon","lat":33.327,"lon":35.305,"depth":10},
+    {"id":"usp0007zem","time":"1997-03-26T04:22:51Z","mag":5,"place":"3 km WNW of Nabatîyé et Tahta, Lebanon","lat":33.386,"lon":35.452,"depth":10},
+    {"id":"usp0001vvw","time":"1983-06-03T02:04:39Z","mag":4.7,"place":"8 km WNW of Zahlé, Lebanon","lat":33.877,"lon":35.817,"depth":10},
+    {"id":"usp0007zfk","time":"1997-03-26T13:20:21Z","mag":4.7,"place":"12 km SW of Baabda, Lebanon","lat":33.738,"lon":35.464,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000fyyz","time":"2008-02-15T10:36:19Z","mag":5.1,"place":"11 km ENE of Tyre, Lebanon","lat":33.327,"lon":35.305,"depth":10},
+    {"id":"usp0007zfk","time":"1997-03-26T13:20:21Z","mag":4.7,"place":"12 km SW of Baabda, Lebanon","lat":33.738,"lon":35.464,"depth":10},
+    {"id":"usp0007zem","time":"1997-03-26T04:22:51Z","mag":5,"place":"3 km WNW of Nabatîyé et Tahta, Lebanon","lat":33.386,"lon":35.452,"depth":10},
+    {"id":"usp0001vvw","time":"1983-06-03T02:04:39Z","mag":4.7,"place":"8 km WNW of Zahlé, Lebanon","lat":33.877,"lon":35.817,"depth":10},
+    {"id":"iscgem888080","time":"1956-03-16T19:43:31Z","mag":5.5,"place":"11 km WSW of Aanjar, Lebanon","lat":33.687,"lon":35.812,"depth":15},
+    {"id":"iscgemsup888079","time":"1956-03-16T19:32:43Z","mag":5.32,"place":"7 km SSE of Baabda, Lebanon","lat":33.776,"lon":35.575,"depth":15}
+  ]
+}

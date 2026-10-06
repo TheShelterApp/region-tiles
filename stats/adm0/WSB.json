@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "WSB",
+  "name": "Akrotiri Sovereign Base Area",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0003a03","time":"1987-11-09T06:02:43Z","mag":4.8,"place":"13 km S of Kolossi, Cyprus","lat":34.544,"lon":32.937,"depth":10},
+    {"id":"usp000d6gh","time":"2004-10-16T15:28:27Z","mag":4.7,"place":"43 km SSE of Limassol, Cyprus","lat":34.335,"lon":33.253,"depth":50},
+    {"id":"usp0009cw7","time":"1999-08-11T04:27:33Z","mag":4.5,"place":"7 km SW of Erími, Cyprus","lat":34.642,"lon":32.855,"depth":33},
+    {"id":"usp000a65w","time":"2000-12-16T14:27:07Z","mag":4.5,"place":"125 km S of Kolossi, Cyprus","lat":33.546,"lon":33.134,"depth":33}
+  ],
+  "recent": [
+    {"id":"usp000d6gh","time":"2004-10-16T15:28:27Z","mag":4.7,"place":"43 km SSE of Limassol, Cyprus","lat":34.335,"lon":33.253,"depth":50},
+    {"id":"usp000a65w","time":"2000-12-16T14:27:07Z","mag":4.5,"place":"125 km S of Kolossi, Cyprus","lat":33.546,"lon":33.134,"depth":33},
+    {"id":"usp0009cw7","time":"1999-08-11T04:27:33Z","mag":4.5,"place":"7 km SW of Erími, Cyprus","lat":34.642,"lon":32.855,"depth":33},
+    {"id":"usp0003a03","time":"1987-11-09T06:02:43Z","mag":4.8,"place":"13 km S of Kolossi, Cyprus","lat":34.544,"lon":32.937,"depth":10}
+  ]
+}

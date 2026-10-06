@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "UMI",
+  "name": "United States Minor Outlying Islands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 3,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1]
+  },
+  "largest": [
+    {"id":"usp00053cv","time":"1992-02-22T11:28:07Z","mag":5.2,"place":"North Pacific Ocean","lat":17.999,"lon":169.954,"depth":30.2},
+    {"id":"us2000crse","time":"2018-01-31T15:26:50Z","mag":5.1,"place":"Line Islands, Kiribati region","lat":4.955,"lon":-164.28,"depth":10},
+    {"id":"us6000s7lg","time":"2026-02-10T08:18:17Z","mag":5,"place":"78 km ENE of Manchioneal, Jamaica","lat":18.209,"lon":-75.56,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000s7lg","time":"2026-02-10T08:18:17Z","mag":5,"place":"78 km ENE of Manchioneal, Jamaica","lat":18.209,"lon":-75.56,"depth":10},
+    {"id":"us2000crse","time":"2018-01-31T15:26:50Z","mag":5.1,"place":"Line Islands, Kiribati region","lat":4.955,"lon":-164.28,"depth":10},
+    {"id":"usp00053cv","time":"1992-02-22T11:28:07Z","mag":5.2,"place":"North Pacific Ocean","lat":17.999,"lon":169.954,"depth":30.2}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "TCA",
+  "name": "Turks and Caicos Islands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000d4hk","time":"2004-09-18T07:07:48Z","mag":5.7,"place":"North Atlantic Ocean","lat":23.106,"lon":-67.614,"depth":10},
+    {"id":"usp0008qrw","time":"1998-06-30T20:19:16Z","mag":5.1,"place":"284 km NNE of Cabarete, Dominican Republic","lat":22.265,"lon":-69.831,"depth":39.7},
+    {"id":"us1000hhj9","time":"2018-10-26T12:49:48Z","mag":4.5,"place":"268 km ENE of Abraham’s Bay, Bahamas","lat":23.079,"lon":-70.468,"depth":10},
+    {"id":"us7000e647","time":"2021-05-25T16:19:24Z","mag":4.5,"place":"North Atlantic Ocean","lat":22.622,"lon":-67.907,"depth":10}
+  ],
+  "recent": [
+    {"id":"us7000e647","time":"2021-05-25T16:19:24Z","mag":4.5,"place":"North Atlantic Ocean","lat":22.622,"lon":-67.907,"depth":10},
+    {"id":"us1000hhj9","time":"2018-10-26T12:49:48Z","mag":4.5,"place":"268 km ENE of Abraham’s Bay, Bahamas","lat":23.079,"lon":-70.468,"depth":10},
+    {"id":"usp000d4hk","time":"2004-09-18T07:07:48Z","mag":5.7,"place":"North Atlantic Ocean","lat":23.106,"lon":-67.614,"depth":10},
+    {"id":"usp0008qrw","time":"1998-06-30T20:19:16Z","mag":5.1,"place":"284 km NNE of Cabarete, Dominican Republic","lat":22.265,"lon":-69.831,"depth":39.7}
+  ]
+}

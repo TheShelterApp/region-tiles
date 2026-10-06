@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "ARE",
+  "name": "United Arab Emirates",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 3,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000b04s","time":"2002-03-11T20:06:37Z","mag":5,"place":"14 km NW of Reef Al Fujairah City, United Arab Emirates","lat":25.236,"lon":56.145,"depth":10},
+    {"id":"usp000fn5a","time":"2007-09-13T15:47:08Z","mag":4.7,"place":"15 km SSW of Dibba Al-Fujairah, United Arab Emirates","lat":25.46,"lon":56.2,"depth":14.1},
+    {"id":"usp000ju98","time":"2012-10-21T16:13:22Z","mag":4.5,"place":"11 km WSW of Reef Al Fujairah City, United Arab Emirates","lat":25.114,"lon":56.138,"depth":25.1}
+  ],
+  "recent": [
+    {"id":"usp000ju98","time":"2012-10-21T16:13:22Z","mag":4.5,"place":"11 km WSW of Reef Al Fujairah City, United Arab Emirates","lat":25.114,"lon":56.138,"depth":25.1},
+    {"id":"usp000fn5a","time":"2007-09-13T15:47:08Z","mag":4.7,"place":"15 km SSW of Dibba Al-Fujairah, United Arab Emirates","lat":25.46,"lon":56.2,"depth":14.1},
+    {"id":"usp000b04s","time":"2002-03-11T20:06:37Z","mag":5,"place":"14 km NW of Reef Al Fujairah City, United Arab Emirates","lat":25.236,"lon":56.145,"depth":10}
+  ]
+}

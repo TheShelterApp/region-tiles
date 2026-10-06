@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "COK",
+  "name": "Cook Islands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 1,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usb000my8j","time":"2014-02-15T07:47:55Z","mag":4.5,"place":"Samoa Islands region","lat":-11.304,"lon":-166.826,"depth":16.7}
+  ],
+  "recent": [
+    {"id":"usb000my8j","time":"2014-02-15T07:47:55Z","mag":4.5,"place":"Samoa Islands region","lat":-11.304,"lon":-166.826,"depth":16.7}
+  ]
+}

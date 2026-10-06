@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "NGA",
+  "name": "Nigeria",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 1,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0009pd8","time":"2000-03-07T15:53:24Z","mag":4.5,"place":"34 km S of Siluko, Nigeria","lat":6.224,"lon":5.147,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp0009pd8","time":"2000-03-07T15:53:24Z","mag":4.5,"place":"34 km S of Siluko, Nigeria","lat":6.224,"lon":5.147,"depth":10}
+  ]
+}

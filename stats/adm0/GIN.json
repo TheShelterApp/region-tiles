@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "GIN",
+  "name": "Guinea",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 6,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,1,0,0,0,0,1]
+  },
+  "largest": [
+    {"id":"usp00020q5","time":"1983-12-22T04:11:29Z","mag":6.3,"place":"38 km WNW of Gaoual, Guinea","lat":11.866,"lon":-13.529,"depth":11.3},
+    {"id":"us6000de5b","time":"2021-02-03T09:55:06Z","mag":5,"place":"41 km NNW of Kindia, Guinea","lat":10.415,"lon":-12.971,"depth":10},
+    {"id":"usp000jpyx","time":"2012-08-06T14:29:21Z","mag":4.8,"place":"31 km ENE of Kérouané, Guinea","lat":9.336,"lon":-8.737,"depth":10},
+    {"id":"us7000ss6x","time":"2026-06-11T09:04:56Z","mag":4.7,"place":"16 km NW of Mamou, Guinea","lat":10.487,"lon":-12.197,"depth":10},
+    {"id":"us2000d9nh","time":"2018-02-19T16:02:33Z","mag":4.6,"place":"24 km NNW of Koubia, Guinea","lat":11.801,"lon":-11.956,"depth":13.7},
+    {"id":"us7000cav6","time":"2020-10-31T07:20:38Z","mag":4.5,"place":"53 km ENE of Kérouané, Guinea","lat":9.406,"lon":-8.554,"depth":10}
+  ],
+  "recent": [
+    {"id":"us7000ss6x","time":"2026-06-11T09:04:56Z","mag":4.7,"place":"16 km NW of Mamou, Guinea","lat":10.487,"lon":-12.197,"depth":10},
+    {"id":"us6000de5b","time":"2021-02-03T09:55:06Z","mag":5,"place":"41 km NNW of Kindia, Guinea","lat":10.415,"lon":-12.971,"depth":10},
+    {"id":"us7000cav6","time":"2020-10-31T07:20:38Z","mag":4.5,"place":"53 km ENE of Kérouané, Guinea","lat":9.406,"lon":-8.554,"depth":10},
+    {"id":"us2000d9nh","time":"2018-02-19T16:02:33Z","mag":4.6,"place":"24 km NNW of Koubia, Guinea","lat":11.801,"lon":-11.956,"depth":13.7},
+    {"id":"usp000jpyx","time":"2012-08-06T14:29:21Z","mag":4.8,"place":"31 km ENE of Kérouané, Guinea","lat":9.336,"lon":-8.737,"depth":10},
+    {"id":"usp00020q5","time":"1983-12-22T04:11:29Z","mag":6.3,"place":"38 km WNW of Gaoual, Guinea","lat":11.866,"lon":-13.529,"depth":11.3}
+  ]
+}

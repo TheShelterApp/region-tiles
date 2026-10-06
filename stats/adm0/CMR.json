@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "CMR",
+  "name": "Cameroon",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem899094","time":"1945-09-12T00:51:25Z","mag":5.88,"place":"93 km NW of Ouésso, Republic of the Congo","lat":2.279,"lon":15.532,"depth":15},
+    {"id":"usp00031y6","time":"1987-01-26T23:11:33Z","mag":4.9,"place":"21 km WSW of Tibati, Cameroon","lat":6.373,"lon":12.453,"depth":10},
+    {"id":"usp0004ewt","time":"1990-09-20T12:13:25Z","mag":4.7,"place":"20 km WNW of Buea, Cameroon","lat":4.208,"lon":9.062,"depth":10},
+    {"id":"usp000djjb","time":"2005-03-19T11:49:18Z","mag":4.6,"place":"22 km WNW of Évodoula, Cameroon","lat":4.181,"lon":11.023,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000djjb","time":"2005-03-19T11:49:18Z","mag":4.6,"place":"22 km WNW of Évodoula, Cameroon","lat":4.181,"lon":11.023,"depth":10},
+    {"id":"usp0004ewt","time":"1990-09-20T12:13:25Z","mag":4.7,"place":"20 km WNW of Buea, Cameroon","lat":4.208,"lon":9.062,"depth":10},
+    {"id":"usp00031y6","time":"1987-01-26T23:11:33Z","mag":4.9,"place":"21 km WSW of Tibati, Cameroon","lat":6.373,"lon":12.453,"depth":10},
+    {"id":"iscgem899094","time":"1945-09-12T00:51:25Z","mag":5.88,"place":"93 km NW of Ouésso, Republic of the Congo","lat":2.279,"lon":15.532,"depth":15}
+  ]
+}

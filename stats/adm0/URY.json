@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "URY",
+  "name": "Uruguay",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 1,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0003hap","time":"1988-06-26T03:24:25Z","mag":5.1,"place":"220 km SE of La Paloma, Uruguay","lat":-36.27,"lon":-52.73,"depth":31.4}
+  ],
+  "recent": [
+    {"id":"usp0003hap","time":"1988-06-26T03:24:25Z","mag":5.1,"place":"220 km SE of La Paloma, Uruguay","lat":-36.27,"lon":-52.73,"depth":31.4}
+  ]
+}

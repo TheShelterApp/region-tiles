@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "PSE",
+  "name": "Palestine",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0002bbr","time":"1985-01-25T06:08:03Z","mag":4.6,"place":"6 km NE of Jericho, Palestinian Territory","lat":31.899,"lon":35.503,"depth":31.3},
+    {"id":"usp000esre","time":"2006-09-09T04:58:08Z","mag":4.5,"place":"4 km E of Al Fa??yil, Palestinian Territory","lat":32.02,"lon":35.49,"depth":1}
+  ],
+  "recent": [
+    {"id":"usp000esre","time":"2006-09-09T04:58:08Z","mag":4.5,"place":"4 km E of Al Fa??yil, Palestinian Territory","lat":32.02,"lon":35.49,"depth":1},
+    {"id":"usp0002bbr","time":"1985-01-25T06:08:03Z","mag":4.6,"place":"6 km NE of Jericho, Palestinian Territory","lat":31.899,"lon":35.503,"depth":31.3}
+  ]
+}

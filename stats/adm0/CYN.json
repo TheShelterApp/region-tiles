@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "CYN",
+  "name": "Northern Cyprus",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem900626","time":"1941-01-20T03:37:01Z","mag":6.03,"place":"4 km SSE of Lefkónoiko, Cyprus","lat":35.221,"lon":33.751,"depth":15},
+    {"id":"usp00035u5","time":"1987-06-16T06:17:42Z","mag":4.7,"place":"65 km ENE of Rizokárpaso, Cyprus","lat":35.785,"lon":35.06,"depth":33},
+    {"id":"usp0001me6","time":"1982-05-20T03:28:03Z","mag":4.6,"place":"7 km WNW of Acherítou, Cyprus","lat":35.124,"lon":33.787,"depth":59.1},
+    {"id":"usp0001zf5","time":"1983-10-31T18:51:57Z","mag":4.5,"place":"6 km N of Acherítou, Cyprus","lat":35.157,"lon":33.859,"depth":33}
+  ],
+  "recent": [
+    {"id":"usp00035u5","time":"1987-06-16T06:17:42Z","mag":4.7,"place":"65 km ENE of Rizokárpaso, Cyprus","lat":35.785,"lon":35.06,"depth":33},
+    {"id":"usp0001zf5","time":"1983-10-31T18:51:57Z","mag":4.5,"place":"6 km N of Acherítou, Cyprus","lat":35.157,"lon":33.859,"depth":33},
+    {"id":"usp0001me6","time":"1982-05-20T03:28:03Z","mag":4.6,"place":"7 km WNW of Acherítou, Cyprus","lat":35.124,"lon":33.787,"depth":59.1},
+    {"id":"iscgem900626","time":"1941-01-20T03:37:01Z","mag":6.03,"place":"4 km SSE of Lefkónoiko, Cyprus","lat":35.221,"lon":33.751,"depth":15}
+  ]
+}

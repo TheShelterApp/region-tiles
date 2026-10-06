@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "SEN",
+  "name": "Senegal",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0002u8a","time":"1986-05-21T01:45:24Z","mag":5.5,"place":"289 km W of Mermoz Boabab, Senegal","lat":14.368,"lon":-20.141,"depth":10},
+    {"id":"usp000ht4f","time":"2011-01-15T00:24:24Z","mag":4.5,"place":"172 km WSW of Mermoz Boabab, Senegal","lat":14.281,"lon":-19.015,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000ht4f","time":"2011-01-15T00:24:24Z","mag":4.5,"place":"172 km WSW of Mermoz Boabab, Senegal","lat":14.281,"lon":-19.015,"depth":10},
+    {"id":"usp0002u8a","time":"1986-05-21T01:45:24Z","mag":5.5,"place":"289 km W of Mermoz Boabab, Senegal","lat":14.368,"lon":-20.141,"depth":10}
+  ]
+}

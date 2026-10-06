@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "LKA",
+  "name": "Sri Lanka",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 14,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,1,2,1,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000039m","time":"1973-08-30T19:50:02Z","mag":5.9,"place":"275 km E of Kalmunai, Sri Lanka","lat":7.103,"lon":84.307,"depth":33},
+    {"id":"usp0001d3v","time":"1981-04-12T10:18:33Z","mag":5.2,"place":"Bay of Bengal","lat":8.073,"lon":85.458,"depth":33},
+    {"id":"usp000fghe","time":"2007-07-18T04:27:24Z","mag":5.2,"place":"Bay of Bengal","lat":6.465,"lon":84.395,"depth":10},
+    {"id":"usp0002yw3","time":"1986-10-12T15:31:11Z","mag":4.8,"place":"North Indian Ocean","lat":3.915,"lon":85.011,"depth":10},
+    {"id":"usp000ceeb","time":"2003-12-03T17:43:07Z","mag":4.8,"place":"Bay of Bengal","lat":9.188,"lon":85.489,"depth":10},
+    {"id":"us6000i21t","time":"2022-07-13T07:48:10Z","mag":4.8,"place":"Bay of Bengal","lat":7.029,"lon":85.992,"depth":10},
+    {"id":"usp000jb3w","time":"2011-11-19T10:40:15Z","mag":4.7,"place":"269 km SSW of Talpe, Sri Lanka","lat":3.917,"lon":79.018,"depth":10},
+    {"id":"us70007ndd","time":"2020-02-11T21:04:16Z","mag":4.7,"place":"North Indian Ocean","lat":4.507,"lon":83.459,"depth":10},
+    {"id":"usp000duq5","time":"2005-07-07T13:13:23Z","mag":4.6,"place":"North Indian Ocean","lat":4.189,"lon":84.784,"depth":10},
+    {"id":"us7000ef8p","time":"2021-06-17T11:14:32Z","mag":4.6,"place":"Bay of Bengal","lat":6.592,"lon":85,"depth":10},
+    {"id":"usp00039sb","time":"1987-10-31T06:14:05Z","mag":4.5,"place":"285 km E of Kalmunai, Sri Lanka","lat":7.156,"lon":84.41,"depth":33},
+    {"id":"usp0008ybe","time":"1998-11-17T14:15:18Z","mag":4.5,"place":"263 km WSW of Ambalangoda, Sri Lanka","lat":5.514,"lon":77.782,"depth":10},
+    {"id":"usp000gw5e","time":"2009-04-15T03:17:58Z","mag":4.5,"place":"109 km SE of Kalmunai, Sri Lanka","lat":6.796,"lon":82.616,"depth":10},
+    {"id":"us7000ff7l","time":"2021-09-23T19:48:30Z","mag":4.5,"place":"Laccadive Sea","lat":5.591,"lon":78.943,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000i21t","time":"2022-07-13T07:48:10Z","mag":4.8,"place":"Bay of Bengal","lat":7.029,"lon":85.992,"depth":10},
+    {"id":"us7000ff7l","time":"2021-09-23T19:48:30Z","mag":4.5,"place":"Laccadive Sea","lat":5.591,"lon":78.943,"depth":10},
+    {"id":"us7000ef8p","time":"2021-06-17T11:14:32Z","mag":4.6,"place":"Bay of Bengal","lat":6.592,"lon":85,"depth":10},
+    {"id":"us70007ndd","time":"2020-02-11T21:04:16Z","mag":4.7,"place":"North Indian Ocean","lat":4.507,"lon":83.459,"depth":10},
+    {"id":"usp000jb3w","time":"2011-11-19T10:40:15Z","mag":4.7,"place":"269 km SSW of Talpe, Sri Lanka","lat":3.917,"lon":79.018,"depth":10},
+    {"id":"usp000gw5e","time":"2009-04-15T03:17:58Z","mag":4.5,"place":"109 km SE of Kalmunai, Sri Lanka","lat":6.796,"lon":82.616,"depth":10},
+    {"id":"usp000fghe","time":"2007-07-18T04:27:24Z","mag":5.2,"place":"Bay of Bengal","lat":6.465,"lon":84.395,"depth":10},
+    {"id":"usp000duq5","time":"2005-07-07T13:13:23Z","mag":4.6,"place":"North Indian Ocean","lat":4.189,"lon":84.784,"depth":10},
+    {"id":"usp000ceeb","time":"2003-12-03T17:43:07Z","mag":4.8,"place":"Bay of Bengal","lat":9.188,"lon":85.489,"depth":10},
+    {"id":"usp0008ybe","time":"1998-11-17T14:15:18Z","mag":4.5,"place":"263 km WSW of Ambalangoda, Sri Lanka","lat":5.514,"lon":77.782,"depth":10},
+    {"id":"usp00039sb","time":"1987-10-31T06:14:05Z","mag":4.5,"place":"285 km E of Kalmunai, Sri Lanka","lat":7.156,"lon":84.41,"depth":33},
+    {"id":"usp0002yw3","time":"1986-10-12T15:31:11Z","mag":4.8,"place":"North Indian Ocean","lat":3.915,"lon":85.011,"depth":10},
+    {"id":"usp0001d3v","time":"1981-04-12T10:18:33Z","mag":5.2,"place":"Bay of Bengal","lat":8.073,"lon":85.458,"depth":33},
+    {"id":"usp000039m","time":"1973-08-30T19:50:02Z","mag":5.9,"place":"275 km E of Kalmunai, Sri Lanka","lat":7.103,"lon":84.307,"depth":33}
+  ]
+}

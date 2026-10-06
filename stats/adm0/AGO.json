@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "AGO",
+  "name": "Angola",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 8,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0]
+  },
+  "largest": [
+    {"id":"usp000ar7y","time":"2001-10-19T13:01:23Z","mag":5.3,"place":"121 km SW of N'zeto, Angola","lat":-7.946,"lon":12.026,"depth":10},
+    {"id":"usp0003vzv","time":"1989-06-05T16:23:40Z","mag":5.1,"place":"93 km SW of Uacu Cungo, Angola","lat":-12.002,"lon":14.563,"depth":10},
+    {"id":"us7000mqfy","time":"2024-06-05T08:42:24Z","mag":5.1,"place":"87 km W of Caconda, Angola","lat":-13.711,"lon":14.249,"depth":10},
+    {"id":"usp0000f5r","time":"1976-02-22T07:12:10Z","mag":4.8,"place":"183 km WNW of Sumbe, Angola","lat":-10.84,"lon":12.205,"depth":33},
+    {"id":"usp000btbd","time":"2003-03-23T18:09:26Z","mag":4.8,"place":"85 km W of Caconda, Angola","lat":-13.763,"lon":14.273,"depth":38.2},
+    {"id":"usp00010hb","time":"1979-05-09T07:29:39Z","mag":4.7,"place":"53 km N of Lubango, Angola","lat":-14.435,"lon":13.56,"depth":33},
+    {"id":"usp0009cqe","time":"1999-08-06T17:22:46Z","mag":4.6,"place":"88 km E of Lucapa, Angola","lat":-8.537,"lon":21.54,"depth":10},
+    {"id":"us70005d8x","time":"2019-09-07T18:49:56Z","mag":4.6,"place":"178 km WNW of Zambezi, Zambia","lat":-13.147,"lon":21.504,"depth":10}
+  ],
+  "recent": [
+    {"id":"us7000mqfy","time":"2024-06-05T08:42:24Z","mag":5.1,"place":"87 km W of Caconda, Angola","lat":-13.711,"lon":14.249,"depth":10},
+    {"id":"us70005d8x","time":"2019-09-07T18:49:56Z","mag":4.6,"place":"178 km WNW of Zambezi, Zambia","lat":-13.147,"lon":21.504,"depth":10},
+    {"id":"usp000btbd","time":"2003-03-23T18:09:26Z","mag":4.8,"place":"85 km W of Caconda, Angola","lat":-13.763,"lon":14.273,"depth":38.2},
+    {"id":"usp000ar7y","time":"2001-10-19T13:01:23Z","mag":5.3,"place":"121 km SW of N'zeto, Angola","lat":-7.946,"lon":12.026,"depth":10},
+    {"id":"usp0009cqe","time":"1999-08-06T17:22:46Z","mag":4.6,"place":"88 km E of Lucapa, Angola","lat":-8.537,"lon":21.54,"depth":10},
+    {"id":"usp0003vzv","time":"1989-06-05T16:23:40Z","mag":5.1,"place":"93 km SW of Uacu Cungo, Angola","lat":-12.002,"lon":14.563,"depth":10},
+    {"id":"usp00010hb","time":"1979-05-09T07:29:39Z","mag":4.7,"place":"53 km N of Lubango, Angola","lat":-14.435,"lon":13.56,"depth":33},
+    {"id":"usp0000f5r","time":"1976-02-22T07:12:10Z","mag":4.8,"place":"183 km WNW of Sumbe, Angola","lat":-10.84,"lon":12.205,"depth":33}
+  ]
+}

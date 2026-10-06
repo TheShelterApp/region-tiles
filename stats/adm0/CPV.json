@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "CPV",
+  "name": "Cabo Verde",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 15,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,0,0,0,0,1,0,0,0,0,0,2,0,0,0,0,0,0,1,1,0,0,0,1,1,0,0,0,0,0,1,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem900952","time":"1941-08-15T06:09:26Z","mag":6.54,"place":"267 km NNW of Ponta do Sol, Cabo Verde","lat":19.29,"lon":-26.365,"depth":10},
+    {"id":"usp0005tp6","time":"1993-05-29T06:50:13Z","mag":6.4,"place":"253 km NW of Ponta do Sol, Cabo Verde","lat":19.072,"lon":-26.476,"depth":12},
+    {"id":"iscgem902379","time":"1938-02-15T03:27:47Z","mag":6.04,"place":"252 km NNW of Ponta do Sol, Cabo Verde","lat":19.234,"lon":-26.17,"depth":15},
+    {"id":"iscgem902380","time":"1938-02-15T06:57:15Z","mag":5.79,"place":"260 km NNW of Ponta do Sol, Cabo Verde","lat":19.285,"lon":-26.232,"depth":15},
+    {"id":"usp0005tza","time":"1993-06-04T01:32:11Z","mag":5.3,"place":"245 km NW of Ponta do Sol, Cabo Verde","lat":19.035,"lon":-26.395,"depth":10},
+    {"id":"us6000jjbh","time":"2023-01-26T04:16:05Z","mag":5.3,"place":"Cape Verde","lat":16.615,"lon":-25.619,"depth":10},
+    {"id":"usp0008v57","time":"1998-09-18T13:47:13Z","mag":5,"place":"54 km SW of Nova Sintra, Cabo Verde","lat":14.474,"lon":-25.001,"depth":10},
+    {"id":"usp00005ts","time":"1974-03-31T21:12:57Z","mag":4.9,"place":"144 km W of Ponta do Sol, Cabo Verde","lat":17.037,"lon":-26.436,"depth":33},
+    {"id":"usp000jeee","time":"2012-02-03T18:24:44Z","mag":4.9,"place":"264 km WNW of Ponta do Sol, Cabo Verde","lat":18.391,"lon":-27.256,"depth":10},
+    {"id":"us20008m8v","time":"2017-02-24T19:16:53Z","mag":4.9,"place":"137 km N of Ponta do Sol, Cabo Verde","lat":18.438,"lon":-25.244,"depth":16.3},
+    {"id":"usp0004q21","time":"1991-04-07T17:48:13Z","mag":4.8,"place":"127 km W of Ponta do Sol, Cabo Verde","lat":17.256,"lon":-26.291,"depth":10},
+    {"id":"usp000ht75","time":"2011-01-16T08:33:18Z","mag":4.8,"place":"153 km W of Ponta do Sol, Cabo Verde","lat":17.137,"lon":-26.531,"depth":10},
+    {"id":"usp000chnv","time":"2004-01-11T11:58:34Z","mag":4.6,"place":"160 km WNW of Ponta do Sol, Cabo Verde","lat":17.697,"lon":-26.514,"depth":10},
+    {"id":"usp000d2af","time":"2004-08-17T05:03:39Z","mag":4.6,"place":"40 km SW of Nova Sintra, Cabo Verde","lat":14.653,"lon":-25.003,"depth":10},
+    {"id":"us10005z6k","time":"2016-06-27T09:58:19Z","mag":4.5,"place":"North Atlantic Ocean","lat":19.313,"lon":-20.979,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000jjbh","time":"2023-01-26T04:16:05Z","mag":5.3,"place":"Cape Verde","lat":16.615,"lon":-25.619,"depth":10},
+    {"id":"us20008m8v","time":"2017-02-24T19:16:53Z","mag":4.9,"place":"137 km N of Ponta do Sol, Cabo Verde","lat":18.438,"lon":-25.244,"depth":16.3},
+    {"id":"us10005z6k","time":"2016-06-27T09:58:19Z","mag":4.5,"place":"North Atlantic Ocean","lat":19.313,"lon":-20.979,"depth":10},
+    {"id":"usp000jeee","time":"2012-02-03T18:24:44Z","mag":4.9,"place":"264 km WNW of Ponta do Sol, Cabo Verde","lat":18.391,"lon":-27.256,"depth":10},
+    {"id":"usp000ht75","time":"2011-01-16T08:33:18Z","mag":4.8,"place":"153 km W of Ponta do Sol, Cabo Verde","lat":17.137,"lon":-26.531,"depth":10},
+    {"id":"usp000d2af","time":"2004-08-17T05:03:39Z","mag":4.6,"place":"40 km SW of Nova Sintra, Cabo Verde","lat":14.653,"lon":-25.003,"depth":10},
+    {"id":"usp000chnv","time":"2004-01-11T11:58:34Z","mag":4.6,"place":"160 km WNW of Ponta do Sol, Cabo Verde","lat":17.697,"lon":-26.514,"depth":10},
+    {"id":"usp0008v57","time":"1998-09-18T13:47:13Z","mag":5,"place":"54 km SW of Nova Sintra, Cabo Verde","lat":14.474,"lon":-25.001,"depth":10},
+    {"id":"usp0005tza","time":"1993-06-04T01:32:11Z","mag":5.3,"place":"245 km NW of Ponta do Sol, Cabo Verde","lat":19.035,"lon":-26.395,"depth":10},
+    {"id":"usp0005tp6","time":"1993-05-29T06:50:13Z","mag":6.4,"place":"253 km NW of Ponta do Sol, Cabo Verde","lat":19.072,"lon":-26.476,"depth":12},
+    {"id":"usp0004q21","time":"1991-04-07T17:48:13Z","mag":4.8,"place":"127 km W of Ponta do Sol, Cabo Verde","lat":17.256,"lon":-26.291,"depth":10},
+    {"id":"usp00005ts","time":"1974-03-31T21:12:57Z","mag":4.9,"place":"144 km W of Ponta do Sol, Cabo Verde","lat":17.037,"lon":-26.436,"depth":33},
+    {"id":"iscgem900952","time":"1941-08-15T06:09:26Z","mag":6.54,"place":"267 km NNW of Ponta do Sol, Cabo Verde","lat":19.29,"lon":-26.365,"depth":10},
+    {"id":"iscgem902380","time":"1938-02-15T06:57:15Z","mag":5.79,"place":"260 km NNW of Ponta do Sol, Cabo Verde","lat":19.285,"lon":-26.232,"depth":15},
+    {"id":"iscgem902379","time":"1938-02-15T03:27:47Z","mag":6.04,"place":"252 km NNW of Ponta do Sol, Cabo Verde","lat":19.234,"lon":-26.17,"depth":15}
+  ]
+}

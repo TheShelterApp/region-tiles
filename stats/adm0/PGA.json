@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "PGA",
+  "name": "Spratly Islands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem852946","time":"1965-10-07T03:36:03Z","mag":5.9,"place":"South China Sea","lat":12.395,"lon":114.463,"depth":25.9},
+    {"id":"usp0001rab","time":"1982-12-07T11:05:41Z","mag":5,"place":"South China Sea","lat":12.493,"lon":114.541,"depth":33}
+  ],
+  "recent": [
+    {"id":"usp0001rab","time":"1982-12-07T11:05:41Z","mag":5,"place":"South China Sea","lat":12.493,"lon":114.541,"depth":33},
+    {"id":"iscgem852946","time":"1965-10-07T03:36:03Z","mag":5.9,"place":"South China Sea","lat":12.395,"lon":114.463,"depth":25.9}
+  ]
+}
