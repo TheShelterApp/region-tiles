@@ -3,7 +3,7 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  COMCAT_BASE, PAGE_LIMIT, MIN_REQUEST_INTERVAL_MS, CACHE_DIR, MIN_MAGNITUDE, EVENT_TYPE,
+  COMCAT_BASE, PAGE_LIMIT, MIN_REQUEST_INTERVAL_MS, CACHE_DIR, MIN_MAGNITUDE, EVENT_TYPE, EMPTY_PAGE_MIN_SPAN_DAYS,
 } from './config.mjs';
 
 const USER_AGENT = 'TheShelterApp-region-tiles-stats (+https://github.com/TheShelterApp/region-tiles)';
@@ -115,7 +115,10 @@ const cacheName = (start, end) =>
 
 let lastRequestAt = 0;
 let requestCount = 0;
+let requestIntervalMs = MIN_REQUEST_INTERVAL_MS;
 export const stats = () => ({ requests: requestCount });
+/** Tests only: the pause between requests (they answer from a stub, not from ComCat). */
+export const setRequestIntervalForTests = (ms) => { requestIntervalMs = ms; };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -123,7 +126,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export async function politeGet(url, { attempts = 6, timeoutMs = 180_000 } = {}) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
-    const wait = lastRequestAt + MIN_REQUEST_INTERVAL_MS - Date.now();
+    const wait = lastRequestAt + requestIntervalMs - Date.now();
     if (wait > 0) await sleep(wait);
     lastRequestAt = Date.now();
     requestCount++;
@@ -160,53 +163,69 @@ export function baseParams(start, end) {
   return { starttime: start, endtime: end, minmagnitude: String(MIN_MAGNITUDE), eventtype: EVENT_TYPE };
 }
 
-/** ComCat /count for a filter (used by the verification). */
+/** ComCat /count for a filter (the build's window check, the verification). A body without a numeric count fails. */
 export async function comcatCount(params) {
   const { body } = await politeGet(queryURL('count', { ...params, format: 'geojson' }));
-  return JSON.parse(body).count;
+  const count = JSON.parse(body || 'null')?.count;
+  if (!Number.isInteger(count) || count < 0) throw new Error(`ComCat /count: no count in ${JSON.stringify(body.slice(0, 200))}`);
+  return count;
 }
+
+/** Whether [start, end) is long enough that ComCat always lists M4.5+ earthquakes in it (EMPTY_PAGE_MIN_SPAN_DAYS). */
+export const pageMustHaveRows = (start, end) => Date.parse(end) - Date.parse(start) >= EMPTY_PAGE_MIN_SPAN_DAYS * 86_400_000;
 
 /**
  * The events of [start, end): read from the cache when `useCache` and the page is cached, else downloaded (and
  * cached). A page that hits PAGE_LIMIT is split at its midpoint and both halves fetched, so no row is lost to the cap.
+ * A page of at least EMPTY_PAGE_MIN_SPAN_DAYS without events (204, an empty body, a header-only CSV) throws, and no
+ * empty page is ever cached; an empty cached page (an older run's) is downloaded again. A body that is not ComCat CSV
+ * throws before it is cached.
  */
-export async function fetchPage(start, end, { useCache = false, log = console.log } = {}) {
-  mkdirSync(CACHE_DIR, { recursive: true });
-  const file = join(CACHE_DIR, cacheName(start, end));
-  let text;
+export async function fetchPage(start, end, { useCache = false, log = console.log, cacheDir = CACHE_DIR } = {}) {
+  mkdirSync(cacheDir, { recursive: true });
+  const file = join(cacheDir, cacheName(start, end));
+  const mustHaveRows = pageMustHaveRows(start, end);
   if (useCache && existsSync(file)) {
-    text = readFileSync(file, 'utf8');
-  } else {
-    const url = queryURL('query', { ...baseParams(start, end), orderby: 'time-asc', limit: String(PAGE_LIMIT), format: 'csv' });
-    const { body } = await politeGet(url);
-    text = body;
-    const rowCount = Math.max(0, parseCSV(text).length - 1);
-    log(`  fetched ${start.slice(0, 10)} → ${end.slice(0, 10)}: ${rowCount} rows`);
-    if (rowCount >= PAGE_LIMIT) {
-      const mid = new Date(Math.floor((Date.parse(start) + Date.parse(end)) / 2 / 1000) * 1000).toISOString();
-      log(`  page at the ${PAGE_LIMIT}-row cap, splitting at ${mid}`);
-      const a = await fetchPage(start, mid, { useCache, log });
-      const b = await fetchPage(mid, end, { useCache, log });
-      return [...a, ...b];
-    }
-    const tmp = `${file}.tmp`;
-    writeFileSync(tmp, text);
-    renameSync(tmp, file);
+    const cached = eventsFromCSV(readFileSync(file, 'utf8'));
+    if (cached.length || !mustHaveRows) return cached;
+    log(`  cached ${start.slice(0, 10)} → ${end.slice(0, 10)} holds no events: downloading it again`);
   }
-  return eventsFromCSV(text);
+  const url = queryURL('query', { ...baseParams(start, end), orderby: 'time-asc', limit: String(PAGE_LIMIT), format: 'csv' });
+  const { status, body } = await politeGet(url);
+  const rowCount = Math.max(0, parseCSV(body).length - 1);
+  log(`  fetched ${start.slice(0, 10)} → ${end.slice(0, 10)}: ${rowCount} rows`);
+  if (rowCount >= PAGE_LIMIT) {
+    const mid = new Date(Math.floor((Date.parse(start) + Date.parse(end)) / 2 / 1000) * 1000).toISOString();
+    log(`  page at the ${PAGE_LIMIT}-row cap, splitting at ${mid}`);
+    const a = await fetchPage(start, mid, { useCache, log, cacheDir });
+    const b = await fetchPage(mid, end, { useCache, log, cacheDir });
+    return [...a, ...b];
+  }
+  const events = eventsFromCSV(body);
+  if (!events.length) {
+    if (mustHaveRows) {
+      const what = status === 204 ? 'HTTP 204' : !body.trim() ? 'an empty body' : rowCount ? `${rowCount} rows without a usable event` : 'a header-only CSV';
+      throw new Error(`ComCat answered ${start} → ${end} with ${what}: a page of ${EMPTY_PAGE_MIN_SPAN_DAYS} days or more always holds M${MIN_MAGNITUDE}+ earthquakes, so the answer is wrong (nothing cached, nothing written)`);
+    }
+    return events;
+  }
+  const tmp = `${file}.tmp`;
+  writeFileSync(tmp, body);
+  renameSync(tmp, file);
+  return events;
 }
 
 /**
  * Every event of [start, end) by half-year pages. Pages that END before `reuseCacheBefore` may come from the cache
  * (old pages hardly change); later pages are always downloaded again.
  */
-export async function fetchRange(start, end, { reuseCacheBefore = null, log = console.log } = {}) {
+export async function fetchRange(start, end, { reuseCacheBefore = null, log = console.log, cacheDir = CACHE_DIR } = {}) {
   const pages = halfYearPages(start, end);
   const reuseUntil = reuseCacheBefore ? Date.parse(reuseCacheBefore) : -Infinity;
   const byId = new Map();
   for (const p of pages) {
     const useCache = Date.parse(p.end) <= reuseUntil;
-    const events = await fetchPage(p.start, p.end, { useCache, log });
+    const events = await fetchPage(p.start, p.end, { useCache, log, cacheDir });
     for (const e of events) byId.set(e.id, e);
   }
   return [...byId.values()].sort((a, b) => a.t - b.t || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));

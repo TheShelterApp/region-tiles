@@ -1,11 +1,19 @@
-// node --test pipeline/stats/stats.test.mjs — the CSV reader, the paging, the country assignment and the incremental merge.
+// node --test pipeline/stats/stats.test.mjs — the CSV reader, the paging, the country assignment, the incremental merge
+// and the checks that keep a wrong ComCat answer from being published.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { parseCSV, eventsFromCSV, halfYearPages } from './comcat.mjs';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import {
+  parseCSV, eventsFromCSV, halfYearPages, fetchPage, comcatCount, baseParams, pageMustHaveRows, setRequestIntervalForTests,
+} from './comcat.mjs';
 import { makeAssigner, polygonsOf, loadRegions, levelForMagnitude } from './assign.mjs';
 import { aggregate, histogramYears, formatJSON, yearStart } from './aggregate.mjs';
+import { plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
+import { judge } from './build-stats.mjs';
 import { STATS_DIR, STATS_INDEX, SCHEMA_VERSION, TOP_LARGEST, TOP_RECENT } from './config.mjs';
 import { INDEX_DIR } from '../../config.mjs';
 
@@ -233,4 +241,200 @@ test('published files: schema, totals and ordering', { skip: !existsSync(STATS_I
   }
   assert.equal(sum, index.assigned);
   assert.equal(index.total, index.assigned + index.unassigned.total);
+});
+
+// ---- XR-1 (round 16): a wrong ComCat answer fails the build before anything is written ------------------------------
+
+const CSV_HEADER = 'time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type';
+const csvRow = (id, time, mag = 5.1) => `${time},35.0,140.0,10,${mag},mb,,,,,us,${id},2026-01-01T00:00:00.000Z,"somewhere",earthquake`;
+
+/** Answers every request with `answer(url)` -> {status, body}; records the URLs. */
+function stubFetch(answer) {
+  const urls = [];
+  const original = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    urls.push(String(url));
+    const { status = 200, body = '' } = answer(String(url));
+    return new Response(status === 204 ? null : body, { status });
+  };
+  return { urls, restore: () => { globalThis.fetch = original; } };
+}
+
+const tempDir = (name) => mkdtempSync(join(tmpdir(), `region-tiles-${name}-`));
+
+test('fetchPage: a half-year answered with 204, an empty body or a header-only CSV fails and caches nothing', async () => {
+  setRequestIntervalForTests(0);
+  for (const [status, body] of [[204, ''], [200, ''], [200, `${CSV_HEADER}\n`]]) {
+    const cacheDir = tempDir('cache');
+    const stub = stubFetch(() => ({ status, body }));
+    try {
+      await assert.rejects(
+        fetchPage('2025-01-01T00:00:00.000Z', '2025-07-01T00:00:00.000Z', { cacheDir, log: () => {} }),
+        /always holds M4\.5\+ earthquakes/,
+      );
+    } finally { stub.restore(); }
+    assert.deepEqual(readdirSync(cacheDir), [], `nothing cached after ${status} ${JSON.stringify(body)}`);
+  }
+});
+
+test('fetchPage: a short page may be empty (not cached); a populated page is cached; a non-CSV body fails uncached', async () => {
+  setRequestIntervalForTests(0);
+  const cacheDir = tempDir('cache');
+  let stub = stubFetch(() => ({ status: 204 }));
+  try {
+    assert.deepEqual(await fetchPage('2026-07-01T00:00:00.000Z', '2026-07-03T00:00:00.000Z', { cacheDir, log: () => {} }), []);
+  } finally { stub.restore(); }
+  assert.deepEqual(readdirSync(cacheDir), []);
+  assert.equal(pageMustHaveRows('2026-07-01T00:00:00.000Z', '2026-07-03T00:00:00.000Z'), false);
+  assert.equal(pageMustHaveRows('2026-07-01T00:00:00.000Z', '2026-07-08T00:00:00.000Z'), true);
+
+  stub = stubFetch(() => ({ body: `${CSV_HEADER}\n${csvRow('us1', '2025-02-01T00:00:00.000Z')}\n` }));
+  try {
+    const events = await fetchPage('2025-01-01T00:00:00.000Z', '2025-07-01T00:00:00.000Z', { cacheDir, log: () => {} });
+    assert.deepEqual(events.map((e) => e.id), ['us1']);
+  } finally { stub.restore(); }
+  assert.equal(readdirSync(cacheDir).length, 1);
+
+  const htmlDir = tempDir('cache');
+  stub = stubFetch(() => ({ body: '<html><body>Service maintenance</body></html>\n' }));
+  try {
+    await assert.rejects(fetchPage('2025-01-01T00:00:00.000Z', '2025-07-01T00:00:00.000Z', { cacheDir: htmlDir, log: () => {} }), /no "time" column/);
+  } finally { stub.restore(); }
+  assert.deepEqual(readdirSync(htmlDir), []);
+});
+
+test('fetchPage: an empty page an older run cached is downloaded again, never trusted', async () => {
+  setRequestIntervalForTests(0);
+  const cacheDir = tempDir('cache');
+  writeFileSync(join(cacheDir, '1990-01-01T000000Z_1990-07-01T000000Z.csv'), '');
+  const stub = stubFetch(() => ({ body: `${CSV_HEADER}\n${csvRow('iscgem1', '1990-03-01T00:00:00.000Z')}\n` }));
+  try {
+    const events = await fetchPage('1990-01-01T00:00:00.000Z', '1990-07-01T00:00:00.000Z', { useCache: true, cacheDir, log: () => {} });
+    assert.deepEqual(events.map((e) => e.id), ['iscgem1']);
+    assert.equal(stub.urls.length, 1);
+  } finally { stub.restore(); }
+});
+
+test('comcatCount: an answer without a count fails', async () => {
+  setRequestIntervalForTests(0);
+  for (const [status, body, ok] of [[200, '{"count":12,"maxAllowed":20000}', 12], [204, ''], [200, '{}'], [200, '{"count":-1}']]) {
+    const stub = stubFetch(() => ({ status, body }));
+    try {
+      if (ok !== undefined) assert.equal(await comcatCount(baseParams('2025-01-01', '2025-02-01')), ok);
+      else await assert.rejects(comcatCount(baseParams('2025-01-01', '2025-02-01')), /no count|JSON/);
+    } finally { stub.restore(); }
+  }
+});
+
+test('window count: a download short of ComCat\'s own count by more than the tolerance is a truncated page', () => {
+  const window = 'w';
+  assert.equal(windowCountProblem({ downloaded: 14407, comcat: 14407, window }), null);
+  assert.equal(windowCountProblem({ downloaded: 14407 - 72, comcat: 14407, window }), null, '0.5 % of 14,407 is 72');
+  assert.match(windowCountProblem({ downloaded: 14407 - 73, comcat: 14407, window }), /short by 73, at most 72/);
+  assert.equal(windowCountProblem({ downloaded: 90, comcat: 100, window }), null, 'the slack of 10');
+  assert.match(windowCountProblem({ downloaded: 89, comcat: 100, window }), /truncated/);
+  assert.equal(windowCountProblem({ downloaded: 120, comcat: 100, window }), null, 'more than the count is not a loss');
+});
+
+test('plausibility: zero events, a dropping total, year or country fail; small revisions pass', () => {
+  const previous = {
+    total: 306470,
+    countries: { JPN: 25769, ISL: 797, AIA: 3 },
+    years: new Map([[1945, 127], [2024, 6397], [2025, 8556], [2026, 5851]]),
+  };
+  const ok = {
+    total: 306470 - 3000,
+    countries: { JPN: 25769 - 700, ISL: 797 - 23, AIA: 0 },
+    years: new Map([[1945, 117], [2024, 6397 - 319], [2025, 8556 - 427], [2026, 6200]]),
+  };
+  assert.deepEqual(plausibilityProblems({ previous, next: ok, comparable: true, sameAssignment: true }), []);
+
+  const zero = { total: 0, countries: {}, years: new Map() };
+  const all = plausibilityProblems({ previous, next: zero, comparable: true, sameAssignment: true });
+  assert.equal(all.length, 4, all.join('\n'));
+  assert.match(all[0], /counts 0 earthquakes/);
+  assert.match(all[1], /global total drops from 306470 to 0/);
+  assert.match(all[2], /4 year\(s\) drops: 1945: 127 → 0/);
+  assert.match(all[3], /2 countries drops: ISL 797 → 0 .*JPN 25769 → 0/);
+  assert.doesNotMatch(all[3], /AIA/, 'a drop within the slack of 10');
+  // Without a previous build, or with another filter or an earlier cutoff, only the zero total is judged.
+  assert.deepEqual(plausibilityProblems({ previous: null, next: zero, comparable: false, sameAssignment: false }), [all[0]]);
+  assert.deepEqual(plausibilityProblems({ previous, next: zero, comparable: false, sameAssignment: false }), [all[0]]);
+  // Another assignment rule moves events between countries: their totals are not compared, the years still are.
+  const moved = { ...ok, countries: { JPN: 100, ISL: 0, AIA: 0 } };
+  assert.deepEqual(plausibilityProblems({ previous, next: moved, comparable: true, sameAssignment: false }), []);
+  // One half-year page lost: about half of a year's events.
+  const lostPage = { ...ok, total: ok.total, years: new Map([...ok.years, [2025, 4300]]) };
+  assert.match(plausibilityProblems({ previous, next: lostPage, comparable: true, sameAssignment: true })[0], /2025: 8556 → 4300/);
+  // The global total just past the 1 % tolerance.
+  assert.match(plausibilityProblems({ previous, next: { ...ok, total: 306470 - 3065 }, comparable: true, sameAssignment: true })[0], /at most 3064 allowed/);
+});
+
+test('plausibility: --accept-drop turns the problems into warnings', () => {
+  assert.throws(() => judge(['x drops'], { acceptDrop: false, log: () => {} }), /not plausible, nothing written:\n {2}- x drops/);
+  const lines = [];
+  judge(['x drops'], { acceptDrop: true, log: (l) => lines.push(l) });
+  assert.deepEqual(lines, ['⚠ accepted (--accept-drop): x drops']);
+  judge([], { acceptDrop: false, log: () => assert.fail('no log') });
+});
+
+test('readPublished sums the global histogram of the published files', () => {
+  const dir = tempDir('stats');
+  mkdirSync(join(dir, 'adm0'));
+  writeFileSync(join(dir, 'index.json'), JSON.stringify({
+    total: 9, countries: { AAA: 4, BBB: 2 }, unassigned: { total: 3, histogram: { startYear: 2000, counts: [1, 2] } },
+  }));
+  writeFileSync(join(dir, 'adm0', 'AAA.json'), JSON.stringify({ histogram: { startYear: 1999, counts: [1, 1, 2] } }));
+  const p = readPublished(dir);
+  assert.equal(p.total, 9);
+  assert.deepEqual([...p.years], [[1999, 1], [2000, 2], [2001, 4]]);
+  assert.deepEqual(p.missing, ['BBB']);
+  assert.equal(readPublished(tempDir('empty')), null);
+});
+
+// End to end on a copy of the published files (skipped until a build has run): the scenario of the audit. Every page
+// answers 204, or every page holds a single row while ComCat's /count says thousands: the build exits 1 and no
+// published byte changes.
+const buildScript = fileURLToPath(new URL('./build-stats.mjs', import.meta.url));
+function runBuildWithStub(stubSource) {
+  const out = tempDir('stats-copy');
+  cpSync(STATS_DIR, out, { recursive: true });
+  const stub = join(tempDir('stub'), 'stub.mjs');
+  writeFileSync(stub, stubSource);
+  const before = snapshotDir(out);
+  // An incremental run four weeks after the published cutoff (3 or 4 half-year pages, whatever the date).
+  const until = new Date(Date.parse(JSON.parse(readFileSync(STATS_INDEX, 'utf8')).until) + 28 * 86_400_000).toISOString().slice(0, 10);
+  const r = spawnSync(process.execPath, ['--import', pathToFileURL(stub).href, buildScript, `--until=${until}`], {
+    env: { ...process.env, STATS_OUT_DIR: out, COMCAT_CACHE_DIR: tempDir('cache') }, encoding: 'utf8', timeout: 60_000,
+  });
+  return { r, unchanged: JSON.stringify(snapshotDir(out)) === JSON.stringify(before) };
+}
+function snapshotDir(dir) {
+  return readdirSync(dir, { recursive: true }).sort().map((f) => {
+    const file = join(dir, f);
+    return statSync(file).isDirectory() ? [f] : [f, readFileSync(file, 'utf8')];
+  });
+}
+
+test('build: ComCat answering 204 everywhere fails before any write', { skip: !existsSync(STATS_INDEX) }, () => {
+  const { r, unchanged } = runBuildWithStub('globalThis.fetch = async () => new Response(null, { status: 204 });\n');
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stderr, /HTTP 204/);
+  assert.ok(unchanged, 'the published files are unchanged');
+});
+
+test('build: a window short of ComCat\'s own count fails before any write', { skip: !existsSync(STATS_INDEX) }, () => {
+  const { r, unchanged } = runBuildWithStub(`
+    let n = 0;
+    globalThis.fetch = async (url) => {
+      if (String(url).includes('/count?')) return new Response('{"count":15000}', { status: 200 });
+      const start = new URL(String(url)).searchParams.get('starttime');
+      n++;
+      return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + n + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
+    };
+  `);
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stdout, /▶ incremental: /);
+  assert.match(r.stderr, /not plausible, nothing written:\n {2}- the download of .* holds [34] events, ComCat's \/count of the same window 15000/);
+  assert.ok(unchanged, 'the published files are unchanged');
 });

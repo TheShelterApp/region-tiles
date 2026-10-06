@@ -5,9 +5,12 @@
 //   node pipeline/stats/build-stats.mjs            incremental: from 1 January of the year of (last cutoff - 365 days)
 //   node pipeline/stats/build-stats.mjs --full     everything since 1936 (cached pages before the revision window reused)
 //   --until=YYYY-MM-DD   the cutoff (exclusive, 00:00 UTC; default today) — the same cutoff gives the same files
+//   --accept-drop        publish even when the window count or the comparison with the previous files fails (after
+//                        reviewing a genuine large ComCat revision in the log); an empty page still fails
 //
 // A run falls back to --full by itself when there is no previous index, or it was built with another schema,
-// assignment rule or region set.
+// assignment rule or region set. It fails (exit 1, nothing written) on an empty page, a window short of ComCat's own
+// count, or counts that drop implausibly against the previous files (plausibility.mjs, thresholds in config.mjs).
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -16,8 +19,9 @@ import {
   SCHEMA_VERSION, SINCE, MIN_MAGNITUDE, EVENT_TYPE, SOURCE, STATS_DIR, STATS_ADM0_DIR, STATS_INDEX,
   REVISION_WINDOW_DAYS, OFFSHORE_MAX_DEGREES, OFFSHORE_CANDIDATES, TOP_LARGEST, TOP_RECENT,
 } from './config.mjs';
-import { fetchRange, stats as httpStats } from './comcat.mjs';
+import { fetchRange, comcatCount, baseParams, pageMustHaveRows, stats as httpStats } from './comcat.mjs';
 import { loadRegions } from './assign.mjs';
+import { addHistogram, plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
 import {
   aggregate, countryDocument, formatJSON, isoSeconds, SINCE_MS, yearOf, yearStart,
 } from './aggregate.mjs';
@@ -25,9 +29,10 @@ import {
 const DAY = 86_400_000;
 
 function parseArgs(argv) {
-  const args = { full: false, until: null };
+  const args = { full: false, until: null, acceptDrop: false };
   for (const a of argv) {
     if (a === '--full') args.full = true;
+    else if (a === '--accept-drop') args.acceptDrop = true;
     else if (a.startsWith('--until=')) args.until = a.slice('--until='.length);
     else throw new Error(`unknown argument ${a}`);
   }
@@ -62,7 +67,17 @@ function writeAtomic(file, text) {
   renameSync(tmp, file);
 }
 
-export async function build({ full = false, until = null, log = console.log } = {}) {
+/** Problems found before any write: an error unless `acceptDrop`, which logs them as warnings. */
+export function judge(problems, { acceptDrop, log }) {
+  if (!problems.length) return;
+  if (!acceptDrop) {
+    throw new Error(`the statistics are not plausible, nothing written:\n  - ${problems.join('\n  - ')}\n`
+      + 'Run again later; publish anyway only after reviewing a genuine ComCat revision (--accept-drop).');
+  }
+  for (const p of problems) log(`⚠ accepted (--accept-drop): ${p}`);
+}
+
+export async function build({ full = false, until = null, acceptDrop = false, log = console.log } = {}) {
   const today = new Date();
   const untilMs = until ? Date.parse(`${until}T00:00:00Z`) : Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
   if (!Number.isFinite(untilMs)) throw new Error(`bad --until ${until}`);
@@ -90,9 +105,18 @@ export async function build({ full = false, until = null, log = console.log } = 
     reuseCacheBefore: mode === 'full' ? new Date(revisionStartMs(untilMs)).toISOString() : null,
     log,
   });
+  // The download against ComCat's own count of the same window (endtime inclusive on both sides): a truncated page.
+  const windowISO = [new Date(windowStartMs).toISOString(), new Date(untilMs).toISOString()];
+  const comcatWindow = await comcatCount(baseParams(...windowISO));
+  log(`▶ ComCat /count of the window: ${comcatWindow}, downloaded ${fetched.length}`);
+  const countProblem = windowCountProblem({ downloaded: fetched.length, comcat: comcatWindow, window: windowISO.join(' → ') });
+  judge(countProblem ? [countProblem] : [], { acceptDrop, log });
   // ComCat's endtime is inclusive: an event at the cutoff's very second belongs to the next run ([since, until)).
   const events = fetched.filter((e) => e.t >= windowStartMs && e.t < untilMs);
   log(`▶ ${events.length} events in the window (${httpStats().requests} ComCat requests)`);
+  if (!events.length && pageMustHaveRows(...windowISO)) {
+    throw new Error(`no events in the window ${windowISO.join(' → ')}: ComCat's answer is wrong, nothing written`);
+  }
 
   const regions = loadRegions();
   const perCountry = new Map(regions.countries.map((c) => [c.id, []]));
@@ -119,20 +143,36 @@ export async function build({ full = false, until = null, log = console.log } = 
   const inexact = aggregates.filter(({ agg }) => !agg.exact).map(({ c }) => c.id);
   if (inexact.length) {
     log(`▶ the increment cannot prove the lists of ${inexact.join(', ')}: full run`);
-    return build({ full: true, until, log });
+    return build({ full: true, until, acceptDrop, log });
   }
-  const totals = {};
-  for (const { c, file, agg } of aggregates) {
-    writeAtomic(file, `${formatJSON(countryDocument({ id: c.id, name: c.name, agg, sinceMs: SINCE_MS, untilMs }))}\n`);
-    totals[c.id] = agg.total;
-  }
-
+  const totals = Object.fromEntries(aggregates.map(({ c, agg }) => [c.id, agg.total]));
   const unassignedAgg = aggregate({
     events: unassigned,
     previous: mode === 'incremental' ? { histogram: previousIndex.unassigned.histogram, largest: [], recent: [] } : null,
     windowStartMs, sinceMs: SINCE_MS, untilMs,
   });
   const assigned = Object.values(totals).reduce((a, b) => a + b, 0);
+
+  // Before any write: the new counts against the previous published files.
+  const years = new Map();
+  for (const { agg } of aggregates) addHistogram(years, agg.histogram);
+  addHistogram(years, unassignedAgg.histogram);
+  const published = readPublished(STATS_DIR);
+  const comparable = !!previousIndex && previousIndex.since === isoSeconds(SINCE_MS) && previousIndex.minMagnitude === MIN_MAGNITUDE
+    && previousIndex.eventType === EVENT_TYPE && Date.parse(previousIndex.until) <= untilMs;
+  if (previousIndex && !comparable) log('▶ the previous files have another filter or a later cutoff: not compared');
+  const problems = plausibilityProblems({
+    previous: published,
+    next: { total: assigned + unassignedAgg.total, countries: totals, years },
+    comparable,
+    sameAssignment: comparable && !!sameAssignment(previousIndex.assignment, fingerprint),
+  });
+  judge(problems, { acceptDrop, log });
+  if (published && comparable) log(`▶ plausible against the previous files: total ${published.total} → ${assigned + unassignedAgg.total}`);
+
+  for (const { c, file, agg } of aggregates) {
+    writeAtomic(file, `${formatJSON(countryDocument({ id: c.id, name: c.name, agg, sinceMs: SINCE_MS, untilMs }))}\n`);
+  }
   const index = {
     schemaVersion: SCHEMA_VERSION,
     generatedAt: isoSeconds(Math.floor(Date.now() / 1000) * 1000),
