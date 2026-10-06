@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "ISR",
+  "name": "Israel",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem894070","time":"1951-01-30T23:07:27Z","mag":5.88,"place":"127 km WNW of Jaffa, Israel","lat":32.373,"lon":33.454,"depth":15},
+    {"id":"usp00026p8","time":"1984-08-24T06:02:24Z","mag":5.3,"place":"1 km SSW of Rekhasim, Israel","lat":32.739,"lon":35.094,"depth":24.3},
+    {"id":"us2000fx3m","time":"2018-07-04T19:45:40Z","mag":4.7,"place":"2 km NNE of Giv‘at Avni, Israel","lat":32.797,"lon":35.444,"depth":10},
+    {"id":"us70007jnl","time":"2020-02-06T04:53:51Z","mag":4.5,"place":"26 km W of Atlit, Israel","lat":32.729,"lon":34.665,"depth":10}
+  ],
+  "recent": [
+    {"id":"us70007jnl","time":"2020-02-06T04:53:51Z","mag":4.5,"place":"26 km W of Atlit, Israel","lat":32.729,"lon":34.665,"depth":10},
+    {"id":"us2000fx3m","time":"2018-07-04T19:45:40Z","mag":4.7,"place":"2 km NNE of Giv‘at Avni, Israel","lat":32.797,"lon":35.444,"depth":10},
+    {"id":"usp00026p8","time":"1984-08-24T06:02:24Z","mag":5.3,"place":"1 km SSW of Rekhasim, Israel","lat":32.739,"lon":35.094,"depth":24.3},
+    {"id":"iscgem894070","time":"1951-01-30T23:07:27Z","mag":5.88,"place":"127 km WNW of Jaffa, Israel","lat":32.373,"lon":33.454,"depth":15}
+  ]
+}

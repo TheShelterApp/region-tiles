@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "BLZ",
+  "name": "Belize",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0002g7g","time":"1985-06-28T00:46:45Z","mag":4.7,"place":"55 km ESE of Dangriga, Belize","lat":16.722,"lon":-87.783,"depth":33},
+    {"id":"usp000534c","time":"1992-02-15T18:47:55Z","mag":4.5,"place":"32 km E of Punta Gorda, Belize","lat":16.087,"lon":-88.506,"depth":33}
+  ],
+  "recent": [
+    {"id":"usp000534c","time":"1992-02-15T18:47:55Z","mag":4.5,"place":"32 km E of Punta Gorda, Belize","lat":16.087,"lon":-88.506,"depth":33},
+    {"id":"usp0002g7g","time":"1985-06-28T00:46:45Z","mag":4.7,"place":"55 km ESE of Dangriga, Belize","lat":16.722,"lon":-87.783,"depth":33}
+  ]
+}

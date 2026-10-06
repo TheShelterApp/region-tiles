@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "KAS",
+  "name": "Siachen Glacier",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usb000khr2","time":"2013-10-21T02:27:13Z","mag":5.4,"place":"52 km NNE of Thang, India","lat":35.341,"lon":77.084,"depth":48.7},
+    {"id":"usp00098yg","time":"1999-05-29T06:03:04Z","mag":4.6,"place":"83 km NE of Thang, India","lat":35.403,"lon":77.51,"depth":33},
+    {"id":"usp000av84","time":"2001-12-25T05:44:47Z","mag":4.6,"place":"41 km NNE of Thang, India","lat":35.251,"lon":77.011,"depth":33},
+    {"id":"usb000khr1","time":"2013-10-21T02:26:11Z","mag":4.5,"place":"44 km NNE of Thang, India","lat":35.29,"lon":77,"depth":35}
+  ],
+  "recent": [
+    {"id":"usb000khr2","time":"2013-10-21T02:27:13Z","mag":5.4,"place":"52 km NNE of Thang, India","lat":35.341,"lon":77.084,"depth":48.7},
+    {"id":"usb000khr1","time":"2013-10-21T02:26:11Z","mag":4.5,"place":"44 km NNE of Thang, India","lat":35.29,"lon":77,"depth":35},
+    {"id":"usp000av84","time":"2001-12-25T05:44:47Z","mag":4.6,"place":"41 km NNE of Thang, India","lat":35.251,"lon":77.011,"depth":33},
+    {"id":"usp00098yg","time":"1999-05-29T06:03:04Z","mag":4.6,"place":"83 km NE of Thang, India","lat":35.403,"lon":77.51,"depth":33}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "GBR",
+  "name": "United Kingdom",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 10,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp00025ue","time":"1984-07-19T06:56:10Z","mag":5,"place":"5 km SSE of Criccieth, United Kingdom","lat":52.878,"lon":-4.198,"depth":12.9},
+    {"id":"usp000bcxg","time":"2002-09-22T23:53:14Z","mag":4.8,"place":"2 km ESE of Wombourn, United Kingdom","lat":52.52,"lon":-2.15,"depth":9.4},
+    {"id":"usp000f1uq","time":"2007-01-07T01:50:53Z","mag":4.8,"place":"206 km W of Florø, Norway","lat":61.906,"lon":1.171,"depth":10},
+    {"id":"usp000g02w","time":"2008-02-27T00:56:47Z","mag":4.8,"place":"1 km NNE of Market Rasen, United Kingdom","lat":53.403,"lon":-0.332,"depth":18.4},
+    {"id":"usp00047ck","time":"1990-04-02T13:46:31Z","mag":4.7,"place":"4 km NNE of Presteigne, United Kingdom","lat":52.314,"lon":-2.985,"depth":18},
+    {"id":"usp000a5pv","time":"2000-12-08T05:53:58Z","mag":4.7,"place":"169 km ESE of Lerwick, United Kingdom","lat":59.697,"lon":1.739,"depth":10},
+    {"id":"usp000fase","time":"2007-04-28T07:18:11Z","mag":4.6,"place":"1 km WNW of Lympne, United Kingdom","lat":51.085,"lon":1.009,"depth":10},
+    {"id":"us60005msj","time":"2019-09-24T13:38:14Z","mag":4.6,"place":"223 km ESE of Boddam, United Kingdom","lat":56.95,"lon":1.8,"depth":10},
+    {"id":"usp00014q1","time":"1979-12-26T03:57:04Z","mag":4.5,"place":"6 km SSE of Brampton, United Kingdom","lat":54.903,"lon":-2.683,"depth":10},
+    {"id":"usp0009gkt","time":"1999-10-25T19:15:17Z","mag":4.5,"place":"10 km N of Hirwaun, United Kingdom","lat":51.836,"lon":-3.54,"depth":10}
+  ],
+  "recent": [
+    {"id":"us60005msj","time":"2019-09-24T13:38:14Z","mag":4.6,"place":"223 km ESE of Boddam, United Kingdom","lat":56.95,"lon":1.8,"depth":10},
+    {"id":"usp000g02w","time":"2008-02-27T00:56:47Z","mag":4.8,"place":"1 km NNE of Market Rasen, United Kingdom","lat":53.403,"lon":-0.332,"depth":18.4},
+    {"id":"usp000fase","time":"2007-04-28T07:18:11Z","mag":4.6,"place":"1 km WNW of Lympne, United Kingdom","lat":51.085,"lon":1.009,"depth":10},
+    {"id":"usp000f1uq","time":"2007-01-07T01:50:53Z","mag":4.8,"place":"206 km W of Florø, Norway","lat":61.906,"lon":1.171,"depth":10},
+    {"id":"usp000bcxg","time":"2002-09-22T23:53:14Z","mag":4.8,"place":"2 km ESE of Wombourn, United Kingdom","lat":52.52,"lon":-2.15,"depth":9.4},
+    {"id":"usp000a5pv","time":"2000-12-08T05:53:58Z","mag":4.7,"place":"169 km ESE of Lerwick, United Kingdom","lat":59.697,"lon":1.739,"depth":10},
+    {"id":"usp0009gkt","time":"1999-10-25T19:15:17Z","mag":4.5,"place":"10 km N of Hirwaun, United Kingdom","lat":51.836,"lon":-3.54,"depth":10},
+    {"id":"usp00047ck","time":"1990-04-02T13:46:31Z","mag":4.7,"place":"4 km NNE of Presteigne, United Kingdom","lat":52.314,"lon":-2.985,"depth":18},
+    {"id":"usp00025ue","time":"1984-07-19T06:56:10Z","mag":5,"place":"5 km SSE of Criccieth, United Kingdom","lat":52.878,"lon":-4.198,"depth":12.9},
+    {"id":"usp00014q1","time":"1979-12-26T03:57:04Z","mag":4.5,"place":"6 km SSE of Brampton, United Kingdom","lat":54.903,"lon":-2.683,"depth":10}
+  ]
+}

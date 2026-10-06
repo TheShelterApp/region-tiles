@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "BEL",
+  "name": "Belgium",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 5,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0000k17","time":"1976-10-24T20:33:29Z","mag":5.5,"place":"2 km NE of Quévy-le-Petit, Belgium","lat":50.382,"lon":3.959,"depth":33},
+    {"id":"usp00055q3","time":"1992-04-13T01:20:00Z","mag":5.4,"place":"1 km W of Kessenich, Belgium","lat":51.153,"lon":5.798,"depth":21.2},
+    {"id":"iscgemsup902529","time":"1938-06-11T10:57:33Z","mag":5.33,"place":"1 km NW of Nukerke, Belgium","lat":50.81,"lon":3.578,"depth":15},
+    {"id":"usp0001zn0","time":"1983-11-08T00:49:32Z","mag":5,"place":"0 km E of Hodeige, Belgium","lat":50.696,"lon":5.346,"depth":10},
+    {"id":"usp000ah38","time":"2001-06-23T01:39:59Z","mag":4.8,"place":"2 km ENE of Niel-bij-As, Belgium","lat":51.023,"lon":5.637,"depth":10}
+  ],
+  "recent": [
+    {"id":"usp000ah38","time":"2001-06-23T01:39:59Z","mag":4.8,"place":"2 km ENE of Niel-bij-As, Belgium","lat":51.023,"lon":5.637,"depth":10},
+    {"id":"usp00055q3","time":"1992-04-13T01:20:00Z","mag":5.4,"place":"1 km W of Kessenich, Belgium","lat":51.153,"lon":5.798,"depth":21.2},
+    {"id":"usp0001zn0","time":"1983-11-08T00:49:32Z","mag":5,"place":"0 km E of Hodeige, Belgium","lat":50.696,"lon":5.346,"depth":10},
+    {"id":"usp0000k17","time":"1976-10-24T20:33:29Z","mag":5.5,"place":"2 km NE of Quévy-le-Petit, Belgium","lat":50.382,"lon":3.959,"depth":33},
+    {"id":"iscgemsup902529","time":"1938-06-11T10:57:33Z","mag":5.33,"place":"1 km NW of Nukerke, Belgium","lat":50.81,"lon":3.578,"depth":15}
+  ]
+}

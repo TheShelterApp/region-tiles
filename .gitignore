@@ -12,3 +12,6 @@ dist/
 
 # OS noise
 .DS_Store
+
+# Raw USGS ComCat pages of the area-history statistics (pipeline/stats): re-downloadable, never committed.
+.cache/

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "MRT",
+  "name": "Mauritania",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 5,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0005zpw","time":"1993-09-03T17:46:56Z","mag":4.6,"place":"Mauritania","lat":20.025,"lon":-12.811,"depth":33},
+    {"id":"usp000jfnn","time":"2012-03-01T18:24:01Z","mag":4.6,"place":"76 km E of Zouerate, Mauritania","lat":22.804,"lon":-11.728,"depth":10},
+    {"id":"usp000gd54","time":"2008-07-25T23:53:11Z","mag":4.5,"place":"Mauritania","lat":20.417,"lon":-17.12,"depth":10},
+    {"id":"usb000l7dv","time":"2013-11-22T17:36:59Z","mag":4.5,"place":"27 km ESE of Zouerate, Mauritania","lat":22.649,"lon":-12.215,"depth":15},
+    {"id":"usb000s47v","time":"2014-08-07T19:46:42Z","mag":4.5,"place":"39 km ENE of Zouerate, Mauritania","lat":22.88,"lon":-12.122,"depth":10}
+  ],
+  "recent": [
+    {"id":"usb000s47v","time":"2014-08-07T19:46:42Z","mag":4.5,"place":"39 km ENE of Zouerate, Mauritania","lat":22.88,"lon":-12.122,"depth":10},
+    {"id":"usb000l7dv","time":"2013-11-22T17:36:59Z","mag":4.5,"place":"27 km ESE of Zouerate, Mauritania","lat":22.649,"lon":-12.215,"depth":15},
+    {"id":"usp000jfnn","time":"2012-03-01T18:24:01Z","mag":4.6,"place":"76 km E of Zouerate, Mauritania","lat":22.804,"lon":-11.728,"depth":10},
+    {"id":"usp000gd54","time":"2008-07-25T23:53:11Z","mag":4.5,"place":"Mauritania","lat":20.417,"lon":-17.12,"depth":10},
+    {"id":"usp0005zpw","time":"1993-09-03T17:46:56Z","mag":4.6,"place":"Mauritania","lat":20.025,"lon":-12.811,"depth":33}
+  ]
+}

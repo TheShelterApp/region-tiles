@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "BWA",
+  "name": "Botswana",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 14,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,1,0,0,0]
+  },
+  "largest": [
+    {"id":"us10008e3k","time":"2017-04-03T17:40:18Z","mag":6.5,"place":"132 km WSW of Moijabana, Botswana","lat":-22.678,"lon":25.156,"depth":29},
+    {"id":"iscgem893392","time":"1952-09-11T08:23:39Z","mag":5.89,"place":"42 km NNW of Maun, Botswana","lat":-19.628,"lon":23.258,"depth":15},
+    {"id":"iscgem893539","time":"1952-10-11T01:24:03Z","mag":5.84,"place":"43 km NNW of Maun, Botswana","lat":-19.612,"lon":23.27,"depth":15},
+    {"id":"us10008fjl","time":"2017-04-03T17:50:16Z","mag":5,"place":"92 km SSW of Letlhakane, Botswana","lat":-22.142,"lon":25.147,"depth":10},
+    {"id":"us10008egm","time":"2017-04-05T00:55:50Z","mag":5,"place":"137 km SSW of Letlhakane, Botswana","lat":-22.565,"lon":25.087,"depth":10},
+    {"id":"us100096mw","time":"2017-07-04T11:37:05Z","mag":4.9,"place":"140 km W of Moijabana, Botswana","lat":-22.586,"lon":25.064,"depth":10},
+    {"id":"us2000a7i7","time":"2017-08-12T02:37:47Z","mag":4.9,"place":"55 km NNE of Botlhapatlou, Botswana","lat":-23.574,"lon":25.725,"depth":10},
+    {"id":"us10008fjd","time":"2017-04-03T18:11:26Z","mag":4.7,"place":"129 km W of Moijabana, Botswana","lat":-22.578,"lon":25.169,"depth":16.2},
+    {"id":"us10008fwy","time":"2017-04-08T19:55:32Z","mag":4.7,"place":"137 km SSW of Letlhakane, Botswana","lat":-22.566,"lon":25.084,"depth":14.4},
+    {"id":"us1000azub","time":"2017-11-01T12:12:41Z","mag":4.7,"place":"136 km W of Moijabana, Botswana","lat":-22.637,"lon":25.108,"depth":10},
+    {"id":"us10008fjf","time":"2017-04-03T18:38:12Z","mag":4.6,"place":"136 km W of Moijabana, Botswana","lat":-22.567,"lon":25.099,"depth":15},
+    {"id":"us7000k7zx","time":"2023-06-05T07:59:57Z","mag":4.6,"place":"100 km N of Maun, Botswana","lat":-19.079,"lon":23.503,"depth":10.2},
+    {"id":"usp000b2se","time":"2002-04-19T15:48:47Z","mag":4.5,"place":"62 km SW of Kalamare, Botswana","lat":-23.306,"lon":26.115,"depth":10},
+    {"id":"us10008gx1","time":"2017-04-06T02:30:22Z","mag":4.5,"place":"124 km NNE of Khudumelapye, Botswana","lat":-22.785,"lon":25.016,"depth":10}
+  ],
+  "recent": [
+    {"id":"us7000k7zx","time":"2023-06-05T07:59:57Z","mag":4.6,"place":"100 km N of Maun, Botswana","lat":-19.079,"lon":23.503,"depth":10.2},
+    {"id":"us1000azub","time":"2017-11-01T12:12:41Z","mag":4.7,"place":"136 km W of Moijabana, Botswana","lat":-22.637,"lon":25.108,"depth":10},
+    {"id":"us2000a7i7","time":"2017-08-12T02:37:47Z","mag":4.9,"place":"55 km NNE of Botlhapatlou, Botswana","lat":-23.574,"lon":25.725,"depth":10},
+    {"id":"us100096mw","time":"2017-07-04T11:37:05Z","mag":4.9,"place":"140 km W of Moijabana, Botswana","lat":-22.586,"lon":25.064,"depth":10},
+    {"id":"us10008fwy","time":"2017-04-08T19:55:32Z","mag":4.7,"place":"137 km SSW of Letlhakane, Botswana","lat":-22.566,"lon":25.084,"depth":14.4},
+    {"id":"us10008gx1","time":"2017-04-06T02:30:22Z","mag":4.5,"place":"124 km NNE of Khudumelapye, Botswana","lat":-22.785,"lon":25.016,"depth":10},
+    {"id":"us10008egm","time":"2017-04-05T00:55:50Z","mag":5,"place":"137 km SSW of Letlhakane, Botswana","lat":-22.565,"lon":25.087,"depth":10},
+    {"id":"us10008fjf","time":"2017-04-03T18:38:12Z","mag":4.6,"place":"136 km W of Moijabana, Botswana","lat":-22.567,"lon":25.099,"depth":15},
+    {"id":"us10008fjd","time":"2017-04-03T18:11:26Z","mag":4.7,"place":"129 km W of Moijabana, Botswana","lat":-22.578,"lon":25.169,"depth":16.2},
+    {"id":"us10008fjl","time":"2017-04-03T17:50:16Z","mag":5,"place":"92 km SSW of Letlhakane, Botswana","lat":-22.142,"lon":25.147,"depth":10},
+    {"id":"us10008e3k","time":"2017-04-03T17:40:18Z","mag":6.5,"place":"132 km WSW of Moijabana, Botswana","lat":-22.678,"lon":25.156,"depth":29},
+    {"id":"usp000b2se","time":"2002-04-19T15:48:47Z","mag":4.5,"place":"62 km SW of Kalamare, Botswana","lat":-23.306,"lon":26.115,"depth":10},
+    {"id":"iscgem893539","time":"1952-10-11T01:24:03Z","mag":5.84,"place":"43 km NNW of Maun, Botswana","lat":-19.612,"lon":23.27,"depth":15},
+    {"id":"iscgem893392","time":"1952-09-11T08:23:39Z","mag":5.89,"place":"42 km NNW of Maun, Botswana","lat":-19.628,"lon":23.258,"depth":15}
+  ]
+}

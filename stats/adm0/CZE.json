@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "CZE",
+  "name": "Czechia",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 8,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0002p9f","time":"1985-12-23T04:27:06Z","mag":4.8,"place":"0 km NW of Skalná, Czechia","lat":50.177,"lon":12.353,"depth":10},
+    {"id":"usp0002qbh","time":"1986-01-23T02:21:58Z","mag":4.7,"place":"3 km ESE of Plesná, Czechia","lat":50.213,"lon":12.396,"depth":24.5},
+    {"id":"usp0002p4d","time":"1985-12-20T16:36:29Z","mag":4.6,"place":"5 km E of Skalná, Czechia","lat":50.175,"lon":12.443,"depth":10},
+    {"id":"usp0002p5b","time":"1985-12-21T10:04:11Z","mag":4.6,"place":"5 km E of Skalná, Czechia","lat":50.178,"lon":12.439,"depth":24.1},
+    {"id":"usp0002pb4","time":"1985-12-24T00:04:17Z","mag":4.6,"place":"5 km E of Skalná, Czechia","lat":50.172,"lon":12.444,"depth":10},
+    {"id":"usp000b627","time":"2002-06-13T01:14:39Z","mag":4.6,"place":"1 km NNW of Rychvald, Czechia","lat":49.882,"lon":18.371,"depth":10},
+    {"id":"usp0002ny2","time":"1985-12-16T14:06:03Z","mag":4.5,"place":"2 km NE of Skalná, Czechia","lat":50.183,"lon":12.386,"depth":10},
+    {"id":"usp0002p9b","time":"1985-12-23T03:24:48Z","mag":4.5,"place":"3 km ESE of Plesná, Czechia","lat":50.211,"lon":12.393,"depth":24.2}
+  ],
+  "recent": [
+    {"id":"usp000b627","time":"2002-06-13T01:14:39Z","mag":4.6,"place":"1 km NNW of Rychvald, Czechia","lat":49.882,"lon":18.371,"depth":10},
+    {"id":"usp0002qbh","time":"1986-01-23T02:21:58Z","mag":4.7,"place":"3 km ESE of Plesná, Czechia","lat":50.213,"lon":12.396,"depth":24.5},
+    {"id":"usp0002pb4","time":"1985-12-24T00:04:17Z","mag":4.6,"place":"5 km E of Skalná, Czechia","lat":50.172,"lon":12.444,"depth":10},
+    {"id":"usp0002p9f","time":"1985-12-23T04:27:06Z","mag":4.8,"place":"0 km NW of Skalná, Czechia","lat":50.177,"lon":12.353,"depth":10},
+    {"id":"usp0002p9b","time":"1985-12-23T03:24:48Z","mag":4.5,"place":"3 km ESE of Plesná, Czechia","lat":50.211,"lon":12.393,"depth":24.2},
+    {"id":"usp0002p5b","time":"1985-12-21T10:04:11Z","mag":4.6,"place":"5 km E of Skalná, Czechia","lat":50.178,"lon":12.439,"depth":24.1},
+    {"id":"usp0002p4d","time":"1985-12-20T16:36:29Z","mag":4.6,"place":"5 km E of Skalná, Czechia","lat":50.175,"lon":12.443,"depth":10},
+    {"id":"usp0002ny2","time":"1985-12-16T14:06:03Z","mag":4.5,"place":"2 km NE of Skalná, Czechia","lat":50.183,"lon":12.386,"depth":10}
+  ]
+}

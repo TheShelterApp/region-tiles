@@ -12,7 +12,10 @@
     "version": "node pipeline/04-version.mjs",
     "validate": "node pipeline/05-validate.mjs",
     "build": "node pipeline/build.mjs",
-    "sqlite": "node pipeline/06-sqlite.mjs"
+    "sqlite": "node pipeline/06-sqlite.mjs",
+    "stats": "node pipeline/stats/build-stats.mjs",
+    "stats:verify": "node pipeline/stats/verify-stats.mjs",
+    "test:stats": "node --test pipeline/stats/stats.test.mjs"
   },
   "engines": {
     "node": ">=20"

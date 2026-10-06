@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "UKR",
+  "name": "Ukraine",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 7,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,1]
+  },
+  "largest": [
+    {"id":"usp000g5qk","time":"2008-05-07T08:00:21Z","mag":4.9,"place":"81 km SE of Mykolayivka, Ukraine","lat":45.358,"lon":30.922,"depth":10},
+    {"id":"us10006bxe","time":"2016-08-07T08:15:05Z","mag":4.8,"place":"5 km SE of Mariupol, Ukraine","lat":47.067,"lon":37.592,"depth":10},
+    {"id":"us6000s5xe","time":"2026-02-02T09:47:51Z","mag":4.8,"place":"24 km NW of Mysovoe, Ukraine","lat":45.626,"lon":35.659,"depth":10},
+    {"id":"usp000j8uh","time":"2011-10-02T10:14:32Z","mag":4.7,"place":"10 km NE of Synevyrska Poliana, Ukraine","lat":48.657,"lon":23.783,"depth":10},
+    {"id":"usp0001n7a","time":"1982-07-01T05:49:59Z","mag":4.6,"place":"6 km SSE of Mynay, Ukraine","lat":48.534,"lon":22.309,"depth":14.1},
+    {"id":"usc000hykp","time":"2013-06-23T21:16:34Z","mag":4.5,"place":"6 km E of Lozuvatka, Ukraine","lat":48.054,"lon":33.374,"depth":14.9},
+    {"id":"us7000fdpw","time":"2021-09-23T03:17:58Z","mag":4.5,"place":"9 km ESE of Zavodske, Ukraine","lat":48.97,"lon":25.979,"depth":15.8}
+  ],
+  "recent": [
+    {"id":"us6000s5xe","time":"2026-02-02T09:47:51Z","mag":4.8,"place":"24 km NW of Mysovoe, Ukraine","lat":45.626,"lon":35.659,"depth":10},
+    {"id":"us7000fdpw","time":"2021-09-23T03:17:58Z","mag":4.5,"place":"9 km ESE of Zavodske, Ukraine","lat":48.97,"lon":25.979,"depth":15.8},
+    {"id":"us10006bxe","time":"2016-08-07T08:15:05Z","mag":4.8,"place":"5 km SE of Mariupol, Ukraine","lat":47.067,"lon":37.592,"depth":10},
+    {"id":"usc000hykp","time":"2013-06-23T21:16:34Z","mag":4.5,"place":"6 km E of Lozuvatka, Ukraine","lat":48.054,"lon":33.374,"depth":14.9},
+    {"id":"usp000j8uh","time":"2011-10-02T10:14:32Z","mag":4.7,"place":"10 km NE of Synevyrska Poliana, Ukraine","lat":48.657,"lon":23.783,"depth":10},
+    {"id":"usp000g5qk","time":"2008-05-07T08:00:21Z","mag":4.9,"place":"81 km SE of Mykolayivka, Ukraine","lat":45.358,"lon":30.922,"depth":10},
+    {"id":"usp0001n7a","time":"1982-07-01T05:49:59Z","mag":4.6,"place":"6 km SSE of Mynay, Ukraine","lat":48.534,"lon":22.309,"depth":14.1}
+  ]
+}

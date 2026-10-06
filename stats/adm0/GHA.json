@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "GHA",
+  "name": "Ghana",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem902037","time":"1939-06-22T19:19:32Z","mag":6.4,"place":"8 km ENE of Swedru, Ghana","lat":5.568,"lon":-0.625,"depth":15},
+    {"id":"iscgem812036","time":"1969-02-09T18:29:02Z","mag":5.2,"place":"4 km NW of Teshi Old Town, Ghana","lat":5.605,"lon":-0.138,"depth":13.7}
+  ],
+  "recent": [
+    {"id":"iscgem812036","time":"1969-02-09T18:29:02Z","mag":5.2,"place":"4 km NW of Teshi Old Town, Ghana","lat":5.605,"lon":-0.138,"depth":13.7},
+    {"id":"iscgem902037","time":"1939-06-22T19:19:32Z","mag":6.4,"place":"8 km ENE of Swedru, Ghana","lat":5.568,"lon":-0.625,"depth":15}
+  ]
+}

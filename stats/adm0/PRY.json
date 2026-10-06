@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "PRY",
+  "name": "Paraguay",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0003sea","time":"1989-02-28T13:01:57Z","mag":6.5,"place":"86 km E of General Enrique Mosconi, Argentina","lat":-23.113,"lon":-61.465,"depth":569},
+    {"id":"usp0001kke","time":"1982-04-08T05:58:51Z","mag":5.1,"place":"50 km N of Laguna Naick-Neck, Argentina","lat":-24.795,"lon":-58.096,"depth":33}
+  ],
+  "recent": [
+    {"id":"usp0003sea","time":"1989-02-28T13:01:57Z","mag":6.5,"place":"86 km E of General Enrique Mosconi, Argentina","lat":-23.113,"lon":-61.465,"depth":569},
+    {"id":"usp0001kke","time":"1982-04-08T05:58:51Z","mag":5.1,"place":"50 km N of Laguna Naick-Neck, Argentina","lat":-24.795,"lon":-58.096,"depth":33}
+  ]
+}

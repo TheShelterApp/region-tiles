@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "BDI",
+  "name": "Burundi",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 15,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,1,3,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,1,0,0,0,1,0]
+  },
+  "largest": [
+    {"id":"iscgem842935","time":"1966-10-30T05:05:34Z","mag":5.4,"place":"20 km S of Gitega, Burundi","lat":-3.615,"lon":29.921,"depth":15},
+    {"id":"usp0000srv","time":"1978-01-29T21:41:36Z","mag":5.3,"place":"11 km WNW of Rumonge, Burundi","lat":-3.929,"lon":29.35,"depth":10},
+    {"id":"us6000qvm7","time":"2025-07-28T13:38:20Z","mag":5.2,"place":"33 km NW of Rumonge, Burundi","lat":-3.741,"lon":29.242,"depth":10},
+    {"id":"usp0004eus","time":"1990-09-18T04:55:42Z","mag":5,"place":"10 km SSE of Rumonge, Burundi","lat":-4.061,"lon":29.483,"depth":10},
+    {"id":"us6000bjrj","time":"2020-08-24T14:13:13Z","mag":5,"place":"32 km NW of Rumonge, Burundi","lat":-3.747,"lon":29.258,"depth":10},
+    {"id":"usp0005yce","time":"1993-08-11T17:11:34Z","mag":4.8,"place":"16 km S of Bujumbura, Burundi","lat":-3.527,"lon":29.36,"depth":21.2},
+    {"id":"usp000bug2","time":"2003-04-05T22:48:19Z","mag":4.8,"place":"12 km SSE of Mwaro, Burundi","lat":-3.615,"lon":29.75,"depth":10},
+    {"id":"us10006s1p","time":"2016-09-23T16:11:56Z","mag":4.8,"place":"24 km SE of Cyangugu, Rwanda","lat":-2.65,"lon":29.06,"depth":10},
+    {"id":"usp0007x2s","time":"1997-02-11T07:38:37Z","mag":4.7,"place":"18 km N of Cibitoke, Burundi","lat":-2.723,"lon":29.112,"depth":10},
+    {"id":"usp000cmxd","time":"2004-02-24T02:14:34Z","mag":4.7,"place":"14 km SSW of Muramvya, Burundi","lat":-3.393,"lon":29.558,"depth":10},
+    {"id":"usp000cv7e","time":"2004-05-16T11:21:46Z","mag":4.7,"place":"16 km WNW of Kayanza, Burundi","lat":-2.877,"lon":29.49,"depth":10},
+    {"id":"usp000hz64","time":"2011-04-03T04:37:59Z","mag":4.7,"place":"17 km SW of Mwaro, Burundi","lat":-3.635,"lon":29.601,"depth":10},
+    {"id":"usp00005b9","time":"1974-02-18T09:59:45Z","mag":4.6,"place":"13 km W of Muramvya, Burundi","lat":-3.246,"lon":29.487,"depth":5},
+    {"id":"usp000cn0b","time":"2004-02-24T07:00:02Z","mag":4.5,"place":"15 km S of Muramvya, Burundi","lat":-3.409,"lon":29.597,"depth":10},
+    {"id":"us7000d2xs","time":"2021-01-24T17:07:04Z","mag":4.5,"place":"18 km ESE of Bujumbura, Burundi","lat":-3.467,"lon":29.505,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000qvm7","time":"2025-07-28T13:38:20Z","mag":5.2,"place":"33 km NW of Rumonge, Burundi","lat":-3.741,"lon":29.242,"depth":10},
+    {"id":"us7000d2xs","time":"2021-01-24T17:07:04Z","mag":4.5,"place":"18 km ESE of Bujumbura, Burundi","lat":-3.467,"lon":29.505,"depth":10},
+    {"id":"us6000bjrj","time":"2020-08-24T14:13:13Z","mag":5,"place":"32 km NW of Rumonge, Burundi","lat":-3.747,"lon":29.258,"depth":10},
+    {"id":"us10006s1p","time":"2016-09-23T16:11:56Z","mag":4.8,"place":"24 km SE of Cyangugu, Rwanda","lat":-2.65,"lon":29.06,"depth":10},
+    {"id":"usp000hz64","time":"2011-04-03T04:37:59Z","mag":4.7,"place":"17 km SW of Mwaro, Burundi","lat":-3.635,"lon":29.601,"depth":10},
+    {"id":"usp000cv7e","time":"2004-05-16T11:21:46Z","mag":4.7,"place":"16 km WNW of Kayanza, Burundi","lat":-2.877,"lon":29.49,"depth":10},
+    {"id":"usp000cn0b","time":"2004-02-24T07:00:02Z","mag":4.5,"place":"15 km S of Muramvya, Burundi","lat":-3.409,"lon":29.597,"depth":10},
+    {"id":"usp000cmxd","time":"2004-02-24T02:14:34Z","mag":4.7,"place":"14 km SSW of Muramvya, Burundi","lat":-3.393,"lon":29.558,"depth":10},
+    {"id":"usp000bug2","time":"2003-04-05T22:48:19Z","mag":4.8,"place":"12 km SSE of Mwaro, Burundi","lat":-3.615,"lon":29.75,"depth":10},
+    {"id":"usp0007x2s","time":"1997-02-11T07:38:37Z","mag":4.7,"place":"18 km N of Cibitoke, Burundi","lat":-2.723,"lon":29.112,"depth":10},
+    {"id":"usp0005yce","time":"1993-08-11T17:11:34Z","mag":4.8,"place":"16 km S of Bujumbura, Burundi","lat":-3.527,"lon":29.36,"depth":21.2},
+    {"id":"usp0004eus","time":"1990-09-18T04:55:42Z","mag":5,"place":"10 km SSE of Rumonge, Burundi","lat":-4.061,"lon":29.483,"depth":10},
+    {"id":"usp0000srv","time":"1978-01-29T21:41:36Z","mag":5.3,"place":"11 km WNW of Rumonge, Burundi","lat":-3.929,"lon":29.35,"depth":10},
+    {"id":"usp00005b9","time":"1974-02-18T09:59:45Z","mag":4.6,"place":"13 km W of Muramvya, Burundi","lat":-3.246,"lon":29.487,"depth":5},
+    {"id":"iscgem842935","time":"1966-10-30T05:05:34Z","mag":5.4,"place":"20 km S of Gitega, Burundi","lat":-3.615,"lon":29.921,"depth":15}
+  ]
+}

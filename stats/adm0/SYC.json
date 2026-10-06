@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "SYC",
+  "name": "Seychelles",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 9,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,1,0,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0006wgh","time":"1995-04-28T17:44:13Z","mag":5.2,"place":"South Indian Ocean","lat":-1.904,"lon":55.622,"depth":10},
+    {"id":"usp000c6u1","time":"2003-09-05T11:35:28Z","mag":5,"place":"South Indian Ocean","lat":-1.547,"lon":55.927,"depth":10},
+    {"id":"usp000c6up","time":"2003-09-05T16:16:59Z","mag":4.9,"place":"South Indian Ocean","lat":-1.444,"lon":55.954,"depth":10},
+    {"id":"usp0006wmb","time":"1995-04-30T15:23:47Z","mag":4.7,"place":"South Indian Ocean","lat":-1.877,"lon":55.514,"depth":10},
+    {"id":"usp000d59m","time":"2004-09-29T03:41:43Z","mag":4.7,"place":"East of Tanzania","lat":-8.371,"lon":43.85,"depth":32.1},
+    {"id":"usp0006wm9","time":"1995-04-30T15:07:20Z","mag":4.6,"place":"South Indian Ocean","lat":-1.854,"lon":55.565,"depth":10},
+    {"id":"usp0006wme","time":"1995-04-30T16:20:58Z","mag":4.6,"place":"249 km N of Bel Ombre, Seychelles","lat":-2.363,"lon":55.55,"depth":10},
+    {"id":"usp00081kd","time":"1997-05-01T18:23:40Z","mag":4.5,"place":"291 km N of Bel Ombre, Seychelles","lat":-1.981,"lon":55.574,"depth":10},
+    {"id":"usb000sfhr","time":"2014-09-13T15:26:33Z","mag":4.5,"place":"South Indian Ocean","lat":-3.617,"lon":49.52,"depth":10}
+  ],
+  "recent": [
+    {"id":"usb000sfhr","time":"2014-09-13T15:26:33Z","mag":4.5,"place":"South Indian Ocean","lat":-3.617,"lon":49.52,"depth":10},
+    {"id":"usp000d59m","time":"2004-09-29T03:41:43Z","mag":4.7,"place":"East of Tanzania","lat":-8.371,"lon":43.85,"depth":32.1},
+    {"id":"usp000c6up","time":"2003-09-05T16:16:59Z","mag":4.9,"place":"South Indian Ocean","lat":-1.444,"lon":55.954,"depth":10},
+    {"id":"usp000c6u1","time":"2003-09-05T11:35:28Z","mag":5,"place":"South Indian Ocean","lat":-1.547,"lon":55.927,"depth":10},
+    {"id":"usp00081kd","time":"1997-05-01T18:23:40Z","mag":4.5,"place":"291 km N of Bel Ombre, Seychelles","lat":-1.981,"lon":55.574,"depth":10},
+    {"id":"usp0006wme","time":"1995-04-30T16:20:58Z","mag":4.6,"place":"249 km N of Bel Ombre, Seychelles","lat":-2.363,"lon":55.55,"depth":10},
+    {"id":"usp0006wmb","time":"1995-04-30T15:23:47Z","mag":4.7,"place":"South Indian Ocean","lat":-1.877,"lon":55.514,"depth":10},
+    {"id":"usp0006wm9","time":"1995-04-30T15:07:20Z","mag":4.6,"place":"South Indian Ocean","lat":-1.854,"lon":55.565,"depth":10},
+    {"id":"usp0006wgh","time":"1995-04-28T17:44:13Z","mag":5.2,"place":"South Indian Ocean","lat":-1.904,"lon":55.622,"depth":10}
+  ]
+}

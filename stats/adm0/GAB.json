@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "GAB",
+  "name": "Gabon",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 11,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,1,2,0,0,0]
+  },
+  "largest": [
+    {"id":"usp000084t","time":"1974-09-23T19:28:17Z","mag":6.2,"place":"64 km NNE of Lastoursville, Gabon","lat":-0.278,"lon":12.917,"depth":33},
+    {"id":"us6000j6u0","time":"2022-12-04T09:53:12Z","mag":5.5,"place":"34 km S of Lambaréné, Gabon","lat":-1.014,"lon":10.236,"depth":10},
+    {"id":"us7000dhjf","time":"2021-03-09T23:07:55Z","mag":5.3,"place":"34 km NW of Fougamou, Gabon","lat":-0.988,"lon":10.375,"depth":8},
+    {"id":"usp0000fdx","time":"1976-03-12T15:59:13Z","mag":5.2,"place":"37 km NNW of Lastoursville, Gabon","lat":-0.487,"lon":12.624,"depth":33},
+    {"id":"us7000dgk0","time":"2021-03-06T17:08:53Z","mag":5.2,"place":"40 km W of Fougamou, Gabon","lat":-1.203,"lon":10.216,"depth":10},
+    {"id":"us7000dxq2","time":"2021-04-27T00:40:56Z","mag":4.7,"place":"39 km S of Lambaréné, Gabon","lat":-1.055,"lon":10.255,"depth":10},
+    {"id":"us7000j3i2","time":"2023-01-10T21:45:14Z","mag":4.6,"place":"30 km S of Lambaréné, Gabon","lat":-0.978,"lon":10.259,"depth":10},
+    {"id":"us7000kxwr","time":"2023-09-25T01:28:54Z","mag":4.6,"place":"42 km S of Lambaréné, Gabon","lat":-1.084,"lon":10.191,"depth":10},
+    {"id":"us6000dkep","time":"2021-02-17T11:59:34Z","mag":4.5,"place":"62 km W of Fougamou, Gabon","lat":-1.272,"lon":10.023,"depth":10},
+    {"id":"us7000dxq1","time":"2021-04-27T00:38:58Z","mag":4.5,"place":"40 km S of Lambaréné, Gabon","lat":-1.062,"lon":10.203,"depth":10},
+    {"id":"us7000e1gd","time":"2021-05-09T01:30:08Z","mag":4.5,"place":"48 km SSW of Lambaréné, Gabon","lat":-1.105,"lon":10.068,"depth":10}
+  ],
+  "recent": [
+    {"id":"us7000kxwr","time":"2023-09-25T01:28:54Z","mag":4.6,"place":"42 km S of Lambaréné, Gabon","lat":-1.084,"lon":10.191,"depth":10},
+    {"id":"us7000j3i2","time":"2023-01-10T21:45:14Z","mag":4.6,"place":"30 km S of Lambaréné, Gabon","lat":-0.978,"lon":10.259,"depth":10},
+    {"id":"us6000j6u0","time":"2022-12-04T09:53:12Z","mag":5.5,"place":"34 km S of Lambaréné, Gabon","lat":-1.014,"lon":10.236,"depth":10},
+    {"id":"us7000e1gd","time":"2021-05-09T01:30:08Z","mag":4.5,"place":"48 km SSW of Lambaréné, Gabon","lat":-1.105,"lon":10.068,"depth":10},
+    {"id":"us7000dxq2","time":"2021-04-27T00:40:56Z","mag":4.7,"place":"39 km S of Lambaréné, Gabon","lat":-1.055,"lon":10.255,"depth":10},
+    {"id":"us7000dxq1","time":"2021-04-27T00:38:58Z","mag":4.5,"place":"40 km S of Lambaréné, Gabon","lat":-1.062,"lon":10.203,"depth":10},
+    {"id":"us7000dhjf","time":"2021-03-09T23:07:55Z","mag":5.3,"place":"34 km NW of Fougamou, Gabon","lat":-0.988,"lon":10.375,"depth":8},
+    {"id":"us7000dgk0","time":"2021-03-06T17:08:53Z","mag":5.2,"place":"40 km W of Fougamou, Gabon","lat":-1.203,"lon":10.216,"depth":10},
+    {"id":"us6000dkep","time":"2021-02-17T11:59:34Z","mag":4.5,"place":"62 km W of Fougamou, Gabon","lat":-1.272,"lon":10.023,"depth":10},
+    {"id":"usp0000fdx","time":"1976-03-12T15:59:13Z","mag":5.2,"place":"37 km NNW of Lastoursville, Gabon","lat":-0.487,"lon":12.624,"depth":33},
+    {"id":"usp000084t","time":"1974-09-23T19:28:17Z","mag":6.2,"place":"64 km NNE of Lastoursville, Gabon","lat":-0.278,"lon":12.917,"depth":33}
+  ]
+}

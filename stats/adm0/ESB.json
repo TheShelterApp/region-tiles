@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "ESB",
+  "name": "Dhekelia Sovereign Base Area",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 7,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,1,1,0]
+  },
+  "largest": [
+    {"id":"iscgem877385","time":"1961-09-15T01:46:11Z","mag":5.9,"place":"6 km SSE of Xylofágou, Cyprus","lat":34.929,"lon":33.886,"depth":30},
+    {"id":"usp000jkam","time":"2012-05-11T18:48:29Z","mag":5.4,"place":"76 km S of Ayia Napa, Cyprus","lat":34.304,"lon":34.142,"depth":16.6},
+    {"id":"usp00031pn","time":"1987-01-15T11:19:34Z","mag":5,"place":"33 km S of Xylofágou, Cyprus","lat":34.678,"lon":33.905,"depth":34.4},
+    {"id":"us7000d23a","time":"2021-01-21T14:27:06Z","mag":5,"place":"1 km NE of Pérgamos, Cyprus","lat":35.049,"lon":33.716,"depth":62.9},
+    {"id":"us7000hgcl","time":"2022-06-10T01:40:21Z","mag":5,"place":"15 km S of Xylofágou, Cyprus","lat":34.835,"lon":33.87,"depth":47.2},
+    {"id":"us6000qlxy","time":"2025-06-23T12:37:42Z","mag":4.8,"place":"47 km SSE of Ayia Napa, Cyprus","lat":34.571,"lon":34.133,"depth":10},
+    {"id":"us7000nwak","time":"2024-12-05T20:53:01Z","mag":4.6,"place":"41 km S of Ayia Napa, Cyprus","lat":34.613,"lon":34.017,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000qlxy","time":"2025-06-23T12:37:42Z","mag":4.8,"place":"47 km SSE of Ayia Napa, Cyprus","lat":34.571,"lon":34.133,"depth":10},
+    {"id":"us7000nwak","time":"2024-12-05T20:53:01Z","mag":4.6,"place":"41 km S of Ayia Napa, Cyprus","lat":34.613,"lon":34.017,"depth":10},
+    {"id":"us7000hgcl","time":"2022-06-10T01:40:21Z","mag":5,"place":"15 km S of Xylofágou, Cyprus","lat":34.835,"lon":33.87,"depth":47.2},
+    {"id":"us7000d23a","time":"2021-01-21T14:27:06Z","mag":5,"place":"1 km NE of Pérgamos, Cyprus","lat":35.049,"lon":33.716,"depth":62.9},
+    {"id":"usp000jkam","time":"2012-05-11T18:48:29Z","mag":5.4,"place":"76 km S of Ayia Napa, Cyprus","lat":34.304,"lon":34.142,"depth":16.6},
+    {"id":"usp00031pn","time":"1987-01-15T11:19:34Z","mag":5,"place":"33 km S of Xylofágou, Cyprus","lat":34.678,"lon":33.905,"depth":34.4},
+    {"id":"iscgem877385","time":"1961-09-15T01:46:11Z","mag":5.9,"place":"6 km SSE of Xylofágou, Cyprus","lat":34.929,"lon":33.886,"depth":30}
+  ]
+}

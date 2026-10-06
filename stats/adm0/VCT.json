@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "VCT",
+  "name": "Saint Vincent and the Grenadines",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 6,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]
+  },
+  "largest": [
+    {"id":"iscgem901464","time":"1940-07-06T03:40:16Z","mag":6.1,"place":"13 km W of Barrouallie, Saint Vincent and the Grenadines","lat":13.232,"lon":-61.395,"depth":120},
+    {"id":"usp0001cfx","time":"1981-03-02T07:54:07Z","mag":5.1,"place":"113 km SW of Bridgetown, Barbados","lat":12.343,"lon":-60.314,"depth":76.9},
+    {"id":"us6000rehv","time":"2025-10-03T14:59:24Z","mag":4.8,"place":"26 km N of Chateaubelair, Saint Vincent and the Grenadines","lat":13.532,"lon":-61.247,"depth":139.2},
+    {"id":"usp0001dma","time":"1981-05-10T22:23:50Z","mag":4.7,"place":"19 km ENE of Georgetown, Saint Vincent and the Grenadines","lat":13.315,"lon":-60.943,"depth":115.7},
+    {"id":"usp000a9v5","time":"2001-02-18T05:42:07Z","mag":4.6,"place":"61 km ESE of Byera Village, Saint Vincent and the Grenadines","lat":13.128,"lon":-60.567,"depth":35},
+    {"id":"usp0006jrf","time":"1994-09-20T09:19:02Z","mag":4.5,"place":"19 km NE of Georgetown, Saint Vincent and the Grenadines","lat":13.414,"lon":-61.007,"depth":90}
+  ],
+  "recent": [
+    {"id":"us6000rehv","time":"2025-10-03T14:59:24Z","mag":4.8,"place":"26 km N of Chateaubelair, Saint Vincent and the Grenadines","lat":13.532,"lon":-61.247,"depth":139.2},
+    {"id":"usp000a9v5","time":"2001-02-18T05:42:07Z","mag":4.6,"place":"61 km ESE of Byera Village, Saint Vincent and the Grenadines","lat":13.128,"lon":-60.567,"depth":35},
+    {"id":"usp0006jrf","time":"1994-09-20T09:19:02Z","mag":4.5,"place":"19 km NE of Georgetown, Saint Vincent and the Grenadines","lat":13.414,"lon":-61.007,"depth":90},
+    {"id":"usp0001dma","time":"1981-05-10T22:23:50Z","mag":4.7,"place":"19 km ENE of Georgetown, Saint Vincent and the Grenadines","lat":13.315,"lon":-60.943,"depth":115.7},
+    {"id":"usp0001cfx","time":"1981-03-02T07:54:07Z","mag":5.1,"place":"113 km SW of Bridgetown, Barbados","lat":12.343,"lon":-60.314,"depth":76.9},
+    {"id":"iscgem901464","time":"1940-07-06T03:40:16Z","mag":6.1,"place":"13 km W of Barrouallie, Saint Vincent and the Grenadines","lat":13.232,"lon":-61.395,"depth":120}
+  ]
+}

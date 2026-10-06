@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "SWE",
+  "name": "Sweden",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 2,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0002w13","time":"1986-07-14T13:50:31Z","mag":4.8,"place":"1 km NNW of Skultorp, Sweden","lat":58.365,"lon":13.818,"depth":10},
+    {"id":"usb000sci4","time":"2014-09-15T13:08:00Z","mag":4.6,"place":"41 km NNE of Älvdalen, Sweden","lat":61.552,"lon":14.439,"depth":15.8}
+  ],
+  "recent": [
+    {"id":"usb000sci4","time":"2014-09-15T13:08:00Z","mag":4.6,"place":"41 km NNE of Älvdalen, Sweden","lat":61.552,"lon":14.439,"depth":15.8},
+    {"id":"usp0002w13","time":"1986-07-14T13:50:31Z","mag":4.8,"place":"1 km NNW of Skultorp, Sweden","lat":58.365,"lon":13.818,"depth":10}
+  ]
+}

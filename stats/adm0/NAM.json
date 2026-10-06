@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "NAM",
+  "name": "Namibia",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 16,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,2,0,3,1,0,3,1,0,0,0,0]
+  },
+  "largest": [
+    {"id":"us6000dyuk","time":"2021-04-04T01:41:02Z","mag":5.4,"place":"68 km NNW of Khorixas, Namibia","lat":-19.821,"lon":14.663,"depth":6},
+    {"id":"usp000gzuu","time":"2009-07-31T08:14:39Z","mag":5.1,"place":"67 km S of Khorixas, Namibia","lat":-20.974,"lon":14.928,"depth":10},
+    {"id":"usp0005jqn","time":"1992-12-23T10:54:52Z","mag":5,"place":"58 km SE of Rehoboth, Namibia","lat":-23.754,"lon":17.41,"depth":10},
+    {"id":"us1000eb4u","time":"2018-05-24T07:08:13Z","mag":5,"place":"73 km NNW of Khorixas, Namibia","lat":-19.769,"lon":14.662,"depth":10},
+    {"id":"us7000h1j9","time":"2022-04-12T20:36:16Z","mag":5,"place":"33 km N of Khorixas, Namibia","lat":-20.067,"lon":14.953,"depth":10},
+    {"id":"us7000e5q7","time":"2021-05-24T08:27:42Z","mag":4.9,"place":"65 km NNW of Khorixas, Namibia","lat":-19.806,"lon":14.759,"depth":10},
+    {"id":"usp000154r","time":"1980-01-23T09:45:53Z","mag":4.8,"place":"23 km SW of Otavi, Namibia","lat":-19.768,"lon":17.149,"depth":33},
+    {"id":"usp000g4ww","time":"2008-04-26T14:48:47Z","mag":4.8,"place":"70 km N of Okahandja, Namibia","lat":-21.347,"lon":16.887,"depth":10},
+    {"id":"usp000jgq1","time":"2012-03-24T04:43:51Z","mag":4.8,"place":"57 km WNW of Khorixas, Namibia","lat":-20.184,"lon":14.451,"depth":10},
+    {"id":"us1000d47b","time":"2018-03-14T08:32:46Z","mag":4.8,"place":"67 km NNW of Khorixas, Namibia","lat":-19.848,"lon":14.626,"depth":11.3},
+    {"id":"us1000ec3w","time":"2018-05-25T14:58:43Z","mag":4.8,"place":"72 km NNW of Khorixas, Namibia","lat":-19.777,"lon":14.664,"depth":10},
+    {"id":"usp0003dt0","time":"1988-03-10T07:24:16Z","mag":4.7,"place":"104 km NNW of Opuwo, Namibia","lat":-17.188,"lon":13.47,"depth":5},
+    {"id":"us20004y45","time":"2016-02-02T19:15:01Z","mag":4.7,"place":"52 km NW of Khorixas, Namibia","lat":-20.072,"lon":14.574,"depth":12.3},
+    {"id":"us20004y57","time":"2016-02-03T11:04:00Z","mag":4.7,"place":"47 km WNW of Khorixas, Namibia","lat":-20.13,"lon":14.584,"depth":10},
+    {"id":"us70006ass","time":"2019-11-21T02:20:52Z","mag":4.6,"place":"67 km NNW of Khorixas, Namibia","lat":-19.784,"lon":14.779,"depth":10},
+    {"id":"us6000eq58","time":"2021-06-27T03:55:47Z","mag":4.6,"place":"102 km ENE of Karasburg, Namibia","lat":-27.64,"lon":19.7,"depth":10}
+  ],
+  "recent": [
+    {"id":"us7000h1j9","time":"2022-04-12T20:36:16Z","mag":5,"place":"33 km N of Khorixas, Namibia","lat":-20.067,"lon":14.953,"depth":10},
+    {"id":"us6000eq58","time":"2021-06-27T03:55:47Z","mag":4.6,"place":"102 km ENE of Karasburg, Namibia","lat":-27.64,"lon":19.7,"depth":10},
+    {"id":"us7000e5q7","time":"2021-05-24T08:27:42Z","mag":4.9,"place":"65 km NNW of Khorixas, Namibia","lat":-19.806,"lon":14.759,"depth":10},
+    {"id":"us6000dyuk","time":"2021-04-04T01:41:02Z","mag":5.4,"place":"68 km NNW of Khorixas, Namibia","lat":-19.821,"lon":14.663,"depth":6},
+    {"id":"us70006ass","time":"2019-11-21T02:20:52Z","mag":4.6,"place":"67 km NNW of Khorixas, Namibia","lat":-19.784,"lon":14.779,"depth":10},
+    {"id":"us1000ec3w","time":"2018-05-25T14:58:43Z","mag":4.8,"place":"72 km NNW of Khorixas, Namibia","lat":-19.777,"lon":14.664,"depth":10},
+    {"id":"us1000eb4u","time":"2018-05-24T07:08:13Z","mag":5,"place":"73 km NNW of Khorixas, Namibia","lat":-19.769,"lon":14.662,"depth":10},
+    {"id":"us1000d47b","time":"2018-03-14T08:32:46Z","mag":4.8,"place":"67 km NNW of Khorixas, Namibia","lat":-19.848,"lon":14.626,"depth":11.3},
+    {"id":"us20004y57","time":"2016-02-03T11:04:00Z","mag":4.7,"place":"47 km WNW of Khorixas, Namibia","lat":-20.13,"lon":14.584,"depth":10},
+    {"id":"us20004y45","time":"2016-02-02T19:15:01Z","mag":4.7,"place":"52 km NW of Khorixas, Namibia","lat":-20.072,"lon":14.574,"depth":12.3},
+    {"id":"usp000jgq1","time":"2012-03-24T04:43:51Z","mag":4.8,"place":"57 km WNW of Khorixas, Namibia","lat":-20.184,"lon":14.451,"depth":10},
+    {"id":"usp000gzuu","time":"2009-07-31T08:14:39Z","mag":5.1,"place":"67 km S of Khorixas, Namibia","lat":-20.974,"lon":14.928,"depth":10},
+    {"id":"usp000g4ww","time":"2008-04-26T14:48:47Z","mag":4.8,"place":"70 km N of Okahandja, Namibia","lat":-21.347,"lon":16.887,"depth":10},
+    {"id":"usp0005jqn","time":"1992-12-23T10:54:52Z","mag":5,"place":"58 km SE of Rehoboth, Namibia","lat":-23.754,"lon":17.41,"depth":10},
+    {"id":"usp0003dt0","time":"1988-03-10T07:24:16Z","mag":4.7,"place":"104 km NNW of Opuwo, Namibia","lat":-17.188,"lon":13.47,"depth":5},
+    {"id":"usp000154r","time":"1980-01-23T09:45:53Z","mag":4.8,"place":"23 km SW of Otavi, Namibia","lat":-19.768,"lon":17.149,"depth":33}
+  ]
+}

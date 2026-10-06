@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "VIR",
+  "name": "United States Virgin Islands",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 11,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem793579","time":"1970-07-08T04:49:11Z","mag":6.1,"place":"22 km NNE of Saint Croix, U.S. Virgin Islands","lat":17.901,"lon":-64.638,"depth":143},
+    {"id":"usp0004422","time":"1990-01-09T19:09:45Z","mag":5,"place":"29 km S of Cruz Bay, U.S. Virgin Islands","lat":18.07,"lon":-64.754,"depth":33},
+    {"id":"usp000hb4v","time":"2010-04-10T18:50:24Z","mag":4.8,"place":"Puerto Rico region","lat":18.872,"lon":-65.06,"depth":45.7},
+    {"id":"usp00013vd","time":"1979-11-06T00:19:45Z","mag":4.7,"place":"46 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.729,"lon":-65.1,"depth":41},
+    {"id":"usp0008rux","time":"1998-07-19T09:27:41Z","mag":4.6,"place":"18 km WSW of Charlotte Amalie, U.S. Virgin Islands","lat":18.303,"lon":-65.098,"depth":131.9},
+    {"id":"usp000gqth","time":"2008-12-17T19:55:53Z","mag":4.6,"place":"76 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.991,"lon":-65.192,"depth":28.9},
+    {"id":"pr2020323008","time":"2020-11-18T11:59:09Z","mag":4.54,"place":"71 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.958,"lon":-65.104,"depth":31},
+    {"id":"usp0002hrc","time":"1985-08-15T01:33:02Z","mag":4.5,"place":"65 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.912,"lon":-65.089,"depth":53.9},
+    {"id":"usp0003yn3","time":"1989-08-20T01:01:50Z","mag":4.5,"place":"25 km NE of Saint Croix, U.S. Virgin Islands","lat":17.878,"lon":-64.56,"depth":156.9},
+    {"id":"usp000b615","time":"2002-06-12T12:48:34Z","mag":4.5,"place":"32 km S of Charlotte Amalie, U.S. Virgin Islands","lat":18.045,"lon":-64.927,"depth":33},
+    {"id":"usp000hgdf","time":"2010-07-22T00:00:04Z","mag":4.5,"place":"15 km N of Charlotte Amalie, U.S. Virgin Islands","lat":18.483,"lon":-64.949,"depth":123.7}
+  ],
+  "recent": [
+    {"id":"pr2020323008","time":"2020-11-18T11:59:09Z","mag":4.54,"place":"71 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.958,"lon":-65.104,"depth":31},
+    {"id":"usp000hgdf","time":"2010-07-22T00:00:04Z","mag":4.5,"place":"15 km N of Charlotte Amalie, U.S. Virgin Islands","lat":18.483,"lon":-64.949,"depth":123.7},
+    {"id":"usp000hb4v","time":"2010-04-10T18:50:24Z","mag":4.8,"place":"Puerto Rico region","lat":18.872,"lon":-65.06,"depth":45.7},
+    {"id":"usp000gqth","time":"2008-12-17T19:55:53Z","mag":4.6,"place":"76 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.991,"lon":-65.192,"depth":28.9},
+    {"id":"usp000b615","time":"2002-06-12T12:48:34Z","mag":4.5,"place":"32 km S of Charlotte Amalie, U.S. Virgin Islands","lat":18.045,"lon":-64.927,"depth":33},
+    {"id":"usp0008rux","time":"1998-07-19T09:27:41Z","mag":4.6,"place":"18 km WSW of Charlotte Amalie, U.S. Virgin Islands","lat":18.303,"lon":-65.098,"depth":131.9},
+    {"id":"usp0004422","time":"1990-01-09T19:09:45Z","mag":5,"place":"29 km S of Cruz Bay, U.S. Virgin Islands","lat":18.07,"lon":-64.754,"depth":33},
+    {"id":"usp0003yn3","time":"1989-08-20T01:01:50Z","mag":4.5,"place":"25 km NE of Saint Croix, U.S. Virgin Islands","lat":17.878,"lon":-64.56,"depth":156.9},
+    {"id":"usp0002hrc","time":"1985-08-15T01:33:02Z","mag":4.5,"place":"65 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.912,"lon":-65.089,"depth":53.9},
+    {"id":"usp00013vd","time":"1979-11-06T00:19:45Z","mag":4.7,"place":"46 km NNW of Charlotte Amalie, U.S. Virgin Islands","lat":18.729,"lon":-65.1,"depth":41},
+    {"id":"iscgem793579","time":"1970-07-08T04:49:11Z","mag":6.1,"place":"22 km NNE of Saint Croix, U.S. Virgin Islands","lat":17.901,"lon":-64.638,"depth":143}
+  ]
+}

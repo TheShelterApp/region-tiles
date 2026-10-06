@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "LCA",
+  "name": "Saint Lucia",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 11,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,2,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"iscgem891566","time":"1953-03-19T08:27:52Z","mag":7.3,"place":"18 km WSW of Soufrière, Saint Lucia","lat":13.809,"lon":-61.216,"depth":128.8},
+    {"id":"usp0001j5w","time":"1982-01-20T15:15:47Z","mag":5.2,"place":"55 km ESE of Micoud, Saint Lucia","lat":13.701,"lon":-60.404,"depth":69},
+    {"id":"usp000j644","time":"2011-08-07T04:01:09Z","mag":5.2,"place":"61 km E of Dennery, Saint Lucia","lat":13.874,"lon":-60.326,"depth":27},
+    {"id":"usc000t4f6","time":"2014-12-07T15:35:44Z","mag":5,"place":"62 km E of Dennery, Saint Lucia","lat":13.846,"lon":-60.316,"depth":32.5},
+    {"id":"usp000gg74","time":"2008-09-02T06:18:57Z","mag":4.7,"place":"49 km E of Dennery, Saint Lucia","lat":13.863,"lon":-60.437,"depth":16},
+    {"id":"usp00049h2","time":"1990-05-19T17:44:02Z","mag":4.6,"place":"4 km N of Laborie, Saint Lucia","lat":13.793,"lon":-60.985,"depth":16.5},
+    {"id":"usp000fubb","time":"2007-12-13T00:18:28Z","mag":4.6,"place":"11 km WNW of Gros Islet, Saint Lucia","lat":14.104,"lon":-61.046,"depth":126},
+    {"id":"usp000j0jg","time":"2011-04-25T13:10:21Z","mag":4.6,"place":"86 km E of Dennery, Saint Lucia","lat":14.039,"lon":-60.103,"depth":70},
+    {"id":"us100028ye","time":"2015-05-14T14:16:50Z","mag":4.6,"place":"48 km E of Dennery, Saint Lucia","lat":13.987,"lon":-60.448,"depth":61.3},
+    {"id":"usp00011bd","time":"1979-06-16T12:41:20Z","mag":4.5,"place":"40 km W of Choiseul, Saint Lucia","lat":13.75,"lon":-61.419,"depth":171},
+    {"id":"usp000cxj6","time":"2004-06-10T03:18:27Z","mag":4.5,"place":"48 km ESE of Micoud, Saint Lucia","lat":13.677,"lon":-60.479,"depth":65.8}
+  ],
+  "recent": [
+    {"id":"us100028ye","time":"2015-05-14T14:16:50Z","mag":4.6,"place":"48 km E of Dennery, Saint Lucia","lat":13.987,"lon":-60.448,"depth":61.3},
+    {"id":"usc000t4f6","time":"2014-12-07T15:35:44Z","mag":5,"place":"62 km E of Dennery, Saint Lucia","lat":13.846,"lon":-60.316,"depth":32.5},
+    {"id":"usp000j644","time":"2011-08-07T04:01:09Z","mag":5.2,"place":"61 km E of Dennery, Saint Lucia","lat":13.874,"lon":-60.326,"depth":27},
+    {"id":"usp000j0jg","time":"2011-04-25T13:10:21Z","mag":4.6,"place":"86 km E of Dennery, Saint Lucia","lat":14.039,"lon":-60.103,"depth":70},
+    {"id":"usp000gg74","time":"2008-09-02T06:18:57Z","mag":4.7,"place":"49 km E of Dennery, Saint Lucia","lat":13.863,"lon":-60.437,"depth":16},
+    {"id":"usp000fubb","time":"2007-12-13T00:18:28Z","mag":4.6,"place":"11 km WNW of Gros Islet, Saint Lucia","lat":14.104,"lon":-61.046,"depth":126},
+    {"id":"usp000cxj6","time":"2004-06-10T03:18:27Z","mag":4.5,"place":"48 km ESE of Micoud, Saint Lucia","lat":13.677,"lon":-60.479,"depth":65.8},
+    {"id":"usp00049h2","time":"1990-05-19T17:44:02Z","mag":4.6,"place":"4 km N of Laborie, Saint Lucia","lat":13.793,"lon":-60.985,"depth":16.5},
+    {"id":"usp0001j5w","time":"1982-01-20T15:15:47Z","mag":5.2,"place":"55 km ESE of Micoud, Saint Lucia","lat":13.701,"lon":-60.404,"depth":69},
+    {"id":"usp00011bd","time":"1979-06-16T12:41:20Z","mag":4.5,"place":"40 km W of Choiseul, Saint Lucia","lat":13.75,"lon":-61.419,"depth":171},
+    {"id":"iscgem891566","time":"1953-03-19T08:27:52Z","mag":7.3,"place":"18 km WSW of Soufrière, Saint Lucia","lat":13.809,"lon":-61.216,"depth":128.8}
+  ]
+}

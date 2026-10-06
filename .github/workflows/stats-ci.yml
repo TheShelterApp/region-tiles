@@ -1,0 +1,32 @@
+# Checks a change to the area-history statistics or their pipeline: the unit tests, the real-polygon assignments and
+# the published files' schema and totals. No network.
+name: Area history statistics CI
+
+on:
+  pull_request:
+    paths:
+      - 'pipeline/stats/**'
+      - 'stats/**'
+      - 'index/**'
+      - 'geo/adm0/**'
+      - 'geo/adm1/**'
+      - '.github/workflows/stats-*.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'pipeline/stats/**'
+      - '.github/workflows/stats-*.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: node --test pipeline/stats/stats.test.mjs

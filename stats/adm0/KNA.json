@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "KNA",
+  "name": "Saint Kitts and Nevis",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 13,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,6,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"usp0002cy6","time":"1985-03-16T14:54:00Z","mag":6.5,"place":"18 km SE of Market Shop, Saint Kitts and Nevis","lat":17.013,"lon":-62.448,"depth":13.4},
+    {"id":"usp0002cy7","time":"1985-03-16T14:57:15Z","mag":5.6,"place":"18 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.972,"lon":-62.512,"depth":33},
+    {"id":"usp0002qy9","time":"1986-02-12T23:41:38Z","mag":5.6,"place":"28 km NNW of Brades, Montserrat","lat":17.019,"lon":-62.329,"depth":21.9},
+    {"id":"usp0002drv","time":"1985-04-13T04:12:39Z","mag":5,"place":"19 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.976,"lon":-62.481,"depth":18.7},
+    {"id":"usp0003n89","time":"1988-10-26T18:24:54Z","mag":4.9,"place":"3 km S of Dieppe Bay Town, Saint Kitts and Nevis","lat":17.384,"lon":-62.813,"depth":9.1},
+    {"id":"usp0002cyu","time":"1985-03-17T03:41:12Z","mag":4.8,"place":"24 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.947,"lon":-62.449,"depth":24.8},
+    {"id":"usp000gmpc","time":"2008-11-02T08:05:21Z","mag":4.8,"place":"20 km E of Market Shop, Saint Kitts and Nevis","lat":17.138,"lon":-62.384,"depth":10},
+    {"id":"usp000114x","time":"1979-06-07T07:25:31Z","mag":4.7,"place":"47 km NE of Nicola Town, Saint Kitts and Nevis","lat":17.647,"lon":-62.406,"depth":18},
+    {"id":"usp0002d1m","time":"1985-03-19T16:53:44Z","mag":4.7,"place":"27 km NNW of Brades, Montserrat","lat":16.999,"lon":-62.351,"depth":33},
+    {"id":"usp00091pe","time":"1999-01-25T10:36:31Z","mag":4.6,"place":"28 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.885,"lon":-62.497,"depth":140.3},
+    {"id":"usp0002g4a","time":"1985-06-24T21:19:41Z","mag":4.5,"place":"Leeward Islands","lat":17.038,"lon":-62.458,"depth":33},
+    {"id":"usp000b0kd","time":"2002-03-18T18:36:05Z","mag":4.5,"place":"32 km SSW of Trinity, Saint Kitts and Nevis","lat":17.04,"lon":-62.91,"depth":153},
+    {"id":"us1000882u","time":"2017-03-10T06:01:17Z","mag":4.5,"place":"12 km N of Dieppe Bay Town, Saint Kitts and Nevis","lat":17.525,"lon":-62.805,"depth":107.1}
+  ],
+  "recent": [
+    {"id":"us1000882u","time":"2017-03-10T06:01:17Z","mag":4.5,"place":"12 km N of Dieppe Bay Town, Saint Kitts and Nevis","lat":17.525,"lon":-62.805,"depth":107.1},
+    {"id":"usp000gmpc","time":"2008-11-02T08:05:21Z","mag":4.8,"place":"20 km E of Market Shop, Saint Kitts and Nevis","lat":17.138,"lon":-62.384,"depth":10},
+    {"id":"usp000b0kd","time":"2002-03-18T18:36:05Z","mag":4.5,"place":"32 km SSW of Trinity, Saint Kitts and Nevis","lat":17.04,"lon":-62.91,"depth":153},
+    {"id":"usp00091pe","time":"1999-01-25T10:36:31Z","mag":4.6,"place":"28 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.885,"lon":-62.497,"depth":140.3},
+    {"id":"usp0003n89","time":"1988-10-26T18:24:54Z","mag":4.9,"place":"3 km S of Dieppe Bay Town, Saint Kitts and Nevis","lat":17.384,"lon":-62.813,"depth":9.1},
+    {"id":"usp0002qy9","time":"1986-02-12T23:41:38Z","mag":5.6,"place":"28 km NNW of Brades, Montserrat","lat":17.019,"lon":-62.329,"depth":21.9},
+    {"id":"usp0002g4a","time":"1985-06-24T21:19:41Z","mag":4.5,"place":"Leeward Islands","lat":17.038,"lon":-62.458,"depth":33},
+    {"id":"usp0002drv","time":"1985-04-13T04:12:39Z","mag":5,"place":"19 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.976,"lon":-62.481,"depth":18.7},
+    {"id":"usp0002d1m","time":"1985-03-19T16:53:44Z","mag":4.7,"place":"27 km NNW of Brades, Montserrat","lat":16.999,"lon":-62.351,"depth":33},
+    {"id":"usp0002cyu","time":"1985-03-17T03:41:12Z","mag":4.8,"place":"24 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.947,"lon":-62.449,"depth":24.8},
+    {"id":"usp0002cy7","time":"1985-03-16T14:57:15Z","mag":5.6,"place":"18 km SSE of Market Shop, Saint Kitts and Nevis","lat":16.972,"lon":-62.512,"depth":33},
+    {"id":"usp0002cy6","time":"1985-03-16T14:54:00Z","mag":6.5,"place":"18 km SE of Market Shop, Saint Kitts and Nevis","lat":17.013,"lon":-62.448,"depth":13.4},
+    {"id":"usp000114x","time":"1979-06-07T07:25:31Z","mag":4.7,"place":"47 km NE of Nicola Town, Saint Kitts and Nevis","lat":17.647,"lon":-62.406,"depth":18}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "GUY",
+  "name": "Guyana",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 4,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0]
+  },
+  "largest": [
+    {"id":"us6000ddge","time":"2021-01-31T19:05:14Z","mag":5.5,"place":"82 km SSE of Lethem, Guyana","lat":2.668,"lon":-59.588,"depth":5.2},
+    {"id":"us6000dwr1","time":"2021-03-26T15:57:43Z","mag":4.8,"place":"80 km SSE of Lethem, Guyana","lat":2.684,"lon":-59.612,"depth":10},
+    {"id":"usp000gnfd","time":"2008-11-11T14:31:03Z","mag":4.6,"place":"76 km E of Mabaruma, Guyana","lat":8.202,"lon":-59.086,"depth":10},
+    {"id":"usp000aykv","time":"2002-02-16T22:11:07Z","mag":4.5,"place":"North Atlantic Ocean","lat":10.422,"lon":-55.619,"depth":10}
+  ],
+  "recent": [
+    {"id":"us6000dwr1","time":"2021-03-26T15:57:43Z","mag":4.8,"place":"80 km SSE of Lethem, Guyana","lat":2.684,"lon":-59.612,"depth":10},
+    {"id":"us6000ddge","time":"2021-01-31T19:05:14Z","mag":5.5,"place":"82 km SSE of Lethem, Guyana","lat":2.668,"lon":-59.588,"depth":5.2},
+    {"id":"usp000gnfd","time":"2008-11-11T14:31:03Z","mag":4.6,"place":"76 km E of Mabaruma, Guyana","lat":8.202,"lon":-59.086,"depth":10},
+    {"id":"usp000aykv","time":"2002-02-16T22:11:07Z","mag":4.5,"place":"North Atlantic Ocean","lat":10.422,"lon":-55.619,"depth":10}
+  ]
+}

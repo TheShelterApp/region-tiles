@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "ZWE",
+  "name": "Zimbabwe",
+  "since": "1936-01-01T00:00:00Z",
+  "until": "2026-10-06T00:00:00Z",
+  "minMagnitude": 4.5,
+  "eventType": "earthquake",
+  "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
+  "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
+  "total": 13,
+  "histogram": {
+    "startYear": 1936,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,3,0,0]
+  },
+  "largest": [
+    {"id":"iscgem873131","time":"1963-09-25T07:03:52Z","mag":5.5,"place":"38 km SW of Siavonga, Zambia","lat":-16.778,"lon":28.446,"depth":15},
+    {"id":"usp000004d","time":"1973-01-13T06:05:42Z","mag":5,"place":"47 km SW of Siavonga, Zambia","lat":-16.808,"lon":28.367,"depth":33},
+    {"id":"us7000p08s","time":"2024-12-20T07:11:41Z","mag":4.9,"place":"21 km S of Kariba, Zimbabwe","lat":-16.708,"lon":28.823,"depth":10},
+    {"id":"us7000p0u1","time":"2024-12-23T03:39:05Z","mag":4.9,"place":"17 km S of Kariba, Zimbabwe","lat":-16.673,"lon":28.814,"depth":10},
+    {"id":"usp000a8zu","time":"2001-02-03T17:05:12Z","mag":4.8,"place":"40 km SSW of Siavonga, Zambia","lat":-16.856,"lon":28.513,"depth":15.3},
+    {"id":"usp0001duf","time":"1981-05-24T06:35:56Z","mag":4.7,"place":"34 km N of Kamativi Mine, Zimbabwe","lat":-18.003,"lon":27.055,"depth":33},
+    {"id":"usp000g1h1","time":"2008-03-15T02:26:22Z","mag":4.7,"place":"46 km SW of Lupane, Zimbabwe","lat":-19.216,"lon":27.479,"depth":5.8},
+    {"id":"us7000hc68","time":"2022-05-24T09:14:59Z","mag":4.7,"place":"14 km SE of Binga, Zimbabwe","lat":-17.695,"lon":27.457,"depth":10},
+    {"id":"usp0001et8","time":"1981-07-19T08:07:49Z","mag":4.6,"place":"24 km NNE of Kamativi Mine, Zimbabwe","lat":-18.113,"lon":27.152,"depth":33},
+    {"id":"us7000p06l","time":"2024-12-20T00:15:31Z","mag":4.6,"place":"23 km SSE of Kariba, Zimbabwe","lat":-16.715,"lon":28.885,"depth":10},
+    {"id":"usp0001e52","time":"1981-06-14T03:37:12Z","mag":4.5,"place":"33 km N of Kamativi Mine, Zimbabwe","lat":-18.016,"lon":27.025,"depth":33},
+    {"id":"usp000ehnb","time":"2006-05-21T21:55:03Z","mag":4.5,"place":"9 km S of Dorowa Mining Lease, Zimbabwe","lat":-19.156,"lon":31.752,"depth":10},
+    {"id":"us60006bx5","time":"2019-11-07T01:58:34Z","mag":4.5,"place":"61 km ENE of Sinazongwe, Zambia","lat":-16.993,"lon":27.963,"depth":5.1}
+  ],
+  "recent": [
+    {"id":"us7000p0u1","time":"2024-12-23T03:39:05Z","mag":4.9,"place":"17 km S of Kariba, Zimbabwe","lat":-16.673,"lon":28.814,"depth":10},
+    {"id":"us7000p08s","time":"2024-12-20T07:11:41Z","mag":4.9,"place":"21 km S of Kariba, Zimbabwe","lat":-16.708,"lon":28.823,"depth":10},
+    {"id":"us7000p06l","time":"2024-12-20T00:15:31Z","mag":4.6,"place":"23 km SSE of Kariba, Zimbabwe","lat":-16.715,"lon":28.885,"depth":10},
+    {"id":"us7000hc68","time":"2022-05-24T09:14:59Z","mag":4.7,"place":"14 km SE of Binga, Zimbabwe","lat":-17.695,"lon":27.457,"depth":10},
+    {"id":"us60006bx5","time":"2019-11-07T01:58:34Z","mag":4.5,"place":"61 km ENE of Sinazongwe, Zambia","lat":-16.993,"lon":27.963,"depth":5.1},
+    {"id":"usp000g1h1","time":"2008-03-15T02:26:22Z","mag":4.7,"place":"46 km SW of Lupane, Zimbabwe","lat":-19.216,"lon":27.479,"depth":5.8},
+    {"id":"usp000ehnb","time":"2006-05-21T21:55:03Z","mag":4.5,"place":"9 km S of Dorowa Mining Lease, Zimbabwe","lat":-19.156,"lon":31.752,"depth":10},
+    {"id":"usp000a8zu","time":"2001-02-03T17:05:12Z","mag":4.8,"place":"40 km SSW of Siavonga, Zambia","lat":-16.856,"lon":28.513,"depth":15.3},
+    {"id":"usp0001et8","time":"1981-07-19T08:07:49Z","mag":4.6,"place":"24 km NNE of Kamativi Mine, Zimbabwe","lat":-18.113,"lon":27.152,"depth":33},
+    {"id":"usp0001e52","time":"1981-06-14T03:37:12Z","mag":4.5,"place":"33 km N of Kamativi Mine, Zimbabwe","lat":-18.016,"lon":27.025,"depth":33},
+    {"id":"usp0001duf","time":"1981-05-24T06:35:56Z","mag":4.7,"place":"34 km N of Kamativi Mine, Zimbabwe","lat":-18.003,"lon":27.055,"depth":33},
+    {"id":"usp000004d","time":"1973-01-13T06:05:42Z","mag":5,"place":"47 km SW of Siavonga, Zambia","lat":-16.808,"lon":28.367,"depth":33},
+    {"id":"iscgem873131","time":"1963-09-25T07:03:52Z","mag":5.5,"place":"38 km SW of Siavonga, Zambia","lat":-16.778,"lon":28.446,"depth":15}
+  ]
+}
