@@ -14,7 +14,7 @@ import { makeAssigner, polygonsOf, loadRegions, levelForMagnitude } from './assi
 import { aggregate, histogramYears, formatJSON, yearStart } from './aggregate.mjs';
 import { plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
 import { judge } from './build-stats.mjs';
-import { windowCheck, WINDOW_SAMPLE } from './verify-stats.mjs';
+import { VERIFY_OUTCOME, windowCheck, WINDOW_SAMPLE } from './verify-stats.mjs';
 import { STATS_DIR, STATS_INDEX, SCHEMA_VERSION, TOP_LARGEST, TOP_RECENT } from './config.mjs';
 import { INDEX_DIR } from '../../config.mjs';
 
@@ -501,8 +501,13 @@ test('window check: box count and window bins agree; a short box download and a 
   const wrong = { histogram: { startYear: 1936, counts: [...new Array(2025 - 1936).fill(0), 2, 3] } };
   const bad = windowCheck({ id: 'AAA', events, contains, comcatBox: 4, doc: wrong, assign, windowStartMs, untilMs });
   assert.deepEqual(bad.problems, ['AAA: the published bins of the window differ from a recount of its events (2026: published 3, recount 2)']);
-  assert.throws(() => judge(bad.problems, { acceptDrop: false, log: () => {} }), /not plausible, nothing written/);
-  assert.doesNotThrow(() => judge(bad.problems, { acceptDrop: true, log: () => {} }));
+  // The verify step runs after the build wrote the files on the runner, before the commit and push: its refusal says so.
+  assert.throws(
+    () => judge(bad.problems, { acceptDrop: false, log: () => {}, outcome: VERIFY_OUTCOME }),
+    /not plausible, nothing committed or pushed:\n {2}- AAA: the published bins/,
+  );
+  assert.doesNotThrow(() => judge(bad.problems, { acceptDrop: true, log: () => {}, outcome: VERIFY_OUTCOME }));
+  assert.match(readFileSync(fileURLToPath(new URL('./verify-stats.mjs', import.meta.url)), 'utf8'), /judge\(problems, \{ acceptDrop, log: console\.log, outcome: VERIFY_OUTCOME \}\)/);
 });
 
 test('window check: the workflow verifies a bounded sample before the push, in dry runs too', () => {

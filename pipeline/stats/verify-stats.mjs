@@ -30,6 +30,8 @@ import { judge } from './build-stats.mjs';
 const DEFAULT_SAMPLE = ['JPN', 'IDN', 'CHL', 'TUR', 'ITA', 'ISL', 'AFG', 'VUT'];
 /** The refresh workflow's sample: mostly offshore (Japan), coast and trench (Chile), landlocked (Afghanistan). */
 export const WINDOW_SAMPLE = ['JPN', 'CHL', 'AFG'];
+/** What a refused window check leaves undone (judge's wording): the files are on the runner, not in the repository. */
+export const VERIFY_OUTCOME = 'nothing committed or pushed';
 
 const boxOf = (id, c) => {
   const [minLng, minLat, maxLng, maxLat] = c.bbox;
@@ -96,7 +98,8 @@ async function verifyWindow({ sample, acceptDrop }) {
   console.log('| Country | ComCat /count in its box | Downloaded in the box | Published, window years | Recount, window years |');
   console.log('|---|---:|---:|---:|---:|');
   for (const r of rows) console.log(`| ${r.name} (${r.id}) | ${r.comcatBox} | ${r.downloadedBox} | ${r.published} | ${r.recount} |`);
-  judge(problems, { acceptDrop, log: console.log });
+  // The build has written the files on the runner by now; the refusal stops the workflow before its commit and push.
+  judge(problems, { acceptDrop, log: console.log, outcome: VERIFY_OUTCOME });
 }
 
 async function verifyAll(sample) {
