@@ -232,6 +232,7 @@ npm run stats -- --until=2026-10-06   # a fixed cutoff: the same cutoff gives th
 npm run stats -- --accept-drop        # publish although the plausibility checks fail (below; review the log first)
 npm run test:stats            # unit tests, the real-polygon assignments, the published files' schema and totals
 npm run stats:verify          # compare with ComCat /count (below)
+npm run stats:verify -- --window   # the same, bounded to the last build's window and 3 countries (the workflow's check)
 ```
 
 ComCat is read in half-year pages (`orderby=time-asc`, `limit=20000`; a page at the cap is split in two), at most one
@@ -266,7 +267,13 @@ and the total moved 306,470 → 306,469 (a Dominican Republic event deleted or r
 **Refresh** — `.github/workflows/stats-refresh.yml`: on the 2nd of every month (04:17 UTC) incremental, every January
 (and on a manual run with `full`) the whole catalogue again, so revisions of older events reach the files once a year.
 A run that fails the plausibility checks pushes nothing (run it again later, or with `accept_drop` after a review); a
-manual run with `dry_run` builds and tests without committing or pushing.
+manual run with `dry_run` builds, tests and verifies without committing or pushing. Before the push the workflow runs
+`verify-stats.mjs --window` (R16-FOLLOWUPS (4)): for Japan, Chile and Afghanistan, ComCat's `/count` inside the box over
+the run's window against the download (short by more than the window tolerance fails), and the published bins of the
+window's years against a recount of its events. It reads the pages the build cached and asks ComCat 3 `/count`s; the
+full verification below would read the whole catalogue again (182 page requests on a fresh runner). Checked
+2026-10-14 on a copy of the files: a full and then an incremental build to 2026-10-14, each verified with 3 requests,
+every box and every window bin equal. The runner image is pinned (`ubuntu-24.04`, HYG-5).
 The workflow pushes `stats/` to `main` itself with the default `GITHUB_TOKEN` (`contents: write`): `main`'s ruleset
 forbids only deletion and non-fast-forward updates, and the repository does not let Actions open pull requests. No
 other secret. GitHub pauses scheduled workflows of a public repository after 60 days without activity; the monthly
