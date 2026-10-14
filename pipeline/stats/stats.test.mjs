@@ -14,6 +14,7 @@ import { makeAssigner, polygonsOf, loadRegions, levelForMagnitude } from './assi
 import { aggregate, histogramYears, formatJSON, yearStart } from './aggregate.mjs';
 import { plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
 import { judge } from './build-stats.mjs';
+import { windowCheck, WINDOW_SAMPLE } from './verify-stats.mjs';
 import { STATS_DIR, STATS_INDEX, SCHEMA_VERSION, TOP_LARGEST, TOP_RECENT } from './config.mjs';
 import { INDEX_DIR } from '../../config.mjs';
 
@@ -468,4 +469,54 @@ test('build: a shrunken catalogue that agrees with its /count fails on the drop;
   assert.equal(accepted.r.status, 0, accepted.r.stdout + accepted.r.stderr);
   assert.match(accepted.r.stdout, /⚠ accepted \(--accept-drop\): the global total drops/);
   assert.equal(accepted.unchanged, false, 'written under --accept-drop');
+});
+
+// ---- R16-FOLLOWUPS (4): the refresh workflow's bounded verification before the push -----------------------------------
+
+test('window check: box count and window bins agree; a short box download and a wrong bin are problems', () => {
+  const { assign } = fixture();
+  const at = (iso, lat, lon, mag = 5.0) => ({ id: `${iso}-${lat}-${lon}`, t: Date.parse(iso), lat, lon, mag });
+  const windowStartMs = Date.UTC(2025, 0, 1);
+  const untilMs = Date.UTC(2026, 9, 14);
+  const events = [
+    at('2025-03-01T00:00:00Z', 1, 1), at('2025-07-01T00:00:00Z', 1, 1.5), at('2026-02-01T00:00:00Z', 1, 0.5),
+    at('2026-05-01T00:00:00Z', 1, 4), // offshore A: counts for A, outside A's box
+    at('2026-05-02T00:00:00Z', 1, 11), // B
+    at('2026-10-14T00:00:00Z', 1, 1), // at the cutoff's second: ComCat's endtime is inclusive, the next run counts it
+  ];
+  const contains = (e) => e.lon >= 0 && e.lon <= 2 && e.lat >= 0 && e.lat <= 2;
+  const doc = { histogram: { startYear: 1936, counts: [...new Array(2025 - 1936).fill(7), 2, 2] } };
+  const ok = windowCheck({ id: 'AAA', events, contains, comcatBox: 4, doc, assign, windowStartMs, untilMs });
+  assert.deepEqual(ok.problems, []);
+  assert.deepEqual(ok.row, { id: 'AAA', comcatBox: 4, downloadedBox: 4, published: 4, recount: 4 });
+
+  // ComCat counts more in the box than the download holds, beyond max(10, 0.5 %): a truncated page.
+  const short = windowCheck({ id: 'AAA', events, contains, comcatBox: 15, doc, assign, windowStartMs, untilMs });
+  assert.equal(short.problems.length, 1);
+  assert.match(short.problems[0], /AAA's box holds 4 events, ComCat's \/count of the same window 15/);
+  // A difference within the tolerance passes (an event revised into the box between the download and the count).
+  assert.deepEqual(windowCheck({ id: 'AAA', events, contains, comcatBox: 5, doc, assign, windowStartMs, untilMs }).problems, []);
+
+  // A published window bin the recount does not reproduce; the bins before the window are not the check's business.
+  const wrong = { histogram: { startYear: 1936, counts: [...new Array(2025 - 1936).fill(0), 2, 3] } };
+  const bad = windowCheck({ id: 'AAA', events, contains, comcatBox: 4, doc: wrong, assign, windowStartMs, untilMs });
+  assert.deepEqual(bad.problems, ['AAA: the published bins of the window differ from a recount of its events (2026: published 3, recount 2)']);
+  assert.throws(() => judge(bad.problems, { acceptDrop: false, log: () => {} }), /not plausible, nothing written/);
+  assert.doesNotThrow(() => judge(bad.problems, { acceptDrop: true, log: () => {} }));
+});
+
+test('window check: the workflow verifies a bounded sample before the push, in dry runs too', () => {
+  assert.deepEqual(WINDOW_SAMPLE, ['JPN', 'CHL', 'AFG']);
+  const yml = readFileSync(fileURLToPath(new URL('../../.github/workflows/stats-refresh.yml', import.meta.url)), 'utf8');
+  const steps = yml.split('\n      - ').map((s) => s.split('\n')[0]);
+  const verify = steps.findIndex((s) => s.startsWith('name: Verify a sample against ComCat'));
+  assert.ok(verify > steps.findIndex((s) => s.startsWith('name: Test the statistics')), 'after the tests');
+  assert.ok(verify < steps.findIndex((s) => s.startsWith('name: What changed (dry run)')), 'before the dry-run report');
+  assert.ok(verify < steps.findIndex((s) => s.startsWith('name: Commit and push')), 'before the push');
+  assert.match(yml, /args=\(--window\)/);
+  assert.match(yml, /node pipeline\/stats\/verify-stats\.mjs "\$\{args\[@\]\}"/);
+  for (const f of ['stats-refresh.yml', 'stats-ci.yml']) {
+    const w = readFileSync(fileURLToPath(new URL(`../../.github/workflows/${f}`, import.meta.url)), 'utf8');
+    assert.match(w, /runs-on: ubuntu-24\.04\b/, `${f}: a pinned runner image (HYG-5)`);
+  }
 });

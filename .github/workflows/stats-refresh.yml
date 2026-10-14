@@ -7,8 +7,10 @@
 # No secret beyond the default GITHUB_TOKEN.
 # A wrong ComCat answer fails the build before any file is written (XR-1, round 16; README "Refresh"): an empty page, a
 # window short of ComCat's own /count, or counts that drop against the published files. Nothing is pushed then; run it
-# again later, or with `accept_drop` after reviewing a genuine large revision in the log. `dry_run` builds and tests
-# without committing or pushing.
+# again later, or with `accept_drop` after reviewing a genuine large revision in the log. Before the push a bounded
+# verification (verify-stats.mjs --window: 3 sample countries, 3 ComCat requests) checks the built files against
+# ComCat's /count in each sample box and a recount of the window. `dry_run` builds, tests and verifies without
+# committing or pushing.
 name: Area history statistics
 
 on:
@@ -38,7 +40,8 @@ concurrency:
 
 jobs:
   refresh:
-    runs-on: ubuntu-latest
+    # Pinned (HYG-5): ubuntu-latest moves to a new image on GitHub's schedule, and this runs unattended once a month.
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     permissions:
       contents: write
@@ -60,6 +63,16 @@ jobs:
           node pipeline/stats/build-stats.mjs "${args[@]}"
       - name: Test the statistics
         run: node --test pipeline/stats/stats.test.mjs
+      # R16-FOLLOWUPS (4): the built files against ComCat's own /count, bounded to this run's window and 3 sample
+      # countries (the pages come from the build's cache; 3 requests). A short box or a window bin the recount does not
+      # reproduce fails here, before anything is pushed; accept_drop makes them warnings, as for the build.
+      - name: Verify a sample against ComCat
+        env:
+          ACCEPT_DROP: ${{ inputs.accept_drop }}
+        run: |
+          args=(--window)
+          if [ "$ACCEPT_DROP" = "true" ]; then args+=(--accept-drop); fi
+          node pipeline/stats/verify-stats.mjs "${args[@]}"
       - name: What changed (dry run)
         if: ${{ inputs.dry_run }}
         run: |

@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pinned (HYG-5), like stats-refresh.yml
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
