@@ -67,11 +67,13 @@ function writeAtomic(file, text) {
   renameSync(tmp, file);
 }
 
-/** Problems found before any write: an error unless `acceptDrop`, which logs them as warnings. */
-export function judge(problems, { acceptDrop, log }) {
+/** Problems found before any write: an error unless `acceptDrop`, which logs them as warnings. `outcome` says what the
+ *  refusal left undone: the build refuses before it writes a file; the verify step (verify-stats.mjs --window) runs after
+ *  the build wrote the files on the runner, before the workflow commits or pushes them. */
+export function judge(problems, { acceptDrop, log, outcome = 'nothing written' }) {
   if (!problems.length) return;
   if (!acceptDrop) {
-    throw new Error(`the statistics are not plausible, nothing written:\n  - ${problems.join('\n  - ')}\n`
+    throw new Error(`the statistics are not plausible, ${outcome}:\n  - ${problems.join('\n  - ')}\n`
       + 'Run again later; publish anyway only after reviewing a genuine ComCat revision (--accept-drop).');
   }
   for (const p of problems) log(`⚠ accepted (--accept-drop): ${p}`);
