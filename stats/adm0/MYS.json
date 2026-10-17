@@ -2,19 +2,20 @@
   "schemaVersion": 1,
   "id": "MYS",
   "name": "Malaysia",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 54,
+  "total": 56,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10,0,0,1,1,1,1,1,2,0,0,0,1,0,0,5,1,0,4,0,0,0,0,0,0,0,1,1,1,2,1,1,2,1,0,0,1,0,2,5,0,1,1,1,1,0,0,1,0,0,1]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10,0,0,1,1,1,1,1,2,0,0,0,1,0,0,5,1,0,4,0,0,0,0,0,0,0,1,1,1,2,1,1,2,1,0,0,1,0,2,5,0,1,1,1,1,0,0,1,0,0,2]
   },
   "largest": [
     {"id":"us6000sasz","time":"2026-02-22T16:57:46Z","mag":7.1,"place":"57 km NNW of Kota Belud, Malaysia","lat":6.854,"lon":116.294,"depth":629},
+    {"id":"iscgem911497","time":"1923-08-11T00:54:43Z","mag":6.55,"place":"26 km NNW of Lahad Datu, Malaysia","lat":5.252,"lon":118.26,"depth":35},
     {"id":"usp0000hhh","time":"1976-07-26T02:56:39Z","mag":6.2,"place":"7 km SSW of Lahad Datu, Malaysia","lat":4.956,"lon":118.308,"depth":33},
     {"id":"iscgem894388","time":"1951-06-02T06:47:56Z","mag":6.07,"place":"10 km W of Kudat, Malaysia","lat":6.878,"lon":116.727,"depth":15},
     {"id":"us20002m5s","time":"2015-06-04T23:15:43Z","mag":6,"place":"14 km WNW of Ranau, Malaysia","lat":5.987,"lon":116.541,"depth":10},
@@ -32,10 +33,10 @@
     {"id":"usp00068dv","time":"1994-02-12T06:49:55Z","mag":5.3,"place":"57 km NNW of Kapit, Malaysia","lat":2.485,"lon":112.765,"depth":28.9},
     {"id":"usp000drez","time":"2005-05-23T19:58:09Z","mag":5.3,"place":"54 km NW of Taman Rajawali, Malaysia","lat":6.256,"lon":117.709,"depth":19},
     {"id":"us20002pfr","time":"2015-06-12T18:29:15Z","mag":5.3,"place":"27 km N of Ranau, Malaysia","lat":6.205,"lon":116.681,"depth":7.3},
-    {"id":"usp0000hhn","time":"1976-07-26T05:35:10Z","mag":5.2,"place":"29 km E of Lahad Datu, Malaysia","lat":4.986,"lon":118.594,"depth":33},
-    {"id":"usp0003puz","time":"1988-12-14T17:06:28Z","mag":5.2,"place":"25 km SW of Taman Rajawali, Malaysia","lat":5.753,"lon":117.859,"depth":79.4}
+    {"id":"usp0000hhn","time":"1976-07-26T05:35:10Z","mag":5.2,"place":"29 km E of Lahad Datu, Malaysia","lat":4.986,"lon":118.594,"depth":33}
   ],
   "recent": [
+    {"id":"us6000tzwg","time":"2026-10-06T13:11:22Z","mag":5,"place":"51 km NNE of Semporna, Malaysia","lat":4.895,"lon":118.825,"depth":10},
     {"id":"us6000sasz","time":"2026-02-22T16:57:46Z","mag":7.1,"place":"57 km NNW of Kota Belud, Malaysia","lat":6.854,"lon":116.294,"depth":629},
     {"id":"us6000k1ki","time":"2023-04-02T19:32:25Z","mag":5.5,"place":"56 km NNW of Kota Kinabalu, Malaysia","lat":6.431,"lon":115.834,"depth":618.7},
     {"id":"us7000ajc1","time":"2020-06-30T01:58:30Z","mag":4.9,"place":"48 km W of Kudat, Malaysia","lat":6.93,"lon":116.382,"depth":620.5},
@@ -54,7 +55,6 @@
     {"id":"usp000g74r","time":"2008-05-18T06:26:41Z","mag":5,"place":"50 km NE of Tawau, Malaysia","lat":4.598,"lon":118.173,"depth":10},
     {"id":"usp000g3dh","time":"2008-04-09T00:51:44Z","mag":4.5,"place":"40 km NNE of Semporna, Malaysia","lat":4.838,"lon":118.713,"depth":27.8},
     {"id":"usp000fr4h","time":"2007-10-23T20:34:37Z","mag":5.2,"place":"87 km NW of Sanga-Sanga, Philippines","lat":5.71,"lon":119.316,"depth":48.8},
-    {"id":"usp000eu0f","time":"2006-09-28T15:11:35Z","mag":4.5,"place":"73 km WNW of Taman Rajawali, Malaysia","lat":6.041,"lon":117.398,"depth":10},
-    {"id":"usp000du8k","time":"2005-06-30T18:09:48Z","mag":4.5,"place":"63 km SSE of Lawas, Malaysia","lat":4.329,"lon":115.62,"depth":24.7}
+    {"id":"usp000eu0f","time":"2006-09-28T15:11:35Z","mag":4.5,"place":"73 km WNW of Taman Rajawali, Malaysia","lat":6.041,"lon":117.398,"depth":10}
   ]
 }

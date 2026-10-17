@@ -1,9 +1,9 @@
-// USGS ComCat download: CSV pages of at most PAGE_LIMIT rows, ordered by time, at most one request per
-// MIN_REQUEST_INTERVAL_MS, cached on disk (CACHE_DIR, never in git).
+// USGS ComCat download: CSV pages by era (PAGE_ERAS) of at most PAGE_LIMIT rows, ordered by time, at most one request
+// per MIN_REQUEST_INTERVAL_MS, cached on disk (CACHE_DIR, never in git).
 import { existsSync, readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  COMCAT_BASE, PAGE_LIMIT, MIN_REQUEST_INTERVAL_MS, CACHE_DIR, MIN_MAGNITUDE, EVENT_TYPE, EMPTY_PAGE_MIN_SPAN_DAYS,
+  COMCAT_BASE, PAGE_LIMIT, PAGE_ERAS, MIN_REQUEST_INTERVAL_MS, CACHE_DIR, MIN_MAGNITUDE, EVENT_TYPE,
 } from './config.mjs';
 
 const USER_AGENT = 'TheShelterApp-region-tiles-stats (+https://github.com/TheShelterApp/region-tiles)';
@@ -92,20 +92,48 @@ export function toEvent(row, ix) {
 
 // ---- Paging -------------------------------------------------------------------------------------------------------
 
-/** Half-year pages [start, end) between two instants, cut at 1 January and 1 July (UTC). */
-export function halfYearPages(startISO, endISO) {
+const DAY_MS = 86_400_000;
+const ERAS = PAGE_ERAS.map((e) => ({ ...e, startMs: e.start === null ? -Infinity : Date.parse(e.start) }));
+const iso = (ms) => new Date(ms).toISOString();
+
+/** The era (PAGE_ERAS) an instant belongs to: the last one that starts at or before it. */
+export function eraOf(ms) {
+  let i = 0;
+  while (i + 1 < ERAS.length && ERAS[i + 1].startMs <= ms) i++;
+  return { ...ERAS[i], endMs: i + 1 < ERAS.length ? ERAS[i + 1].startMs : Infinity };
+}
+
+/** The first calendar boundary after `ms` of a step of `stepMonths` (months counted from year 0, UTC). */
+function nextBoundary(ms, stepMonths) {
+  const d = new Date(ms);
+  const next = (Math.floor((d.getUTCFullYear() * 12 + d.getUTCMonth()) / stepMonths) + 1) * stepMonths;
+  return Date.UTC(Math.floor(next / 12), next % 12, 1);
+}
+
+/**
+ * The pages [start, end) between two instants: each era's pages (PAGE_ERAS) cut at its calendar step and at the era's
+ * end, so no page spans two eras. Since 1936 these are the half-years cut at 1 January and 1 July.
+ */
+export function pagesFor(startISO, endISO) {
   const end = Date.parse(endISO);
   const pages = [];
   let cur = Date.parse(startISO);
   while (cur < end) {
-    const d = new Date(cur);
-    const y = d.getUTCFullYear();
-    const nextBoundary = d.getUTCMonth() < 6 ? Date.UTC(y, 6, 1) : Date.UTC(y + 1, 0, 1);
-    const next = Math.min(nextBoundary, end);
-    pages.push({ start: new Date(cur).toISOString(), end: new Date(next).toISOString() });
+    const era = eraOf(cur);
+    const next = Math.min(era.stepMonths ? nextBoundary(cur, era.stepMonths) : Infinity, era.endMs, end);
+    pages.push({ start: iso(cur), end: iso(next) });
     cur = next;
   }
   return pages;
+}
+
+/** [start, end] cut at the era starts inside it: the window's per-era /count (each ISO, end inclusive like ComCat's). */
+export function eraSegments(startISO, endISO) {
+  const start = Date.parse(startISO);
+  const end = Date.parse(endISO);
+  const cuts = ERAS.map((e) => e.startMs).filter((ms) => ms > start && ms < end);
+  const bounds = [start, ...cuts, end];
+  return bounds.slice(1).map((b, i) => ({ start: iso(bounds[i]), end: iso(b) }));
 }
 
 const cacheName = (start, end) =>
@@ -171,15 +199,17 @@ export async function comcatCount(params) {
   return count;
 }
 
-/** Whether [start, end) is long enough that ComCat always lists M4.5+ earthquakes in it (EMPTY_PAGE_MIN_SPAN_DAYS). */
-export const pageMustHaveRows = (start, end) => Date.parse(end) - Date.parse(start) >= EMPTY_PAGE_MIN_SPAN_DAYS * 86_400_000;
+/** Whether [start, end) is long enough that ComCat always lists M4.5+ earthquakes in it: at least its era's
+ *  `minDaysWithRows` (PAGE_ERAS; the era of its start). */
+export const pageMustHaveRows = (start, end) =>
+  Date.parse(end) - Date.parse(start) >= eraOf(Date.parse(start)).minDaysWithRows * DAY_MS;
 
 /**
  * The events of [start, end): read from the cache when `useCache` and the page is cached, else downloaded (and
  * cached). A page that hits PAGE_LIMIT is split at its midpoint and both halves fetched, so no row is lost to the cap.
- * A page of at least EMPTY_PAGE_MIN_SPAN_DAYS without events (204, an empty body, a header-only CSV) throws, and no
- * empty page is ever cached; an empty cached page (an older run's) is downloaded again. A body that is not ComCat CSV
- * throws before it is cached.
+ * A page at least its era's `minDaysWithRows` long without events (204, an empty body, a header-only CSV) throws, and
+ * no empty page is ever cached; an empty cached page (an older run's) is downloaded again. A body that is not ComCat
+ * CSV throws before it is cached.
  */
 export async function fetchPage(start, end, { useCache = false, log = console.log, cacheDir = CACHE_DIR } = {}) {
   mkdirSync(cacheDir, { recursive: true });
@@ -205,7 +235,8 @@ export async function fetchPage(start, end, { useCache = false, log = console.lo
   if (!events.length) {
     if (mustHaveRows) {
       const what = status === 204 ? 'HTTP 204' : !body.trim() ? 'an empty body' : rowCount ? `${rowCount} rows without a usable event` : 'a header-only CSV';
-      throw new Error(`ComCat answered ${start} → ${end} with ${what}: a page of ${EMPTY_PAGE_MIN_SPAN_DAYS} days or more always holds M${MIN_MAGNITUDE}+ earthquakes, so the answer is wrong (nothing cached, nothing written)`);
+      const { minDaysWithRows } = eraOf(Date.parse(start));
+      throw new Error(`ComCat answered ${start} → ${end} with ${what}: a page of ${minDaysWithRows} days or more in this era always holds M${MIN_MAGNITUDE}+ earthquakes, so the answer is wrong (nothing cached, nothing written)`);
     }
     return events;
   }
@@ -216,11 +247,11 @@ export async function fetchPage(start, end, { useCache = false, log = console.lo
 }
 
 /**
- * Every event of [start, end) by half-year pages. Pages that END before `reuseCacheBefore` may come from the cache
- * (old pages hardly change); later pages are always downloaded again.
+ * Every event of [start, end) by the era pages (`pagesFor`). Pages that END before `reuseCacheBefore` may come from
+ * the cache (old pages hardly change); later pages are always downloaded again.
  */
 export async function fetchRange(start, end, { reuseCacheBefore = null, log = console.log, cacheDir = CACHE_DIR } = {}) {
-  const pages = halfYearPages(start, end);
+  const pages = pagesFor(start, end);
   const reuseUntil = reuseCacheBefore ? Date.parse(reuseCacheBefore) : -Infinity;
   const byId = new Map();
   for (const p of pages) {

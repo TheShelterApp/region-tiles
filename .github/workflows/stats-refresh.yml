@@ -1,16 +1,17 @@
 # Monthly refresh of the area-history statistics (stats/, see README "Area history statistics").
 # Incremental by default: ComCat is read again from 1 January of the year of (last cutoff - 365 days), which picks up
 # the new events and the catalogue's revisions of the last year. Every January (and on a manual run with "full") the
-# whole catalogue since 1936 is read again, so revisions of older events reach the files once a year.
+# whole catalogue since 1500 (the century before ComCat's earliest earthquake, 1568; SHLTR-120) is read again, so
+# revisions of older events reach the files once a year.
 # The result is pushed to main by the workflow's own token: main's ruleset forbids only deletion and non-fast-forward
 # updates, and the repository does not let Actions open pull requests, so a fast-forward push is the compliant path.
 # No secret beyond the default GITHUB_TOKEN.
 # A wrong ComCat answer fails the build before any file is written (XR-1, round 16; README "Refresh"): an empty page, a
-# window short of ComCat's own /count, or counts that drop against the published files. Nothing is pushed then; run it
-# again later, or with `accept_drop` after reviewing a genuine large revision in the log. Before the push a bounded
-# verification (verify-stats.mjs --window: 3 sample countries, 3 ComCat requests) checks the built files against
-# ComCat's /count in each sample box and a recount of the window. `dry_run` builds, tests and verifies without
-# committing or pushing.
+# window short of ComCat's own /count (per era), an earthquake ComCat lists before 1500 (move SINCE back), or counts
+# that drop against the published files. Nothing is pushed then; run it again later, or with `accept_drop` after
+# reviewing a genuine large revision in the log. Before the push a bounded verification (verify-stats.mjs --window:
+# 3 sample countries, 3 ComCat requests) checks the built files against ComCat's /count in each sample box and a
+# recount of the window. `dry_run` builds, tests and verifies without committing or pushing.
 name: Area history statistics
 
 on:
@@ -19,7 +20,7 @@ on:
   workflow_dispatch:
     inputs:
       full:
-        description: Rebuild everything since 1936 (reads the whole catalogue, about 4 minutes of ComCat requests)
+        description: Rebuild everything since 1500 (reads the whole catalogue, about 5 minutes of ComCat requests)
         type: boolean
         default: false
       accept_drop:

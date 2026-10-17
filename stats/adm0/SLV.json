@@ -2,40 +2,41 @@
   "schemaVersion": 1,
   "id": "SLV",
   "name": "El Salvador",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 1118,
+  "total": 1137,
   "histogram": {
-    "startYear": 1936,
-    "counts": [1,0,1,4,0,0,0,0,0,1,0,0,0,0,0,3,0,1,0,1,0,0,1,0,0,1,0,0,0,1,1,0,0,1,0,1,2,7,10,11,17,11,12,14,10,10,21,11,12,21,12,14,14,10,13,17,21,11,11,20,21,21,10,9,12,58,14,9,14,22,25,24,20,26,20,25,66,23,28,23,43,28,43,40,18,29,17,27,33,26,14]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,1,0,1,0,0,0,0,1,2,3,1,0,1,0,0,2,0,1,0,1,0,1,4,0,0,0,0,0,1,0,0,0,0,0,3,0,1,0,1,0,0,1,0,0,1,0,0,0,1,1,0,0,1,0,1,2,7,10,11,17,11,12,14,10,10,21,11,12,21,12,14,14,10,13,17,21,11,11,20,21,21,10,9,12,58,14,9,14,22,25,24,20,26,20,25,66,23,28,23,43,28,43,40,18,29,17,27,33,26,15]
   },
   "largest": [
+    {"id":"iscgem913939","time":"1915-09-07T01:20:49Z","mag":7.7,"place":"12 km NW of Chalatenango, El Salvador","lat":14.126,"lon":-89.007,"depth":15},
     {"id":"usp000a7m5","time":"2001-01-13T17:33:32Z","mag":7.7,"place":"28 km SSW of Puerto El Triunfo, El Salvador","lat":13.049,"lon":-88.66,"depth":60},
     {"id":"usp000jqvm","time":"2012-08-27T04:37:19Z","mag":7.3,"place":"126 km S of Puerto El Triunfo, El Salvador","lat":12.139,"lon":-88.59,"depth":28},
     {"id":"iscgem597450","time":"1982-06-19T06:21:58Z","mag":7.29,"place":"18 km SSW of La Libertad, El Salvador","lat":13.332,"lon":-89.387,"depth":73},
+    {"id":"iscgem909737","time":"1926-02-08T15:18:01Z","mag":7.13,"place":"113 km SSW of Puerto El Triunfo, El Salvador","lat":12.292,"lon":-88.801,"depth":20},
+    {"id":"iscgem906153","time":"1932-05-21T10:10:03Z","mag":7.09,"place":"12 km S of Conchagua, El Salvador","lat":13.198,"lon":-87.862,"depth":15},
+    {"id":"cent19001109161000000","time":"1900-11-09T13:12:00Z","mag":7,"place":"Near the coast of El Salvador","lat":13,"lon":-90,"depth":null},
+    {"id":"iscgemsup16958050","time":"1909-08-16T06:59:03Z","mag":6.96,"place":"off the coast of Central America","lat":10.414,"lon":-90.012,"depth":16},
     {"id":"us10007c4w","time":"2016-11-24T18:43:47Z","mag":6.9,"place":"156 km SSW of Puerto El Triunfo, El Salvador","lat":11.91,"lon":-88.897,"depth":10},
+    {"id":"iscgem913530","time":"1917-06-08T00:51:44Z","mag":6.71,"place":"8 km S of San Juan Opico, El Salvador","lat":13.802,"lon":-89.361,"depth":15},
+    {"id":"iscgem909744","time":"1926-02-15T02:59:50Z","mag":6.7,"place":"128 km SSW of Chirilagua, El Salvador","lat":12.104,"lon":-88.451,"depth":15},
+    {"id":"iscgem910933","time":"1924-05-01T19:54:23Z","mag":6.69,"place":"108 km SSW of Puerto El Triunfo, El Salvador","lat":12.415,"lon":-89.015,"depth":20},
     {"id":"usp000a9jv","time":"2001-02-13T14:22:05Z","mag":6.6,"place":"5 km S of Cojutepeque, El Salvador","lat":13.671,"lon":-88.938,"depth":10},
     {"id":"us70003t2n","time":"2019-05-30T09:03:32Z","mag":6.6,"place":"32 km S of La Libertad, El Salvador","lat":13.199,"lon":-89.306,"depth":57.9},
+    {"id":"iscgemsup913848","time":"1916-09-23T05:42:39Z","mag":6.5,"place":"off the coast of Central America","lat":11.225,"lon":-91.207,"depth":15},
     {"id":"usp0008acs","time":"1997-11-09T22:56:42Z","mag":6.5,"place":"13 km NNE of San Sebastián, El Salvador","lat":13.849,"lon":-88.808,"depth":176.4},
     {"id":"us7000kgpb","time":"2023-07-19T00:22:07Z","mag":6.5,"place":"43 km S of Intipucá, El Salvador","lat":12.8,"lon":-88.08,"depth":70.8},
+    {"id":"iscgem914030","time":"1913-01-15T18:52:19Z","mag":6.4,"place":"177 km SSW of Puerto El Triunfo, El Salvador","lat":11.832,"lon":-89.243,"depth":15},
     {"id":"usp0002ffh","time":"1985-06-03T02:45:32Z","mag":6.3,"place":"near the coast of Guatemala","lat":13.175,"lon":-90.138,"depth":65.5},
-    {"id":"usp000d8uu","time":"2004-11-20T22:01:45Z","mag":6.3,"place":"34 km SW of Acajutla, El Salvador","lat":13.376,"lon":-90.056,"depth":40.6},
-    {"id":"iscgem902655","time":"1938-09-01T22:48:24Z","mag":6.28,"place":"102 km S of La Libertad, El Salvador","lat":12.564,"lon":-89.261,"depth":15},
-    {"id":"official19510506230800000","time":"1951-05-06T23:08:00Z","mag":6.2,"place":"Near Jucuapa, El Salvador","lat":13.52,"lon":-88.4,"depth":10},
-    {"id":"us10008rtu","time":"2017-05-12T10:41:26Z","mag":6.2,"place":"78 km SSW of Acajutla, El Salvador","lat":12.919,"lon":-90.061,"depth":16},
-    {"id":"us6000pi09","time":"2025-01-05T17:18:45Z","mag":6.2,"place":"56 km SSE of La Libertad, El Salvador","lat":13.001,"lon":-89.177,"depth":46},
-    {"id":"iscgem903988","time":"1936-12-20T02:43:27Z","mag":6.18,"place":"1 km WNW of Berlín, El Salvador","lat":13.505,"lon":-88.545,"depth":15},
-    {"id":"iscgem899126","time":"1945-10-07T13:23:30Z","mag":6.16,"place":"121 km SSW of Puerto El Triunfo, El Salvador","lat":12.348,"lon":-89.131,"depth":25},
-    {"id":"usp0008cv7","time":"1997-12-18T15:02:00Z","mag":6.1,"place":"11 km WSW of Sensuntepeque, El Salvador","lat":13.84,"lon":-88.739,"depth":182.1},
-    {"id":"usp000aam7","time":"2001-02-28T18:50:13Z","mag":6.1,"place":"24 km S of Zacatecoluca, El Salvador","lat":13.283,"lon":-88.827,"depth":65.3},
-    {"id":"us1000hib5","time":"2018-10-28T22:23:53Z","mag":6.1,"place":"85 km SW of Acajutla, El Salvador","lat":13.035,"lon":-90.369,"depth":22},
-    {"id":"us6000nncs","time":"2024-08-28T21:57:54Z","mag":6.1,"place":"56 km SSW of La Libertad, El Salvador","lat":13.047,"lon":-89.583,"depth":26.4}
+    {"id":"usp000d8uu","time":"2004-11-20T22:01:45Z","mag":6.3,"place":"34 km SW of Acajutla, El Salvador","lat":13.376,"lon":-90.056,"depth":40.6}
   ],
   "recent": [
+    {"id":"us6000u1n6","time":"2026-10-11T23:20:35Z","mag":4.5,"place":"103 km SSW of La Libertad, El Salvador","lat":12.658,"lon":-89.763,"depth":35},
     {"id":"us7000td5l","time":"2026-08-31T18:56:28Z","mag":4.6,"place":"117 km SSW of Chirilagua, El Salvador","lat":12.203,"lon":-88.448,"depth":35},
     {"id":"us6000tkcb","time":"2026-08-13T00:30:05Z","mag":5.5,"place":"50 km SSW of Intipucá, El Salvador","lat":12.752,"lon":-88.165,"depth":71.9},
     {"id":"us6000th2y","time":"2026-07-30T20:14:26Z","mag":4.5,"place":"93 km S of La Libertad, El Salvador","lat":12.646,"lon":-89.335,"depth":35},
@@ -54,7 +55,6 @@
     {"id":"us7000rekd","time":"2025-11-29T06:52:40Z","mag":4.9,"place":"20 km S of El Rosario, El Salvador","lat":13.313,"lon":-89.049,"depth":85},
     {"id":"us6000rpb0","time":"2025-11-20T07:26:04Z","mag":4.6,"place":"14 km SE of Conchagua, El Salvador","lat":13.207,"lon":-87.774,"depth":197},
     {"id":"us6000rmbn","time":"2025-11-09T01:49:06Z","mag":4.9,"place":"33 km SSW of Puerto El Triunfo, El Salvador","lat":13.012,"lon":-88.688,"depth":71.6},
-    {"id":"us6000rltt","time":"2025-11-06T05:21:05Z","mag":4.6,"place":"22 km SSW of Puerto El Triunfo, El Salvador","lat":13.09,"lon":-88.617,"depth":78.2},
-    {"id":"us6000rg1i","time":"2025-10-10T06:27:16Z","mag":4.6,"place":"13 km S of Conchagua, El Salvador","lat":13.188,"lon":-87.852,"depth":171.5}
+    {"id":"us6000rltt","time":"2025-11-06T05:21:05Z","mag":4.6,"place":"22 km SSW of Puerto El Triunfo, El Salvador","lat":13.09,"lon":-88.617,"depth":78.2}
   ]
 }

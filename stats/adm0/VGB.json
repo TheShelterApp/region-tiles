@@ -2,22 +2,25 @@
   "schemaVersion": 1,
   "id": "VGB",
   "name": "British Virgin Islands",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 188,
+  "total": 191,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,0,3,2,9,8,5,1,2,0,5,4,0,4,7,3,1,2,9,9,3,2,3,0,3,1,0,9,10,2,4,1,6,9,4,1,2,5,10,2,0,2,2,1,4,4,4,2,1,3,4,1,1]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,0,3,2,9,8,5,1,2,0,5,4,0,4,7,3,1,2,9,9,3,2,3,0,3,1,0,9,10,2,4,1,6,9,4,1,2,5,10,2,0,2,2,1,4,4,4,2,1,3,4,1,1]
   },
   "largest": [
+    {"id":"iscgem912920","time":"1919-09-06T09:29:50Z","mag":6.19,"place":"131 km NNE of Cruz Bay, U.S. Virgin Islands","lat":19.49,"lon":-64.502,"depth":15},
     {"id":"usp000gjyf","time":"2008-10-11T10:40:14Z","mag":6.1,"place":"91 km N of Charlotte Amalie, U.S. Virgin Islands","lat":19.161,"lon":-64.833,"depth":23},
     {"id":"usp000ar3u","time":"2001-10-17T11:29:09Z","mag":6,"place":"112 km N of Charlotte Amalie, U.S. Virgin Islands","lat":19.354,"lon":-64.932,"depth":33},
+    {"id":"iscgem907465","time":"1930-06-25T12:06:00Z","mag":5.93,"place":"68 km N of Cruz Bay, U.S. Virgin Islands","lat":18.947,"lon":-64.704,"depth":15},
     {"id":"usp0002g66","time":"1985-06-26T17:10:00Z","mag":5.9,"place":"65 km NNE of Cruz Bay, U.S. Virgin Islands","lat":18.889,"lon":-64.577,"depth":46.2},
     {"id":"iscgem889520","time":"1955-05-13T03:30:00Z","mag":5.84,"place":"110 km NNE of Cruz Bay, U.S. Virgin Islands","lat":19.242,"lon":-64.372,"depth":15},
+    {"id":"iscgem909422","time":"1927-08-02T00:51:46Z","mag":5.73,"place":"80 km NNE of Cruz Bay, U.S. Virgin Islands","lat":19.025,"lon":-64.575,"depth":15},
     {"id":"pr2023343002","time":"2023-12-09T14:27:22Z","mag":5.7,"place":"74 km NE of Cruz Bay, U.S. Virgin Islands","lat":18.879,"lon":-64.383,"depth":7},
     {"id":"pr2025124000","time":"2025-05-04T06:58:24Z","mag":5.63,"place":"88 km NE of Cruz Bay, U.S. Virgin Islands","lat":18.986,"lon":-64.316,"depth":20},
     {"id":"usp000ar1k","time":"2001-10-16T15:27:27Z","mag":5.6,"place":"112 km N of Charlotte Amalie, U.S. Virgin Islands","lat":19.355,"lon":-64.886,"depth":33},
@@ -30,10 +33,7 @@
     {"id":"usp000eqx9","time":"2006-08-14T13:09:35Z","mag":5.3,"place":"78 km NNE of Cruz Bay, U.S. Virgin Islands","lat":19.022,"lon":-64.636,"depth":21.4},
     {"id":"usp000fuqp","time":"2007-12-19T01:57:23Z","mag":5.3,"place":"97 km N of Cruz Bay, U.S. Virgin Islands","lat":19.198,"lon":-64.648,"depth":8.5},
     {"id":"pr2020281016","time":"2020-10-07T18:24:34Z","mag":5.3,"place":"67 km ESE of Cruz Bay, U.S. Virgin Islands","lat":18.174,"lon":-64.178,"depth":10},
-    {"id":"usp0000kz2","time":"1976-12-28T02:57:38Z","mag":5.2,"place":"North Atlantic Ocean","lat":22.139,"lon":-63.488,"depth":33},
-    {"id":"usp0001mv4","time":"1982-06-11T21:57:33Z","mag":5.2,"place":"63 km NE of Cruz Bay, U.S. Virgin Islands","lat":18.752,"lon":-64.384,"depth":47.9},
-    {"id":"usp000bhmp","time":"2002-11-13T20:26:53Z","mag":5.2,"place":"81 km NE of Cruz Bay, U.S. Virgin Islands","lat":18.846,"lon":-64.242,"depth":33},
-    {"id":"usp000dag6","time":"2004-12-11T19:45:46Z","mag":5.2,"place":"36 km NNE of Cruz Bay, U.S. Virgin Islands","lat":18.651,"lon":-64.702,"depth":54.7}
+    {"id":"usp0000kz2","time":"1976-12-28T02:57:38Z","mag":5.2,"place":"North Atlantic Ocean","lat":22.139,"lon":-63.488,"depth":33}
   ],
   "recent": [
     {"id":"pr2026090013","time":"2026-03-31T21:15:38Z","mag":4.9,"place":"96 km N of Charlotte Amalie, U.S. Virgin Islands","lat":19.216,"lon":-64.896,"depth":20},

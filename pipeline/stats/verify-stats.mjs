@@ -11,7 +11,7 @@
 //
 // --window (the refresh workflow, before its push; R16-FOLLOWUPS (4)): the same check, bounded to the last build's own
 // window (index.json lastRun.windowStart → until) and to WINDOW_SAMPLE. It reads only the pages that build cached and
-// asks ComCat one /count per sample country (3 requests), never the whole catalogue (182 page requests on a fresh
+// asks ComCat one /count per sample country (3 requests), never the whole catalogue (219 page requests on a fresh
 // runner). Per sample country it fails (exit 1) when the download falls short of ComCat's /count in the box by more
 // than the build's window tolerance, or when a window year's published bin differs from a recount of the window's
 // events assigned to the country. --accept-drop turns those into warnings, as for the build.

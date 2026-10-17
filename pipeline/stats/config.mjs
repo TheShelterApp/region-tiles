@@ -4,8 +4,17 @@
 import { join } from 'node:path';
 import { ROOT } from '../../config.mjs';
 
-/** The catalogue start: the "90-year area history" counts from here (fixed; the span grows by a year every January). */
-export const SINCE = '1936-01-01T00:00:00Z';
+/**
+ * The catalogue start (fixed, 1 January; SHLTR-120: the area history from the earliest year ComCat has). ComCat's
+ * earliest earthquake of M4.5+, and its earliest event of any kind, is 1568-01-01 near Moodus, Connecticut, M4.9
+ * (ushis15680101000000000; a /count from year 1 on, 2026-10-17): the window opens at the century before it, so its
+ * first page is a whole one and a historical event ComCat adds before 1568 still counts. Every run checks that ComCat
+ * lists no earthquake before SINCE (EARLIEST_QUERY_START); moving SINCE makes the next run a full one by itself.
+ */
+export const SINCE = '1500-01-01T00:00:00Z';
+
+/** Where the check that nothing precedes SINCE starts (ComCat accepts year 1). */
+export const EARLIEST_QUERY_START = '0001-01-01T00:00:00Z';
 
 /** Preferred magnitude floor (ComCat `minmagnitude`, inclusive). */
 export const MIN_MAGNITUDE = 4.5;
@@ -18,6 +27,24 @@ export const COMCAT_BASE = 'https://earthquake.usgs.gov/fdsnws/event/1';
 
 /** ComCat's hard cap per query is 20,000 rows; a page that returns the cap is split in two and fetched again. */
 export const PAGE_LIMIT = 20000;
+
+/**
+ * The window is read in pages as long as ComCat's density allows, by era (each era runs from its `start` to the next
+ * era's; the first one takes everything before the second):
+ * - before 1900, one page: ComCat holds 321 earthquakes of M4.5+ before 1900 (292 of them in the 1800s);
+ * - 1900-1935, a year a page (1 January): 14 (1900) to 312 a year;
+ * - since 1936, a half-year a page (1 January and 1 July): 127 (1945) to 9,584 (2011) a year.
+ * `stepMonths` cuts an era's pages at calendar boundaries (months counted from year 0: 12 cuts at 1 January, 6 at
+ * 1 January and 1 July); null reads the era in one page. `minDaysWithRows`: a page of the era at least this long has always held
+ * M4.5+ earthquakes, so an empty answer for it is wrong (EMPTY_PAGE rule below): any 100 years from 1500 on, any year
+ * of 1900-1935, any 7 days since 1936. Counts of 2026-10-17. Every page stays far below PAGE_LIMIT (the largest, the
+ * first half of 2011, about 5,800 rows).
+ */
+export const PAGE_ERAS = [
+  { start: null, stepMonths: null, minDaysWithRows: 36_500 },
+  { start: '1900-01-01T00:00:00Z', stepMonths: 12, minDaysWithRows: 365 },
+  { start: '1936-01-01T00:00:00Z', stepMonths: 6, minDaysWithRows: 7 },
+];
 
 /** At most one ComCat request per this many milliseconds (the USGS asks clients to stay polite). */
 export const MIN_REQUEST_INTERVAL_MS = 1100;
@@ -67,25 +94,25 @@ export const SOURCE = {
 // ---- Plausibility (XR-1, round 16) ---------------------------------------------------------------------------------
 // A wrong ComCat answer must fail the build (exit 1: the refresh workflow pushes nothing) instead of publishing it. The
 // checks run before any file is written; `--accept-drop` turns the comparisons with the previous files and the window
-// count into warnings, for a genuine large revision an operator has reviewed. An empty page always fails.
+// counts into warnings, for a genuine large revision an operator has reviewed. An empty page always fails.
 
-/**
- * A page spanning at least this many days is never empty: every year since 1936 has at least 127 earthquakes of M4.5+
- * (1945, the fewest; published files of 2026-10-06), and a page is a half-year except the run's last one (from
- * 1 January or 1 July to the cutoff, today's catalogue: about 20 a day, 8,556 in 2025) and the halves of a page at the
- * row cap. A 204, an empty body or a header-only CSV for such a page is a wrong answer, never cached.
- */
-export const EMPTY_PAGE_MIN_SPAN_DAYS = 7;
+// EMPTY_PAGE rule: a page at least its era's `minDaysWithRows` long (PAGE_ERAS) is never empty. Every page of a run is
+// a whole page of its era (the pre-1900 page, a year, a half-year) except the run's last one (from 1 January or 1 July
+// to the cutoff; today's catalogue: about 20 a day, 8,556 in 2025) and the halves of a page at the row cap. A 204, an
+// empty body or a header-only CSV for such a page is a wrong answer, never cached.
 
 /** The events downloaded for the run's window may fall short of ComCat's /count of the same window by at most
- *  max(COUNT_SLACK, COUNT_TOLERANCE x count): more is a truncated page. (The whole catalogue matched exactly on
- *  2026-10-06; a few events revised between the pages and the count are the slack.) */
+ *  max(COUNT_SLACK, COUNT_TOLERANCE x count): more is a truncated page. The window is counted per era (PAGE_ERAS), so
+ *  the sparse early eras keep a tolerance of their own size: the whole catalogue's 0.5 % (about 1,500) would hide the
+ *  loss of every event before 1936. (The whole catalogue matched exactly on 2026-10-06; a few events revised between
+ *  the pages and the count are the slack.) */
 export const COUNT_TOLERANCE = 0.005;
 export const COUNT_SLACK = 10;
 
-/** Against the previous published files (same filter, a cutoff no earlier): the global total may drop by at most
- *  TOTAL_DROP_TOLERANCE, a year's global count by at most max(YEAR_DROP_SLACK, YEAR_DROP_TOLERANCE x its count), and,
- *  with the same assignment rule and regions, a country's total by at most max(COUNTRY_DROP_SLACK,
+/** Against the previous published files (same filter, a cutoff no earlier, a window start no later; a window opened
+ *  earlier is compared over the previous window's years, plausibility.mjs `comparison`): the global total may drop by
+ *  at most TOTAL_DROP_TOLERANCE, a year's global count by at most max(YEAR_DROP_SLACK, YEAR_DROP_TOLERANCE x its
+ *  count), and, with the same assignment rule and regions, a country's total by at most max(COUNTRY_DROP_SLACK,
  *  COUNTRY_DROP_TOLERANCE x its total). ComCat's revisions move a few events across M4.5 or delete duplicates; the
  *  catalogue grows, so a larger drop is a lost page or a broken answer. */
 export const TOTAL_DROP_TOLERANCE = 0.01;
