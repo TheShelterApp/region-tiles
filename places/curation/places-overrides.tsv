@@ -1,0 +1,8 @@
+# Town overrides, by GeoNames geonameid (every row must name a cities1000 place: the build fails otherwise).
+# name_en / name_ru replace the selected names; population replaces GeoNames' figure (it ranks the town in rule E);
+# keep 1 keeps the town at any population threshold; drop 1 removes it.
+geonameid	name_en	name_ru	short_en	short_ru	population	keep	drop	note
+146970	Khankendi	Ханкенди				1		Stepanakert/Khankendi (Q3 default: Khankendi in both languages, the current official name, consistent with the country shown). GeoNames' population is 2,100, under the threshold: kept at any threshold
+5128581	New York	Нью-Йорк						GeoNames names the city "New York City"; the header says "New York", as Apple does
+1528249	Jalal-Abad	Джалал-Абад						GeoNames' record at Jalal-Abad's position is named "Manas" (R1)
+1814906		Чунцин						The first Cyrillic name GeoNames lists is not the Russian one (R1)

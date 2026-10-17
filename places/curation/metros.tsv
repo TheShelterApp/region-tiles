@@ -1,0 +1,43 @@
+# Metro rules: towns shown as their city (final architecture: Q5 = the metro, the whole city).
+# rule adm2:<bundle district>: every town inside that regions-bundle district (ADM2, vertex for vertex) is shown as
+# `metro`; check_name must equal the district's bundle name, so a renumbered bundle fails the build instead of folding
+# the wrong district. rule place:<geonameid>: one town is shown as `metro`. Sections of a city (GeoNames PPLX) need no
+# row: each takes the nearest larger non-section town within 15 km of the same country.
+# Tokyo: the 23 special wards (the app's WardCity table); the Tama cities (Hachioji, Machida, Fuchu, Chofu...) stay
+# themselves (golden points pin both).
+# rule admin1:<GeoNames country>.<admin1 code> with km: every town of that first-order division within km of
+# the metro is shown as the metro (a city-province's districts: Istanbul, Mexico City); separate towns farther out
+# keep their names. check_name: the metro's English name (adm2 rules: the district's bundle name).
+rule	metro	check_name	km	note
+adm2:JPN.35.1	1850147	Meguro		Tokyo special ward
+adm2:JPN.35.4	1850147	Chuo		Tokyo special ward
+adm2:JPN.35.7	1850147	Shibuya		Tokyo special ward
+adm2:JPN.35.8	1850147	Itabashi		Tokyo special ward
+adm2:JPN.35.10	1850147	Katsushika		Tokyo special ward
+adm2:JPN.35.11	1850147	Nerima		Tokyo special ward
+adm2:JPN.35.14	1850147	Suginami		Tokyo special ward
+adm2:JPN.35.15	1850147	Toshima		Tokyo special ward
+adm2:JPN.35.19	1850147	Adachi		Tokyo special ward
+adm2:JPN.35.23	1850147	Ota		Tokyo special ward
+adm2:JPN.35.24	1850147	Chiyoda		Tokyo special ward
+adm2:JPN.35.28	1850147	Taito		Tokyo special ward
+adm2:JPN.35.32	1850147	Koto		Tokyo special ward
+adm2:JPN.35.34	1850147	Minato		Tokyo special ward
+adm2:JPN.35.35	1850147	Kita		Tokyo special ward
+adm2:JPN.35.40	1850147	Edogawa		Tokyo special ward
+adm2:JPN.35.41	1850147	Arakawa		Tokyo special ward
+adm2:JPN.35.42	1850147	Bunkyo		Tokyo special ward
+adm2:JPN.35.43	1850147	Shinjuku		Tokyo special ward
+adm2:JPN.35.44	1850147	Nakano		Tokyo special ward
+adm2:JPN.35.53	1850147	Shinagawa		Tokyo special ward
+adm2:JPN.35.58	1850147	Sumida		Tokyo special ward
+adm2:JPN.35.59	1850147	Setagaya		Tokyo special ward
+admin1:TR.34	745044	Istanbul	32	Istanbul's urban districts (Fatih, Uskudar, Kadikoy, Esenyurt...); Catalca, Silivri, Sile stay
+admin1:MX.09	3530597	Mexico City	32	the alcaldias of Mexico City (Cuauhtemoc, Iztapalapa, Coyoacan...)
+admin1:ID.04	1642911	Jakarta	20	the administrative cities of Jakarta
+admin1:TW.04	1668341	Taipei	10	Taipei's districts (Xinyi, Neihu); New Taipei, Keelung and Taoyuan stay
+admin1:KR.11	1835848	Seoul	20	Seoul's districts
+admin1:RU.48	524901	Moscow	22	Moscow's districts; Zelenograd, Troitsk and the New Moscow towns stay
+admin1:RU.66	498817	Saint Petersburg	16	Saint Petersburg's districts; Pushkin, Kolpino, Peterhof, Kronstadt stay
+admin1:CN.22	1816670	Beijing	45	Beijing's districts (Daxing, Tongzhou, Shunyi...), as Apple names them
+admin1:CN.23	1796236	Shanghai	45	Shanghai's districts (Pudong, Minhang, Baoshan...), as Apple names them

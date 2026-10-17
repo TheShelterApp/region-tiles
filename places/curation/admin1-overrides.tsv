@@ -1,0 +1,44 @@
+# Province name overrides, by pack key (adm1:<bundle id>). Empty cells keep Natural Earth's name.
+key	name_en	name_ru	short_en	short_ru	note
+adm1:RUS.83	Crimea	Крым			The neutral name inside zone:crimea (NE: "Autonomous Republic of Crimea" / Russian "Avtonomnaya Respublika Krym")
+adm1:RUS.64	Altai Krai	Алтайский край			NE 5.1.2 names RU-ALT (Altai Krai) "Altai Republic", like RU-AL
+adm1:RUS.29	Moscow Oblast	Московская область			NE's name_en "Moscow" is also the city's (RUS.30)
+adm1:UKR.13	Kyiv Oblast	Киевская область			NE's names equal the city's (UKR.24)
+adm1:USA.44	District of Columbia	Округ Колумбия			NE's name equals the state's (USA.7 Washington)
+adm1:BLR.6	Minsk Region	Минская область			NE's name_en equals the city's (BLR.7)
+adm1:KAZ.11	Almaty Region	Алматинская область			NE's name_en equals the city's (KAZ.15)
+adm1:UZB.13	Tashkent Region	Ташкентская область			NE's name_en equals the city's (UZB.14)
+adm1:BGR.9	Sofia Province	Софийская область			NE's name_en equals the city's (BGR.8)
+adm1:HRV.10	Zagreb County	Загребская жупания			NE's name_en equals the city's (HRV.11)
+adm1:MOZ.10	Maputo Province	Провинция Мапуту			NE's name_en equals the city's (MOZ.11)
+adm1:TWN.13	Chiayi County	Уезд Цзяи			NE's name_en equals the city's (TWN.14)
+adm1:TWN.5	Hsinchu County	Уезд Синьчжу			NE's name_en equals the city's (TWN.4)
+adm1:TUR.17		Афьонкарахисар			NE's Russian name carries the type word ("il")
+adm1:TUR.60		Кырыккале			NE's Russian name carries the type word ("il")
+adm1:TUR.67		Мардин			NE's Russian name carries the type word ("il")
+adm1:AIA.1	Anguilla	Ангилья			NE's unnamed sliver ("AIA+99?"): the country's name
+adm1:ATA.2	Antarctica	Антарктида			NE's unnamed sliver ("ATA+99?"): the country's name
+adm1:COL.1	Colombia	Колумбия			NE's unnamed sliver ("COL+99?"): the country's name
+adm1:KIR.2	Kiribati	Кирибати			NE's unnamed sliver ("KIR+99?"): the country's name
+adm1:MEX.1	Mexico	Мексика			NE's unnamed sliver ("MEX+99?"): the country's name
+adm1:RUS.1	Russia	Россия			NE's unnamed sliver ("RUS+99?"): the country's name
+adm1:VEN.1	Venezuela	Венесуэла			NE's unnamed sliver ("VEN+99?"): the country's name
+adm1:ARE.4		Фуджейра			NE has no Russian name
+adm1:ARE.6		Сайх-Мудайра			NE has no Russian name
+adm1:ASM.1		Восточный округ			NE has no Russian name
+adm1:ASM.2		Острова Мануа			NE has no Russian name
+adm1:HKG.3		Сиу-Ма-Шань			NE has no Russian name
+adm1:MDG.5		Андруй			NE has no Russian name
+adm1:CHN.3			Guangxi	Гуанси	Short form of the autonomous region
+adm1:CHN.10			Tibet	Тибет	Short form of the autonomous region
+adm1:CHN.11			Xinjiang	Синьцзян	Short form of the autonomous region
+adm1:CHN.13			Ningxia	Нинся	Short form of the autonomous region
+adm1:RUS.61			Khanty-Mansi AO	ХМАО — Югра	Short form
+adm1:RUS.47			Yamalo-Nenets AO	ЯНАО	Short form
+adm1:RUS.9			Chukotka	Чукотка	Short form
+adm1:RUS.46			Nenets AO	НАО	Short form
+adm1:RUS.79			Jewish AO	ЕАО	Short form
+adm1:RUS.7	North Ossetia-Alania	Северная Осетия — Алания	North Ossetia	Северная Осетия	NE: "Republic of North Ossetia-Alania"
+adm1:PAN.10	Ngäbe-Buglé				NE's name_en "comarca Ngabe-Bugle" carries the type word
+adm1:PNG.8	Bougainville				NE's name_en "of Bougainville"
+adm1:TJK.3	Districts of Republican Subordination		Republican Subordination		NE's name_en starts in lower case

@@ -1,0 +1,20 @@
+# Short forms for long titles, by pack key. Countries are named at runtime by the app's CountryName (system Locale names
+# plus catalog overrides), so their rows hold short forms only. Waters and zones keep theirs in waters.tsv / zones.tsv.
+# The header uses the full name when it fits at a scale of 0.64, else the short form, else tail truncation; the iOS
+# release gate (Scripts/check-place-pack.sh) measures the widths with the system font and lists names still too wide.
+key	short_en	short_ru	note
+adm0:BIH	Bosnia	Босния	System name: Bosnia & Herzegovina / Босния и Герцеговина
+adm0:CAF	CAR	ЦАР	System name: Central African Republic / Центрально-Африканская Республика
+adm0:COD	DR Congo	ДР Конго	System name: Congo - Kinshasa / Демократическая Республика Конго
+adm0:VCT	St. Vincent	Сент-Винсент	System name: St. Vincent & Grenadines / Сент-Винсент и Гренадины
+adm0:SGS	South Georgia	Южная Георгия	System name: South Georgia & South Sandwich Islands
+adm0:HMD	Heard Island	Остров Херд	System name: Heard & McDonald Islands / острова Херд и Макдональд
+adm0:IOT	Chagos	Чагос	System name: British Indian Ocean Territory / Британская территория в Индийском океане
+adm0:ATF	French Southern Lands	ФЮАТ	System name: French Southern Territories / Французские Южные территории
+adm0:UMI	US Outlying Islands	Внешние острова США	System name: U.S. Outlying Islands / Внешние малые острова (США)
+adm0:TCA	Turks & Caicos	Тёркс и Кайкос	System name: Turks & Caicos Islands / о-ва Тёркс и Кайкос
+adm0:PNG	Papua New Guinea	Папуа — Новая Гвинея	System name (ru): Папуа — Новая Гвинея
+adm0:ARE	UAE	ОАЭ	System name: United Arab Emirates / ОАЭ
+adm0:KNA	St. Kitts & Nevis	Сент-Китс и Невис	System name: St. Kitts & Nevis
+adm0:STP	São Tomé	Сан-Томе	System name: São Tomé & Príncipe / Сан-Томе и Принсипи
+adm0:DOM	Dominican Rep.	Доминикана	System name: Dominican Republic / Доминиканская Республика
