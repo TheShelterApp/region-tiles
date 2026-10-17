@@ -9,7 +9,7 @@
 //   node places/lattice.mjs answers <core.gz> <detail.gz> --out <answers.tsv.gz> [--n 100000] [--points <points.tsv>]
 //   node places/lattice.mjs points <core.gz> <detail.gz> --out <points.tsv> [--n 20000] [--seed 1] [--golden <golden.tsv>]
 //   node places/lattice.mjs diff <old core.gz> <old detail.gz> <new core.gz> <new detail.gz> --report <diff.md>
-//        [--n 100000] [--accepted places/accepted-diffs.md] [--max-share 0.005]
+//        [--n 100000] [--accepted places/accepted-diffs.md --version <candidate>] [--max-share 0.005]
 // `answers` answers the Fibonacci lattice (the globe at its default metres per point), or with --points the points of a
 // points file (lat, lon, mpp, kind; the coordinates are echoed as written). `points` writes a targeted sample of a pack.
 // `diff` exits 1 when more than --max-share of the answers of any tier change without a matching line in the accepted
@@ -48,12 +48,43 @@ export function pointAnswers(resolver, points) {
   return points.map((p) => ({ ...answerRow(resolver, p.lat, p.lon, p.mpp), kind: p.kind, text: p.text }));
 }
 
-export function parseAccepted(path) {
+/**
+ * The accepted lines of one release's section (`## <version>`) of accepted-diffs.md: a lattice change is a list item
+ * with a code span `tier old-key new-key` (a key may be `*`); a part-parity difference (verify.mjs check 8) one with
+ * `parity tier lat,lon core-key full-key`, the point as the report prints it. Only the candidate's own section counts,
+ * so a line accepted for one release never waves a later change through.
+ */
+export function parseAccepted(path, version = null) {
   if (!path || !existsSync(path)) return [];
   const out = [];
+  let section = null;
   for (const line of readFileSync(path, 'utf8').split('\n')) {
+    const h = line.match(/^##\s+(\S+)/);
+    if (h) {
+      section = h[1];
+      continue;
+    }
+    if (version !== null && section !== version) continue;
     const m = line.match(/^\s*[-*]\s+`(globe|regional|city)\s+(\S+)\s+(\S+)`/);
     if (m) out.push({ tier: m[1], from: m[2], to: m[3] });
+  }
+  return out;
+}
+
+/** The accepted part-parity differences of one release: `tier lat,lon core-key full-key` strings. */
+export function parseAcceptedParity(path, version) {
+  if (!path || !existsSync(path)) return new Set();
+  const out = new Set();
+  let section = null;
+  for (const line of readFileSync(path, 'utf8').split('\n')) {
+    const h = line.match(/^##\s+(\S+)/);
+    if (h) {
+      section = h[1];
+      continue;
+    }
+    if (section !== version) continue;
+    const m = line.match(/^\s*[-*]\s+`parity\s+(globe|regional)\s+(\S+)\s+(\S+)\s+(\S+)`/);
+    if (m) out.add(`${m[1]} ${m[2]} ${m[3]} ${m[4]}`);
   }
   return out;
 }
@@ -136,7 +167,7 @@ export const SAMPLE_MPP = [500, 1500, 5000, 12000, 30000];
 
 /** The kinds of the targeted sample and their shares of it. */
 export const SAMPLE_KINDS = [
-  ['country-edge', 0.26], ['zone-edge', 0.1], ['water-edge', 0.12], ['province-edge', 0.1], ['town', 0.14],
+  ['country-edge', 0.26], ['zone-edge', 0.1], ['water-edge', 0.12], ['province-edge', 0.1], ['assignment-edge', 0.02], ['town', 0.14],
   ['town-pair', 0.06], ['vertex', 0.1], ['antimeridian', 0.04], ['polar', 0.02], ['uniform', 0.06],
 ];
 
@@ -146,6 +177,7 @@ const EDGE_KM = {
   'zone-edge': [0.05, 0.3, 0.9, 1.1, 2, 10, 21.9, 22.1, 30],
   'water-edge': [0.01, 0.5, 3, 20, 49.5, 50.5],
   'province-edge': [0.01, 0.2, 2, 10],
+  'assignment-edge': [0.01, 0.1, 0.5, 2],
 };
 
 /** A picker of a random edge of a layer's rings, weighted by edge count. */
@@ -213,6 +245,7 @@ export function targetedPoints(resolver, n, seed = 1, goldenPath = null) {
     'zone-edge': edgePicker(ix.zones.areas),
     'water-edge': edgePicker(ix.waters.areas),
     'province-edge': edgePicker(ix.provinces.areas),
+    'assignment-edge': edgePicker(ix.assignments.areas),
   };
   const vertexPickers = [pickers['country-edge'], pickers['province-edge'], pickers['water-edge'], pickers['zone-edge']];
   const towns = ix.towns ? ix.towns.places : [];
@@ -234,7 +267,9 @@ export function targetedPoints(resolver, n, seed = 1, goldenPath = null) {
     const count = Math.round(n * share);
     for (let made = 0, tries = 0; made < count && tries < count * 20; tries++) {
       const before = out.length;
-      if (EDGE_KM[kind]) {
+      if (EDGE_KM[kind] && kind === 'assignment-edge' && !ix.assignments.areas.length) {
+        break;
+      } else if (EDGE_KM[kind]) {
         const p = offEdge(pickers[kind](rand), rand(), pick(EDGE_KM[kind]) * (rand() < 0.5 ? -1 : 1));
         if (p) push(p[0], p[1], kind);
       } else if (kind === 'town' && towns.length) {
@@ -328,7 +363,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     const t0 = Date.now();
     const oldRows = latticeAnswers(Resolver.fromParts(pos[0], pos[1]), n);
     const newRows = latticeAnswers(Resolver.fromParts(pos[2], pos[3]), n);
-    const diff = diffLattices(oldRows, newRows, parseAccepted(o.accepted));
+    const diff = diffLattices(oldRows, newRows, parseAccepted(o.accepted, o.version ?? null));
     const md = diffMarkdown(diff, `Lattice diff (${n} points, ${((Date.now() - t0) / 1000).toFixed(0)} s)`);
     if (o.report) {
       ensureDir(dirname(o.report));

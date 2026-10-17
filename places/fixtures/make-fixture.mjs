@@ -1,6 +1,7 @@
 // A small fixture pack for the iOS contract runner (PlaceIndex and PlaceResolver over real data without the 4 MB
 // pack): both parts of a built pack, cut to a few windows (Kanto, Istanbul and the Sea of Marmara, Cyprus and the
-// Turkish coast, Crimea, Crete and the southern Aegean), plus the answers of the reference resolver inside them.
+// Turkish coast, Crimea, Crete and the southern Aegean, Jerusalem's assignment areas, the border towns Narva and
+// El Paso where the outlines disagree), plus the answers of the reference resolver inside them.
 //
 // Areas are clipped to each window grown by 1 degree (Sutherland-Hodgman per ring), so every answer inside a window,
 // where every reach but the 500 km nearest-country rule is shorter than the margin, is the full pack's answer too; the
@@ -29,6 +30,9 @@ export const WINDOWS = [
   { name: 'cyprus', box: [31.5, 34.4, 35.5, 37.0] },
   { name: 'crimea', box: [32.3, 44.2, 36.8, 46.3] },
   { name: 'crete', box: [23.0, 34.7, 27.0, 36.5] },
+  { name: 'jerusalem', box: [34.9, 31.5, 35.5, 32.0] },
+  { name: 'narva', box: [27.6, 59.1, 28.5, 59.6] },
+  { name: 'el-paso', box: [-106.8, 31.5, -106.2, 31.95] },
 ];
 const MARGIN = 1;
 

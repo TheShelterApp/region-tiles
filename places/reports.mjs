@@ -5,6 +5,9 @@
 //   disputed.md           every Natural Earth disputed area with the pack's answer at a point inside it, per tier
 //   ru-coverage.md        towns with a Russian name, per country, and where the names come from
 //   short-candidates.tsv  names that may need a short form, by character count (the width gate runs on a Mac)
+//   town-names-ru.md      the Russian name of every town of 100,000 people or more shown as itself, with its source and
+//                         the alternatives the build saw (Wikidata's label, GeoNames' names), for the owner's review
+//   sections.md           GeoNames city sections (PPLX) shown as themselves, and their population caps
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -57,7 +60,7 @@ function interiorPoint(polys) {
   return best;
 }
 
-export function writeReviewReports({ core, detail, full, reports, srcRoot }) {
+export function writeReviewReports({ core, detail, full, reports, srcRoot, buildReport = null }) {
   const waters = core.areas.filter((a) => a.layer === 2);
   const byKey = new Map([...core.areas, ...detail.areas].map((a) => [a.key, a]));
   const towns = new Map(detail.places.map((t) => [t.id, t]));
@@ -83,10 +86,10 @@ export function writeReviewReports({ core, detail, full, reports, srcRoot }) {
   L.push('', '## Metro rules (places/curation/metros.tsv) and what they fold', '');
   const foldCount = new Map();
   for (const t of detail.places) if (t.metro !== t.id) foldCount.set(t.metro, (foldCount.get(t.metro) || 0) + 1);
-  L.push('| Rule | Shown as | District (bundle name) |', '|---|---|---|');
+  L.push('| Rule | Shown as | Name (ward / metro) | km |', '|---|---|---|---|');
   for (const m of cur('metros.tsv')) {
     const t = towns.get(Number(m.metro));
-    L.push(`| ${m.rule} | ${esc(t?.name_en)} / ${esc(t?.name_ru)} | ${esc(m.check_name)} |`);
+    L.push(`| ${m.rule} | ${esc(t?.name_en)} / ${esc(t?.name_ru)} | ${esc(m.check_name)} | ${esc(m.km)} |`);
   }
   L.push('', 'Towns shown as another town (metro rules plus sections of a city, GeoNames PPLX, within 15 km), the 60 largest groups:', '',
     '| Shown as | Russian | Towns folded in |', '|---|---|---|');
@@ -131,6 +134,40 @@ export function writeReviewReports({ core, detail, full, reports, srcRoot }) {
     if (near.length) L.push(`| ${esc(m.name_en)} (place:${m.id}) | ${esc(m.name_ru)} | ${near.map((t) => `${esc(t.name_en)} ${hav(m, t).toFixed(0)} km`).join(', ')} |`);
   }
   writeFileSync(join(reports, 'review-names.md'), L.join('\n') + '\n');
+
+  // ---- town-names-ru.md -----------------------------------------------------------------------------------------------
+  if (buildReport?.russianReview) {
+    const via = { override: 'override', wikidata: 'Wikidata', 'geonames-preferred': 'GeoNames (preferred)', geonames: 'GeoNames (the only name)',
+      'geonames-short': 'GeoNames (the only short name)', ambiguous: 'none: GeoNames names differ', none: 'none' };
+    const T = ['# Russian names of towns of 100,000 people or more', '',
+      `Pack ${core.meta.version}. Every town of 100,000 people or more that the header shows as itself, with its Russian name and where it comes from: ` +
+      'an override (places/curation/places-overrides.tsv), the Wikidata label of the town\'s item (used only when the item\'s English label is ' +
+      'the town\'s name and the Russian label is no district, agglomeration or "old" quarter), GeoNames\' preferred Russian name, or GeoNames\' ' +
+      'only Russian name (two different ones are a guess: none, the Latin name shows). To change a name, add an override.', '',
+      `${buildReport.russianReview.length} towns; without a Russian name: ${buildReport.russianReview.filter((r) => !r.name_ru).length}.`, '',
+      '| Town | Country | English | Russian | Source | Wikidata label (en / ru) | GeoNames |', '|---|---|---|---|---|---|---|'];
+    for (const r of buildReport.russianReview) {
+      T.push(`| place:${r.id} | ${r.cc} | ${esc(r.name_en)} | ${esc(r.name_ru)} | ${via[r.via] || r.via} | ${r.wikidata ? `${esc(r.wikidata_en)} / ${esc(r.wikidata)}${r.wikidata_used ? '' : ' (rejected)'}` : ''} | ${esc(r.geonames)} |`);
+    }
+    writeFileSync(join(reports, 'town-names-ru.md'), T.join('\n') + '\n');
+  }
+
+  // ---- sections.md --------------------------------------------------------------------------------------------------
+  if (buildReport?.sectionsShownAsThemselves) {
+    const S = ['# City sections shown as themselves', '',
+      'GeoNames city sections (PPLX) with no town of their municipality within 15 km to fold into (often the city\'s own ' +
+      'record: Ichikawa, Navi Mumbai; or a district of a city whose record lies farther away). A section larger than every town ' +
+      'within 15 km ranks with that town\'s population instead (capped), so a record carrying a whole district\'s or city\'s ' +
+      'figure does not win rule E far beyond its place; keep 1 in places-overrides.tsv exempts one.', '',
+      '| Town | Country | Name | Population | Capped to |', '|---|---|---|---|---|'];
+    for (const t of buildReport.sectionsShownAsThemselves) S.push(`| place:${t.id} | ${t.cc} | ${esc(t.name)} | ${t.pop} | ${t.cappedTo ?? ''} |`);
+    if (buildReport.wardNamesElsewhere?.length) {
+      S.push('', 'Towns named after a Tokyo ward outside Tokyo with 100,000 people or more (a ward\'s record at a wrong place would ' +
+        'win rule E there; real cities of that name are fine):', '', '| Town | Ward | Name | Prefecture | Population |', '|---|---|---|---|---|');
+      for (const w of buildReport.wardNamesElsewhere) S.push(`| place:${w.id} | ${w.ward} | ${esc(w.name)} | JP.${w.a1} | ${w.pop} |`);
+    }
+    writeFileSync(join(reports, 'sections.md'), S.join('\n') + '\n');
+  }
 
   // ---- provinces.tsv ------------------------------------------------------------------------------------------------
   const prov = detail.areas.filter((a) => a.layer === 1).sort((a, b) => a.key.localeCompare(b.key, 'en', { numeric: true }));

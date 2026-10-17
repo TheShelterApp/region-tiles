@@ -16,6 +16,9 @@ dist/
 # Raw USGS ComCat pages of the area-history statistics (pipeline/stats): re-downloadable, never committed.
 .cache/
 
-# The place-names pack's local builds, staged sources and Wikidata cache (places/README.md). Release bytes live under
-# places/dist/<version>/ and are committed by a release PR only. node_modules may be a symlink in a worktree.
+# The place-names pack's local builds, staged sources and Wikidata cache (places/README.md) are under dist/ above. Release
+# bytes live under places/dist/<version>/ and are committed by a release PR: the dist/ rule must not hide them (a release
+# PR without them would let the tag point at a commit the jsDelivr and raw mirrors 404 on, forever).
+!places/dist/
+# node_modules may be a symlink in a worktree.
 node_modules

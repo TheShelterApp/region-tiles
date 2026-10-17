@@ -1,11 +1,13 @@
 # Checks a change to the place-names pack (places/, places/README.md): the unit tests, a full build from the pinned
 # sources archive and the regions bundle, every check of places/verify.mjs (the golden points, the lattice regression
-# against the previous committed release, part parity, reproducibility, budgets, licences), and for a release PR the
-# committed release bytes. The reports and the built pack are uploaded as artefacts.
+# against the previous committed release, part parity, reproducibility, budgets, licences, town countries), and the
+# committed release bytes against places-db.json. The reports and the built pack are uploaded as artefacts.
+# It runs on pull requests and on the merge to main (the commit a release tags), on the Node of places/.nvmrc (the one
+# release builds use: name hygiene depends on its Unicode tables), with every action pinned by commit.
 # Its only network steps besides checkout, setup-node and npm ci download the two pinned release assets (the sources
 # archive by places/sources.lock.json, the regions bundle by regions-db.json), each checked by sha256.
 # There is no release step: a release is cut by a session on the merge commit after the owner's approval
-# (places/README.md, "Release").
+# (places/release.mjs, places/README.md "Release").
 name: Place names pack CI
 
 on:
@@ -14,6 +16,21 @@ on:
       - 'places/**'
       - 'places-db.json'
       - 'regions-db.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'LICENSES.md'
+      - '.gitignore'
+      - '.github/workflows/places-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'places/**'
+      - 'places-db.json'
+      - 'regions-db.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'LICENSES.md'
+      - '.gitignore'
       - '.github/workflows/places-ci.yml'
   workflow_dispatch:
 
@@ -25,10 +42,10 @@ jobs:
     runs-on: ubuntu-24.04 # pinned, like stats-ci.yml (HYG-5)
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 22
+          node-version-file: places/.nvmrc
       - run: npm ci
       - name: Unit tests
         run: node --test places/test/*.test.mjs
@@ -59,15 +76,19 @@ jobs:
           args=(--pack "dist/places/$version" --sources dist/inputs/places-sources.tar.gz --bundle dist/inputs/regions.sqlite.gz --rebuild)
           if [ -n "$previous" ]; then args+=(--previous "places/dist/$previous"); fi
           node places/verify.mjs "${args[@]}"
-      - name: Committed release bytes (a release PR)
+      - name: Committed release bytes
         run: |
+          set -euo pipefail
           version="$(cat places/VERSION)"
-          if [ -d "places/dist/$version" ]; then
-            node places/check-release.mjs --committed "places/dist/$version" --built "dist/places/$version" --pointer places-db.json
+          pointer_version=""
+          if [ -f places-db.json ]; then pointer_version="$(node -e "console.log(require('./places-db.json').version)")"; fi
+          if [ -d "places/dist/$version" ] || [ "$pointer_version" = "$version" ]; then
+            # A release (or a release PR): the bytes, the pointer and the version must all be there and agree.
+            node places/check-release.mjs --committed "places/dist/$version" --pointer places-db.json --built "dist/places/$version"
           else
-            echo "No committed release bytes for $version (not a release PR)."
+            echo "No committed release for $version yet (places-db.json names ${pointer_version:-nothing})."
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: always()
         with:
           name: places-pack

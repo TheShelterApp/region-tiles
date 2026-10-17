@@ -1,8 +1,28 @@
 # Town overrides, by GeoNames geonameid (every row must name a cities1000 place: the build fails otherwise).
 # name_en / name_ru replace the selected names; population replaces GeoNames' figure (it ranks the town in rule E);
-# keep 1 keeps the town at any population threshold; drop 1 removes it.
-geonameid	name_en	name_ru	short_en	short_ru	population	keep	drop	note
-146970	Khankendi	Ханкенди				1		Stepanakert/Khankendi (Q3 default: Khankendi in both languages, the current official name, consistent with the country shown). GeoNames' population is 2,100, under the threshold: kept at any threshold
-5128581	New York	Нью-Йорк						GeoNames names the city "New York City"; the header says "New York", as Apple does
-1528249	Jalal-Abad	Джалал-Абад						GeoNames' record at Jalal-Abad's position is named "Manas" (R1)
-1814906		Чунцин						The first Cyrillic name GeoNames lists is not the Russian one (R1)
+# keep 1 keeps the town at any population threshold; drop 1 removes it (a misplaced or duplicate record).
+# adm0 sets the town's country, alt a second country rule E may name it on (both bundle country ids: town-countries.tsv);
+# lat / lon move a misplaced point (degrees).
+geonameid	name_en	name_ru	short_en	short_ru	population	keep	drop	adm0	alt	lat	lon	note
+146970	Khankendi	Ханкенди			53400	1						Stepanakert/Khankendi (Q3 default: Khankendi in both languages, the current official name, consistent with the country shown). GeoNames' population is 2,100: Wikidata Q129352's 53,400 (2011), so it ranks as the city it is (rule E) and stays at any threshold
+5128581	New York	Нью-Йорк										GeoNames names the city "New York City"; the header says "New York", as Apple does
+1528249	Jalal-Abad	Джалал-Абад										GeoNames' record at Jalal-Abad's position is named "Manas" (R1)
+1814906		Чунцин										The first Cyrillic name GeoNames lists is not the Russian one (R1)
+281184									PSE			Jerusalem: also named on the Palestine assignment area (East Jerusalem, the Old City), Q2 and Q5
+1273294		Дели										Wikidata's linked item is Old Delhi (Старый Дели)
+3449433		Сантус										Wikidata's linked item is the Baixada Santista agglomeration; GeoNames lists two spellings
+1808316	Yiyang	Иян										GeoNames' record at Yiyang's centre is named after its urban district Heshan; Wikidata and the Russian name are Yiyang's
+1265873		Кожикоде										GeoNames lists "Калькутта" (wrong) and "Кожикоде"
+2317765		Зария										GeoNames lists "Заря" (wrong) and "Зария"
+11611630		Фунабаси			644668							Funabashi: GeoNames gives the city 0 people and its population to a district record (Honcho, 1863905)
+1863905							1					Honcho, Funabashi: a district record carrying the city's population (it named Funabashi "Honcho")
+1865689							1					Aihara, Sagamihara: a neighbourhood record carrying Sagamihara's population (it named Hashimoto "Aihara")
+11790632							1					"Bunkyo" in Sagamihara: a district record carrying Tokyo's Bunkyo ward's population (it named Sagamihara "Machida")
+11836117							1					"Suginami" at Ishioka, Ibaraki: Tokyo's Suginami ward's record and population 80 km from the ward
+11611609										35.5714	139.3733	Sagamihara: GeoNames' point lies 12 km west of the city centre (in the Tanzawa hills); the city hall in Chuo-ku
+1852139							1					"Shinagawa" in Ehime: a record carrying Tokyo's Shinagawa ward's population, 700 km from the ward
+1852383							1					"Minato" in Wakayama: a record carrying a Tokyo ward's population
+11209896							1					"Koto" in Kumamoto: a record carrying Tokyo's Koto ward's population, 900 km from the ward
+11785389						1						Wah Cantonment: a city of its own that GeoNames files as a section (PPLX): its population is not capped
+11790343		Митака			195391							Mitaka: GeoNames gives the city 0 people and its population to a section record (Kamirenjaku, 1860437), which folds into it
+146268								CYP				Nicosia: GeoNames' point lies south of the Green Line, in the Republic of Cyprus; the bundle's simplified Northern Cyprus outline covers it (rule E still names it there: its outline's country is kept as alt)

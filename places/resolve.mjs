@@ -9,11 +9,13 @@ import { openPart, PlaceIndex } from './lib/pack.mjs';
 import { KM_PER_DEG } from './lib/geometry.mjs';
 
 export const BAND_KM = 22; // 12 nautical miles: the owner's territorial-waters rule
-export const GLOBE_BAND_PT = 24; // B_globe = max(BAND_KM, 24 pt x metres per point)
+export const GLOBE_BAND_PT = 24; // B_globe = min(GLOBE_BAND_MAX_KM, max(BAND_KM, 24 pt x metres per point))
+export const GLOBE_BAND_MAX_KM = 100; // the zoom-scaled band's cap (a zoomed-out globe is about 36 km per point)
 export const COUNTRY_REACH_KM = 500; // RegionGeometry.offshoreMaxDistanceSq
 export const GAP_KM = 50; // a coastal gap of the marine partition: the nearest water polygon within 50 km
 export const TOWN_REACH_KM = 50; // rule E candidates
-export const ZONE_TIE_KM = 1; // in the band, a zone within 1 km of the nearest country's distance names the water
+export const ZONE_TIE_KM = 1; // in the band, a zone within 1 km of its own administering country's distance names the water
+export const NATIONAL_BAND_KM = 3; // over a national sea (Q7) the band shrinks to the simplified outlines' error at a coast
 export const DEFAULT_GLOBE_MPP = 5000; // metres per point at the start of the globe tier (about 3,000 km camera distance)
 
 /** Rule E's ranking radius R(pop) = clamp(10 km x (pop / 10,000)^0.25, 8 km, 30 km). */
@@ -102,22 +104,77 @@ export class Resolver {
 
   // ---- building blocks ------------------------------------------------------------------------------------------------
 
-  /** Land: a country polygon or a province polygon (mapped to its country) or a zone polygon holds the point. */
+  /**
+   * Land: a country, province, zone or assignment polygon holds the point. Its country: an assignment area's (a curated
+   * reassignment of a coarse outline: East Jerusalem and the West Bank to Palestine, the rest of the Jerusalem district
+   * to Israel), else the one country the country and province layers agree on, else (they disagree, or two country
+   * outlines overlap: both are simplified, so they part by a few km at borders) the country of the town rule E names
+   * among the candidates' towns, else the province's, else the smallest key.
+   */
   land(lat, lon) {
-    const country = this.ix.countries.containing(lat, lon)[0] || null;
+    const countries = this.ix.countries.containing(lat, lon);
     const province = this.ix.provinces.containing(lat, lon)[0] || null;
     const zone = this.ix.zones.containing(lat, lon)[0] || null;
-    const viaProvince = !country && province ? this.ix.countryByIso3.get(province.iso3) : null;
-    return { country: country || viaProvince, province, zone, isLand: !!(country || province || zone) };
+    const assignment = this.assignmentAt(lat, lon);
+    const country = (assignment && this.ix.countryByIso3.get(assignment.iso3)) || this.countryOf(lat, lon, countries, province);
+    return { country, province, zone, assignment, isLand: !!(countries.length || province || zone || assignment) };
   }
 
-  /** The nearest land within km: a zone when it is within ZONE_TIE_KM of the nearest country's distance. */
-  nearestLand(lat, lon, km) {
+  /** The assignment area holding the point: the smallest `rank` first, then the smaller key. */
+  assignmentAt(lat, lon) {
+    return this.ix.assignments.containing(lat, lon).sort((a, b) => a.rank - b.rank || (a.key < b.key ? -1 : 1))[0] || null;
+  }
+
+  countryOf(lat, lon, countries, province) {
+    const candidates = [];
+    for (const c of countries) if (!candidates.includes(c.iso3)) candidates.push(c.iso3);
+    const provinceCountry = province && this.ix.countryByIso3.has(province.iso3) ? province.iso3 : null;
+    if (provinceCountry && !candidates.includes(provinceCountry)) candidates.push(provinceCountry);
+    if (candidates.length === 0) return null;
+    if (candidates.length === 1) return this.ix.countryByIso3.get(candidates[0]);
+    if (this.ix.towns) {
+      const set = new Set(candidates);
+      const t = this.ruleETown(lat, lon, (town) => set.has(town.adm0) || set.has(town.adm0_alt));
+      if (t) return this.ix.countryByIso3.get(set.has(t.adm0) ? t.adm0 : t.adm0_alt);
+    }
+    if (provinceCountry) return this.ix.countryByIso3.get(provinceCountry);
+    return countries[0];
+  }
+
+  /**
+   * The nearest country land within km, without zones: a country outline, or (with `detail`) a province outline mapped
+   * to its country, which is nearer where the simplified country outline cuts a coast off (Taman). Ties: the country
+   * outline.
+   */
+  nearestCountry(lat, lon, km) {
     const c = this.ix.countries.nearest(lat, lon, km);
+    const p = this.ix.provinces.nearest(lat, lon, km, (a) => this.ix.countryByIso3.has(a.iso3));
+    if (p && (!c || p.km < c.km)) return { country: this.ix.countryByIso3.get(p.area.iso3), km: p.km };
+    return c ? { country: c.area, km: c.km } : null;
+  }
+
+  /**
+   * The nearest land within km. A zone wins over the nearest country when it is nearer, or, against one of its own
+   * administering countries (`admin`: their outlines coincide along a coast), within ZONE_TIE_KM of it. The nearest
+   * country comes along (the city tier's bay town is of that country).
+   */
+  nearestLand(lat, lon, km) {
+    const land = this.nearestCountry(lat, lon, km);
     const z = this.ix.zones.nearest(lat, lon, km);
-    if (z && (!c || z.km <= c.km + ZONE_TIE_KM)) return { zone: z.area, country: c?.area || null, km: z.km };
-    if (c) return { zone: null, country: c.area, km: c.km };
-    return null;
+    if (z) {
+      const own = land && z.area.admins.has(land.country.iso3);
+      if (!land || (own ? z.km <= land.km + ZONE_TIE_KM : z.km < land.km)) return { zone: z.area, country: land?.country || null, km: z.km };
+    }
+    return land ? { zone: null, country: land.country, km: land.km } : null;
+  }
+
+  /**
+   * A water where the 22 km band does not apply (owner decision Q7): a national sea such as Marmara shows its own name.
+   * Only NATIONAL_BAND_KM keeps the coast's country, so a coastal point the simplified outlines leave in the water
+   * (Kadikoy, 0.3 km off Turkey's outline) is still the country.
+   */
+  isNational(w) {
+    return !!(w && !w.gap && w.water.national);
   }
 
   /** Parent hops from a water to the top of its chain (an ocean: 0). */
@@ -185,12 +242,12 @@ export class Resolver {
     };
   }
 
-  /** Rule E: the town with the smallest d / R(pop), d <= 50 km, whose build-time country is `iso3`. Ties: smaller id. */
-  ruleE(lat, lon, iso3) {
+  /** Rule E over the towns `accept` takes: the smallest d / R(pop), d <= 50 km; ties: the smaller id. */
+  ruleETown(lat, lon, accept) {
     let best = null;
     let bestScore = Infinity;
     for (const { town, km } of this.ix.towns.within(lat, lon, TOWN_REACH_KM)) {
-      if (town.adm0 !== iso3) continue;
+      if (!accept(town)) continue;
       const score = km / townRadiusKm(town.pop);
       if (score < bestScore || (score === bestScore && best && town.id < best.id)) {
         bestScore = score;
@@ -200,12 +257,17 @@ export class Resolver {
     return best;
   }
 
+  /** Rule E: the town of one of `iso3s` (its own country or its outline's, `adm0_alt`). */
+  ruleE(lat, lon, iso3s) {
+    return this.ruleETown(lat, lon, (t) => iso3s.has(t.adm0) || iso3s.has(t.adm0_alt));
+  }
+
   /** A city's bay: a town within its urban reach U(pop) of the point, of the band's country. */
   bayTown(lat, lon, iso3) {
     let best = null;
     let bestScore = Infinity;
     for (const { town, km } of this.ix.towns.within(lat, lon, 20)) {
-      if (town.adm0 !== iso3 || km > urbanReachKm(town.pop)) continue;
+      if ((town.adm0 !== iso3 && town.adm0_alt !== iso3) || km > urbanReachKm(town.pop)) continue;
       const score = km / townRadiusKm(town.pop);
       if (score < bestScore || (score === bestScore && best && town.id < best.id)) {
         bestScore = score;
@@ -230,30 +292,37 @@ export class Resolver {
   globe(lat, lon, L, mpp, language) {
     if (L.isLand) {
       if (L.zone) return this.answerWorld(L.zone.world, STEP.globeLand);
-      const c = L.country || this.ix.countries.nearest(lat, lon, BAND_KM)?.area;
+      const c = L.country || this.nearestCountry(lat, lon, BAND_KM)?.country;
       if (c) return this.answerWorld(worldOf(c, lat, lon), STEP.globeLand);
     }
-    // A scale that is not a positive number (the app never sends one) leaves the plain band, as PlaceChain does.
-    const band = Number.isFinite(mpp) && mpp > 0 ? Math.max(BAND_KM, (GLOBE_BAND_PT * mpp) / 1000) : BAND_KM;
+    // Inside a water named at the globe tier (an ocean, a major sea) only the 22 km band applies; elsewhere (Marmara,
+    // a bay) the band grows with the zoom, capped, so a small enclosed sea reads as its land's part of the world. A scale
+    // that is not a positive number (the app never sends one) leaves the plain band, as PlaceChain does.
+    const w = this.water(lat, lon);
+    const inGlobeRow = !!(w && !w.gap && this.shownWater(w.water).globe);
+    const scaled = Number.isFinite(mpp) && mpp > 0 ? (GLOBE_BAND_PT * mpp) / 1000 : 0;
+    const band = inGlobeRow ? BAND_KM : Math.min(GLOBE_BAND_MAX_KM, Math.max(BAND_KM, scaled));
     const near = this.nearestLand(lat, lon, band);
     if (near) return this.answerWorld(near.zone ? near.zone.world : worldOf(near.country, lat, lon), STEP.globeBand);
-    const w = this.water(lat, lon);
     if (w) return this.answerArea(this.globeWater(w.water), 'water', w.gap ? STEP.globeGap : STEP.globeWater, language);
     const c = this.nearestCountryAnywhere(lat, lon, false);
     return c ? this.answerWorld(worldOf(c, lat, lon), STEP.globeNearest) : null;
   }
 
   regional(lat, lon, L, language, fromCity = false) {
+    let w;
     if (!fromCity) {
       if (L.zone) return this.answerArea(L.zone, 'zone', STEP.regionalLand, language);
       if (L.country) return this.answerArea(L.country, 'country', STEP.regionalLand, language);
-      const near = this.nearestLand(lat, lon, BAND_KM);
+      w = this.water(lat, lon);
+      const near = this.nearestLand(lat, lon, this.isNational(w) ? NATIONAL_BAND_KM : BAND_KM);
       if (near) {
         return near.zone ? this.answerArea(near.zone, 'zone', STEP.regionalBand, language)
           : this.answerArea(near.country, 'country', STEP.regionalBand, language);
       }
+    } else {
+      w = this.water(lat, lon);
     }
-    const w = this.water(lat, lon);
     if (w) return this.answerArea(w.water, 'water', w.gap ? STEP.regionalGap : STEP.regionalWater, language);
     const iso = this.ix.countries.nearest(lat, lon, COUNTRY_REACH_KM, (a) => !!a.iso2);
     if (iso) return this.answerArea(iso.area, 'country', STEP.regionalNearestCountry, language);
@@ -263,9 +332,17 @@ export class Resolver {
 
   city(lat, lon, L, language) {
     if (L.isLand) {
-      const country = L.country || this.ix.countries.nearest(lat, lon, BAND_KM)?.area || null;
-      if (country) {
-        const t = this.ruleE(lat, lon, country.iso3);
+      // Rule E's towns: of the land's country; on land only a zone outline holds (Kunashir), of the zone's
+      // administering countries; else of the country within the band.
+      let iso3s = null;
+      if (L.country) iso3s = new Set([L.country.iso3]);
+      else if (L.zone && L.zone.admins.size) iso3s = L.zone.admins;
+      else {
+        const c = this.nearestCountry(lat, lon, BAND_KM)?.country;
+        if (c) iso3s = new Set([c.iso3]);
+      }
+      if (iso3s) {
+        const t = this.ruleE(lat, lon, iso3s);
         if (t) return this.answerTown(t, STEP.cityTown, language);
       }
       // Inside a neutral zone the zone's name stands in for the administering country's province (final architecture
@@ -279,8 +356,11 @@ export class Resolver {
       const iso3 = near.country?.iso3;
       const t = iso3 ? this.bayTown(lat, lon, iso3) : null;
       if (t) return this.answerTown(t, STEP.cityBay, language);
-      return near.zone ? this.answerArea(near.zone, 'zone', STEP.cityBand, language)
-        : this.answerArea(near.country, 'country', STEP.cityBand, language);
+      // A national sea (Q7) keeps its own name past a city's bay, beyond the outlines' error at its coast.
+      if (near.km <= NATIONAL_BAND_KM || !this.isNational(this.water(lat, lon))) {
+        return near.zone ? this.answerArea(near.zone, 'zone', STEP.cityBand, language)
+          : this.answerArea(near.country, 'country', STEP.cityBand, language);
+      }
     }
     return this.regional(lat, lon, L, language, true);
   }

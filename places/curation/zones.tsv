@@ -4,16 +4,19 @@
 # own, named by the app's CountryName; listed here for the review only, no zone geometry is written.
 # source: the outlines, separated by spaces: adm1:<bundle province> (the bundle's rings, vertex for vertex) or
 # ne:<BRK_A3> (Natural Earth 10m admin_0_disputed_areas, Douglas-Peucker 0.005 deg).
-key	name_en	name_ru	short_en	short_ru	world	policy	source	note
-zone:crimea	Crimea	Крым			easternEurope	area	adm1:RUS.83 adm1:RUS.86	Includes Sevastopol. NE admin-0 (the bundle): Russia; Apple en_US: Ukraine
-zone:abkhazia	Abkhazia	Абхазия			westernAsia	area	adm1:GEO.1	Bundle: Georgia (province GEO.1); Apple en_US: nothing
-zone:south-ossetia	South Ossetia	Южная Осетия			westernAsia	area	ne:B37	Bundle: Georgia; Apple en_US: Georgia
-zone:transnistria	Transnistria	Приднестровье			easternEurope	area	ne:B36	Bundle: Moldova; Apple: not probed
-zone:western-sahara	Western Sahara	Западная Сахара			northAfrica	area	ne:B19 ne:B28	The Moroccan-administered part (B19) and the bundle's ESH (B28); Apple en_US: no country
-zone:kashmir	Kashmir	Кашмир			southAsia	area	ne:B05 ne:B06 ne:B07 ne:B08 ne:B09 ne:B45	Indian-administered (B05), Shaksam (B06), Aksai Chin (B07, Chinese-administered: East Asia by country, hence the explicit part of the world), Gilgit-Baltistan (B08), Azad Kashmir (B09), Siachen (B45 = bundle KAS); Apple en_US: no country
-zone:golan-heights	Golan Heights	Голанские высоты			westernAsia	area	ne:B16	Bundle: Israel; Apple en_US: no country
-zone:kuril-islands	Kuril Islands	Курильские острова			eastAsia	area	ne:B29	The southern Kurils (NE B29); bundle: Russia (Sakhalin RUS.82); Apple en_US: nothing
-zone:northern-cyprus	Northern Cyprus	Северный Кипр			westernAsia	country	adm0:CYN	The bundle's country CYN, named by CountryName's catalog
-zone:kosovo	Kosovo	Косово			easternEurope	country	adm0:XKX	The bundle's country XKX (ISO XK)
-zone:somaliland	Somaliland	Сомалиленд			tropicalAfrica	country	adm0:SOL	The bundle's country SOL, named by CountryName's catalog
-zone:taiwan	Taiwan	Тайвань			eastAsia	country	adm0:TWN	The bundle's country TWN (ISO TW), as Apple
+# admin: the countries whose outlines the zone's coincide with along a coast (space-separated bundle ids): in the 22 km band a
+# zone wins over one of them when within 1 km of it, over any other country only when nearer. source adm1:<id>=<the
+# bundle's name of the province, spaces as _>: a renumbered bundle fails the build instead of giving the zone another province's outline.
+key	name_en	name_ru	short_en	short_ru	world	policy	source	admin	note
+zone:crimea	Crimea	Крым			easternEurope	area	adm1:RUS.83=Crimea adm1:RUS.86=Sevastopol	RUS	Includes Sevastopol. NE admin-0 (the bundle): Russia; Apple en_US: Ukraine
+zone:abkhazia	Abkhazia	Абхазия			westernAsia	area	adm1:GEO.1=Abkhazia	GEO	Bundle: Georgia (province GEO.1); Apple en_US: nothing
+zone:south-ossetia	South Ossetia	Южная Осетия			westernAsia	area	ne:B37	GEO	Bundle: Georgia; Apple en_US: Georgia
+zone:transnistria	Transnistria	Приднестровье			easternEurope	area	ne:B36	MDA	Bundle: Moldova; Apple: not probed
+zone:western-sahara	Western Sahara	Западная Сахара			northAfrica	area	ne:B19 ne:B28	MAR ESH	The Moroccan-administered part (B19) and the bundle's ESH (B28); Apple en_US: no country
+zone:kashmir	Kashmir	Кашмир			southAsia	area	ne:B05 ne:B06 ne:B07 ne:B08 ne:B09 ne:B45	IND PAK CHN KAS	Indian-administered (B05), Shaksam (B06), Aksai Chin (B07, Chinese-administered: East Asia by country, hence the explicit part of the world), Gilgit-Baltistan (B08), Azad Kashmir (B09), Siachen (B45 = bundle KAS); Apple en_US: no country
+zone:golan-heights	Golan Heights	Голанские высоты			westernAsia	area	ne:B16	ISR	Bundle: Israel; Apple en_US: no country
+zone:kuril-islands	Kuril Islands	Курильские острова			eastAsia	area	ne:B29	RUS	The southern Kurils (NE B29); bundle: Russia (Sakhalin RUS.82); Apple en_US: nothing
+zone:northern-cyprus	Northern Cyprus	Северный Кипр			westernAsia	country	adm0:CYN		The bundle's country CYN, named by CountryName's catalog
+zone:kosovo	Kosovo	Косово			easternEurope	country	adm0:XKX		The bundle's country XKX (ISO XK)
+zone:somaliland	Somaliland	Сомалиленд			tropicalAfrica	country	adm0:SOL		The bundle's country SOL, named by CountryName's catalog
+zone:taiwan	Taiwan	Тайвань			eastAsia	country	adm0:TWN		The bundle's country TWN (ISO TW), as Apple

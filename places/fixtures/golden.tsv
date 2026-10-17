@@ -5,7 +5,7 @@
 # Apple probe (2026-10-17); the expectations are this pack's own answers, reviewed, never Apple's names.
 # A change here is a reviewed decision: say why in the commit.
 id	lat	lon	tier	mpp	key	name_en	name_ru	note
-strait-turkey-cyprus	35.75	33	globe	5000	region:westernAsia			the owner's case: between Turkey and Cyprus, > 22 km from both
+strait-turkey-cyprus	35.75	33	globe	5000	sea:1159115321	Mediterranean Sea	Средиземное море	the owner's case: between Turkey and Cyprus, > 22 km from both; inside a globe sea only the 22 km band applies (final architecture 8.1)
 strait-turkey-cyprus	35.75	33	regional		sea:1159115321	Mediterranean Sea	Средиземное море	the owner's case: between Turkey and Cyprus, > 22 km from both
 strait-turkey-cyprus	35.75	33	city		sea:1159115321	Mediterranean Sea	Средиземное море	the owner's case: between Turkey and Cyprus, > 22 km from both
 satte	36.07254	139.72615	globe	5000	region:eastAsia			the owner's case: Satte, Saitama
@@ -86,7 +86,7 @@ kyrenia	35.34	33.319	city		place:146412	Kyrenia	Кирения	Northern Cyprus (
 famagusta	35.125	33.941	globe	5000	region:westernAsia			Northern Cyprus (the bundle's country CYN)
 famagusta	35.125	33.941	regional		adm0:CYN			Northern Cyprus (the bundle's country CYN)
 famagusta	35.125	33.941	city		place:146617	Famagusta	Фамагуста	Northern Cyprus (the bundle's country CYN)
-off-sendai-31km	38.5	141.9	globe	5000	region:eastAsia			Q6: the ocean, folded to the whole ("Pacific Ocean", not "North Pacific Ocean")
+off-sendai-31km	38.5	141.9	globe	5000	sea:1159115079	Pacific Ocean	Тихий океан	Q6: the ocean, folded to the whole; inside a globe water only the 22 km band applies
 off-sendai-31km	38.5	141.9	regional		sea:1159115079	Pacific Ocean	Тихий океан	Q6: the ocean, folded to the whole ("Pacific Ocean", not "North Pacific Ocean")
 off-sendai-31km	38.5	141.9	city		sea:1159115079	Pacific Ocean	Тихий океан	Q6: the ocean, folded to the whole ("Pacific Ocean", not "North Pacific Ocean")
 mid-marmara	40.75	28.2	globe	5000	region:westernAsia			the globe band: Western Asia at the globe tier, not the Atlantic
@@ -127,7 +127,7 @@ katzrin	32.9925	35.6912	regional		zone:golan-heights	Golan Heights	Голанс�
 katzrin	32.9925	35.6912	city		place:443093	Qatzrin	Кацрин	zone:golan-heights
 kunashir	44.0306	145.8556	globe	5000	region:eastAsia			zone:kuril-islands
 kunashir	44.0306	145.8556	regional		zone:kuril-islands	Kuril Islands	Курильские острова	zone:kuril-islands
-kunashir	44.0306	145.8556	city		zone:kuril-islands	Kuril Islands	Курильские острова	zone:kuril-islands
+kunashir	44.0306	145.8556	city		place:2119447	Yuzhno-Kurilsk	Южно-Курильск	the Kuril zone shows its town (Yuzhno-Kurilsk joins Sakhalin by the province outline); the regional tier shows the zone
 donetsk	48.0159	37.8028	globe	5000	region:easternEurope			Q2: Ukraine
 donetsk	48.0159	37.8028	regional		adm0:UKR			Q2: Ukraine
 donetsk	48.0159	37.8028	city		place:709717	Donetsk	Донецк	Q2: Ukraine
@@ -164,7 +164,7 @@ equator-150w	0	-150	city		sea:1159115079	Pacific Ocean	Тихий океан	R1 
 north-pole-sea	85	0	globe	5000	sea:1159115017	Arctic Ocean	Северный Ледовитый океан	R1 water point
 north-pole-sea	85	0	regional		sea:1159115017	Arctic Ocean	Северный Ледовитый океан	R1 water point
 north-pole-sea	85	0	city		sea:1159115017	Arctic Ocean	Северный Ледовитый океан	R1 water point
-black-sea	43	34	globe	5000	region:westernAsia			R1 water point
+black-sea	43	34	globe	5000	sea:1159115171	Black Sea	Чёрное море	R1 water point; a globe sea, 113 km from land: only the 22 km band applies
 black-sea	43	34	regional		sea:1159115171	Black Sea	Чёрное море	R1 water point
 black-sea	43	34	city		sea:1159115171	Black Sea	Чёрное море	R1 water point
 caspian-sea	42	50.5	globe	5000	sea:1159115461	Caspian Sea	Каспийское море	R1 water point
@@ -173,7 +173,7 @@ caspian-sea	42	50.5	city		sea:1159115461	Caspian Sea	Каспийское мор
 aleutians-bering	54	-165	globe	5000	region:northAmerica			R1 water point: 8 km off an Aleutian island
 aleutians-bering	54	-165	regional		adm0:USA			R1 water point: 8 km off an Aleutian island
 aleutians-bering	54	-165	city		adm0:USA			R1 water point: 8 km off an Aleutian island
-aleutians-pacific	51	-175	globe	5000	region:northAmerica			R1 water point
+aleutians-pacific	51	-175	globe	5000	sea:1159115079	Pacific Ocean	Тихий океан	R1 water point; open ocean: only the 22 km band applies
 aleutians-pacific	51	-175	regional		sea:1159115079	Pacific Ocean	Тихий океан	R1 water point
 aleutians-pacific	51	-175	city		sea:1159115079	Pacific Ocean	Тихий океан	R1 water point
 lombok-strait	-8.5	115.5	globe	5000	region:southEastAsia			R1 water point: inside Indonesia's outline
@@ -258,7 +258,7 @@ r4-tokyo-bay	35.45	139.8	globe	5000	region:eastAsia			R4 point (territorial-wate
 r4-tokyo-bay	35.45	139.8	regional		adm0:JPN			R4 point (territorial-water): Tokyo Bay
 r4-tokyo-bay	35.45	139.8	city		place:1859642	Kawasaki	Кавасаки	R4 point (territorial-water): Tokyo Bay
 r4-marmara	40.88	28.9	globe	5000	region:westernAsia			R4 point (territorial-water): Sea of Marmara 14 km off Istanbul
-r4-marmara	40.88	28.9	regional		adm0:TUR			R4 point (territorial-water): Sea of Marmara 14 km off Istanbul
+r4-marmara	40.88	28.9	regional		sea:1159119181	Sea of Marmara	Мраморное море	R4 point (territorial-water): Sea of Marmara 14 km off Istanbul; Q7: a national sea shows its name, not the country
 r4-marmara	40.88	28.9	city		place:745044	Istanbul	Стамбул	R4 point (territorial-water): Sea of Marmara 14 km off Istanbul
 r4-valparaiso-off	-33	-71.72	globe	5000	region:southAmerica			R4 point (territorial-water): 8 km off Valparaiso (CL)
 r4-valparaiso-off	-33	-71.72	regional		adm0:CHL			R4 point (territorial-water): 8 km off Valparaiso (CL)
@@ -266,7 +266,7 @@ r4-valparaiso-off	-33	-71.72	city		adm0:CHL			R4 point (territorial-water): 8 km
 r4-aegean-border	38.3	26.2	globe	5000	region:westernEurope			R4 point (territorial-water): Chios strait, GR/TR border waters
 r4-aegean-border	38.3	26.2	regional		adm0:GRC			R4 point (territorial-water): Chios strait, GR/TR border waters
 r4-aegean-border	38.3	26.2	city		adm0:GRC			R4 point (territorial-water): Chios strait, GR/TR border waters
-r4-tr-cy-strait	35.75	33	globe	5000	region:westernAsia			R4 point (international-water): Turkey-Cyprus strait
+r4-tr-cy-strait	35.75	33	globe	5000	sea:1159115321	Mediterranean Sea	Средиземное море	R4 point (international-water): Turkey-Cyprus strait; inside a globe sea only the 22 km band applies
 r4-tr-cy-strait	35.75	33	regional		sea:1159115321	Mediterranean Sea	Средиземное море	R4 point (international-water): Turkey-Cyprus strait
 r4-tr-cy-strait	35.75	33	city		sea:1159115321	Mediterranean Sea	Средиземное море	R4 point (international-water): Turkey-Cyprus strait
 r4-mid-pacific	5	-150	globe	5000	sea:1159115079	Pacific Ocean	Тихий океан	R4 point (international-water): Mid-Pacific
@@ -331,4 +331,39 @@ r4-jerusalem	31.778	35.2354	regional		adm0:PSE			R4 point (disputed): Jerusalem 
 r4-jerusalem	31.778	35.2354	city		place:281184	Jerusalem	Иерусалим	R4 point (disputed): Jerusalem Old City (East Jerusalem)
 r4-kunashir	44.0306	145.8556	globe	5000	region:eastAsia			R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils)
 r4-kunashir	44.0306	145.8556	regional		zone:kuril-islands	Kuril Islands	Курильские острова	R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils)
-r4-kunashir	44.0306	145.8556	city		zone:kuril-islands	Kuril Islands	Курильские острова	R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils)
+r4-kunashir	44.0306	145.8556	city		place:2119447	Yuzhno-Kurilsk	Южно-Курильск	R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils); the Kuril zone shows its town
+west-jerusalem	31.7767	35.2054	globe	5000	region:westernAsia			Q2: West Jerusalem (the Knesset) is Israel; the bundle's Palestine outline covers it (assign:israel-jerusalem)
+west-jerusalem	31.7767	35.2054	regional		adm0:ISR			Q2: West Jerusalem (the Knesset) is Israel; the bundle's Palestine outline covers it (assign:israel-jerusalem)
+west-jerusalem	31.7767	35.2054	city		place:281184	Jerusalem	Иерусалим	Q2: West Jerusalem (the Knesset) is Israel; the bundle's Palestine outline covers it (assign:israel-jerusalem)
+jerusalem-bus-station	31.789	35.203	regional		adm0:ISR			Q2: West Jerusalem (the central bus station) is Israel
+kiryat-hayovel	31.75	35.17	regional		adm0:ISR			Q2: West Jerusalem (Kiryat HaYovel) is Israel
+reyhanli	36.2687	36.5673	regional		adm0:TUR			a border town inside both simplified outlines (Turkey, Syria): rule E's town decides
+reyhanli	36.2687	36.5673	city		place:302355	Reyhanlı	Рейханлы	a border town inside both simplified outlines (Turkey, Syria): rule E's town decides
+el-paso	31.76	-106.49	regional		adm0:USA			a border city inside Mexico's and the USA's simplified outlines: rule E's town decides
+el-paso	31.76	-106.49	city		place:5520993	El Paso	Эль-Пасо	a border city inside Mexico's and the USA's simplified outlines: rule E's town decides
+narva	59.3797	28.1791	regional		adm0:EST			a border town inside Russia's simplified outline: the province (Ida-Viru) says Estonia
+narva	59.3797	28.1791	city		place:590031	Narva	Нарва	a border town inside Russia's simplified outline: the province (Ida-Viru) says Estonia
+konstanz	47.6633	9.1753	regional		adm0:DEU			a border city whose province outline (Thurgau) disagrees with its country's: rule E's town decides
+off-nemuro	43.36	145.84	regional		adm0:JPN			the band off Nemuro: Japan is nearer than the Kuril zone (the 1 km zone tie applies against Russia only)
+off-sochi	43.28	39.8	regional		adm0:RUS			the band off Sochi: Russia (Krasnodar's province outline), not the Abkhazia zone
+taman	45.2117	36.7161	regional		adm0:RUS			the Kerch Strait, Krasnodar side: the province outline is nearer than the Crimea zone
+taman	45.2117	36.7161	city		place:484670	Taman	Тамань	Taman joins Krasnodar Krai by the province outline (the simplified country outline cuts the peninsula off)
+khankendi-south	39.79	46.76	city		place:146970	Khankendi	Ханкенди	3 km south of Khankendi: its Wikidata population (53,400) ranks it above Shusha
+sagamihara	35.5714	139.3733	city		place:11611609	Sagamihara	Сагамихара	Sagamihara's city hall: GeoNames' point moved there; the district records carrying other places' populations dropped
+funabashi	35.6947	139.9825	city		place:11611630	Funabashi	Фунабаси	Funabashi: its population back from the district record that named it Honcho
+ishioka	36.19	140.287	city		place:2112571	Ishioka	Исиока	Ishioka: the misplaced Suginami ward record (588k) dropped
+nicosia	35.17284	33.35397	city		place:146268	Nicosia	Никосия	Nicosia (GeoNames' point, south of the Green Line): Cyprus's capital, named on both sides of the simplified outline
+delhi	28.65195	77.23149	city		place:1273294	Delhi	Дели	Delhi: not Wikidata's Old Delhi label
+mid-atlantic	30	-40	globe	12000	sea:1159115057	Atlantic Ocean	Атлантический океан	the globe zoomed out: open ocean shows the ocean (the band is 22 km inside a globe water)
+mid-atlantic	30	-40	globe	30000	sea:1159115057	Atlantic Ocean	Атлантический океан	the globe zoomed out: open ocean shows the ocean (the band is 22 km inside a globe water)
+off-oahu	20.6	-158.9	globe	12000	sea:1159115079	Pacific Ocean	Тихий океан	near Hawaii, zoomed out: the ocean, not Oceania
+off-oahu	20.6	-158.9	globe	30000	sea:1159115079	Pacific Ocean	Тихий океан	near Hawaii, zoomed out: the ocean, not Oceania
+caribbean	15	-75	globe	15000	sea:1159115379	Caribbean Sea	Карибское море	an enclosed globe sea at 15 km per point
+caribbean	15	-75	globe	30000	sea:1159115379	Caribbean Sea	Карибское море	an enclosed globe sea at 30 km per point
+north-sea	56	3	globe	30000	sea:1159115879	North Sea	Северное море	an enclosed globe sea at 30 km per point
+sea-of-japan	40	134	globe	30000	sea:1159115305	Sea of Japan	Японское море	an enclosed globe sea at 30 km per point
+gulf-of-mexico	25	-90	globe	30000	sea:1159115399	Gulf of Mexico	Мексиканский залив	an enclosed globe sea at 30 km per point
+baltic	57	19	globe	15000	sea:1159115831	Baltic Sea	Балтийское море	the Baltic's centre shows its name on the globe
+bay-of-bengal	15	88	globe	30000	sea:1159115253	Bay of Bengal	Бенгальский залив	a globe sea at 30 km per point
+ionian	37.5	18.5	globe	30000	sea:1159115321	Mediterranean Sea	Средиземное море	the Ionian Sea is no globe row: its globe ancestor, the Mediterranean
+mid-marmara	40.75	28.2	globe	30000	region:westernAsia			Marmara zoomed out: the zoom-scaled band (capped at 100 km) still gives Western Asia

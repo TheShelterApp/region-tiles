@@ -53,7 +53,7 @@ function main() {
     return {
       key, ne_id: String(p.ne_id), ne_name: clean(p.name || ''), class: p.featurecla, rank: String(p.scalerank),
       name_en: en, name_ru: ruWd || (isRussian(ruNe) ? ruNe : ''),
-      short_en: '', short_ru: '', parent: '', whole: '', globe: '',
+      short_en: '', short_ru: '', parent: '', whole: '', globe: '', national: '',
       wikidata: p.wikidataid || '',
       note: [ruWd && ruNe && ruWd !== ruNe ? `NE ru: ${ruNe}` : '', !ruWd && ruNe && !isRussian(ruNe) ? `NE ru (not Russian): ${ruNe}` : '',
         w?.en && w.en !== en ? `Wikidata en: ${w.en}` : '', `NE basin: ${p.oceanbasin || ''} / ${p.subbasin || ''}`].filter(Boolean).join('; '),
@@ -139,7 +139,7 @@ function main() {
   }
 
   rows.sort((a, b) => Number(a.rank) - Number(b.rank) || a.class.localeCompare(b.class) || a.ne_name.localeCompare(b.ne_name) || a.key.localeCompare(b.key));
-  writeTsv(out, ['key', 'ne_id', 'ne_name', 'class', 'rank', 'name_en', 'name_ru', 'short_en', 'short_ru', 'parent', 'whole', 'globe', 'wikidata', 'note'], rows);
+  writeTsv(out, ['key', 'ne_id', 'ne_name', 'class', 'rank', 'name_en', 'name_ru', 'short_en', 'short_ru', 'parent', 'whole', 'globe', 'national', 'wikidata', 'note'], rows);
   console.log(`draft: ${rows.length} rows -> ${out}`);
 }
 

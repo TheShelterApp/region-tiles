@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { gunzipChecked } from './io.mjs';
 import { decodeGeometry, bboxOf, polygonContains, distanceKm, haversineKm, KM_PER_DEG } from './geometry.mjs';
 
-export const LAYER = { country: 0, province: 1, water: 2, zone: 3 };
+export const LAYER = { country: 0, province: 1, water: 2, zone: 3, assignment: 4 };
 export const SUPPORTED_SCHEMAS = new Set([1]);
 
 /** Open a part from a .sqlite.gz path or buffer, or a .sqlite path. Returns { meta, areas, places, raw }. */
@@ -18,12 +18,18 @@ export function openPart(input) {
   if (!SUPPORTED_SCHEMAS.has(Number(meta.schema))) throw new Error(`unsupported schema ${meta.schema}`);
   const areas = db.prepare('SELECT * FROM areas ORDER BY id').all().map((a) => {
     const polys = decodeGeometry(a.geometry);
-    return { ...a, polys, boxes: polys.map((p) => bboxOf([p], a.q)) };
+    return withAdmins({ ...a, polys, boxes: polys.map((p) => bboxOf([p], a.q)) });
   });
   const hasPlaces = db.prepare("SELECT count(*) AS n FROM sqlite_master WHERE name = 'places'").get().n > 0;
   const places = hasPlaces ? db.prepare('SELECT * FROM places ORDER BY cell, id').all() : null;
   db.close();
   return { meta, areas, places, raw };
+}
+
+/** A zone's administering countries (`admin`, space-separated bundle ids) as a set, for the band's zone tie. */
+export function withAdmins(a) {
+  a.admins = new Set(String(a.admin || '').split(/\s+/).filter(Boolean));
+  return a;
 }
 
 const cellKey = (la, lo) => la * 360 + lo; // la 0..179, lo 0..359
@@ -146,8 +152,9 @@ export class PlaceIndex {
     this.countries = new AreaGrid(byLayer(core, LAYER.country));
     this.waters = new AreaGrid(byLayer(core, LAYER.water));
     this.zones = new AreaGrid(byLayer(core, LAYER.zone));
+    this.assignments = new AreaGrid(byLayer(core, LAYER.assignment));
     this.provinces = new AreaGrid(byLayer(detail, LAYER.province));
-    this.towns = detail ? new TownGrid(detail.places) : null;
+    this.towns = detail ? new TownGrid(detail.places || []) : null;
     this.byKey = new Map();
     for (const part of [core, detail]) if (part) for (const a of part.areas) this.byKey.set(a.key, a);
     this.countryByIso3 = new Map(byLayer(core, LAYER.country).map((a) => [a.iso3, a]));

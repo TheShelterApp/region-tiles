@@ -8,13 +8,14 @@ import {
   encodeGeometry, decodeGeometry, polygonContains, distanceKm, haversineKm, simplifyRing, cellOf, fromGeoJSON, quantise,
   bboxOf, countVertices, KM_PER_DEG,
 } from '../lib/geometry.mjs';
-import { clean, isRussian, isAllCaps, titleCase, cleanRomanisation, appleStyle, nameProblems } from '../lib/names.mjs';
+import { clean, isRussian, isAllCaps, titleCase, cleanRomanisation, appleStyle, nameProblems, stripAdminSuffix, nameSimilarity } from '../lib/names.mjs';
 import { gzipDeterministic, gunzipChecked, tarDeterministic, untar } from '../lib/io.mjs';
 import { keepTown, isCities5000 } from '../lib/places.mjs';
-import { writePart } from '../build.mjs';
+import { writePart, pointerUrls, wikidataRussian, pickRussian } from '../build.mjs';
+import { releaseProblems } from '../check-release.mjs';
 import { openPart, PlaceIndex } from '../lib/pack.mjs';
 import { Resolver, townRadiusKm, urbanReachKm, worldOf, normalisePoint, shortForm } from '../resolve.mjs';
-import { diffLattices, parseAccepted, targetedPoints, pointsTsv, pointAnswers, latticeTsv, SAMPLE_KINDS } from '../lattice.mjs';
+import { diffLattices, parseAccepted, parseAcceptedParity, targetedPoints, pointsTsv, pointAnswers, latticeTsv, SAMPLE_KINDS } from '../lattice.mjs';
 
 // ---- geometry -----------------------------------------------------------------------------------------------------------
 
@@ -168,7 +169,7 @@ function syntheticPack() {
     // A province reaching past its country's outline (the bundle's Sevastopol case).
     area({ layer: 1, key: 'adm1:BBB.1', iso3: 'BBB', parent: 'adm0:BBB', name_en: 'East Province', q: Q4, polys: rect(1, -5, 10.5, 5, Q4) }),
   ];
-  const town = (id, lat, lon, pop, adm0, metro = id, nameRu = null) => ({ id, lat: Math.round(lat * Q4), lon: Math.round(lon * Q4), pop, adm0, adm1: null, metro, name_en: `T${id}`, name_ru: nameRu, short_en: null, short_ru: null });
+  const town = (id, lat, lon, pop, adm0, metro = id, nameRu = null) => ({ id, lat: Math.round(lat * Q4), lon: Math.round(lon * Q4), pop, adm0, adm1: null, adm0_alt: null, metro, name_en: `T${id}`, name_ru: nameRu, short_en: null, short_ru: null });
   const towns = [
     town(1, 0, -5, 1000000, 'AAA', 1, '\u0413\u043E\u0440\u043E\u0434'),
     town(2, 0, -4.8, 20000, 'AAA', 1), // a section of town 1: shown as town 1
@@ -212,8 +213,11 @@ test('globe chain: part of the world, the zoom-scaled band, the globe ancestor',
   const g = (lat, lon, mpp) => full.resolve({ lat, lon, tier: 'globe', mpp });
   assert.equal(g(0, -5).key, 'region:westernEurope');
   assert.equal(g(4, 9).key, 'region:westernAsia'); // the zone's explicit part of the world
-  assert.equal(g(0, 0, 100).key, 'sea:10'); // 111 km from land, band 22 km: the strait's globe ancestor
-  assert.equal(g(0, 0, 5000).key, 'region:westernEurope'); // band 120 km: the nearest land (tie: smaller key)
+  assert.equal(g(0, -0.5, 100).key, 'sea:10'); // 55 km from land, band 22 km: the strait's globe ancestor
+  assert.equal(g(0, -0.5, 5000).key, 'region:westernEurope'); // the strait is no globe water: band 100 km (120 capped)
+  assert.equal(g(0, 0, 5000).key, 'sea:10'); // 111 km from both coasts: beyond the capped band
+  assert.equal(g(5.5, -5, 5000).key, 'sea:10'); // inside the globe ocean, 55 km off: only the 22 km band applies
+  assert.equal(g(5.1, -5, 5000).key, 'region:westernEurope'); // 11 km off: the band
   assert.equal(g(55, 125).key, 'region:eastAsia'); // WorldRegion's coordinate rule for Russia
 });
 
@@ -283,10 +287,153 @@ test('the targeted sample is deterministic and its answers carry the parity colu
   assert.equal(pointsTsv(a), pointsTsv(b));
   assert.ok(a.length > 300);
   const kinds = new Set(a.map((p) => p.kind));
-  for (const [kind] of SAMPLE_KINDS) assert.ok(kinds.has(kind), kind);
+  for (const [kind] of SAMPLE_KINDS) if (kind !== 'assignment-edge') assert.ok(kinds.has(kind), kind); // the synthetic pack has no assignment area
   const rows = pointAnswers(full, a.slice(0, 5).map((p) => ({ ...p, text: [String(p.lat), String(p.lon), String(p.mpp)] })));
   const tsv = latticeTsv(rows).split('\n');
   assert.equal(tsv[0].split('\t').length, 4 + 3 * 6);
   assert.equal(tsv[1].split('\t')[3], a[0].kind);
   assert.equal(tsv[1].split('\t')[0], String(a[0].lat));
+});
+
+// ---- borders, bands, national seas, assignments (the 2026-10-17 review) -------------------------------------------------
+// AAA and BBB: the country outlines put the border at lon 0.2, the provinces at 0 (simplified outlines part by a few km).
+// CCC (not the zone's administering country) and DDD (its administering country) face zone islands across water; DDD's
+// province reaches 0.3 deg past its country outline (Taman). EEE borders a national sea. III and PPP: an assignment area.
+function borderPack() {
+  const dir = mkdtempSync(join(tmpdir(), 'places-border-'));
+  const core = [
+    area({ layer: 0, key: 'adm0:AAA', iso3: 'AAA', iso2: 'AA', world: 'westernEurope', name_en: 'Aland', q: Q5, polys: rect(-10, -5, 0.2, 5, Q5) }),
+    area({ layer: 0, key: 'adm0:BBB', iso3: 'BBB', iso2: 'BB', world: 'easternEurope', name_en: 'Bland', q: Q5, polys: rect(0.2, -5, 10, 5, Q5) }),
+    area({ layer: 0, key: 'adm0:CCC', iso3: 'CCC', iso2: 'CC', world: 'eastAsia', name_en: 'Cland', q: Q5, polys: rect(18, 0, 19.905, 1, Q5) }),
+    area({ layer: 0, key: 'adm0:DDD', iso3: 'DDD', iso2: 'DD', world: 'easternEurope', name_en: 'Dland', q: Q5, polys: rect(30, 0, 31, 1, Q5) }),
+    area({ layer: 0, key: 'adm0:EEE', iso3: 'EEE', iso2: 'EE', world: 'westernAsia', name_en: 'Eland', q: Q5, polys: rect(38, 0, 40, 2, Q5) }),
+    area({ layer: 0, key: 'adm0:III', iso3: 'III', iso2: 'II', world: 'westernAsia', name_en: 'Iland', q: Q5, polys: rect(48, 0, 50, 2, Q5) }),
+    area({ layer: 0, key: 'adm0:PPP', iso3: 'PPP', iso2: 'PP', world: 'westernAsia', name_en: 'Pland', q: Q5, polys: rect(50, 0, 52, 2, Q5) }),
+    area({ layer: 2, key: 'sea:20', kind: 'ocean', rank: 0, globe: 1, name_en: 'Wide Ocean', name_ru: '\u041E\u043A\u0435\u0430\u043D', q: Q4, polys: rect(-60, -60, 60, -6, Q4) }),
+    area({ layer: 2, key: 'sea:21', kind: 'sea', rank: 5, national: 1, name_en: 'Inner Sea', name_ru: '\u041C\u043E\u0440\u0435', parent: 'sea:20', q: Q4, polys: rect(40, 0, 42, 2, Q4) }),
+    area({ layer: 3, key: 'zone:c', world: 'eastAsia', kind: 'area', admin: 'BBB', name_en: 'Isle C', name_ru: '\u041E\u0441\u0442\u0440\u043E\u0432', q: Q4, polys: rect(20, 0, 21, 1, Q4) }),
+    area({ layer: 3, key: 'zone:d', world: 'easternEurope', kind: 'area', admin: 'DDD', name_en: 'Isle D', name_ru: '\u041E\u0441\u0442\u0440\u043E\u0432', q: Q4, polys: rect(31.5, 0, 32, 1, Q4) }),
+    area({ layer: 4, key: 'assign:x', iso3: 'III', rank: 1, kind: 'assignment', name_en: 'III here', q: Q4, polys: rect(50, 0, 50.5, 2, Q4) }),
+  ];
+  const detail = [
+    area({ layer: 1, key: 'adm1:AAA.1', iso3: 'AAA', parent: 'adm0:AAA', name_en: 'A Province', q: Q4, polys: rect(-10, -5, 0, 5, Q4) }),
+    area({ layer: 1, key: 'adm1:BBB.1', iso3: 'BBB', parent: 'adm0:BBB', name_en: 'B Province', q: Q4, polys: rect(0, -5, 10, 5, Q4) }),
+    area({ layer: 1, key: 'adm1:DDD.1', iso3: 'DDD', parent: 'adm0:DDD', name_en: 'D Province', q: Q4, polys: rect(30, 0, 31.3, 1, Q4) }),
+  ];
+  const town = (id, lat, lon, pop, adm0, alt = null) => ({ id, lat: Math.round(lat * Q4), lon: Math.round(lon * Q4), pop, adm0, adm1: null, adm0_alt: alt, metro: id, name_en: `T${id}`, name_ru: null, short_en: null, short_ru: null });
+  const towns = [
+    town(11, 1, -0.1, 50000, 'AAA'),
+    town(12, 1, 0.1, 50000, 'BBB'),
+    town(13, 3, 0.3, 20000, 'AAA', 'BBB'), // an A town inside B's outline (adm0_alt BBB)
+  ];
+  const meta = { version: '0.0.1', generated: '2026-10-17T00:00:00Z', attribution: 'test' };
+  writePart(join(dir, 'core.sqlite'), 'core', core, null, meta);
+  writePart(join(dir, 'detail.sqlite'), 'detail', detail, towns, { ...meta, min_population: '5000' });
+  const c = openPart(join(dir, 'core.sqlite.gz'));
+  const d = openPart(join(dir, 'detail.sqlite.gz'));
+  rmSync(dir, { recursive: true, force: true });
+  return { full: new Resolver(new PlaceIndex(c, d)), coreOnly: new Resolver(new PlaceIndex(c, null)) };
+}
+
+test('outlines that disagree near a border: rule E\'s town decides, else the province; core alone: the country outline', () => {
+  const { full, coreOnly } = borderPack();
+  const reg = (r, lat, lon) => r.resolve({ lat, lon, tier: 'regional' }).key;
+  assert.equal(reg(full, 1, 0.15), 'adm0:BBB'); // country outline A, province B: the nearest town (12, in B) decides
+  assert.equal(reg(full, 1, -0.05), 'adm0:AAA'); // both say A
+  assert.equal(reg(full, -4, 0.1), 'adm0:BBB'); // no town within 50 km: the province
+  assert.equal(reg(coreOnly, 1, 0.15), 'adm0:AAA');
+  assert.equal(full.resolve({ lat: 1, lon: 0.15, tier: 'city' }).key, 'place:12');
+});
+
+test('a town is named on the land its outline gives it (adm0_alt)', () => {
+  const { full } = borderPack();
+  assert.equal(full.resolve({ lat: 3, lon: 0.31, tier: 'city' }).key, 'place:13'); // land B, a town of A with alt B
+});
+
+test('the band: a zone ties only with its own administering country, province outlines count with detail', () => {
+  const { full, coreOnly } = borderPack();
+  // 5.0 km from Cland (not the zone's administering country), 5.56 km from zone c: the nearer country wins.
+  assert.equal(full.resolve({ lat: 0.5, lon: 19.95, tier: 'regional' }).key, 'adm0:CCC');
+  // 5.6 km from D's province outline (39 km from its country outline), 16.7 km from zone d: the province's country.
+  assert.equal(full.resolve({ lat: 0.5, lon: 31.35, tier: 'regional' }).key, 'adm0:DDD');
+  assert.equal(coreOnly.resolve({ lat: 0.5, lon: 31.35, tier: 'regional' }).key, 'zone:d'); // core alone: the zone
+  assert.equal(full.resolve({ lat: 0.5, lon: 31.48, tier: 'regional' }).key, 'zone:d'); // 2.2 km from the zone: it ties
+});
+
+test('a national sea shows its name past the 3 km the outlines may miss at its coast (Q7)', () => {
+  const { full } = borderPack();
+  assert.equal(full.resolve({ lat: 1, lon: 40.1, tier: 'regional' }).key, 'sea:21'); // 11 km off: the sea, not the country
+  assert.equal(full.resolve({ lat: 1, lon: 40.02, tier: 'regional' }).key, 'adm0:EEE'); // 2.2 km off: the coast's country
+  assert.equal(full.resolve({ lat: 1, lon: 40.1, tier: 'city' }).key, 'sea:21');
+  assert.equal(full.resolve({ lat: 1, lon: 40.1, tier: 'globe', mpp: 5000 }).key, 'region:westernAsia'); // the globe keeps its band
+});
+
+test('an assignment area gives its country before the outlines', () => {
+  const { full, coreOnly } = borderPack();
+  assert.equal(full.resolve({ lat: 1, lon: 50.2, tier: 'regional' }).key, 'adm0:III');
+  assert.equal(coreOnly.resolve({ lat: 1, lon: 50.2, tier: 'regional' }).key, 'adm0:III');
+  assert.equal(full.resolve({ lat: 1, lon: 51, tier: 'regional' }).key, 'adm0:PPP');
+});
+
+test('the accepted diffs of one release only', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'places-acc-'));
+  try {
+    const f = join(dir, 'a.md');
+    writeFileSync(f, ['## 1.0.0', '- `regional * *`: everything', '- `parity regional 1.0000,2.0000 sea:1 adm0:X`: x', '## 1.1.0', '- `city a b`: one'].join('\n'));
+    assert.deepEqual(parseAccepted(f, '1.1.0'), [{ tier: 'city', from: 'a', to: 'b' }]);
+    assert.equal(parseAccepted(f, '1.0.0').length, 1);
+    assert.equal(parseAccepted(f).length, 2);
+    assert.deepEqual([...parseAcceptedParity(f, '1.0.0')], ['regional 1.0000,2.0000 sea:1 adm0:X']);
+    assert.equal(parseAcceptedParity(f, '1.1.0').size, 0);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a release pointer must be this version\'s, with the URLs it publishes', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'places-rel-'));
+  try {
+    const committed = join(dir, '9.9.9');
+    mkdirSync(committed);
+    const meta = { version: '9.9.9', generated: '2026-10-17T00:00:00Z', attribution: 'test' };
+    const parts = ['core', 'detail'].map((name) => writePart(join(committed, `places-${name}.sqlite`), name, [], name === 'detail' ? [] : null, meta));
+    const pointer = { version: '9.9.9', schema: 1, parts: parts.map((p) => ({ name: p.name, size_bytes: p.size_bytes, inflated_bytes: p.inflated_bytes, sha256: p.sha256, urls: pointerUrls('9.9.9', p.name) })) };
+    const pointerPath = join(dir, 'places-db.json');
+    writeFileSync(pointerPath, JSON.stringify(pointer));
+    assert.deepEqual(releaseProblems({ committed, pointerPath, version: '9.9.9' }), []);
+    pointer.parts[1].urls = pointerUrls('9.9.8', 'detail');
+    writeFileSync(pointerPath, JSON.stringify(pointer));
+    assert.ok(releaseProblems({ committed, pointerPath, version: '9.9.9' }).some((p) => p.startsWith('detail: urls')));
+    assert.ok(releaseProblems({ committed, pointerPath, version: '9.9.10' }).some((p) => p.includes('places/VERSION')));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('town names: soft signs at a word end, admin suffixes, Wikidata items that are not the town, GeoNames guesses', () => {
+  assert.equal(cleanRomanisation("Ryazan'", 'RU'), 'Ryazan');
+  assert.equal(cleanRomanisation("Homyel'", 'BY'), 'Homyel');
+  assert.equal(cleanRomanisation("O'Higgins", 'CL'), "O'Higgins");
+  assert.equal(stripAdminSuffix('Goyang-si', 'KR'), 'Goyang');
+  assert.equal(stripAdminSuffix('Nishi-Tokyo-shi', 'JP'), 'Nishi-Tokyo');
+  assert.equal(stripAdminSuffix('Quezon City', 'PH'), 'Quezon City');
+  assert.ok(nameSimilarity('Faiyum', 'Al Fayyum') >= 0.5);
+  const delhi = ['Delhi', 'Dilli'];
+  assert.equal(wikidataRussian({ ru: '\u0421\u0442\u0430\u0440\u044B\u0439 \u0414\u0435\u043B\u0438', en: 'Old Delhi' }, delhi), '');
+  assert.equal(wikidataRussian({ ru: '\u0414\u0435\u043B\u0438', en: 'Delhi' }, delhi), '\u0414\u0435\u043B\u0438');
+  assert.equal(wikidataRussian({ ru: '\u0421\u0430\u043D\u0442\u0443\u0441', en: 'Baixada Santista' }, ['Santos']), '');
+  assert.equal(wikidataRussian({ ru: '\u0422\u0430\u0433\u0430\u043D\u0441\u043A\u0438\u0439 \u0440\u0430\u0439\u043E\u043D', en: 'Taganskiy' }, ['Taganskiy']), '');
+  assert.equal(wikidataRussian({ ru: '\u0421\u0442\u0430\u0440\u044B\u0439 \u041E\u0441\u043A\u043E\u043B', en: 'Stary Oskol' }, ['Staryy Oskol']), '\u0421\u0442\u0430\u0440\u044B\u0439 \u041E\u0441\u043A\u043E\u043B');
+  const alt = (name, preferred = false) => ({ lang: 'ru', name, preferred, short: false, colloquial: false, historic: false, from: '', to: '' });
+  assert.equal(pickRussian([alt('\u0417\u0430\u0440\u044F'), alt('\u0417\u0430\u0440\u0438\u0430')]).name, ''); // two different names: a guess
+  assert.equal(pickRussian([alt('\u041A\u0430\u043B\u044C\u043A\u0443\u0442\u0442\u0430'), alt('\u041A\u043E\u0436\u0438\u043A\u043E\u0434\u0435')]).name, '');
+  assert.equal(pickRussian([alt('\u041A\u0430\u044F\u043D\u0438'), alt('\u041A\u0430\u044F\u0430\u043D\u0438')]).name, '\u041A\u0430\u044F\u043D\u0438'); // two spellings of one name
+  assert.equal(pickRussian([alt('\u0417\u0430\u0440\u044F'), alt('\u0417\u0430\u0440\u0438\u044F', true)]).name, '\u0417\u0430\u0440\u0438\u044F');
+  assert.equal(pickRussian([alt('\u0416\u0438\u0433\u0443\u043B\u0451\u0432\u0441\u043A'), alt('\u0416\u0438\u0433\u0443\u043B\u0435\u0432\u0441\u043A')]).name, '\u0416\u0438\u0433\u0443\u043B\u0451\u0432\u0441\u043A');
+});
+
+test('the town threshold honours any minimum population', () => {
+  assert.equal(keepTown(9000, 'PPL', 10000), false);
+  assert.equal(keepTown(10001, 'PPL', 10000), true);
+  assert.equal(keepTown(100, 'PPLA', 10000), true);
 });

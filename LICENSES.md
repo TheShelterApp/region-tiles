@@ -127,9 +127,11 @@ Credit line (also `meta.attribution` of both files):
   Filtered (population, feature codes), joined to this dataset's outlines, renamed (curated overrides) and converted.
 - **Seas and oceans:** Natural Earth 10m `geography_marine_polys` 5.2.0: **public domain**; names curated by The
   Shelter.
-- **Neutral zones:** Natural Earth 10m `admin_0_disputed_areas` and this dataset's ADM1 outlines: **public domain**.
+- **Neutral zones and assignment areas:** Natural Earth 10m `admin_0_disputed_areas` and this dataset's ADM1 outlines
+  (Natural Earth): **public domain**.
 - **Countries and provinces:** this dataset's ADM0 and ADM1 outlines (Natural Earth): **public domain**.
-- **Names:** Wikidata labels: **CC0**.
+- **Names:** Wikidata labels and the few figures the overrides take from Wikidata (a population): **CC0**.
 
-The pack uses no OpenStreetMap, geoBoundaries or NeoFeoda data. The inputs are listed with their sha256 in
-`places/sources.lock.json`.
+The pack uses no OpenStreetMap, geoBoundaries or NeoFeoda data: of this dataset it reads the ADM0 and ADM1 outlines
+(Natural Earth) only, never the ADM2 districts (geoBoundaries, CC BY-SA); `places/verify.mjs` check 12 checks it. The
+inputs are listed with their sha256 in `places/sources.lock.json`.

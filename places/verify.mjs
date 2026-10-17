@@ -14,7 +14,7 @@ import { Resolver } from './resolve.mjs';
 import { decodeGeometry, encodeGeometry, fromGeoJSON, quantise, countVertices, bboxOf, fibonacci, polygonContains } from './lib/geometry.mjs';
 import { gunzipChecked, sha256, readTsv, ensureDir, untar, stableStringify } from './lib/io.mjs';
 import { nameProblems, isRussian } from './lib/names.mjs';
-import { latticeAnswers, diffLattices, diffMarkdown, parseAccepted, latticeTsv, TIERS } from './lattice.mjs';
+import { latticeAnswers, diffLattices, diffMarkdown, parseAccepted, parseAcceptedParity, latticeTsv, TIERS } from './lattice.mjs';
 import { gzipDeterministic } from './lib/io.mjs';
 import { writeReviewReports } from './reports.mjs';
 
@@ -92,6 +92,7 @@ async function main() {
   const coreOnly = new Resolver(new PlaceIndex(core, null));
   const n = Number(opt.n);
   const pointer = JSON.parse(readFileSync(join(packDir, 'places-db.json'), 'utf8'));
+  const buildReport = existsSync(join(packDir, 'build-report.json')) ? JSON.parse(readFileSync(join(packDir, 'build-report.json'), 'utf8')) : null;
 
   // 0. meta: schema, part, version and counts, as the app checks them before a swap.
   check(0, 'meta matches the pointer and the tables', () => {
@@ -103,7 +104,7 @@ async function main() {
       if (m.version !== pointer.version) bad.push(`${part} version ${m.version} != pointer ${pointer.version}`);
       if (Number(m.count_areas) !== p.areas.length) bad.push(`${part} count_areas`);
       if (Number(m.count_places) !== (p.places ? p.places.length : 0)) bad.push(`${part} count_places`);
-      for (const [k, layer] of [['countries', 0], ['provinces', 1], ['waters', 2], ['zones', 3]]) {
+      for (const [k, layer] of [['countries', 0], ['provinces', 1], ['waters', 2], ['zones', 3], ['assignments', 4]]) {
         if (Number(m[`count_${k}`]) !== p.areas.filter((a) => a.layer === layer).length) bad.push(`${part} count_${k}`);
       }
       const ptr = pointer.parts.find((x) => x.name === part);
@@ -363,29 +364,54 @@ async function main() {
   check(7, 'lattice regression against the previous release', () => {
     if (!opt.previous) return { ok: true, detail: `no previous release given (first release); ${n} points x 3 tiers written to reports/lattice.tsv.gz (${((Date.now() - t7) / 1000).toFixed(0)} s)` };
     const prev = new Resolver(new PlaceIndex(openPart(join(opt.previous, 'places-core.sqlite.gz')), openPart(join(opt.previous, 'places-detail.sqlite.gz'))));
-    const diff = diffLattices(latticeAnswers(prev, n), latticeRows, parseAccepted(join(HERE, 'accepted-diffs.md')));
+    const diff = diffLattices(latticeAnswers(prev, n), latticeRows, parseAccepted(join(HERE, 'accepted-diffs.md'), pointer.version));
     writeFileSync(join(reports, 'lattice-diff.md'), diffMarkdown(diff, `Lattice diff against ${opt.previous}`));
     const worst = Math.max(...TIERS.map((t) => diff[t].unacceptedShare));
     return { ok: worst <= 0.005, detail: TIERS.map((t) => `${t} ${diff[t].changed} changed, ${diff[t].unaccepted} unaccepted`).join('; ') + ' (reports/lattice-diff.md)' };
   });
 
-  // 8. Part parity: core alone gives the same globe and regional answers as core + detail, except where land is known
-  //    only by a province outline (Sevastopol, Kunashir: the province rings cover gaps of the country rings).
+  // 8. Part parity: core alone gives the same globe and regional answers as core + detail. They can differ only where
+  //    detail knows more: land known only by a province outline (Sevastopol, Kunashir, the Taman peninsula: the
+  //    province rings cover gaps of the simplified country rings), outlines that disagree near a border (the province
+  //    and the towns decide there), a band measured to a province outline. Every difference is listed with its kind in
+  //    reports/part-parity.txt. One where core alone shows a zone (full: none), a water over land, another country or
+  //    another part of the world must be accepted in accepted-diffs.md (`parity tier lat,lon core full`, under the
+  //    candidate's version), so a new one fails; so does a difference of none of these kinds (unexplained).
   check(8, 'part parity (core alone vs core + detail)', () => {
-    const diffs = [];
-    let explained = 0;
+    const accepted = parseAcceptedParity(join(HERE, 'accepted-diffs.md'), pointer.version);
+    const rows = [];
+    const kinds = new Map();
     lattice.forEach(([lat, lon], i) => {
       for (const tier of ['globe', 'regional']) {
         const a = coreOnly.resolve({ lat, lon, tier });
         const b = latticeRows[i][tier];
         if ((a?.key ?? '') === b.key) continue;
-        const provinceOnly = full.ix.provinces.containing(lat, lon).length > 0 && full.ix.countries.containing(lat, lon).length === 0;
-        if (provinceOnly) explained++;
-        else diffs.push(`${tier} ${lat.toFixed(4)},${lon.toFixed(4)}: core ${a?.key}, full ${b.key}`);
+        const Lc = coreOnly.land(lat, lon);
+        const Lf = full.land(lat, lon);
+        let kind;
+        if (Lf.isLand && !Lc.isLand) kind = 'land only by a province outline';
+        else if (Lf.isLand && Lc.country?.iso3 !== Lf.country?.iso3) kind = 'the outlines disagree (the province and the towns decide)';
+        else if (!Lf.isLand) kind = 'the band measured to a province outline';
+        else kind = 'unexplained';
+        const bad = [];
+        if (a?.key?.startsWith('zone:') && !b.key.startsWith('zone:')) bad.push('a zone');
+        if (a?.key?.startsWith('sea:') && Lf.isLand) bad.push('a water over land');
+        if (a?.key?.startsWith('adm0:') && b.key.startsWith('adm0:')) bad.push('another country');
+        if (a?.key?.startsWith('region:') && b.key.startsWith('region:')) bad.push('another part of the world');
+        const id = `${tier} ${lat.toFixed(4)},${lon.toFixed(4)} ${a?.key ?? '-'} ${b.key}`;
+        rows.push({ id, kind, bad, accepted: accepted.has(id) });
+        kinds.set(kind, (kinds.get(kind) || 0) + 1);
       }
     });
-    writeFileSync(join(reports, 'part-parity.txt'), [`explained (land only by a province outline): ${explained}`, ...diffs].join('\n') + '\n');
-    return { ok: diffs.length === 0, detail: `${explained} differences where land is known only by a province outline; ${diffs.length} others${diffs.length ? `: ${diffs.slice(0, 5).join('; ')}` : ''}` };
+    const open = rows.filter((r) => !r.accepted && (r.bad.length || r.kind === 'unexplained'));
+    writeFileSync(join(reports, 'part-parity.txt'), [
+      `Part parity: ${rows.length} differences between core alone and core + detail on the ${n}-point lattice; ${rows.filter((r) => r.bad.length).length} where core alone shows a zone, a water over land, another country or another part of the world, ${open.length} of them not accepted.`,
+      ...[...kinds].map(([k, v]) => `  ${v}\t${k}`), '',
+      'Each line: the accepted-diffs.md entry (tier lat,lon core-key full-key), the kind, what core alone shows.', '',
+      ...rows.map((r) => `${r.accepted ? 'accepted ' : r.bad.length || r.kind === 'unexplained' ? 'OPEN     ' : 'listed   '}- \`parity ${r.id}\`\t${r.kind}${r.bad.length ? `; core alone shows ${r.bad.join(', ')}` : ''}`),
+    ].join('\n') + '\n');
+    const unexplained = rows.filter((r) => r.kind === 'unexplained').length;
+    return { ok: open.length === 0 && unexplained === 0, detail: `${rows.length} differences (${[...kinds].map(([k, v]) => `${v} ${k}`).join(', ')}), ${open.length} not accepted (reports/part-parity.txt)${open.length ? `: ${open.slice(0, 4).map((r) => r.id).join('; ')}` : ''}` };
   });
 
   // 9. Zones and parts of the world.
@@ -396,6 +422,12 @@ async function main() {
     }
     const zones = readTsv(join(HERE, 'curation', 'zones.tsv')).rows;
     for (const z of zones) if (!WORLDS.has(z.world)) bad.push(`zones.tsv ${z.key} world`);
+    const ids = new Set(core.areas.filter((a) => a.layer === 0).map((a) => a.iso3));
+    for (const a of core.areas.filter((x) => x.layer === 3)) {
+      const admins = String(a.admin || '').split(/\s+/).filter(Boolean);
+      if (!admins.length || admins.some((c) => !ids.has(c))) bad.push(`${a.key} admin "${a.admin}"`);
+    }
+    for (const a of core.areas.filter((x) => x.layer === 4)) if (!ids.has(a.iso3)) bad.push(`${a.key} country "${a.iso3}"`);
     return { ok: !bad.length, detail: `${core.areas.filter((a) => a.layer === 3).length} zones${bad.length ? `; ${bad.join('; ')}` : ''}` };
   });
 
@@ -431,10 +463,61 @@ async function main() {
     for (const banned of [/openstreetmap/i, /neofeoda/i, /geoboundaries/i, /osm\./i]) if (banned.test(lock)) bad.push(`sources.lock.json mentions ${banned}`);
     const l = JSON.parse(lock);
     if (!l.upstream?.length || !l.archive?.sha256 || !l.regions_bundle?.sha256) bad.push('sources.lock.json incomplete');
-    return { ok: !bad.length, detail: bad.join('; ') };
+    // The regions bundle's level-2 districts are geoBoundaries (CC BY-SA): the build reads its countries and provinces
+    // (Natural Earth) only, and says so in its report.
+    const levels = buildReport?.bundleLevelsRead;
+    if (!Array.isArray(levels) || levels.some((v) => v > 1)) bad.push(`the build read regions-bundle levels ${JSON.stringify(levels)} (only 0 and 1 are Natural Earth)`);
+    return { ok: !bad.length, detail: bad.join('; ') || `bundle levels read: ${levels.join(', ')}` };
   });
 
-  writeReviewReports({ core, detail, full, reports, srcRoot, partition });
+  // 13. Town countries: a town takes GeoNames' country unless a curated policy pair (town-countries.tsv) or an override
+  //     says otherwise; every town whose country differs from GeoNames' is listed (reports/town-countries.md), and one
+  //     nothing explains fails. So does a GeoNames country code no bundle country and no policy row covers.
+  check(13, 'town countries against GeoNames', () => {
+    const countries = readTsv(join(HERE, 'curation', 'countries.tsv')).rows;
+    const iso2to3 = new Map(countries.filter((r) => r.iso2).map((r) => [r.iso2, r.id]));
+    const policy = readTsv(join(HERE, 'curation', 'town-countries.tsv')).rows;
+    const over = new Map(readTsv(join(HERE, 'curation', 'places-overrides.tsv')).rows.map((r) => [Number(r.geonameid), r]));
+    const gn = new Map();
+    for (const line of readFileSync(join(srcRoot, 'geonames', 'cities1000.txt'), 'utf8').split('\n')) {
+      const c = line.split('\t');
+      if (c.length >= 19) gn.set(Number(c[0]), { cc: c[8], name: c[1] });
+    }
+    const bad = [];
+    const listed = [];
+    const pairs = new Map();
+    for (const t of detail.places) {
+      const g = gn.get(t.id);
+      if (!g) {
+        bad.push(`place:${t.id} not in cities1000`);
+        continue;
+      }
+      const want = iso2to3.get(g.cc) || null;
+      if (t.adm0 === want && !t.adm0_alt) continue;
+      const L = full.land(t.lat / 1e4, t.lon / 1e4);
+      const row = policy.find((r) => r.cc === g.cc && r.country === t.adm0 && (!r.within || r.within === L.zone?.key || r.within === L.assignment?.key));
+      const o = over.get(t.id);
+      let why;
+      if (t.adm0 === want) why = `GeoNames' country; its outline gives ${t.adm0_alt} (adm0_alt)`;
+      else if (o?.adm0 === t.adm0) why = 'override';
+      else if (row) why = `policy: ${row.note}`;
+      else {
+        why = 'UNEXPLAINED';
+        bad.push(`place:${t.id} ${t.name_en} (${g.cc}) is ${t.adm0}`);
+      }
+      const k = `${g.cc} -> ${t.adm0}${t.adm0_alt ? ` (alt ${t.adm0_alt})` : ''}`;
+      pairs.set(k, (pairs.get(k) || 0) + 1);
+      listed.push(`| place:${t.id} | ${t.name_en} | ${g.cc} | ${t.adm0} | ${t.adm0_alt ?? ''} | ${t.pop} | ${why} |`);
+    }
+    writeFileSync(join(reports, 'town-countries.md'), ['# Town countries against GeoNames', '',
+      'Towns whose country is not GeoNames\' (a policy pair of places/curation/town-countries.tsv, an override) or whose',
+      'outline country differs (adm0_alt: rule E also names the town on that land, a border town inside a neighbour\'s',
+      'simplified outline). Pairs:', '', ...[...pairs].sort((a, b) => b[1] - a[1]).map(([k, v]) => `- ${k}: ${v}`), '',
+      '| Town | Name | GeoNames | Country | Outline (alt) | Population | Why |', '|---|---|---|---|---|---|---|', ...listed].join('\n') + '\n');
+    return { ok: !bad.length, detail: `${listed.length} towns listed (reports/town-countries.md)${bad.length ? `; ${bad.length} unexplained: ${bad.slice(0, 5).join('; ')}` : ''}` };
+  });
+
+  writeReviewReports({ core, detail, full, reports, srcRoot, partition, buildReport });
   writeFileSync(join(reports, 'verify.json'), stableStringify({ version: pointer.version, results }));
   const failed = results.filter((r) => !r.ok);
   console.log(`\n${results.length - failed.length}/${results.length} checks passed; reports in ${reports}`);
