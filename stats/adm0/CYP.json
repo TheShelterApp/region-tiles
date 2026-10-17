@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "id": "CYP",
   "name": "Cyprus",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 77,
+  "total": 79,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,1,0,0,0,1,2,2,1,2,2,0,0,0,0,0,1,0,5,24,2,1,7,0,0,0,1,0,0,1,1,0,2,1,0,1,0,0,2,0,0,1,0,0,0,5,0,1,5,0]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,1,0,0,0,1,2,2,1,2,2,0,0,0,0,0,1,0,5,24,2,1,7,0,0,0,1,0,0,1,1,0,2,1,0,1,0,0,2,0,0,1,0,0,0,5,0,1,5,0]
   },
   "largest": [
     {"id":"usp0007r4u","time":"1996-10-09T13:10:52Z","mag":6.8,"place":"36 km SW of Paphos, Cyprus","lat":34.556,"lon":32.126,"depth":33},
@@ -21,19 +21,19 @@
     {"id":"usp0007r50","time":"1996-10-09T14:19:37Z","mag":5.7,"place":"28 km SW of Paphos, Cyprus","lat":34.591,"lon":32.208,"depth":33},
     {"id":"usp0007r6q","time":"1996-10-10T01:10:22Z","mag":5.7,"place":"30 km SW of Paphos, Cyprus","lat":34.56,"lon":32.214,"depth":33},
     {"id":"usp0007vtt","time":"1997-01-13T10:19:26Z","mag":5.7,"place":"50 km SSW of Koloni, Cyprus","lat":34.305,"lon":32.326,"depth":33},
+    {"id":"iscgem907376","time":"1930-05-09T07:07:20Z","mag":5.67,"place":"26 km SSW of Koloni, Cyprus","lat":34.526,"lon":32.348,"depth":15},
     {"id":"usp00098rd","time":"1999-05-25T17:15:21Z","mag":5.6,"place":"42 km SW of Paphos, Cyprus","lat":34.478,"lon":32.131,"depth":10},
     {"id":"usp0009cw8","time":"1999-08-11T04:27:55Z","mag":5.6,"place":"10 km NNW of Páno Polemídia, Cyprus","lat":34.791,"lon":32.939,"depth":33},
     {"id":"usp0005pyb","time":"1993-03-22T11:03:43Z","mag":5.4,"place":"47 km SE of Protaras, Cyprus","lat":34.697,"lon":34.402,"depth":32.1},
     {"id":"usp0007tkm","time":"1996-11-27T00:44:23Z","mag":5.4,"place":"45 km SW of Paphos, Cyprus","lat":34.499,"lon":32.06,"depth":33},
+    {"id":"iscgemsup907521","time":"1930-07-25T19:46:34Z","mag":5.33,"place":"14 km S of Koloni, Cyprus","lat":34.617,"lon":32.48,"depth":15},
     {"id":"usp0006te2","time":"1995-02-23T21:40:31Z","mag":5.3,"place":"10 km W of Pólis, Cyprus","lat":35.043,"lon":32.314,"depth":10},
     {"id":"usp0006y8m","time":"1995-05-29T04:58:32Z","mag":5.3,"place":"16 km W of Pólis, Cyprus","lat":35.039,"lon":32.246,"depth":10},
     {"id":"us200026mv","time":"2015-04-15T08:25:11Z","mag":5.3,"place":"6 km WSW of Kissonerga, Cyprus","lat":34.808,"lon":32.331,"depth":10},
     {"id":"us7000ghf9","time":"2022-02-02T21:03:48Z","mag":5.3,"place":"55 km WNW of P?geia, Cyprus","lat":35.063,"lon":31.82,"depth":26.4},
     {"id":"us6000rmyh","time":"2025-11-12T14:23:31Z","mag":5.3,"place":"5 km NE of Polémi, Cyprus","lat":34.923,"lon":32.555,"depth":10},
     {"id":"iscgemsup903133","time":"1937-06-26T19:19:34Z","mag":5.27,"place":"17 km SW of Pissoúri, Cyprus","lat":34.557,"lon":32.563,"depth":15},
-    {"id":"usp0007r4z","time":"1996-10-09T14:00:10Z","mag":5.2,"place":"45 km SW of Paphos, Cyprus","lat":34.496,"lon":32.063,"depth":33},
-    {"id":"usp0007r74","time":"1996-10-10T04:54:46Z","mag":5.2,"place":"9 km WSW of Pégeia, Cyprus","lat":34.848,"lon":32.288,"depth":33},
-    {"id":"us6000rmxj","time":"2025-11-12T09:31:27Z","mag":5.2,"place":"2 km ENE of Polémi, Cyprus","lat":34.898,"lon":32.533,"depth":19.7}
+    {"id":"usp0007r4z","time":"1996-10-09T14:00:10Z","mag":5.2,"place":"45 km SW of Paphos, Cyprus","lat":34.496,"lon":32.063,"depth":33}
   ],
   "recent": [
     {"id":"us6000rn3f","time":"2025-11-13T09:27:24Z","mag":4.6,"place":"6 km SE of Koloni, Cyprus","lat":34.71,"lon":32.523,"depth":10},

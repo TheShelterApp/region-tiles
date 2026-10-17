@@ -2,19 +2,20 @@
   "schemaVersion": 1,
   "id": "AUS",
   "name": "Australia",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 583,
+  "total": 592,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,0,0,1,2,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,1,0,2,1,2,0,2,8,4,2,0,3,3,14,13,7,8,5,7,11,5,14,24,45,8,10,12,7,7,6,10,6,7,1,2,6,11,4,6,15,9,14,22,10,8,9,11,7,5,10,15,7,7,27,12,13,12,10,16,42,9]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,2,1,1,0,0,0,1,0,1,0,0,0,0,1,2,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,1,0,2,1,2,0,2,8,4,2,0,3,3,14,13,7,8,5,7,11,5,14,24,45,8,10,12,7,7,6,10,6,7,1,2,6,11,4,6,15,9,14,22,10,8,9,11,7,5,10,15,7,7,27,12,13,12,10,16,42,9]
   },
   "largest": [
     {"id":"official19890523105446320_10","time":"1989-05-23T10:54:46Z","mag":8.02,"place":"1989 Macquarie Ridge Earthquake","lat":-52.341,"lon":160.568,"depth":10},
+    {"id":"iscgem910998","time":"1924-06-26T01:37:33Z","mag":7.65,"place":"Macquarie Island region","lat":-56.191,"lon":158.481,"depth":10},
     {"id":"iscgem899985","time":"1943-09-06T03:41:30Z","mag":7.52,"place":"Macquarie Island region","lat":-53.903,"lon":158.761,"depth":10},
     {"id":"usp000381s","time":"1987-09-03T06:40:13Z","mag":7.4,"place":"Macquarie Island region","lat":-58.893,"lon":158.513,"depth":33},
     {"id":"iscgem854292","time":"1965-08-02T13:19:55Z","mag":7.3,"place":"Macquarie Island region","lat":-56.141,"lon":157.884,"depth":11.1},
@@ -30,13 +31,12 @@
     {"id":"usp0000ptq","time":"1977-07-21T11:53:22Z","mag":6.7,"place":"Macquarie Island region","lat":-53.863,"lon":158.602,"depth":33},
     {"id":"usp0003c9n","time":"1988-01-22T12:04:57Z","mag":6.7,"place":"38 km WSW of Tennant Creek, Australia","lat":-19.829,"lon":133.882,"depth":5},
     {"id":"us70004jxe","time":"2019-07-14T05:39:23Z","mag":6.6,"place":"198 km W of Cable Beach, Australia","lat":-18.224,"lon":120.358,"depth":10},
+    {"id":"iscgemsup610548633","time":"1906-03-27T05:04:26Z","mag":6.59,"place":"off the south coast of Australia","lat":-38.097,"lon":118.428,"depth":10},
     {"id":"iscgem815895","time":"1968-10-14T02:58:52Z","mag":6.5,"place":"40 km ENE of Northam, Australia","lat":-31.561,"lon":117.089,"depth":11.2},
-    {"id":"usp00015bk","time":"1980-02-07T10:49:16Z","mag":6.5,"place":"Macquarie Island region","lat":-54.158,"lon":158.89,"depth":10},
-    {"id":"usp0006n54","time":"1994-11-05T02:16:03Z","mag":6.5,"place":"Macquarie Island region","lat":-57.193,"lon":157.858,"depth":24.7},
-    {"id":"iscgem894859","time":"1951-10-28T06:47:46Z","mag":6.47,"place":"Macquarie Island region","lat":-57.894,"lon":157.15,"depth":15}
+    {"id":"usp00015bk","time":"1980-02-07T10:49:16Z","mag":6.5,"place":"Macquarie Island region","lat":-54.158,"lon":158.89,"depth":10}
   ],
   "recent": [
-    {"id":"us6000tz1y","time":"2026-10-02T16:01:39Z","mag":4.7,"place":"5 km NNE of Korumburra, Australia","lat":-38.38,"lon":145.84,"depth":10},
+    {"id":"us6000tz1y","time":"2026-10-02T16:01:39Z","mag":4.7,"place":"5 km NNW of Korumburra, Australia","lat":-38.385,"lon":145.808,"depth":10},
     {"id":"us6000tk0u","time":"2026-08-11T18:10:25Z","mag":4.6,"place":"Western Australia","lat":-31.549,"lon":126.578,"depth":10},
     {"id":"us7000sq0v","time":"2026-06-02T08:18:53Z","mag":4.5,"place":"34 km SW of Tennant Creek, Australia","lat":-19.868,"lon":133.956,"depth":10},
     {"id":"us7000spti","time":"2026-06-01T10:32:50Z","mag":4.8,"place":"Macquarie Island region","lat":-57.853,"lon":157.763,"depth":10},

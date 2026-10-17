@@ -4,8 +4,17 @@
 import { join } from 'node:path';
 import { ROOT } from '../../config.mjs';
 
-/** The catalogue start: the "90-year area history" counts from here (fixed; the span grows by a year every January). */
-export const SINCE = '1936-01-01T00:00:00Z';
+/**
+ * The catalogue start (fixed, 1 January; SHLTR-120: the area history from the earliest year ComCat has). ComCat's
+ * earliest earthquake of M4.5+, and its earliest event of any kind, is 1568-01-01 near Moodus, Connecticut, M4.9
+ * (ushis15680101000000000; a /count from year 1 on, 2026-10-17): the window opens at the century before it, so its
+ * first page is a whole one and a historical event ComCat adds before 1568 still counts. Every run checks that ComCat
+ * lists no earthquake before SINCE (EARLIEST_QUERY_START); moving SINCE makes the next run a full one by itself.
+ */
+export const SINCE = '1500-01-01T00:00:00Z';
+
+/** Where the check that nothing precedes SINCE starts (ComCat accepts year 1). */
+export const EARLIEST_QUERY_START = '0001-01-01T00:00:00Z';
 
 /** Preferred magnitude floor (ComCat `minmagnitude`, inclusive). */
 export const MIN_MAGNITUDE = 4.5;

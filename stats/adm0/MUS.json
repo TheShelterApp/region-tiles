@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "id": "MUS",
   "name": "Mauritius",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 447,
+  "total": 452,
   "histogram": {
-    "startYear": 1936,
-    "counts": [1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,0,2,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,1,0,3,2,0,1,0,1,3,4,4,1,5,8,9,2,1,3,3,7,4,5,2,0,7,4,6,1,12,8,9,7,11,9,9,10,11,13,19,16,11,7,14,9,16,14,11,18,18,13,20,11,5,15,20,13]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,0,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,0,2,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,1,0,3,2,0,1,0,1,3,4,4,1,5,8,9,2,1,3,3,7,4,5,2,0,7,4,6,1,12,8,9,7,11,9,9,10,11,13,19,16,11,7,14,9,16,14,11,18,18,13,20,11,5,15,20,14]
   },
   "largest": [
     {"id":"usp000jpfh","time":"2012-07-26T05:33:33Z","mag":6.7,"place":"Mauritius - Reunion region","lat":-17.592,"lon":66.391,"depth":20},
@@ -27,17 +27,18 @@
     {"id":"usp0003jvv","time":"1988-08-11T13:29:20Z","mag":6.2,"place":"276 km NE of Port Mathurin, Mauritius","lat":-18.062,"lon":65.418,"depth":10},
     {"id":"usp000bydf","time":"2003-05-28T16:15:18Z","mag":6.2,"place":"Mauritius - Reunion region","lat":-17.646,"lon":66.116,"depth":10},
     {"id":"usp000h2sy","time":"2009-10-12T03:15:47Z","mag":6.2,"place":"Mauritius - Reunion region","lat":-17.099,"lon":66.688,"depth":10},
+    {"id":"iscgem907184","time":"1931-12-31T00:23:39Z","mag":6.16,"place":"199 km N of Port Mathurin, Mauritius","lat":-17.919,"lon":63.783,"depth":10},
     {"id":"iscgem884663","time":"1958-07-03T05:45:17Z","mag":6.16,"place":"277 km NE of Port Mathurin, Mauritius","lat":-17.877,"lon":65.243,"depth":15},
     {"id":"iscgemsup889401","time":"1955-04-06T12:50:58Z","mag":6.1,"place":"Mauritius - Reunion region","lat":-17.304,"lon":66.405,"depth":15},
     {"id":"usp0000gys","time":"1976-06-19T15:00:46Z","mag":6.1,"place":"279 km NE of Port Mathurin, Mauritius","lat":-18.02,"lon":65.414,"depth":33},
     {"id":"iscgem879087","time":"1960-05-19T10:11:58Z","mag":6.09,"place":"Mauritius - Reunion region","lat":-17.616,"lon":66.166,"depth":15},
     {"id":"iscgem900874","time":"1941-06-30T16:33:55Z","mag":6.08,"place":"288 km NNE of Port Mathurin, Mauritius","lat":-17.507,"lon":64.915,"depth":15},
-    {"id":"iscgem903526","time":"1936-03-21T01:52:08Z","mag":6.06,"place":"Mauritius - Reunion region","lat":-17.62,"lon":66.654,"depth":15},
-    {"id":"usp0001gux","time":"1981-11-07T09:42:55Z","mag":6,"place":"Mauritius - Reunion region","lat":-17.088,"lon":66.691,"depth":10}
+    {"id":"iscgem906023","time":"1932-02-14T23:13:41Z","mag":6.07,"place":"Mauritius - Reunion region","lat":-18.934,"lon":66.198,"depth":10}
   ],
   "recent": [
     {"id":"us7000ticc","time":"2026-09-14T20:58:48Z","mag":4.5,"place":"Mid-Indian Ridge","lat":-20.023,"lon":67.408,"depth":10},
-    {"id":"us7000tibg","time":"2026-09-14T00:20:59Z","mag":4.6,"place":"Mid-Indian Ridge","lat":-20.186,"lon":67.292,"depth":10},
+    {"id":"us7000tibw","time":"2026-09-14T09:43:50Z","mag":4.6,"place":"Mid-Indian Ridge","lat":-20.355,"lon":67.523,"depth":10},
+    {"id":"us7000tibg","time":"2026-09-14T00:20:59Z","mag":4.5,"place":"Mid-Indian Ridge","lat":-20.166,"lon":67.389,"depth":10},
     {"id":"us7000tiaj","time":"2026-09-13T23:27:47Z","mag":4.6,"place":"Mid-Indian Ridge","lat":-20.144,"lon":67.55,"depth":10},
     {"id":"us6000taj0","time":"2026-07-06T20:25:12Z","mag":4.9,"place":"217 km NE of Port Mathurin, Mauritius","lat":-18.293,"lon":64.871,"depth":10},
     {"id":"us6000tavv","time":"2026-07-06T17:51:18Z","mag":4.8,"place":"217 km NE of Port Mathurin, Mauritius","lat":-18.158,"lon":64.722,"depth":10},
@@ -54,7 +55,6 @@
     {"id":"us6000r0ns","time":"2025-07-29T01:00:33Z","mag":4.7,"place":"Mauritius - Reunion region","lat":-20.334,"lon":66.202,"depth":10},
     {"id":"us6000r0ng","time":"2025-07-29T00:57:40Z","mag":4.5,"place":"Mauritius - Reunion region","lat":-20.141,"lon":66.421,"depth":10},
     {"id":"us7000qcrw","time":"2025-07-15T09:57:58Z","mag":4.7,"place":"237 km ENE of Port Mathurin, Mauritius","lat":-18.647,"lon":65.393,"depth":10},
-    {"id":"us6000qvp1","time":"2025-07-15T09:42:24Z","mag":4.6,"place":"248 km ENE of Port Mathurin, Mauritius","lat":-18.729,"lon":65.558,"depth":10},
-    {"id":"us7000qa7k","time":"2025-06-19T00:47:32Z","mag":4.5,"place":"224 km ENE of Port Mathurin, Mauritius","lat":-18.57,"lon":65.2,"depth":10}
+    {"id":"us6000qvp1","time":"2025-07-15T09:42:24Z","mag":4.6,"place":"248 km ENE of Port Mathurin, Mauritius","lat":-18.729,"lon":65.558,"depth":10}
   ]
 }

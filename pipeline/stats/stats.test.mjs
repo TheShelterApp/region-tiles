@@ -12,7 +12,9 @@ import {
 } from './comcat.mjs';
 import { makeAssigner, polygonsOf, loadRegions, levelForMagnitude } from './assign.mjs';
 import { aggregate, histogramYears, formatJSON, yearStart } from './aggregate.mjs';
-import { comparison, countsFrom, plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
+import {
+  comparison, countsFrom, earlierEventsProblem, plausibilityProblems, readPublished, windowCountProblem,
+} from './plausibility.mjs';
 import { judge } from './build-stats.mjs';
 import { VERIFY_OUTCOME, windowCheck, WINDOW_SAMPLE } from './verify-stats.mjs';
 import { SINCE, STATS_DIR, STATS_INDEX, SCHEMA_VERSION, TOP_LARGEST, TOP_RECENT } from './config.mjs';
@@ -272,6 +274,9 @@ test('published files: schema, totals and ordering', { skip: !existsSync(STATS_I
     assert.equal(doc.total, doc.histogram.counts.reduce((a, b) => a + b, 0), f);
     assert.equal(doc.total, index.countries[doc.id], f);
     assert.equal(doc.until, index.until);
+    // The histogram starts at the window's year (1500), whatever the country's first event (SHLTR-120).
+    assert.equal(doc.since, index.since);
+    assert.equal(doc.histogram.startYear, new Date(index.since).getUTCFullYear(), f);
     for (let i = 1; i < doc.largest.length; i++) assert.ok(doc.largest[i - 1].mag >= doc.largest[i].mag, f);
     for (let i = 1; i < doc.recent.length; i++) assert.ok(doc.recent[i - 1].time >= doc.recent[i].time, f);
     assert.ok(Buffer.byteLength(JSON.stringify(doc)) < 16 * 1024, `${f} is small`);
@@ -466,7 +471,10 @@ test('build: a window short of ComCat\'s own count fails before any write', { sk
   const { r, unchanged } = runBuildWithStub(`
     let n = 0;
     globalThis.fetch = async (url) => {
-      if (String(url).includes('/count?')) return new Response('{"count":15000}', { status: 200 });
+      if (String(url).includes('/count?')) {
+        // Nothing before SINCE; 15,000 in the window.
+        return new Response(String(url).includes('starttime=0001-') ? '{"count":0}' : '{"count":15000}', { status: 200 });
+      }
       const start = new URL(String(url)).searchParams.get('starttime');
       n++;
       return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + n + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
@@ -488,7 +496,8 @@ test('build: a shrunken catalogue that agrees with its /count fails on the drop;
       const u = new URL(String(url));
       const start = u.searchParams.get('starttime');
       if (u.pathname.endsWith('/count')) {
-        return new Response(JSON.stringify({ count: pagesFor(start, u.searchParams.get('endtime')).length }), { status: 200 });
+        const count = start.startsWith('0001-') ? 0 : pagesFor(start, u.searchParams.get('endtime')).length;
+        return new Response(JSON.stringify({ count }), { status: 200 });
       }
       return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + start.slice(0, 10) + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
     };
@@ -540,6 +549,34 @@ test('comparison: a window opened earlier is compared over the previous window\'
   assert.match(problems[2], /AAA 40 → 4/);
   // Over the whole window the shrunken build would have looked larger than the published one.
   assert.equal(countsFrom({ countries: { AAA: h([50, 50, 4]), BBB: h([0, 3, 10]) }, unassigned: h([1, 1, 10]) }, 1934).total, 129);
+});
+
+test('the window starts at the catalogue\'s earliest year: an earthquake ComCat lists before SINCE is a problem', () => {
+  assert.equal(SINCE, '1500-01-01T00:00:00Z', 'the century before ComCat\'s earliest earthquake (1568-01-01, Moodus)');
+  assert.equal(earlierEventsProblem({ count: 0, since: SINCE }), null);
+  assert.match(earlierEventsProblem({ count: 2, since: SINCE }), /lists 2 earthquake\(s\) of the filter before 1500-01-01T00:00:00Z: .*Move SINCE/);
+});
+
+test('build: an earthquake ComCat lists before SINCE fails before any write', { skip: !existsSync(STATS_INDEX) }, () => {
+  // Pages and the window's /count agree (one event a page); only the count before SINCE is wrong.
+  const { r, unchanged } = runBuildWithStub(`
+    import { pagesFor, setRequestIntervalForTests } from ${JSON.stringify(new URL('./comcat.mjs', import.meta.url).href)};
+    setRequestIntervalForTests(0);
+    globalThis.fetch = async (url) => {
+      const u = new URL(String(url));
+      const start = u.searchParams.get('starttime');
+      if (u.pathname.endsWith('/count')) {
+        const count = start.startsWith('0001-') ? 2 : pagesFor(start, u.searchParams.get('endtime')).length;
+        return new Response(JSON.stringify({ count }), { status: 200 });
+      }
+      return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + start.slice(0, 10) + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
+    };
+  `);
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stdout, /▶ incremental: /);
+  assert.match(r.stdout, /▶ ComCat \/count before 1500-01-01T00:00:00Z: 2/);
+  assert.match(r.stderr, /not plausible, nothing written:\n {2}- ComCat lists 2 earthquake\(s\) of the filter before 1500-01-01T00:00:00Z/);
+  assert.ok(unchanged, 'the published files are unchanged');
 });
 
 // ---- R16-FOLLOWUPS (4): the refresh workflow's bounded verification before the push -----------------------------------

@@ -1,28 +1,32 @@
 #!/usr/bin/env node
-// Builds stats/adm0/<ISO3>.json + stats/index.json: per country, the USGS ComCat earthquakes M >= 4.5 since 1936
-// (count, yearly histogram, the largest and the most recent events). See README "Area history statistics".
+// Builds stats/adm0/<ISO3>.json + stats/index.json: per country, the USGS ComCat earthquakes M >= 4.5 since 1500, the
+// century before ComCat's earliest (count, yearly histogram, the largest and the most recent events). See README "Area
+// history statistics".
 //
 //   node pipeline/stats/build-stats.mjs            incremental: from 1 January of the year of (last cutoff - 365 days)
-//   node pipeline/stats/build-stats.mjs --full     everything since 1936 (cached pages before the revision window reused)
+//   node pipeline/stats/build-stats.mjs --full     everything since 1500 (cached pages before the revision window reused)
 //   --until=YYYY-MM-DD   the cutoff (exclusive, 00:00 UTC; default today) — the same cutoff gives the same files
 //   --accept-drop        publish even when the window count or the comparison with the previous files fails (after
 //                        reviewing a genuine large ComCat revision in the log); an empty page still fails
 //
 // A run falls back to --full by itself when there is no previous index, or it was built with another schema,
 // assignment rule or region set. It fails (exit 1, nothing written) on an empty page, a window short of ComCat's own
-// count (per era), or counts that drop implausibly against the previous files (plausibility.mjs, thresholds in
-// config.mjs; a window opened earlier is compared over the previous window's years).
+// count (per era), an earthquake ComCat lists before the window start, or counts that drop implausibly against the
+// previous files (plausibility.mjs, thresholds in config.mjs; a window opened earlier is compared over the previous
+// window's years).
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { INDEX_DIR, REGIONS_DB_JSON } from '../../config.mjs';
 import {
-  SCHEMA_VERSION, SINCE, MIN_MAGNITUDE, EVENT_TYPE, SOURCE, STATS_DIR, STATS_ADM0_DIR, STATS_INDEX,
+  SCHEMA_VERSION, EARLIEST_QUERY_START, MIN_MAGNITUDE, EVENT_TYPE, SOURCE, STATS_DIR, STATS_ADM0_DIR, STATS_INDEX,
   REVISION_WINDOW_DAYS, OFFSHORE_MAX_DEGREES, OFFSHORE_CANDIDATES, TOP_LARGEST, TOP_RECENT,
 } from './config.mjs';
 import { fetchRange, comcatCount, baseParams, eraSegments, pageMustHaveRows, stats as httpStats } from './comcat.mjs';
 import { loadRegions } from './assign.mjs';
-import { comparison, countsFrom, plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
+import {
+  comparison, countsFrom, earlierEventsProblem, plausibilityProblems, readPublished, windowCountProblem,
+} from './plausibility.mjs';
 import {
   aggregate, countryDocument, formatJSON, isoSeconds, SINCE_MS, yearOf, yearStart,
 } from './aggregate.mjs';
@@ -121,6 +125,12 @@ export async function build({ full = false, until = null, acceptDrop = false, lo
     const problem = windowCountProblem({ downloaded, comcat, window: `${segment.start} → ${segment.end}` });
     if (problem) countProblems.push(problem);
   }
+  // SHLTR-120: the window starts at the catalogue's earliest year. An earthquake ComCat lists before SINCE (a newly
+  // added historical event) needs SINCE moved back; one request, ComCat's endtime being inclusive, up to SINCE's last ms.
+  const earlier = await comcatCount(baseParams(EARLIEST_QUERY_START, new Date(SINCE_MS - 1).toISOString()));
+  log(`▶ ComCat /count before ${isoSeconds(SINCE_MS)}: ${earlier}`);
+  const earlierProblem = earlierEventsProblem({ count: earlier, since: isoSeconds(SINCE_MS) });
+  if (earlierProblem) countProblems.push(earlierProblem);
   judge(countProblems, { acceptDrop, log });
   // ComCat's endtime is inclusive: an event at the cutoff's very second belongs to the next run ([since, until)).
   const events = fetched.filter((e) => e.t >= windowStartMs && e.t < untilMs);

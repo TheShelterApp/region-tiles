@@ -39,6 +39,17 @@ export function readPublished(statsDir) {
 const allowedDrop = (previous, tolerance, slack) => Math.max(slack, Math.floor(previous * tolerance));
 
 /**
+ * ComCat's /count of the filter before the window start (`count`): a problem (a string) when it lists any earthquake
+ * there — the window no longer starts at the catalogue's earliest year (SHLTR-120), else null.
+ */
+export function earlierEventsProblem({ count, since }) {
+  if (count === 0) return null;
+  return `ComCat lists ${count} earthquake(s) of the filter before ${since}: the area history no longer starts at the `
+    + "catalogue's earliest year. Move SINCE in pipeline/stats/config.mjs back to 1 January of a year at or before them "
+    + '(the next run is a full one by itself)';
+}
+
+/**
  * Whether the previous files can be compared with a build of [sinceMs, untilMs), and over which years: the same
  * magnitude floor and event type, a cutoff no earlier and a window start no later. A window opened earlier (SINCE moved
  * back) adds years the previous files never counted, so the comparison runs over the previous window's years from

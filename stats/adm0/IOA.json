@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "id": "IOA",
   "name": "Indian Ocean Territories",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 156,
+  "total": 158,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,1,0,0,1,0,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,1,0,0,2,1,1,1,1,2,0,0,3,1,2,0,1,0,2,13,4,0,0,1,1,34,12,2,2,5,7,2,10,3,5,3,4,3,2,3,0,3,1,6,3,0]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,1,0,0,2,1,1,1,1,2,0,0,3,1,2,0,1,0,2,13,4,0,0,1,1,34,12,2,2,5,7,2,10,3,5,3,4,3,2,3,0,3,1,6,3,0]
   },
   "largest": [
     {"id":"usp0009ut0","time":"2000-06-18T14:44:13Z","mag":7.9,"place":"South Indian Ocean","lat":-13.802,"lon":97.453,"depth":10},
@@ -21,19 +21,19 @@
     {"id":"usc000hpsd","time":"2013-06-13T16:47:23Z","mag":6.7,"place":"south of Java, Indonesia","lat":-10.004,"lon":107.236,"depth":9},
     {"id":"iscgem901250","time":"1940-03-21T13:52:54Z","mag":6.27,"place":"south of Java, Indonesia","lat":-10.219,"lon":107.711,"depth":15},
     {"id":"iscgemsup897854","time":"1947-05-11T18:40:02Z","mag":6.11,"place":"south of Java, Indonesia","lat":-9.057,"lon":105.812,"depth":15},
+    {"id":"iscgem906085","time":"1932-03-28T00:35:36Z","mag":6.1,"place":"southwest of Sumatra, Indonesia","lat":-8.592,"lon":98.653,"depth":15},
     {"id":"usp00043z4","time":"1990-01-06T21:44:56Z","mag":6,"place":"South Indian Ocean","lat":-10.681,"lon":92.987,"depth":14.8},
     {"id":"usp000fexm","time":"2007-06-26T22:23:03Z","mag":6,"place":"south of Java, Indonesia","lat":-10.492,"lon":108.149,"depth":10},
     {"id":"usp000ans3","time":"2001-09-07T02:45:59Z","mag":5.9,"place":"South Indian Ocean","lat":-13.166,"lon":97.297,"depth":10},
     {"id":"usp000etdw","time":"2006-09-19T13:58:56Z","mag":5.9,"place":"294 km SSW of Singaparna, Indonesia","lat":-9.902,"lon":107.346,"depth":12},
+    {"id":"iscgem907276","time":"1930-03-15T06:54:50Z","mag":5.85,"place":"248 km SSW of Pelabuhanratu, Indonesia","lat":-9.122,"lon":105.861,"depth":15},
     {"id":"iscgem896696","time":"1949-07-20T22:20:10Z","mag":5.85,"place":"southwest of Sumatra, Indonesia","lat":-10.598,"lon":101.694,"depth":35},
     {"id":"usp0009uw8","time":"2000-06-20T11:34:00Z","mag":5.8,"place":"South Indian Ocean","lat":-14.104,"lon":97.577,"depth":10},
     {"id":"us7000pc0e","time":"2025-02-07T04:31:58Z","mag":5.8,"place":"southwest of Sumatra, Indonesia","lat":-9.707,"lon":97.57,"depth":21},
     {"id":"iscgem853506","time":"1965-10-31T17:24:04Z","mag":5.79,"place":"South Indian Ocean","lat":-14.22,"lon":95.098,"depth":10},
     {"id":"usp0001c1v","time":"1981-02-05T21:38:00Z","mag":5.7,"place":"south of Java, Indonesia","lat":-10.681,"lon":107.965,"depth":33},
     {"id":"usp000czvs","time":"2004-07-10T00:20:57Z","mag":5.7,"place":"South Indian Ocean","lat":-8.784,"lon":94.812,"depth":10},
-    {"id":"usp000ep2q","time":"2006-07-19T07:25:06Z","mag":5.7,"place":"260 km S of Banjar, Indonesia","lat":-9.543,"lon":107.241,"depth":10},
-    {"id":"iscgem903390","time":"1937-12-17T04:26:25Z","mag":5.56,"place":"229 km SSW of Banjar, Indonesia","lat":-9.092,"lon":106.592,"depth":15},
-    {"id":"usp0001m6p","time":"1982-05-09T10:00:56Z","mag":5.5,"place":"South Indian Ocean","lat":-10.734,"lon":94.507,"depth":10}
+    {"id":"usp000ep2q","time":"2006-07-19T07:25:06Z","mag":5.7,"place":"260 km S of Banjar, Indonesia","lat":-9.543,"lon":107.241,"depth":10}
   ],
   "recent": [
     {"id":"us6000qu8a","time":"2025-07-22T20:04:41Z","mag":4.9,"place":"220 km SSW of Pelabuhanratu, Indonesia","lat":-8.916,"lon":106.026,"depth":10},
