@@ -1,0 +1,79 @@
+# Checks a change to the place-names pack (places/, places/README.md): the unit tests, a full build from the pinned
+# sources archive and the regions bundle, every check of places/verify.mjs (the golden points, the lattice regression
+# against the previous committed release, part parity, reproducibility, budgets, licences), and for a release PR the
+# committed release bytes. The reports and the built pack are uploaded as artefacts.
+# Its only network steps besides checkout, setup-node and npm ci download the two pinned release assets (the sources
+# archive by places/sources.lock.json, the regions bundle by regions-db.json), each checked by sha256.
+# There is no release step: a release is cut by a session on the merge commit after the owner's approval
+# (places/README.md, "Release").
+name: Place names pack CI
+
+on:
+  pull_request:
+    paths:
+      - 'places/**'
+      - 'places-db.json'
+      - 'regions-db.json'
+      - '.github/workflows/places-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-24.04 # pinned, like stats-ci.yml (HYG-5)
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Unit tests
+        run: node --test places/test/*.test.mjs
+      - name: Download the pinned inputs
+        run: |
+          set -euo pipefail
+          mkdir -p dist/inputs
+          read -r url sha published < <(node -e "const l=require('./places/sources.lock.json').archive; console.log(l.url, l.sha256, l.published)")
+          if [ "$published" != "true" ]; then
+            echo "The sources archive is not published yet (it needs the owner's approval): $url" >&2
+            exit 1
+          fi
+          curl -fsSL --retry 3 -o dist/inputs/places-sources.tar.gz "$url"
+          echo "$sha  dist/inputs/places-sources.tar.gz" | sha256sum -c -
+          read -r burl bsha < <(node -e "const p=require('./regions-db.json'); console.log(p.url, p.sha256)")
+          curl -fsSL --retry 3 -o dist/inputs/regions.sqlite.gz "$burl"
+          echo "$bsha  dist/inputs/regions.sqlite.gz" | sha256sum -c -
+      - name: Build
+        run: node places/build.mjs --sources dist/inputs/places-sources.tar.gz --bundle dist/inputs/regions.sqlite.gz --out dist/places --version "$(cat places/VERSION)"
+      - name: Verify
+        run: |
+          set -euo pipefail
+          version="$(cat places/VERSION)"
+          previous=""
+          if [ -d places/dist ]; then
+            previous="$(ls places/dist | grep -v "^${version}$" | sort -V | tail -1 || true)"
+          fi
+          args=(--pack "dist/places/$version" --sources dist/inputs/places-sources.tar.gz --bundle dist/inputs/regions.sqlite.gz --rebuild)
+          if [ -n "$previous" ]; then args+=(--previous "places/dist/$previous"); fi
+          node places/verify.mjs "${args[@]}"
+      - name: Committed release bytes (a release PR)
+        run: |
+          version="$(cat places/VERSION)"
+          if [ -d "places/dist/$version" ]; then
+            node places/check-release.mjs --committed "places/dist/$version" --built "dist/places/$version" --pointer places-db.json
+          else
+            echo "No committed release bytes for $version (not a release PR)."
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: places-pack
+          path: |
+            dist/places/*/places-*.sqlite.gz
+            dist/places/*/places-db.json
+            dist/places/*/build-report.json
+            dist/places/*/reports/
+          if-no-files-found: ignore
