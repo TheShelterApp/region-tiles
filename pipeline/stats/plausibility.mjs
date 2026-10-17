@@ -39,6 +39,36 @@ export function readPublished(statsDir) {
 const allowedDrop = (previous, tolerance, slack) => Math.max(slack, Math.floor(previous * tolerance));
 
 /**
+ * Whether the previous files can be compared with a build of [sinceMs, untilMs), and over which years: the same
+ * magnitude floor and event type, a cutoff no earlier and a window start no later. A window opened earlier (SINCE moved
+ * back) adds years the previous files never counted, so the comparison runs over the previous window's years from
+ * `fromYear` (the year of its start, always 1 January) and keeps every drop check across the move. A window that starts
+ * later than the previous one is not compared. `previousIndex`: the previous stats/index.json or null.
+ */
+export function comparison(previousIndex, { sinceMs, untilMs, minMagnitude, eventType }) {
+  const previousSinceMs = Date.parse(previousIndex?.since);
+  const comparable = !!previousIndex && Number.isFinite(previousSinceMs) && previousSinceMs >= sinceMs
+    && previousIndex.minMagnitude === minMagnitude && previousIndex.eventType === eventType
+    && Date.parse(previousIndex.until) <= untilMs;
+  return { comparable, fromYear: new Date(comparable ? previousSinceMs : sinceMs).getUTCFullYear() };
+}
+
+/**
+ * A build's numbers over the years from `fromYear` on (`comparison`), as plausibilityProblems takes them: `total`,
+ * `countries` {ISO3: count}, `years` (Map year -> global count). `countries`: {ISO3: histogram}; `unassigned`: the
+ * open-ocean histogram.
+ */
+export function countsFrom({ countries, unassigned }, fromYear) {
+  const binsFrom = (h) => h.counts.reduce((sum, n, i) => (h.startYear + i >= fromYear ? sum + n : sum), 0);
+  const totals = Object.fromEntries(Object.entries(countries).map(([id, h]) => [id, binsFrom(h)]));
+  const years = new Map();
+  for (const h of [...Object.values(countries), unassigned]) addHistogram(years, h);
+  for (const year of [...years.keys()]) if (year < fromYear) years.delete(year);
+  const total = Object.values(totals).reduce((a, b) => a + b, 0) + binsFrom(unassigned);
+  return { total, countries: totals, years };
+}
+
+/**
  * The download of the run's window against ComCat's /count of the same window: a problem (a string) when the download
  * falls short by more than max(COUNT_SLACK, COUNT_TOLERANCE x count), else null.
  */
@@ -50,11 +80,11 @@ export function windowCountProblem({ downloaded, comcat, window }) {
 }
 
 /**
- * The new build against the previous published one. `next`: {total, countries, years}. `previous`: readPublished()'s
- * result or null. `comparable`: same since, magnitude floor and event type, and a cutoff no earlier than the previous
- * one (the counts can only grow, apart from ComCat's revisions). `sameAssignment`: the same assignment rule and regions
- * (a country's total is comparable). Returns the problems (strings), empty when the build is plausible. A total of zero
- * is always a problem.
+ * The new build against the previous published one. `next`: {total, countries, years} over the previous window's
+ * years (`countsFrom`). `previous`: readPublished()'s result or null. `comparable` (`comparison`): the same magnitude
+ * floor and event type, a cutoff no earlier and a start no later than the previous one (the counts can only grow, apart
+ * from ComCat's revisions). `sameAssignment`: the same assignment rule and regions (a country's total is comparable).
+ * Returns the problems (strings), empty when the build is plausible. A total of zero is always a problem.
  */
 export function plausibilityProblems({ previous, next, comparable, sameAssignment }) {
   const problems = [];
