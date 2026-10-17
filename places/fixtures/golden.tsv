@@ -1,0 +1,334 @@
+# Golden points: the expected answer per tier (final architecture sections 3.3 check 6 and 8.1). Checked by places/verify.mjs
+# through resolve.mjs and by the iOS contract runner through the Swift chain. key is required; name_en / name_ru, when
+# set, must match too (countries and parts of the world are named by the app, so their names are left empty).
+# mpp: metres per point for the globe band (5000 = the start of the globe tier). R4 points: the coordinates of R4's
+# Apple probe (2026-10-17); the expectations are this pack's own answers, reviewed, never Apple's names.
+# A change here is a reviewed decision: say why in the commit.
+id	lat	lon	tier	mpp	key	name_en	name_ru	note
+strait-turkey-cyprus	35.75	33	globe	5000	region:westernAsia			the owner's case: between Turkey and Cyprus, > 22 km from both
+strait-turkey-cyprus	35.75	33	regional		sea:1159115321	Mediterranean Sea	Средиземное море	the owner's case: between Turkey and Cyprus, > 22 km from both
+strait-turkey-cyprus	35.75	33	city		sea:1159115321	Mediterranean Sea	Средиземное море	the owner's case: between Turkey and Cyprus, > 22 km from both
+satte	36.07254	139.72615	globe	5000	region:eastAsia			the owner's case: Satte, Saitama
+satte	36.07254	139.72615	regional		adm0:JPN			the owner's case: Satte, Saitama
+satte	36.07254	139.72615	city		place:1852849	Satte	Сатте	the owner's case: Satte, Saitama
+tokyo-government	35.6895	139.6917	globe	5000	region:eastAsia			a Tokyo ward (Shinjuku) -> Tokyo
+tokyo-government	35.6895	139.6917	regional		adm0:JPN			a Tokyo ward (Shinjuku) -> Tokyo
+tokyo-government	35.6895	139.6917	city		place:1850147	Tokyo	Токио	a Tokyo ward (Shinjuku) -> Tokyo
+shinjuku-station	35.6909	139.7003	globe	5000	region:eastAsia			a Tokyo ward -> Tokyo
+shinjuku-station	35.6909	139.7003	regional		adm0:JPN			a Tokyo ward -> Tokyo
+shinjuku-station	35.6909	139.7003	city		place:1850147	Tokyo	Токио	a Tokyo ward -> Tokyo
+ota-ward	35.56126	139.71605	globe	5000	region:eastAsia			Ota ward (GeoNames PPLA2) -> Tokyo
+ota-ward	35.56126	139.71605	regional		adm0:JPN			Ota ward (GeoNames PPLA2) -> Tokyo
+ota-ward	35.56126	139.71605	city		place:1850147	Tokyo	Токио	Ota ward (GeoNames PPLA2) -> Tokyo
+hachioji	35.65583	139.32389	globe	5000	region:eastAsia			a Tama city keeps its name (judge finding)
+hachioji	35.65583	139.32389	regional		adm0:JPN			a Tama city keeps its name (judge finding)
+hachioji	35.65583	139.32389	city		place:1863440	Hachioji	Хатиодзи	a Tama city keeps its name (judge finding)
+machida	35.54028	139.45083	globe	5000	region:eastAsia			a Tama city keeps its name
+machida	35.54028	139.45083	regional		adm0:JPN			a Tama city keeps its name
+machida	35.54028	139.45083	city		place:1857871	Machida	Матида	a Tama city keeps its name
+fuchu-tokyo	35.6689	139.4776	globe	5000	region:eastAsia			a Tama city keeps its name
+fuchu-tokyo	35.6689	139.4776	regional		adm0:JPN			a Tama city keeps its name
+fuchu-tokyo	35.6689	139.4776	city		place:11611632	Fuchu	Футю	a Tama city keeps its name
+chofu	35.6506	139.5407	globe	5000	region:eastAsia			a Tama city keeps its name
+chofu	35.6506	139.5407	regional		adm0:JPN			a Tama city keeps its name
+chofu	35.6506	139.5407	city		place:1864518	Chofu	Чофу	a Tama city keeps its name
+kawasaki	35.52056	139.71722	globe	5000	region:eastAsia			a separate municipality next to Tokyo keeps its name
+kawasaki	35.52056	139.71722	regional		adm0:JPN			a separate municipality next to Tokyo keeps its name
+kawasaki	35.52056	139.71722	city		place:1859642	Kawasaki	Кавасаки	a separate municipality next to Tokyo keeps its name
+kawaguchi	35.80521	139.71072	globe	5000	region:eastAsia			a separate municipality next to Saitama/Tokyo keeps its name
+kawaguchi	35.80521	139.71072	regional		adm0:JPN			a separate municipality next to Saitama/Tokyo keeps its name
+kawaguchi	35.80521	139.71072	city		place:1859730	Kawaguchi	Кавагути	a separate municipality next to Saitama/Tokyo keeps its name
+khimki	55.9001	37.42848	globe	5000	region:easternEurope			a separate municipality next to Moscow keeps its name
+khimki	55.9001	37.42848	regional		adm0:RUS			a separate municipality next to Moscow keeps its name
+khimki	55.9001	37.42848	city		place:550280	Khimki	Химки	a separate municipality next to Moscow keeps its name
+moscow-red-square	55.7539	37.6208	globe	5000	region:easternEurope			Moscow
+moscow-red-square	55.7539	37.6208	regional		adm0:RUS			Moscow
+moscow-red-square	55.7539	37.6208	city		place:524901	Moscow	Москва	Moscow
+istanbul-fatih	41.0082	28.9784	globe	5000	region:westernAsia			Q5: a district shows the metro
+istanbul-fatih	41.0082	28.9784	regional		adm0:TUR			Q5: a district shows the metro
+istanbul-fatih	41.0082	28.9784	city		place:745044	Istanbul	Стамбул	Q5: a district shows the metro
+istanbul-kadikoy	40.9903	29.029	globe	5000	region:westernAsia			Q5: a district shows the metro
+istanbul-kadikoy	40.9903	29.029	regional		adm0:TUR			Q5: a district shows the metro
+istanbul-kadikoy	40.9903	29.029	city		place:745044	Istanbul	Стамбул	Q5: a district shows the metro
+mexico-city-zocalo	19.4326	-99.1332	globe	5000	region:northAmerica			Q5: a district shows the metro
+mexico-city-zocalo	19.4326	-99.1332	regional		adm0:MEX			Q5: a district shows the metro
+mexico-city-zocalo	19.4326	-99.1332	city		place:3530597	Mexico City	Мехико	Q5: a district shows the metro
+jakarta-south	-6.2615	106.8106	globe	5000	region:southEastAsia			Q5: a district shows the metro
+jakarta-south	-6.2615	106.8106	regional		adm0:IDN			Q5: a district shows the metro
+jakarta-south	-6.2615	106.8106	city		place:1642911	Jakarta	Джакарта	Q5: a district shows the metro
+taipei-xinyi	25.033	121.5654	globe	5000	region:eastAsia			Q5: a district shows the metro
+taipei-xinyi	25.033	121.5654	regional		adm0:TWN			Q5: a district shows the metro
+taipei-xinyi	25.033	121.5654	city		place:1668341	Taipei	Тайбэй	Q5: a district shows the metro
+jerusalem-old-city	31.7767	35.2345	globe	5000	region:westernAsia			Q5: a district shows the metro; Q2: East Jerusalem -> the system name for PS
+jerusalem-old-city	31.7767	35.2345	regional		adm0:PSE			Q5: a district shows the metro; Q2: East Jerusalem -> the system name for PS
+jerusalem-old-city	31.7767	35.2345	city		place:281184	Jerusalem	Иерусалим	Q5: a district shows the metro; Q2: East Jerusalem -> the system name for PS
+khankendi	39.8153	46.7519	globe	5000	region:westernAsia			Q3: Khankendi, kept at any threshold
+khankendi	39.8153	46.7519	regional		adm0:AZE			Q3: Khankendi, kept at any threshold
+khankendi	39.8153	46.7519	city		place:146970	Khankendi	Ханкенди	Q3: Khankendi, kept at any threshold
+sea-of-japan	40	135	globe	5000	sea:1159115305	Sea of Japan	Японское море	every water point has a name (Apple returns coordinates)
+sea-of-japan	40	135	regional		sea:1159115305	Sea of Japan	Японское море	every water point has a name (Apple returns coordinates)
+sea-of-japan	40	135	city		sea:1159115305	Sea of Japan	Японское море	every water point has a name (Apple returns coordinates)
+south-china-sea	14	114	globe	5000	sea:1159115273	South China Sea	Южно-Китайское море	every water point has a name (Apple returns coordinates)
+south-china-sea	14	114	regional		sea:1159115273	South China Sea	Южно-Китайское море	every water point has a name (Apple returns coordinates)
+south-china-sea	14	114	city		sea:1159115273	South China Sea	Южно-Китайское море	every water point has a name (Apple returns coordinates)
+sevastopol	44.6166	33.5254	globe	5000	region:easternEurope			zone:crimea at the regional tier (land only by the province outline)
+sevastopol	44.6166	33.5254	regional		zone:crimea	Crimea	Крым	zone:crimea at the regional tier (land only by the province outline)
+sevastopol	44.6166	33.5254	city		place:694423	Sevastopol	Севастополь	zone:crimea at the regional tier (land only by the province outline)
+simferopol	44.952	34.102	globe	5000	region:easternEurope			zone:crimea at the regional tier
+simferopol	44.952	34.102	regional		zone:crimea	Crimea	Крым	zone:crimea at the regional tier
+simferopol	44.952	34.102	city		place:693805	Simferopol	Симферополь	zone:crimea at the regional tier
+off-crimea	44.45	33.45	globe	5000	region:easternEurope			water 10 km off Sevastopol: the band names the zone
+off-crimea	44.45	33.45	regional		zone:crimea	Crimea	Крым	water 10 km off Sevastopol: the band names the zone
+off-crimea	44.45	33.45	city		zone:crimea	Crimea	Крым	water 10 km off Sevastopol: the band names the zone
+kyrenia	35.34	33.319	globe	5000	region:westernAsia			Northern Cyprus (the bundle's country CYN)
+kyrenia	35.34	33.319	regional		adm0:CYN			Northern Cyprus (the bundle's country CYN)
+kyrenia	35.34	33.319	city		place:146412	Kyrenia	Кирения	Northern Cyprus (the bundle's country CYN)
+famagusta	35.125	33.941	globe	5000	region:westernAsia			Northern Cyprus (the bundle's country CYN)
+famagusta	35.125	33.941	regional		adm0:CYN			Northern Cyprus (the bundle's country CYN)
+famagusta	35.125	33.941	city		place:146617	Famagusta	Фамагуста	Northern Cyprus (the bundle's country CYN)
+off-sendai-31km	38.5	141.9	globe	5000	region:eastAsia			Q6: the ocean, folded to the whole ("Pacific Ocean", not "North Pacific Ocean")
+off-sendai-31km	38.5	141.9	regional		sea:1159115079	Pacific Ocean	Тихий океан	Q6: the ocean, folded to the whole ("Pacific Ocean", not "North Pacific Ocean")
+off-sendai-31km	38.5	141.9	city		sea:1159115079	Pacific Ocean	Тихий океан	Q6: the ocean, folded to the whole ("Pacific Ocean", not "North Pacific Ocean")
+mid-marmara	40.75	28.2	globe	5000	region:westernAsia			the globe band: Western Asia at the globe tier, not the Atlantic
+mid-marmara	40.75	28.2	regional		sea:1159119181	Sea of Marmara	Мраморное море	the globe band: Western Asia at the globe tier, not the Atlantic
+mid-marmara	40.75	28.2	city		sea:1159119181	Sea of Marmara	Мраморное море	the globe band: Western Asia at the globe tier, not the Atlantic
+crete-10km	35.43	25.13	globe	5000	region:westernEurope			10 km off Crete: the band keeps Greece
+crete-10km	35.43	25.13	regional		adm0:GRC			10 km off Crete: the band keeps Greece
+crete-10km	35.43	25.13	city		adm0:GRC			10 km off Crete: the band keeps Greece
+crete-60km	35.88	25.13	globe	5000	region:westernEurope			60 km off Crete: the sea
+crete-60km	35.88	25.13	regional		sea:1159118425	Sea of Crete	Критское море	60 km off Crete: the sea
+crete-60km	35.88	25.13	city		sea:1159118425	Sea of Crete	Критское море	60 km off Crete: the sea
+fiji	-17.8	178	globe	5000	region:oceania			Viti Levu: land, so Oceania at the globe tier (R3's "Pacific Ocean" there is a hysteresis effect)
+fiji	-17.8	178	regional		adm0:FJI			Viti Levu: land, so Oceania at the globe tier (R3's "Pacific Ocean" there is a hysteresis effect)
+fiji	-17.8	178	city		place:8335413	Ba	Мба	Viti Levu: land, so Oceania at the globe tier (R3's "Pacific Ocean" there is a hysteresis effect)
+tokyo-bay	35.45	139.85	globe	5000	region:eastAsia			a city's bay: Yokohama within its urban reach at the city tier
+tokyo-bay	35.45	139.85	regional		adm0:JPN			a city's bay: Yokohama within its urban reach at the city tier
+tokyo-bay	35.45	139.85	city		place:1848354	Yokohama	Иокогама	a city's bay: Yokohama within its urban reach at the city tier
+sukhumi	43.003	41.019	globe	5000	region:westernAsia			zone:abkhazia
+sukhumi	43.003	41.019	regional		zone:abkhazia	Abkhazia	Абхазия	zone:abkhazia
+sukhumi	43.003	41.019	city		place:611847	Sukhumi	Сухуми	zone:abkhazia
+tskhinvali	42.2276	43.9686	globe	5000	region:westernAsia			zone:south-ossetia
+tskhinvali	42.2276	43.9686	regional		zone:south-ossetia	South Ossetia	Южная Осетия	zone:south-ossetia
+tskhinvali	42.2276	43.9686	city		place:611403	Tskhinvali	Цхинвал	zone:south-ossetia
+tiraspol	46.8403	29.6433	globe	5000	region:easternEurope			zone:transnistria
+tiraspol	46.8403	29.6433	regional		zone:transnistria	Transnistria	Приднестровье	zone:transnistria
+tiraspol	46.8403	29.6433	city		place:617239	Tiraspol	Тирасполь	zone:transnistria
+laayoune	27.1536	-13.2033	globe	5000	region:northAfrica			zone:western-sahara
+laayoune	27.1536	-13.2033	regional		zone:western-sahara	Western Sahara	Западная Сахара	zone:western-sahara
+laayoune	27.1536	-13.2033	city		place:2462881	Laayoune	Эль-Аюн	zone:western-sahara
+srinagar	34.0837	74.7973	globe	5000	region:southAsia			zone:kashmir
+srinagar	34.0837	74.7973	regional		zone:kashmir	Kashmir	Кашмир	zone:kashmir
+srinagar	34.0837	74.7973	city		place:1255634	Srinagar	Сринагар	zone:kashmir
+aksai-chin	35	79	globe	5000	region:southAsia			zone:kashmir, explicit part of the world (South Asia) for the Chinese-administered part
+aksai-chin	35	79	regional		zone:kashmir	Kashmir	Кашмир	zone:kashmir, explicit part of the world (South Asia) for the Chinese-administered part
+aksai-chin	35	79	city		zone:kashmir	Kashmir	Кашмир	zone:kashmir, explicit part of the world (South Asia) for the Chinese-administered part
+katzrin	32.9925	35.6912	globe	5000	region:westernAsia			zone:golan-heights
+katzrin	32.9925	35.6912	regional		zone:golan-heights	Golan Heights	Голанские высоты	zone:golan-heights
+katzrin	32.9925	35.6912	city		place:443093	Qatzrin	Кацрин	zone:golan-heights
+kunashir	44.0306	145.8556	globe	5000	region:eastAsia			zone:kuril-islands
+kunashir	44.0306	145.8556	regional		zone:kuril-islands	Kuril Islands	Курильские острова	zone:kuril-islands
+kunashir	44.0306	145.8556	city		zone:kuril-islands	Kuril Islands	Курильские острова	zone:kuril-islands
+donetsk	48.0159	37.8028	globe	5000	region:easternEurope			Q2: Ukraine
+donetsk	48.0159	37.8028	regional		adm0:UKR			Q2: Ukraine
+donetsk	48.0159	37.8028	city		place:709717	Donetsk	Донецк	Q2: Ukraine
+pristina	42.6629	21.1655	globe	5000	region:easternEurope			Kosovo (the bundle's country XKX)
+pristina	42.6629	21.1655	regional		adm0:XKX			Kosovo (the bundle's country XKX)
+pristina	42.6629	21.1655	city		place:786714	Pristina	Приштина	Kosovo (the bundle's country XKX)
+hargeisa	9.56	44.065	globe	5000	region:tropicalAfrica			Somaliland (the bundle's country SOL)
+hargeisa	9.56	44.065	regional		adm0:SOL			Somaliland (the bundle's country SOL)
+hargeisa	9.56	44.065	city		place:57289	Hargeisa	Харгейса	Somaliland (the bundle's country SOL)
+off-turkey-15km	36	33.5	globe	5000	region:westernAsia			R1: 15 km off Turkey, inside the band
+off-turkey-15km	36	33.5	regional		adm0:TUR			R1: 15 km off Turkey, inside the band
+off-turkey-15km	36	33.5	city		adm0:TUR			R1: 15 km off Turkey, inside the band
+off-kyrenia	35.45	33.3	globe	5000	region:westernAsia			R1: 12 km off Kyrenia, inside the band
+off-kyrenia	35.45	33.3	regional		adm0:CYN			R1: 12 km off Kyrenia, inside the band
+off-kyrenia	35.45	33.3	city		adm0:CYN			R1: 12 km off Kyrenia, inside the band
+gulf-of-mexico	25	-90	globe	5000	sea:1159115399	Gulf of Mexico	Мексиканский залив	R1 water point
+gulf-of-mexico	25	-90	regional		sea:1159115399	Gulf of Mexico	Мексиканский залив	R1 water point
+gulf-of-mexico	25	-90	city		sea:1159115399	Gulf of Mexico	Мексиканский залив	R1 water point
+english-channel	50.2	-1	globe	5000	region:westernEurope			R1 water point
+english-channel	50.2	-1	regional		sea:1159116535	English Channel	Ла-Манш	R1 water point
+english-channel	50.2	-1	city		sea:1159116535	English Channel	Ла-Манш	R1 water point
+north-sea	56	3	globe	5000	sea:1159115879	North Sea	Северное море	R1 water point
+north-sea	56	3	regional		sea:1159115879	North Sea	Северное море	R1 water point
+north-sea	56	3	city		sea:1159115879	North Sea	Северное море	R1 water point
+indian-ocean	-20	75	globe	5000	sea:1159115123	Indian Ocean	Индийский океан	R1 water point
+indian-ocean	-20	75	regional		sea:1159115123	Indian Ocean	Индийский океан	R1 water point
+indian-ocean	-20	75	city		sea:1159115123	Indian Ocean	Индийский океан	R1 water point
+south-60-east-90	-60	90	globe	5000	sea:1159115123	Indian Ocean	Индийский океан	R1 water point
+south-60-east-90	-60	90	regional		sea:1159115123	Indian Ocean	Индийский океан	R1 water point
+south-60-east-90	-60	90	city		sea:1159115123	Indian Ocean	Индийский океан	R1 water point
+equator-150w	0	-150	globe	5000	sea:1159115079	Pacific Ocean	Тихий океан	R1 water point: the South Pacific half folds into the Pacific Ocean
+equator-150w	0	-150	regional		sea:1159115079	Pacific Ocean	Тихий океан	R1 water point: the South Pacific half folds into the Pacific Ocean
+equator-150w	0	-150	city		sea:1159115079	Pacific Ocean	Тихий океан	R1 water point: the South Pacific half folds into the Pacific Ocean
+north-pole-sea	85	0	globe	5000	sea:1159115017	Arctic Ocean	Северный Ледовитый океан	R1 water point
+north-pole-sea	85	0	regional		sea:1159115017	Arctic Ocean	Северный Ледовитый океан	R1 water point
+north-pole-sea	85	0	city		sea:1159115017	Arctic Ocean	Северный Ледовитый океан	R1 water point
+black-sea	43	34	globe	5000	region:westernAsia			R1 water point
+black-sea	43	34	regional		sea:1159115171	Black Sea	Чёрное море	R1 water point
+black-sea	43	34	city		sea:1159115171	Black Sea	Чёрное море	R1 water point
+caspian-sea	42	50.5	globe	5000	sea:1159115461	Caspian Sea	Каспийское море	R1 water point
+caspian-sea	42	50.5	regional		sea:1159115461	Caspian Sea	Каспийское море	R1 water point
+caspian-sea	42	50.5	city		sea:1159115461	Caspian Sea	Каспийское море	R1 water point
+aleutians-bering	54	-165	globe	5000	region:northAmerica			R1 water point: 8 km off an Aleutian island
+aleutians-bering	54	-165	regional		adm0:USA			R1 water point: 8 km off an Aleutian island
+aleutians-bering	54	-165	city		adm0:USA			R1 water point: 8 km off an Aleutian island
+aleutians-pacific	51	-175	globe	5000	region:northAmerica			R1 water point
+aleutians-pacific	51	-175	regional		sea:1159115079	Pacific Ocean	Тихий океан	R1 water point
+aleutians-pacific	51	-175	city		sea:1159115079	Pacific Ocean	Тихий океан	R1 water point
+lombok-strait	-8.5	115.5	globe	5000	region:southEastAsia			R1 water point: inside Indonesia's outline
+lombok-strait	-8.5	115.5	regional		adm0:IDN			R1 water point: inside Indonesia's outline
+lombok-strait	-8.5	115.5	city		place:1639850	Klungkung	Клунгкунг	R1 water point: inside Indonesia's outline
+r4-tokyo	35.6895	139.6917	globe	5000	region:eastAsia			R4 point (city): Tokyo (Shinjuku)
+r4-tokyo	35.6895	139.6917	regional		adm0:JPN			R4 point (city): Tokyo (Shinjuku)
+r4-tokyo	35.6895	139.6917	city		place:1850147	Tokyo	Токио	R4 point (city): Tokyo (Shinjuku)
+r4-istanbul	41.0082	28.9784	globe	5000	region:westernAsia			R4 point (city): Istanbul (Fatih)
+r4-istanbul	41.0082	28.9784	regional		adm0:TUR			R4 point (city): Istanbul (Fatih)
+r4-istanbul	41.0082	28.9784	city		place:745044	Istanbul	Стамбул	R4 point (city): Istanbul (Fatih)
+r4-moscow	55.7558	37.6173	globe	5000	region:easternEurope			R4 point (city): Moscow (Kremlin)
+r4-moscow	55.7558	37.6173	regional		adm0:RUS			R4 point (city): Moscow (Kremlin)
+r4-moscow	55.7558	37.6173	city		place:524901	Moscow	Москва	R4 point (city): Moscow (Kremlin)
+r4-newyork	40.7128	-74.006	globe	5000	region:northAmerica			R4 point (city): New York (Lower Manhattan)
+r4-newyork	40.7128	-74.006	regional		adm0:USA			R4 point (city): New York (Lower Manhattan)
+r4-newyork	40.7128	-74.006	city		place:5128581	New York	Нью-Йорк	R4 point (city): New York (Lower Manhattan)
+r4-mexicocity	19.4326	-99.1332	globe	5000	region:northAmerica			R4 point (city): Mexico City (Zocalo)
+r4-mexicocity	19.4326	-99.1332	regional		adm0:MEX			R4 point (city): Mexico City (Zocalo)
+r4-mexicocity	19.4326	-99.1332	city		place:3530597	Mexico City	Мехико	R4 point (city): Mexico City (Zocalo)
+r4-jakarta	-6.2088	106.8456	globe	5000	region:southEastAsia			R4 point (city): Jakarta (Central)
+r4-jakarta	-6.2088	106.8456	regional		adm0:IDN			R4 point (city): Jakarta (Central)
+r4-jakarta	-6.2088	106.8456	city		place:1642911	Jakarta	Джакарта	R4 point (city): Jakarta (Central)
+r4-santiago	-33.4489	-70.6693	globe	5000	region:southAmerica			R4 point (city): Santiago de Chile
+r4-santiago	-33.4489	-70.6693	regional		adm0:CHL			R4 point (city): Santiago de Chile
+r4-santiago	-33.4489	-70.6693	city		place:3871336	Santiago	Сантьяго	R4 point (city): Santiago de Chile
+r4-kathmandu	27.7172	85.324	globe	5000	region:southAsia			R4 point (city): Kathmandu
+r4-kathmandu	27.7172	85.324	regional		adm0:NPL			R4 point (city): Kathmandu
+r4-kathmandu	27.7172	85.324	city		place:1283240	Kathmandu	Катманду	R4 point (city): Kathmandu
+r4-kawaguchi	35.8077	139.7241	globe	5000	region:eastAsia			R4 point (suburb): Kawaguchi (Tokyo suburb, Saitama)
+r4-kawaguchi	35.8077	139.7241	regional		adm0:JPN			R4 point (suburb): Kawaguchi (Tokyo suburb, Saitama)
+r4-kawaguchi	35.8077	139.7241	city		place:1859730	Kawaguchi	Кавагути	R4 point (suburb): Kawaguchi (Tokyo suburb, Saitama)
+r4-khimki	55.897	37.4297	globe	5000	region:easternEurope			R4 point (suburb): Khimki (Moscow suburb)
+r4-khimki	55.897	37.4297	regional		adm0:RUS			R4 point (suburb): Khimki (Moscow suburb)
+r4-khimki	55.897	37.4297	city		place:550280	Khimki	Химки	R4 point (suburb): Khimki (Moscow suburb)
+r4-pazarcik	37.487	37.288	globe	5000	region:westernAsia			R4 point (town): Pazarcik town, Kahramanmaras (TR)
+r4-pazarcik	37.487	37.288	regional		adm0:TUR			R4 point (town): Pazarcik town, Kahramanmaras (TR)
+r4-pazarcik	37.487	37.288	city		place:302800	Pazarcık	Пазарджык	R4 point (town): Pazarcik town, Kahramanmaras (TR)
+r4-wajima	37.3906	136.8992	globe	5000	region:eastAsia			R4 point (town): Wajima, Noto (JP)
+r4-wajima	37.3906	136.8992	regional		adm0:JPN			R4 point (town): Wajima, Noto (JP)
+r4-wajima	37.3906	136.8992	city		place:1848976	Wajima	Вадзима	R4 point (town): Wajima, Noto (JP)
+r4-ovalle	-30.6015	-71.199	globe	5000	region:southAmerica			R4 point (town): Ovalle (CL)
+r4-ovalle	-30.6015	-71.199	regional		adm0:CHL			R4 point (town): Ovalle (CL)
+r4-ovalle	-30.6015	-71.199	city		place:3877918	Ovalle	Овалье	R4 point (town): Ovalle (CL)
+r4-bam	29.106	58.357	globe	5000	region:westernAsia			R4 point (town): Bam (IR)
+r4-bam	29.106	58.357	regional		adm0:IRN			R4 point (town): Bam (IR)
+r4-bam	29.106	58.357	city		place:141736	Bam	Бам	R4 point (town): Bam (IR)
+r4-amatrice	42.6286	13.2905	globe	5000	region:westernEurope			R4 point (town): Amatrice (IT)
+r4-amatrice	42.6286	13.2905	regional		adm0:ITA			R4 point (town): Amatrice (IT)
+r4-amatrice	42.6286	13.2905	city		place:3165803	Teramo	Терамо	R4 point (town): Amatrice (IT)
+r4-ridgecrest	35.6225	-117.6709	globe	5000	region:northAmerica			R4 point (town): Ridgecrest, California (US)
+r4-ridgecrest	35.6225	-117.6709	regional		adm0:USA			R4 point (town): Ridgecrest, California (US)
+r4-ridgecrest	35.6225	-117.6709	city		place:5387494	Ridgecrest	Риджкрест	R4 point (town): Ridgecrest, California (US)
+r4-tr-rural	37.226	37.014	globe	5000	region:westernAsia			R4 point (rural): 2023 Mw7.8 epicentre, Gaziantep countryside (TR)
+r4-tr-rural	37.226	37.014	regional		adm0:TUR			R4 point (rural): 2023 Mw7.8 epicentre, Gaziantep countryside (TR)
+r4-tr-rural	37.226	37.014	city		place:314830	Gaziantep	Газиантеп	R4 point (rural): 2023 Mw7.8 epicentre, Gaziantep countryside (TR)
+r4-jp-rural	43.3	143.4	globe	5000	region:eastAsia			R4 point (rural): Tokachi farmland, Hokkaido (JP)
+r4-jp-rural	43.3	143.4	regional		adm0:JPN			R4 point (rural): Tokachi farmland, Hokkaido (JP)
+r4-jp-rural	43.3	143.4	city		place:2130603	Ashoro	Ashoro	R4 point (rural): Tokachi farmland, Hokkaido (JP)
+r4-cl-rural	-24.5	-69.25	globe	5000	region:southAmerica			R4 point (rural): Atacama desert (CL)
+r4-cl-rural	-24.5	-69.25	regional		adm0:CHL			R4 point (rural): Atacama desert (CL)
+r4-cl-rural	-24.5	-69.25	city		adm1:CHL.6	Antofagasta	Антофагаста	R4 point (rural): Atacama desert (CL)
+r4-id-rural	-1.5	120.5	globe	5000	region:southEastAsia			R4 point (rural): Central Sulawesi highlands (ID)
+r4-id-rural	-1.5	120.5	regional		adm0:IDN			R4 point (rural): Central Sulawesi highlands (ID)
+r4-id-rural	-1.5	120.5	city		place:1630723	Poso	Посо	R4 point (rural): Central Sulawesi highlands (ID)
+r4-ir-rural	34.905	45.956	globe	5000	region:westernAsia			R4 point (rural): 2017 Kermanshah epicentre (IR/IQ border)
+r4-ir-rural	34.905	45.956	regional		adm0:IRN			R4 point (rural): 2017 Kermanshah epicentre (IR/IQ border)
+r4-ir-rural	34.905	45.956	city		place:121240	Paveh	Паве	R4 point (rural): 2017 Kermanshah epicentre (IR/IQ border)
+r4-it-rural	42.87	13.15	globe	5000	region:westernEurope			R4 point (rural): Apennines between Norcia and Visso (IT)
+r4-it-rural	42.87	13.15	regional		adm0:ITA			R4 point (rural): Apennines between Norcia and Visso (IT)
+r4-it-rural	42.87	13.15	city		place:3182749	Ascoli Piceno	Асколи-Пичено	R4 point (rural): Apennines between Norcia and Visso (IT)
+r4-ak-rural	64.5	-150.5	globe	5000	region:northAmerica			R4 point (rural): Interior Alaska wilderness (US)
+r4-ak-rural	64.5	-150.5	regional		adm0:USA			R4 point (rural): Interior Alaska wilderness (US)
+r4-ak-rural	64.5	-150.5	city		adm1:USA.51	Alaska	Аляска	R4 point (rural): Interior Alaska wilderness (US)
+r4-ca-rural	35.95	-120.5	globe	5000	region:northAmerica			R4 point (rural): Parkfield countryside, California inland (US)
+r4-ca-rural	35.95	-120.5	regional		adm0:USA			R4 point (rural): Parkfield countryside, California inland (US)
+r4-ca-rural	35.95	-120.5	city		place:5338196	Coalinga	Коалинга	R4 point (rural): Parkfield countryside, California inland (US)
+r4-kam-rural	55	159	globe	5000	region:eastAsia			R4 point (rural): Sredinny Range, Kamchatka (RU)
+r4-kam-rural	55	159	regional		adm0:RUS			R4 point (rural): Sredinny Range, Kamchatka (RU)
+r4-kam-rural	55	159	city		place:2123278	Milkovo	Мильково	R4 point (rural): Sredinny Range, Kamchatka (RU)
+r4-tokyo-bay	35.45	139.8	globe	5000	region:eastAsia			R4 point (territorial-water): Tokyo Bay
+r4-tokyo-bay	35.45	139.8	regional		adm0:JPN			R4 point (territorial-water): Tokyo Bay
+r4-tokyo-bay	35.45	139.8	city		place:1859642	Kawasaki	Кавасаки	R4 point (territorial-water): Tokyo Bay
+r4-marmara	40.88	28.9	globe	5000	region:westernAsia			R4 point (territorial-water): Sea of Marmara 14 km off Istanbul
+r4-marmara	40.88	28.9	regional		adm0:TUR			R4 point (territorial-water): Sea of Marmara 14 km off Istanbul
+r4-marmara	40.88	28.9	city		place:745044	Istanbul	Стамбул	R4 point (territorial-water): Sea of Marmara 14 km off Istanbul
+r4-valparaiso-off	-33	-71.72	globe	5000	region:southAmerica			R4 point (territorial-water): 8 km off Valparaiso (CL)
+r4-valparaiso-off	-33	-71.72	regional		adm0:CHL			R4 point (territorial-water): 8 km off Valparaiso (CL)
+r4-valparaiso-off	-33	-71.72	city		adm0:CHL			R4 point (territorial-water): 8 km off Valparaiso (CL)
+r4-aegean-border	38.3	26.2	globe	5000	region:westernEurope			R4 point (territorial-water): Chios strait, GR/TR border waters
+r4-aegean-border	38.3	26.2	regional		adm0:GRC			R4 point (territorial-water): Chios strait, GR/TR border waters
+r4-aegean-border	38.3	26.2	city		adm0:GRC			R4 point (territorial-water): Chios strait, GR/TR border waters
+r4-tr-cy-strait	35.75	33	globe	5000	region:westernAsia			R4 point (international-water): Turkey-Cyprus strait
+r4-tr-cy-strait	35.75	33	regional		sea:1159115321	Mediterranean Sea	Средиземное море	R4 point (international-water): Turkey-Cyprus strait
+r4-tr-cy-strait	35.75	33	city		sea:1159115321	Mediterranean Sea	Средиземное море	R4 point (international-water): Turkey-Cyprus strait
+r4-mid-pacific	5	-150	globe	5000	sea:1159115079	Pacific Ocean	Тихий океан	R4 point (international-water): Mid-Pacific
+r4-mid-pacific	5	-150	regional		sea:1159115079	Pacific Ocean	Тихий океан	R4 point (international-water): Mid-Pacific
+r4-mid-pacific	5	-150	city		sea:1159115079	Pacific Ocean	Тихий океан	R4 point (international-water): Mid-Pacific
+r4-indian-ocean	-20	80	globe	5000	sea:1159115123	Indian Ocean	Индийский океан	R4 point (international-water): Indian Ocean
+r4-indian-ocean	-20	80	regional		sea:1159115123	Indian Ocean	Индийский океан	R4 point (international-water): Indian Ocean
+r4-indian-ocean	-20	80	city		sea:1159115123	Indian Ocean	Индийский океан	R4 point (international-water): Indian Ocean
+r4-sea-of-japan	40	135	globe	5000	sea:1159115305	Sea of Japan	Японское море	R4 point (international-water): Sea of Japan
+r4-sea-of-japan	40	135	regional		sea:1159115305	Sea of Japan	Японское море	R4 point (international-water): Sea of Japan
+r4-sea-of-japan	40	135	city		sea:1159115305	Sea of Japan	Японское море	R4 point (international-water): Sea of Japan
+r4-south-china-sea	14	114	globe	5000	sea:1159115273	South China Sea	Южно-Китайское море	R4 point (international-water): South China Sea
+r4-south-china-sea	14	114	regional		sea:1159115273	South China Sea	Южно-Китайское море	R4 point (international-water): South China Sea
+r4-south-china-sea	14	114	city		sea:1159115273	South China Sea	Южно-Китайское море	R4 point (international-water): South China Sea
+r4-baikal	53.6	108.1	globe	5000	region:eastAsia			R4 point (lake): Lake Baikal (middle)
+r4-baikal	53.6	108.1	regional		adm0:RUS			R4 point (lake): Lake Baikal (middle)
+r4-baikal	53.6	108.1	city		adm1:RUS.71	Irkutsk	Иркутская область	R4 point (lake): Lake Baikal (middle)
+r4-van	38.65	42.9	globe	5000	region:westernAsia			R4 point (lake): Lake Van
+r4-van	38.65	42.9	regional		adm0:TUR			R4 point (lake): Lake Van
+r4-van	38.65	42.9	city		place:325336	Adilcevaz	Адилджеваз	R4 point (lake): Lake Van
+r4-caspian	42	50.5	globe	5000	sea:1159115461	Caspian Sea	Каспийское море	R4 point (lake): Caspian Sea (middle)
+r4-caspian	42	50.5	regional		sea:1159115461	Caspian Sea	Каспийское море	R4 point (lake): Caspian Sea (middle)
+r4-caspian	42	50.5	city		sea:1159115461	Caspian Sea	Каспийское море	R4 point (lake): Caspian Sea (middle)
+r4-simferopol	44.9521	34.1024	globe	5000	region:easternEurope			R4 point (disputed): Simferopol (Crimea)
+r4-simferopol	44.9521	34.1024	regional		zone:crimea	Crimea	Крым	R4 point (disputed): Simferopol (Crimea)
+r4-simferopol	44.9521	34.1024	city		place:693805	Simferopol	Симферополь	R4 point (disputed): Simferopol (Crimea)
+r4-sevastopol	44.6167	33.5254	globe	5000	region:easternEurope			R4 point (disputed): Sevastopol (Crimea)
+r4-sevastopol	44.6167	33.5254	regional		zone:crimea	Crimea	Крым	R4 point (disputed): Sevastopol (Crimea)
+r4-sevastopol	44.6167	33.5254	city		place:694423	Sevastopol	Севастополь	R4 point (disputed): Sevastopol (Crimea)
+r4-donetsk	48.0159	37.8029	globe	5000	region:easternEurope			R4 point (disputed): Donetsk
+r4-donetsk	48.0159	37.8029	regional		adm0:UKR			R4 point (disputed): Donetsk
+r4-donetsk	48.0159	37.8029	city		place:709717	Donetsk	Донецк	R4 point (disputed): Donetsk
+r4-srinagar	34.0837	74.7973	globe	5000	region:southAsia			R4 point (disputed): Srinagar (Kashmir)
+r4-srinagar	34.0837	74.7973	regional		zone:kashmir	Kashmir	Кашмир	R4 point (disputed): Srinagar (Kashmir)
+r4-srinagar	34.0837	74.7973	city		place:1255634	Srinagar	Сринагар	R4 point (disputed): Srinagar (Kashmir)
+r4-laayoune	27.1536	-13.2033	globe	5000	region:northAfrica			R4 point (disputed): Laayoune (Western Sahara)
+r4-laayoune	27.1536	-13.2033	regional		zone:western-sahara	Western Sahara	Западная Сахара	R4 point (disputed): Laayoune (Western Sahara)
+r4-laayoune	27.1536	-13.2033	city		place:2462881	Laayoune	Эль-Аюн	R4 point (disputed): Laayoune (Western Sahara)
+r4-kyrenia	35.3364	33.3176	globe	5000	region:westernAsia			R4 point (disputed): Kyrenia (Northern Cyprus)
+r4-kyrenia	35.3364	33.3176	regional		adm0:CYN			R4 point (disputed): Kyrenia (Northern Cyprus)
+r4-kyrenia	35.3364	33.3176	city		place:146412	Kyrenia	Кирения	R4 point (disputed): Kyrenia (Northern Cyprus)
+r4-taipei	25.033	121.5654	globe	5000	region:eastAsia			R4 point (disputed): Taipei
+r4-taipei	25.033	121.5654	regional		adm0:TWN			R4 point (disputed): Taipei
+r4-taipei	25.033	121.5654	city		place:1668341	Taipei	Тайбэй	R4 point (disputed): Taipei
+r4-pristina	42.6629	21.1655	globe	5000	region:easternEurope			R4 point (disputed): Pristina (Kosovo)
+r4-pristina	42.6629	21.1655	regional		adm0:XKX			R4 point (disputed): Pristina (Kosovo)
+r4-pristina	42.6629	21.1655	city		place:786714	Pristina	Приштина	R4 point (disputed): Pristina (Kosovo)
+r4-sukhumi	43.0015	41.0234	globe	5000	region:westernAsia			R4 point (disputed): Sukhumi (Abkhazia)
+r4-sukhumi	43.0015	41.0234	regional		zone:abkhazia	Abkhazia	Абхазия	R4 point (disputed): Sukhumi (Abkhazia)
+r4-sukhumi	43.0015	41.0234	city		place:611847	Sukhumi	Сухуми	R4 point (disputed): Sukhumi (Abkhazia)
+r4-tskhinvali	42.2257	43.97	globe	5000	region:westernAsia			R4 point (disputed): Tskhinvali (South Ossetia)
+r4-tskhinvali	42.2257	43.97	regional		zone:south-ossetia	South Ossetia	Южная Осетия	R4 point (disputed): Tskhinvali (South Ossetia)
+r4-tskhinvali	42.2257	43.97	city		place:611403	Tskhinvali	Цхинвал	R4 point (disputed): Tskhinvali (South Ossetia)
+r4-stepanakert	39.8153	46.752	globe	5000	region:westernAsia			R4 point (disputed): Stepanakert / Khankendi (Karabakh)
+r4-stepanakert	39.8153	46.752	regional		adm0:AZE			R4 point (disputed): Stepanakert / Khankendi (Karabakh)
+r4-stepanakert	39.8153	46.752	city		place:146970	Khankendi	Ханкенди	R4 point (disputed): Stepanakert / Khankendi (Karabakh)
+r4-golan	33	35.75	globe	5000	region:westernAsia			R4 point (disputed): Golan Heights
+r4-golan	33	35.75	regional		zone:golan-heights	Golan Heights	Голанские высоты	R4 point (disputed): Golan Heights
+r4-golan	33	35.75	city		place:443093	Qatzrin	Кацрин	R4 point (disputed): Golan Heights
+r4-jerusalem	31.778	35.2354	globe	5000	region:westernAsia			R4 point (disputed): Jerusalem Old City (East Jerusalem)
+r4-jerusalem	31.778	35.2354	regional		adm0:PSE			R4 point (disputed): Jerusalem Old City (East Jerusalem)
+r4-jerusalem	31.778	35.2354	city		place:281184	Jerusalem	Иерусалим	R4 point (disputed): Jerusalem Old City (East Jerusalem)
+r4-kunashir	44.0306	145.8556	globe	5000	region:eastAsia			R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils)
+r4-kunashir	44.0306	145.8556	regional		zone:kuril-islands	Kuril Islands	Курильские острова	R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils)
+r4-kunashir	44.0306	145.8556	city		zone:kuril-islands	Kuril Islands	Курильские острова	R4 point (disputed): Yuzhno-Kurilsk, Kunashir (Kurils)
