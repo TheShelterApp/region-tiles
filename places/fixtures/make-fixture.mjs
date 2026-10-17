@@ -6,14 +6,22 @@
 // where every reach but the 500 km nearest-country rule is shorter than the margin, is the full pack's answer too; the
 // generator checks that point for point and keeps only the points where it holds.
 //
+// The answers come from random points in each window and from the targeted sample of the release gate's parity run
+// (lattice.mjs `targetedPoints`: off outlines at the band, tie and gap distances, around towns, exactly on vertices),
+// each with its globe scale, chain step and short form, so `make contract` checks the arithmetic of the chain on real
+// outlines without the pack.
+//
 // usage: node places/fixtures/make-fixture.mjs <dist/places/<version>> <out dir>
-// Writes <out>/fixture-core.sqlite.gz, fixture-detail.sqlite.gz and fixture-golden.tsv.
+// Writes <out>/fixture-core.sqlite.gz, fixture-detail.sqlite.gz and fixture-golden.tsv, one point per line in the
+// columns of `lattice.mjs answers` (lat, lon, mpp, kind = window[:sample kind], then per tier key, en, ru, short_en,
+// short_ru, step); the coordinates as written are the ones answered.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { openPart, PlaceIndex } from '../lib/pack.mjs';
 import { Resolver } from '../resolve.mjs';
 import { encodeGeometry, bboxOf, countVertices, rng } from '../lib/geometry.mjs';
 import { writePart } from '../build.mjs';
+import { targetedPoints, answerRow, latticeTsv, TIERS } from '../lattice.mjs';
 
 export const WINDOWS = [
   { name: 'kanto', box: [138.8, 34.8, 140.9, 36.4] },
@@ -119,33 +127,37 @@ function main() {
   const c = writePart(join(out, 'fixture-core.sqlite'), 'core', coreAreas, null, meta);
   const d = writePart(join(out, 'fixture-detail.sqlite'), 'detail', detailAreas, towns.map((t) => ({ ...t })), { ...meta, min_population: detail.meta.min_population });
 
-  // Answers: 60 random points per window plus the golden points inside the windows, kept where fixture == full pack.
+  // Answers: 60 random points per window, then the targeted points inside the windows; a point is kept where the
+  // fixture answers every tier in both languages exactly as the full pack does.
   const fullR = new Resolver(new PlaceIndex(core, detail));
   const fixR = new Resolver(new PlaceIndex(openPart(join(out, 'fixture-core.sqlite.gz')), openPart(join(out, 'fixture-detail.sqlite.gz'))));
   const rnd = rng(20261017);
-  const rows = ['window\tlat\tlon\ttier\tlanguage\tkey\tname'];
+  const rows = [];
   let kept = 0;
   let dropped = 0;
+  const answer = (kind, latText, lonText, mpp) => {
+    const a = answerRow(fullR, Number(latText), Number(lonText), mpp);
+    const b = answerRow(fixR, Number(latText), Number(lonText), mpp);
+    if (TIERS.some((t) => !b[t].key || JSON.stringify(a[t]) !== JSON.stringify(b[t]))) {
+      dropped++;
+      return;
+    }
+    rows.push({ ...b, kind, text: [latText, lonText, String(mpp)] });
+    kept++;
+  };
   for (const w of WINDOWS) {
     for (let i = 0; i < 60; i++) {
       const lat = w.box[1] + rnd() * (w.box[3] - w.box[1]);
       const lon = w.box[0] + rnd() * (w.box[2] - w.box[0]);
-      for (const tier of ['globe', 'regional', 'city']) {
-        for (const language of ['en', 'ru']) {
-          const a = fullR.resolve({ lat, lon, tier, language });
-          const b = fixR.resolve({ lat, lon, tier, language });
-          if (!a || !b || a.key !== b.key || a.name !== b.name) {
-            dropped++;
-            continue;
-          }
-          kept++;
-          rows.push([w.name, lat.toFixed(6), lon.toFixed(6), tier, language, b.key, b.name ?? ''].join('\t'));
-        }
-      }
+      answer(w.name, lat.toFixed(6), lon.toFixed(6), 5000);
     }
   }
-  writeFileSync(join(out, 'fixture-golden.tsv'), rows.join('\n') + '\n');
-  console.log(`fixture core ${c.size_bytes} B gz, detail ${d.size_bytes} B gz; ${kept} answers (${dropped} differ from the full pack and are left out)`);
+  for (const p of targetedPoints(fixR, 1500, 20261017)) {
+    const w = WINDOWS.find((x) => inBox(x.box, p.lat, p.lon));
+    if (w && !['uniform', 'polar', 'antimeridian'].includes(p.kind)) answer(`${w.name}:${p.kind}`, String(p.lat), String(p.lon), p.mpp);
+  }
+  writeFileSync(join(out, 'fixture-golden.tsv'), latticeTsv(rows));
+  console.log(`fixture core ${c.size_bytes} B gz, detail ${d.size_bytes} B gz; ${kept} points x 3 tiers x en/ru (${dropped} differ from the full pack and are left out)`);
 }
 
 main();

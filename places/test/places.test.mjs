@@ -13,8 +13,8 @@ import { gzipDeterministic, gunzipChecked, tarDeterministic, untar } from '../li
 import { keepTown, isCities5000 } from '../lib/places.mjs';
 import { writePart } from '../build.mjs';
 import { openPart, PlaceIndex } from '../lib/pack.mjs';
-import { Resolver, townRadiusKm, urbanReachKm, worldOf } from '../resolve.mjs';
-import { diffLattices, parseAccepted } from '../lattice.mjs';
+import { Resolver, townRadiusKm, urbanReachKm, worldOf, normalisePoint, shortForm } from '../resolve.mjs';
+import { diffLattices, parseAccepted, targetedPoints, pointsTsv, pointAnswers, latticeTsv, SAMPLE_KINDS } from '../lattice.mjs';
 
 // ---- geometry -----------------------------------------------------------------------------------------------------------
 
@@ -253,4 +253,40 @@ test('the lattice diff counts changes and honours accepted lines', () => {
   assert.equal(d.globe.unaccepted, 1);
   assert.equal(d.globe.unacceptedShare, 0.25);
   assert.deepEqual(parseAccepted('/nonexistent'), []);
+});
+
+test('the point is normalised as the app does: 180 is -180, a longitude in range is kept bit for bit', () => {
+  assert.deepEqual(normalisePoint(10, 180), [10, -180]);
+  assert.deepEqual(normalisePoint(10, -180), [10, -180]);
+  assert.deepEqual(normalisePoint(95, 190), [90, -170]);
+  assert.deepEqual(normalisePoint(-91, -190), [-90, 170]);
+  const lon = 139.12345;
+  assert.equal(normalisePoint(0, lon)[1], lon);
+  const { full } = syntheticPack();
+  assert.equal(full.resolve({ lat: 0, lon: 355, tier: 'regional' }).key, 'adm0:AAA'); // -5
+  assert.equal(full.resolve({ lat: Number.NaN, lon: 0, tier: 'regional' }), null);
+});
+
+test('short forms: the shown name\'s, the Latin one only when a Russian title fell back to the Latin name', () => {
+  const row = { name_en: 'Long Name', name_ru: null, short_en: 'Long', short_ru: null };
+  assert.equal(shortForm(row, false), 'Long');
+  assert.equal(shortForm(row, true), 'Long'); // the Russian title is the Latin name
+  assert.equal(shortForm({ ...row, name_ru: '\u0418\u043C\u044F' }, true), null); // a Russian title, no Russian short form
+  assert.equal(shortForm({ ...row, short_ru: '\u041A' }, true), '\u041A');
+  assert.equal(shortForm(row, true, true), null); // a country: the app names it in Russian
+});
+
+test('the targeted sample is deterministic and its answers carry the parity columns', () => {
+  const { full } = syntheticPack();
+  const a = targetedPoints(full, 400, 7);
+  const b = targetedPoints(full, 400, 7);
+  assert.equal(pointsTsv(a), pointsTsv(b));
+  assert.ok(a.length > 300);
+  const kinds = new Set(a.map((p) => p.kind));
+  for (const [kind] of SAMPLE_KINDS) assert.ok(kinds.has(kind), kind);
+  const rows = pointAnswers(full, a.slice(0, 5).map((p) => ({ ...p, text: [String(p.lat), String(p.lon), String(p.mpp)] })));
+  const tsv = latticeTsv(rows).split('\n');
+  assert.equal(tsv[0].split('\t').length, 4 + 3 * 6);
+  assert.equal(tsv[1].split('\t')[3], a[0].kind);
+  assert.equal(tsv[1].split('\t')[0], String(a[0].lat));
 });

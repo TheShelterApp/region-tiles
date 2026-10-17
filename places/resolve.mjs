@@ -60,6 +60,31 @@ export function worldOf(country, lat, lon) {
   return country.world;
 }
 
+/**
+ * The point as the app looks it up: the latitude clamped to [-90, 90], a longitude outside [-180, 180) wrapped into it
+ * (180 is -180: the polygons that end at the antimeridian start again at -180). A longitude already in range is used as
+ * it is, bit for bit.
+ */
+export function normalisePoint(lat, lon) {
+  let x = lon;
+  if (!(x >= -180 && x < 180)) {
+    x = (x + 180) % 360;
+    if (x < 0) x += 360;
+    x -= 180;
+  }
+  return [Math.min(90, Math.max(-90, lat)), x];
+}
+
+/**
+ * The short form of the name a row is shown with: English for an English title; for a Russian title its own Russian
+ * short form, or the English one when the title fell back to the Latin name (no `name_ru`). Countries are named by the
+ * app in both languages, so a Russian country title takes only `short_ru`.
+ */
+export function shortForm(row, ru, namedByApp = false) {
+  if (!ru) return row.short_en || null;
+  return row.short_ru || (namedByApp || row.name_ru ? null : row.short_en || null);
+}
+
 const WORLD_EN = {
   northAmerica: 'North America', southAmerica: 'South America', northAfrica: 'North Africa', tropicalAfrica: 'Tropical Africa',
   antarctica: 'Antarctica', oceania: 'Oceania', westernEurope: 'Western Europe', easternEurope: 'Eastern Europe',
@@ -102,8 +127,15 @@ export class Resolver {
     return d;
   }
 
+  /** A water as it is shown: its `whole` row; a row without a name (check 5 allows none) takes its parent's. */
   shownWater(w) {
-    return w.whole ? this.ix.byKey.get(w.whole) : w;
+    let s = w.whole ? this.ix.byKey.get(w.whole) : w;
+    for (let hops = 0; !s.name_en && s.parent && hops < 16; hops++) {
+      const p = this.ix.byKey.get(s.parent);
+      if (!p) break;
+      s = p.whole ? this.ix.byKey.get(p.whole) : p;
+    }
+    return s;
   }
 
   /**
@@ -137,7 +169,7 @@ export class Resolver {
     const ru = language === 'ru';
     // Countries are named by the app (CountryName.geocoderStyle); the pack's English name is the bundle's.
     const name = level === 'country' ? (ru ? null : s.name_en) : ru ? s.name_ru || s.name_en : s.name_en;
-    return { key: s.key, level, name, shortName: (ru ? s.short_ru : s.short_en) || null, step };
+    return { key: s.key, level, name, shortName: shortForm(s, ru, level === 'country'), step };
   }
 
   answerWorld(world, step) {
@@ -149,7 +181,7 @@ export class Resolver {
     const ru = language === 'ru';
     return {
       key: `place:${shown.id}`, level: 'place', name: ru ? shown.name_ru || shown.name_en : shown.name_en,
-      shortName: (ru ? shown.short_ru : shown.short_en) || null, step, viaTown: t.id,
+      shortName: shortForm(shown, ru), step, viaTown: t.id,
     };
   }
 
@@ -185,8 +217,10 @@ export class Resolver {
 
   // ---- the chain --------------------------------------------------------------------------------------------------------
 
-  resolve({ lat, lon, tier, language = 'en', mpp = null }) {
+  resolve({ lat: rawLat, lon: rawLon, tier, language = 'en', mpp = null }) {
     if (tier === 'city' && !this.ix.detail) return null; // the city tier needs both parts
+    if (!Number.isFinite(rawLat) || !Number.isFinite(rawLon)) return null;
+    const [lat, lon] = normalisePoint(rawLat, rawLon);
     const L = this.land(lat, lon);
     if (tier === 'globe') return this.globe(lat, lon, L, mpp ?? DEFAULT_GLOBE_MPP, language);
     if (tier === 'regional') return this.regional(lat, lon, L, language);
@@ -199,7 +233,8 @@ export class Resolver {
       const c = L.country || this.ix.countries.nearest(lat, lon, BAND_KM)?.area;
       if (c) return this.answerWorld(worldOf(c, lat, lon), STEP.globeLand);
     }
-    const band = Math.max(BAND_KM, (GLOBE_BAND_PT * mpp) / 1000);
+    // A scale that is not a positive number (the app never sends one) leaves the plain band, as PlaceChain does.
+    const band = Number.isFinite(mpp) && mpp > 0 ? Math.max(BAND_KM, (GLOBE_BAND_PT * mpp) / 1000) : BAND_KM;
     const near = this.nearestLand(lat, lon, band);
     if (near) return this.answerWorld(near.zone ? near.zone.world : worldOf(near.country, lat, lon), STEP.globeBand);
     const w = this.water(lat, lon);

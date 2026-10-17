@@ -24,7 +24,7 @@ regions bundle (`regions.sqlite.gz`, `regions-db.json`) or the CDN tiles.
 | `build.mjs` | P2: the two parts, their pointer and a build report |
 | `resolve.mjs` | the reference resolver: the header's chain per tier over a built pack |
 | `verify.mjs`, `reports.mjs` | P3: the checks and the review reports |
-| `lattice.mjs` | the lattice answers and the diff between two packs |
+| `lattice.mjs` | the lattice answers, the diff between two packs, and the targeted sample of the iOS release gate |
 | `fixtures/golden.tsv` | the golden points (checked here and by the iOS contract runner) |
 | `fixtures/make-fixture.mjs` | a small fixture pack for the iOS contract runner |
 | `accepted-diffs.md` | lattice changes accepted for a release |
@@ -170,6 +170,8 @@ closing vertex is not stored: every ring is implicitly closed. Varints are unsig
 
 ## Lookups (the contract of `resolve.mjs` and the app)
 
+- **The point**: the latitude clamped to [-90, 90]; a longitude outside [-180, 180) is wrapped into it (180 is -180,
+  where the polygons that end at the antimeridian start again). A longitude in range is used as it is, bit for bit.
 - **Point in polygon**: even-odd ray cast over all rings of a polygon (holes flip), in quantised units: the point is
   `X = lon * q`, `Y = lat * q` as doubles, compared with the integer vertices exactly as
   `(yi > Y) != (yj > Y) && X < (xj - xi) * (Y - yi) / (yj - yi) + xi`. A geometry holds the point when any polygon does.
@@ -193,8 +195,28 @@ within **1 km** of that country's distance.
 | City (both parts) | 1. Land: rule E, the town with the smallest d / R(pop), d <= 50 km, whose `adm0` is the country under the point (ties: the smaller geonameid), shown as its `metro`. 2. Land inside a zone: the zone (its neutral name stands in for the administering country's province). 3. Land: the province. 4. Land without a province: regional 1. 5. Water within B: a town of the band's country within its U(pop) (a city's bay), else the zone or country. 6. Regional 3-6. |
 
 Keys: `adm0:<id>`, `adm1:<id>`, `sea:<ne_id>`, `zone:<slug>`, `place:<geonameid>`, `region:<WorldRegion case>`. Names:
-the shown row's `name_ru` (else `name_en`) in Russian, `name_en` in English; a water is named by its `whole` row, a
-town by its `metro` row; countries and parts of the world by the app.
+the shown row's `name_ru` (else `name_en`) in Russian, `name_en` in English; a water is named by its `whole` row (a row
+without a name by its parent's), a town by its `metro` row; countries and parts of the world by the app. Short forms
+go with the name shown: `short_en` for an English title; for a Russian one `short_ru`, or `short_en` when the title
+fell back to the Latin name (no `name_ru`); a Russian country title (the app's name) takes only `short_ru`.
+
+### The release gate's parity run
+
+The iOS release gate (`Scripts/check-place-pack.sh` in the iOS repository) compares the Swift chain with this resolver
+field by field (key, chain step, names, short forms; countries' and parts of the world's names excepted, the app names
+those) on two samples:
+
+```bash
+node places/lattice.mjs answers <core.gz> <detail.gz> --out lattice.tsv.gz --n 100000      # the Fibonacci lattice
+node places/lattice.mjs points <core.gz> <detail.gz> --out points.tsv --n 20000 --golden places/fixtures/golden.tsv
+node places/lattice.mjs answers <core.gz> <detail.gz> --out points-answers.tsv.gz --points points.tsv
+```
+
+`points` writes a deterministic targeted sample (seed 1): the golden points, then points where an answer changes and
+the two implementations could part: off country, zone, water and province outlines at the band, tie, gap and reach
+distances, around towns at R(pop), U(pop) and 50 km, between two towns where their rule E scores are equal, exactly on
+vertices and on the rays through them, golden-style 4-decimal points, the antimeridian (180 itself included) and the
+poles; each with a globe scale from 500 to 30,000 m per point. A uniform lattice almost never lands on those places.
 
 ## Verify (P3)
 
