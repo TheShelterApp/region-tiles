@@ -1,0 +1,32 @@
+chain vs Natural Earth oceanbasin (0):
+
+chain vs adjacency (29, informational: the adjacency search reaches an ocean through any neighbour):
+James Bay: chain sea:1159115017, adjacency sea:1159115057
+Hudson Strait: chain sea:1159115017, adjacency sea:1159115057
+Singapore Strait: chain sea:1159115079, adjacency sea:1159115123
+Makassar Strait: chain sea:1159115079, adjacency sea:1159115123
+Ungava Bay: chain sea:1159115017, adjacency sea:1159115057
+Cumberland Sound: chain sea:1159115017, adjacency sea:1159115057
+Vestfjorden: chain sea:1159115017, adjacency sea:1159115057
+Sognefjord: chain sea:1159115017, adjacency sea:1159115057
+Trondheimsfjord: chain sea:1159115017, adjacency sea:1159115057
+Skyring Sound: chain sea:1159115079, adjacency sea:1159115057
+Otway Sound: chain sea:1159115079, adjacency sea:1159115057
+Inútil Bay: chain sea:1159115079, adjacency sea:1159115057
+Bali Sea: chain sea:1159115079, adjacency sea:1159115123
+Bali Strait: chain sea:1159115079, adjacency sea:1159115123
+Bass Strait: chain sea:1159115079, adjacency sea:1159115123
+Bering Strait: chain sea:1159115079, adjacency sea:1159115017
+Iceland Sea: chain sea:1159115017, adjacency sea:1159115057
+Denmark Strait: chain sea:1159115017, adjacency sea:1159115057
+Norwegian Sea: chain sea:1159115017, adjacency sea:1159115057
+Frobisher Bay: chain sea:1159115017, adjacency sea:1159115057
+Hudson Bay: chain sea:1159115017, adjacency sea:1159115057
+Wager Bay: chain sea:1159115017, adjacency sea:1159115057
+Natuna Sea: chain sea:1159115079, adjacency sea:1159115123
+Java Sea: chain sea:1159115079, adjacency sea:1159115123
+Gulf of Boni: chain sea:1159115079, adjacency sea:1159115123
+Banda Sea: chain sea:1159115079, adjacency sea:1159115123
+Berau Gulf: chain sea:1159115079, adjacency sea:1159115123
+Ceram Sea: chain sea:1159115079, adjacency sea:1159115123
+Flores Sea: chain sea:1159115079, adjacency sea:1159115123

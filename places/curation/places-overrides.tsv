@@ -1,0 +1,2468 @@
+# Town overrides, by GeoNames geonameid (every row must name a cities1000 place: the build fails otherwise).
+# name_en / name_ru replace the selected names; population replaces GeoNames' figure (it ranks the town in rule E);
+# keep 1 keeps the town at any population threshold; drop 1 removes it (a misplaced or duplicate record).
+# adm0 sets the town's country, alt a second country rule E may name it on (both bundle country ids: town-countries.tsv);
+# lat / lon move a misplaced point (degrees).
+geonameid	name_en	name_ru	short_en	short_ru	population	keep	drop	adm0	alt	lat	lon	note
+146970	Khankendi	Ханкенди			53400	1						Stepanakert/Khankendi (Q3 default: Khankendi in both languages, the current official name, consistent with the country shown). GeoNames' population is 2,100: Wikidata Q129352's 53,400 (2011), so it ranks as the city it is (rule E) and stays at any threshold
+5128581	New York	Нью-Йорк										GeoNames names the city "New York City"; the header says "New York", as Apple does
+1528249	Jalal-Abad	Джалал-Абад										GeoNames' record at Jalal-Abad's position is named "Manas" (R1)
+1814906		Чунцин										The first Cyrillic name GeoNames lists is not the Russian one (R1)
+281184									PSE			Jerusalem: also named on the Palestine assignment area (East Jerusalem, the Old City), Q2 and Q5
+1273294		Дели										Wikidata's linked item is Old Delhi (Старый Дели)
+3449433		Сантус										Wikidata's linked item is the Baixada Santista agglomeration; GeoNames lists two spellings
+1808316	Yiyang	Иян										GeoNames' record at Yiyang's centre is named after its urban district Heshan; Wikidata and the Russian name are Yiyang's
+1265873		Кожикоде										GeoNames lists "Калькутта" (wrong) and "Кожикоде"
+2317765		Зария										GeoNames lists "Заря" (wrong) and "Зария"
+11611630		Фунабаси			644668							Funabashi: GeoNames gives the city 0 people and its population to a district record (Honcho, 1863905)
+1863905							1					Honcho, Funabashi: a district record carrying the city's population (it named Funabashi "Honcho")
+1865689							1					Aihara, Sagamihara: a neighbourhood record carrying Sagamihara's population (it named Hashimoto "Aihara")
+11790632							1					"Bunkyo" in Sagamihara: a district record carrying Tokyo's Bunkyo ward's population (it named Sagamihara "Machida")
+11836117							1					"Suginami" at Ishioka, Ibaraki: Tokyo's Suginami ward's record and population 80 km from the ward
+11611609										35.5714	139.3733	Sagamihara: GeoNames' point lies 12 km west of the city centre (in the Tanzawa hills); the city hall in Chuo-ku
+1852139							1					"Shinagawa" in Ehime: a record carrying Tokyo's Shinagawa ward's population, 700 km from the ward
+1852383							1					"Minato" in Wakayama: a record carrying a Tokyo ward's population
+11209896							1					"Koto" in Kumamoto: a record carrying Tokyo's Koto ward's population, 900 km from the ward
+11785389		Вах-Кантт				1						Wah Cantonment: a city of its own that GeoNames files as a section (PPLX): its population is not capped; review A5: agents 2026-10-18
+11790343		Митака			195391							Mitaka: GeoNames gives the city 0 people and its population to a section record (Kamirenjaku, 1860437), which folds into it
+146268								CYP				Nicosia: GeoNames' point lies south of the Green Line, in the Republic of Cyprus; the bundle's simplified Northern Cyprus outline covers it (rule E still names it there: its outline's country is kept as alt)
+3860466			Cte. Luis Piedrabuena	Луис-Пьедрабуэна								short form: agents 2026-10-18
+3836951			S. Martín de los Andes	Сан-М.-де-лос-Андес								short form: agents 2026-10-18
+3872079			S. José de la Mariquina									short form: agents 2026-10-18
+3853782			Ing. Luis A. Huergo	Инхеньеро-Уэрго								short form: agents 2026-10-18
+3370726			Edinburgh of the 7 Seas									short form: agents 2026-10-18
+8347851			Kosciuszko Nat. Park									short form: agents 2026-10-18
+3871276			San Vicente de T. Tagua									short form: agents 2026-10-18
+3872205			San Fco. de Mostazal									short form: agents 2026-10-18
+3873249			Rinconada									short form: agents 2026-10-18
+3835943			Sta. Rosa de Calamuch.	Санта-Роса-де-Кал.								short form: agents 2026-10-18
+3832653			Va. Paula de Sarmiento									short form: agents 2026-10-18
+3835938			Sta. Rosa de R. Primero	Вилья-Санта-Роса								short form: agents 2026-10-18
+3449614			Sto. Antônio da Patrulha									short form: agents 2026-10-18
+3471427			Arroio do Silva									short form: agents 2026-10-18
+3430402			Caá Catí									short form: agents 2026-10-18
+3840300			Pcia. Roque Sáenz Peña									short form: agents 2026-10-18
+3860419			Concep. del Bermejo									short form: agents 2026-10-18
+3433803			Gral. J. de San Martín	Хен. Х. де Сан-Мартин								short form: agents 2026-10-18
+3437905			Dr. Juan E. Estigarribia									short form: agents 2026-10-18
+3438754			Dr. Juan L. Mallorquín									short form: agents 2026-10-18
+3439032			Col. Gral. A. Stroessner									short form: agents 2026-10-18
+3862086			S. José de los Cerrillos									short form: agents 2026-10-18
+3437021			San Pedro									short form: agents 2026-10-18
+12640342			Ramotswa Stn./Taung									short form: agents 2026-10-18
+3846915			Lib. Gral. San Martín	Либ. Хен. Сан-Мартин								short form: agents 2026-10-18
+3853788			Ing. Guillermo N. Juárez	Инхеньеро-Хуарес								short form: agents 2026-10-18
+3449344		Сан-Бернарду-ду-Кампу	S. Bernardo do Campo	Сан-Бернарду								short form: agents 2026-10-18; review A5: agents 2026-10-18
+935694			Plaine-des-Palmistes	Ла-Плен-д.-Пальмист								short form: agents 2026-10-18
+934058			Morcellement St André									short form: agents 2026-10-18
+3451051			Rio Verde de M. Grosso									short form: agents 2026-10-18
+13132735			Harare W. Suburbs									short form: agents 2026-10-18
+12157117			Horacio Zeballos G.									short form: agents 2026-10-18
+6318522			S. J. dos Quatro Marcos									short form: agents 2026-10-18
+3449502			Sto. Ant. do Leverger									short form: agents 2026-10-18
+3456226			N. Sra. do Livramento									short form: agents 2026-10-18
+6318357			Sto. Ant. do Descoberto									short form: agents 2026-10-18
+12432244			Setor de Ind. e Abastec.									short form: agents 2026-10-18
+12432990			Setor Compl. Ind. Abast.									short form: agents 2026-10-18
+12157107			La Rinconada Ana Maria									short form: agents 2026-10-18
+12157070			Carmen de la Legua									short form: agents 2026-10-18
+3937547			Villa Poeta José Gálvez									short form: agents 2026-10-18
+3934290			A.H. Nicolas de Pierola									short form: agents 2026-10-18
+12158715			Paragsha - San Andres									short form: agents 2026-10-18
+3404545		Кабу-ди-Санту-Агостинью	Cabo de Sto. Agostinho	Кабу-ди-Санту-Агост.								short form: agents 2026-10-18; review A5: agents 2026-10-18
+6317344			Jaboatão	Жабоатан								short form: agents 2026-10-18
+3389652			Sta. Cruz do Capibaribe	Санта-Крус-ду-Капиб.								short form: agents 2026-10-18
+3408102			S. Sebastião de L. Roça									short form: agents 2026-10-18
+6318281			Sta. Maria do Cambucá									short form: agents 2026-10-18
+3388455			São José da L. Tapada									short form: agents 2026-10-18
+3407486			S. João do Rio do Peixe									short form: agents 2026-10-18
+6318759			Ten. Laurentino Cruz									short form: agents 2026-10-18
+6389321			Segunda Jerusalén									short form: agents 2026-10-18
+6317004			Dep. Irapuan Pinheiro									short form: agents 2026-10-18
+3398871			Gov. Dix-Sept Rosado									short form: agents 2026-10-18
+3388713		Сан-Гонсалу-ду-Амаранти	S. Gonçalo do Amarante	Сан-Г.-ду-Амаранти								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3692414			Pueblo Nuevo de Colan									short form: agents 2026-10-18
+3388714			S. Gonçalo do Amarante									short form: agents 2026-10-18
+3658822			Marcelino Maridueña									short form: agents 2026-10-18
+3697085			S. Antonio del Estrecho									short form: agents 2026-10-18
+3651495			Santa Ana de V. Larga									short form: agents 2026-10-18
+3660773			A. Baquerizo Moreno	А.-Бакерисо-Морено								short form: agents 2026-10-18
+3652758			Pto. Baquerizo Moreno	Пуэрто-Бакерисо								short form: agents 2026-10-18
+3651297	Santo Domingo		Santo Domingo									short form: agents 2026-10-18; review A5: agents 2026-10-18
+3652743			Puerto Fco. de Orellana	П.-Ф.-де-Орельяна								short form: agents 2026-10-18
+11829943			Ol Kalau S. Settlement									short form: agents 2026-10-18
+13132719			Rwamwanja Ref. Camp									short form: agents 2026-10-18
+3651694			San Lorenzo									short form: agents 2026-10-18
+13132716			Kyangwali Ref. Camp									short form: agents 2026-10-18
+13132714			Kiryandongo Ref. Camp									short form: agents 2026-10-18
+1764318			Kg. Simpang Renggam									short form: agents 2026-10-18
+1884367		Букит-Панджанг	Bukit Panjang	Букит-Панджанг								short form: agents 2026-10-18; review A5: agents 2026-10-18
+1884737		Чоа-Чу-Канг	Choa Chu Kang	Чоа-Чу-Канг								short form: agents 2026-10-18; review A5: agents 2026-10-18
+7620438			Ulu Sungai Benut									short form: agents 2026-10-18
+7620439			Ulu Benut Tiga									short form: agents 2026-10-18
+7620470			Ulu Benut Lima									short form: agents 2026-10-18
+7858028			Kg. Jelutong Tengah									short form: agents 2026-10-18
+1638754			Laikit, Laikit II									short form: agents 2026-10-18
+1742667			Sg. Pelek New Village									short form: agents 2026-10-18
+13118276			Bdr. Baru Salak Tinggi									short form: agents 2026-10-18
+1763378			Kg. Tanjung Minyak									short form: agents 2026-10-18
+1763410			Kg. Tanjung Keling									short form: agents 2026-10-18
+1735133			Bukit Tinggi, Bentong									short form: agents 2026-10-18
+1763412			Kg. Tanjung Karang									short form: agents 2026-10-18
+1763999			Kg. Sungai Kajang									short form: agents 2026-10-18
+1768334			Kg. Datuk Keramat									short form: agents 2026-10-18
+1771304			Kg. Baru Balakong									short form: agents 2026-10-18
+13117827			Bdr. Tun Hussein Onn									short form: agents 2026-10-18
+1734575			Kg. Cangkat Jering									short form: agents 2026-10-18
+1820622			Panchor									short form: agents 2026-10-18
+3675252			Mariquita									short form: agents 2026-10-18
+3666519			Ubaté									short form: agents 2026-10-18
+3380387			St-Laurent-du-Maroni	Сен-Лоран-д.-Марони								short form: agents 2026-10-18
+1735069			Kg. Teluk Air Tawar									short form: agents 2026-10-18
+1764027		Кампунг-Сунгай-Глугур	Kg. Sungai Glugur	Сунгай-Глугур								short form: agents 2026-10-18; review A5: agents 2026-10-18
+1764319			Kg. Simpang Pulai									short form: agents 2026-10-18
+1234569			Dehiwala-Mt. Lavinia	Дехивала-М.-Лавиния								short form: agents 2026-10-18
+1238992			Sri J'pura Kotte	Котте								short form: agents 2026-10-18
+6804851			Kg. Baru Ulu Melaka									short form: agents 2026-10-18
+1766484			Kg. Padang Lalang									short form: agents 2026-10-18
+6807244			Kg. Alor Mengkudu									short form: agents 2026-10-18
+13060471			Gen. S. K. Pendatun									short form: agents 2026-10-18
+1260354			Paravur Tekkumbh.									short form: agents 2026-10-18
+13353551			Kizhuvalam									short form: agents 2026-10-18
+11655782			Acharipallam									short form: agents 2026-10-18
+11655925			Tamarakutam									short form: agents 2026-10-18
+3670018			S. Bernardo del Viento									short form: agents 2026-10-18
+3671203			Purísima									short form: agents 2026-10-18
+3792384			Manaure B. del Cesar									short form: agents 2026-10-18
+3649417		Лос-Пуэртос-де-Альтаграсия	Los Ptos. de Altagracia	Лос-Пуэртос-де-Альт.								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3628550			S. Antonio de Los Altos									short form: agents 2026-10-18
+8948694			V.S.K.Valasai									short form: agents 2026-10-18
+7909705			Sta. Cruz de los Taques									short form: agents 2026-10-18
+11519433			Kempanaickenpalayam									short form: agents 2026-10-18
+11522095			K. Nayakkanpalaiyam									short form: agents 2026-10-18
+11522310			B. Periya Agraharam									short form: agents 2026-10-18
+11522389			K. Chellipalaiyam									short form: agents 2026-10-18
+11556532			P. Nallakavundanpatti									short form: agents 2026-10-18
+1259965			Pethanaickenpalayam									short form: agents 2026-10-18
+1269102			Jayankondam									short form: agents 2026-10-18
+11678671			L. Narayanapuram									short form: agents 2026-10-18
+6695468			Bommasandra Ind. Area									short form: agents 2026-10-18
+1604452			Khlong Bang Sao Thong									short form: agents 2026-10-18
+4038659			Tamuning									short form: agents 2026-10-18
+4043615			Chalan Pago-Ordot									short form: agents 2026-10-18
+7873866			Mongmong-Toto-Maite									short form: agents 2026-10-18
+3516497			Brisas B. de Suchiate	Брисас-Б.-де-Сучиате								short form: agents 2026-10-18
+3589074			Santo Domingo Such.									short form: agents 2026-10-18
+3589289		Санта-Лусия-Коцумальгуапа	Santa Lucía Cotz.	Котсумальгуапа								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3589458			Sta. Catarina Ixtahuac.									short form: agents 2026-10-18
+3589626			S. Pedro Sacatepéquez									short form: agents 2026-10-18
+3590197			San Fco. Zapotitlán									short form: agents 2026-10-18
+3590412			San Antonio Such.									short form: agents 2026-10-18
+3597993			Concep. Chiquirichapa									short form: agents 2026-10-18
+3589285			Sta. Lucía Milpas Altas									short form: agents 2026-10-18
+3589627			S. Pedro Sacatepéquez									short form: agents 2026-10-18
+3589852			S. Lucas Sacatepéquez									short form: agents 2026-10-18
+3589885		Сан-Хуан-Сакатепекес	S. Juan Sacatepéquez	С.-Хуан-Сакатепекес								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3590393			San Bartolomé M. Altas									short form: agents 2026-10-18
+3590475			S. Antonio A. Calientes									short form: agents 2026-10-18
+3587157			Candelaria de La Front.	Канделария-де-ла-Ф.								short form: agents 2026-10-18
+3590547			San Agustín Acasag.									short form: agents 2026-10-18
+3601919			San Manuel Colohete									short form: agents 2026-10-18
+3602094			S. José de Comayagua									short form: agents 2026-10-18
+3602275			San Fco. de Ojuera									short form: agents 2026-10-18
+3606251			Las Vegas, Sta. Barbara									short form: agents 2026-10-18
+8455210			Khao Nang Sang Hua									short form: agents 2026-10-18
+1607532			Ayutthaya									short form: agents 2026-10-18
+1694514			Pasong Kawayan I									short form: agents 2026-10-18
+1713053			Gen. Emilio Aguinaldo									short form: agents 2026-10-18
+11790693			Tra Que Veg. Village									short form: agents 2026-10-18
+1713027			Gen. Mamerto Natividad									short form: agents 2026-10-18
+3518253			S. Miguel Panixtlahuaca	Панистлауака								short form: agents 2026-10-18
+3523240			Miahuatlán de P. Díaz	Миауатлан								short form: agents 2026-10-18
+3529510			Ejutla de Crespo									short form: agents 2026-10-18
+3801621			S. Antonino C. Velasco	Сан-Антонино-К.-В.								short form: agents 2026-10-18
+3516843			Sto. Dgo. Tehuantepec	Теуантепек								short form: agents 2026-10-18
+3523450			Matías Romero									short form: agents 2026-10-18
+3526357			Juchitán de Zaragoza									short form: agents 2026-10-18
+3801642			Jalapa del Marqués	Халапа-дель-Маркес								short form: agents 2026-10-18
+3801960			San Blas Atempa	Сан-Блас-Атемпа								short form: agents 2026-10-18
+3516837			Sto. Dgo. Zanatepec	Санатепек								short form: agents 2026-10-18
+3522444			Ocozocoautla	Окосокоаутла								short form: agents 2026-10-18
+3519537			San Cristóbal	Сан-Кристобаль								short form: agents 2026-10-18
+3816362			Benemérito	Бенемерито								short form: agents 2026-10-18
+13156770			Srisailam Project									short form: agents 2026-10-18
+4026082	Lázaro Cárdenas		Cd. Lázaro Cárdenas									short form: agents 2026-10-18; review A5: agents 2026-10-18
+4026954			San José Ixtapa	Сан-Хосе-Икстапа								short form: agents 2026-10-18
+3517285			Tlaxiaco	Тлахьяко								short form: agents 2026-10-18
+3527023			Huajuapan de León									short form: agents 2026-10-18
+3801045			Tamazulapam	Тамасулапам дель Пр.								short form: agents 2026-10-18
+3516923			Stgo. Suchilquitongo	Сучилкитонго								short form: agents 2026-10-18
+3518722			Valle Nacional	Валье-Насьональ								short form: agents 2026-10-18
+3519255			San Fco. Telixtlahuaca	Теликстлауака								short form: agents 2026-10-18
+3520000			S. Agustin de las Juntas	Сан-А.-де-лас-Хунтас								short form: agents 2026-10-18
+3531875			S. Lorenzo Cacaotepec	Какаотепек								short form: agents 2026-10-18
+8858263			Anacleto Canabal 2da.	А.-Канабал 2-я секция								short form: agents 2026-10-18
+3802698			Río Viejo 1ra. Sección	Рио-Вьехо 1-я секция								short form: agents 2026-10-18
+4013669			Coalcomán	Коалкоман								short form: agents 2026-10-18
+3515900			Tepecoacuilco	Тепекоакуилко								short form: agents 2026-10-18
+3516006			Tenancingo	Тенансинго								short form: agents 2026-10-18
+3517763			Sta. Ana Ixtlahuatzingo	Икстлауатсинго								short form: agents 2026-10-18
+3526798			Iguala	Игуала								short form: agents 2026-10-18
+3532802			Apaxtla de Castrejón	Апастла								short form: agents 2026-10-18
+8858154			U.H. José María Morelos	Х. М. Морелос и Павон								short form: agents 2026-10-18
+8858171			Lomas de Ahuatlán	Ломас-де-Ауатлан								short form: agents 2026-10-18
+3526458			Jonacatepec	Хонакатепек								short form: agents 2026-10-18
+3818957			Chiautla de Tapia									short form: agents 2026-10-18
+3523756			Cuayucatepec	Куаюкатепек								short form: agents 2026-10-18
+3801145			Teotitlán de F. Magón	Теотитлан де Ф. Магон								short form: agents 2026-10-18
+3519409			S. Felipe Jalapa de Díaz	Халапа-де-Диас								short form: agents 2026-10-18
+3533439			Acatlán de P. Figueroa	Акатлан де П. Фигероа								short form: agents 2026-10-18
+3522845			Nanchital	Нанчитал								short form: agents 2026-10-18
+8858119			Fracc. Ciudad Olmeca									short form: agents 2026-10-18
+3802417			Medellín y Madero 2da.	Медельин и Мадеро 2								short form: agents 2026-10-18
+3492985			Sta. Cruz de Barahona	Бараона								short form: agents 2026-10-18
+3493081			S. Juan de la Maguana	Сан-Х.-де-ла-Магуана								short form: agents 2026-10-18
+3980194	Villa de Álvarez		Villa de Álvarez									short form: agents 2026-10-18; review A5: agents 2026-10-18
+3982545			Tangancícuaro	Тангансикуаро								short form: agents 2026-10-18
+3983630			Stgo. Tangamandapio									short form: agents 2026-10-18
+3984564			Sta. Clara de Valladares	Санта К. де Вальядар.								short form: agents 2026-10-18
+3994594			Nuevo Parangaricutiro	Нуэво-Сан-Хуан								short form: agents 2026-10-18
+8858150			Villas del Pedregal	Вильяс-д.-Педрегаль								short form: agents 2026-10-18
+8858174			Fracc. Misión del Valle	Мисьон-дель-Валье								short form: agents 2026-10-18
+8858232			Galaxia Tarímbaro	Галаксия-Таримбаро								short form: agents 2026-10-18
+8858234			Fracc. Metrópolis II									short form: agents 2026-10-18
+3979665			Zinapécuaro	Синапекуаро								short form: agents 2026-10-18
+8858222			Rincón de N. Romero	Ринкон-де-Н.-Ромеро								short form: agents 2026-10-18
+3515042			Tultitlán	Тультитлан								short form: agents 2026-10-18
+3515679			Santiago Tianguistenco	Тьянгистенко								short form: agents 2026-10-18
+3515887			Tepeji del Río	Тепехи-дель-Рио								short form: agents 2026-10-18
+3516881			Sto. Dgo. de Guzmán	Санто-Д.-де-Гусман								short form: agents 2026-10-18
+3517236			Magdalena Cahuacán	Магдалена-Кауакан								short form: agents 2026-10-18
+3518702			S. Juan de las Huertas	Сан-Х.-де-лас-Уертас								short form: agents 2026-10-18
+3519249			San Fco. Tlalcilalcalpan	Тлалсилалкалпан								short form: agents 2026-10-18
+3519644			S. Bartolo Cuautlalpan	Сан-Б.-Куаутлалпан								short form: agents 2026-10-18
+3522459			Magdalena Ocotitlán	Магдалена-Окотитлан								short form: agents 2026-10-18
+3523759			Magdalena Chichicaspa									short form: agents 2026-10-18
+3525956			La Concep. de l. Baños	Ла-К.-де-лос-Баньос								short form: agents 2026-10-18
+3526501			Jilotepec	Хилотепек								short form: agents 2026-10-18
+3526858			Huixquilucan	Уикскилукан								short form: agents 2026-10-18
+3530852			San Fco. Chimalpa	Сан-Ф.-Чималпа								short form: agents 2026-10-18
+3531598			Capulhuac	Капулуак								short form: agents 2026-10-18
+3532604			San Bmé. Atlatlahuca	Сан-Б.-Атлатлаука								short form: agents 2026-10-18
+3817591			S. Gaspar Tlahuelilpan	Сан-Г.-Тлауелилпан								short form: agents 2026-10-18
+3826966			E. Zapata (Sto. Dgo.)	Э.-Сапата (Санто-Д.)								short form: agents 2026-10-18
+3827027			San Fco. Tepeolulco	Сан-Ф.-Тепеолулко								short form: agents 2026-10-18
+3827248			S. Andrés Cuexcontitlán	Куексконтитлан								short form: agents 2026-10-18
+3827252			Yachihuacaltepec	Ячиуакалтепек								short form: agents 2026-10-18
+3827257			El Cerrillo V. Hermosa	Эль Серрильо Виста Э.								short form: agents 2026-10-18
+3827262			S. Felipe Tlalmimilolpan	Тлалмимилолпан								short form: agents 2026-10-18
+3827264			Totocuitlapilco	Тотокуитлапилко								short form: agents 2026-10-18
+3827273			S. Bartolomé Tlaltelulco	Сан-Б.-Тлалтелулко								short form: agents 2026-10-18
+3827418			S. Bartolomé Coatepec	Сан-Б.-Коатепек								short form: agents 2026-10-18
+3827582			S. Bartolo Tlaxihuicalco	Тлаксиуикалко								short form: agents 2026-10-18
+3827600			Sto. Tomás Chiconautla	Санто-Т.-Чиконаутла								short form: agents 2026-10-18
+8858097			San J. Gpe. Otzacatipan	Сан Х. Г. Отсакатипан								short form: agents 2026-10-18
+8858104			S. Jorge Pueblo Nuevo	Сан-Х.-Пуэбло-Нуэво								short form: agents 2026-10-18
+8858153			Tepeolulco P. Escondido	Тепеол.-П.-Эскондидо								short form: agents 2026-10-18
+8858158			Fracc. la Trinidad									short form: agents 2026-10-18
+8858186			S. Lorenzo Cuauhtenco	Общ. Сан Л. Куаутенко								short form: agents 2026-10-18
+8858212			Fracc. Colinas del Sol	Колинас-дель-Соль								short form: agents 2026-10-18
+8858218			Constitución Toltepec	Ла-Конст.-Толтепек								short form: agents 2026-10-18
+8858224			Conj. Urbano la Loma I	ЖК Ла-Лома I								short form: agents 2026-10-18
+8858239			Quinto Barrio	Кинто Баррио (Кауак.)								short form: agents 2026-10-18
+3515358			Tlaxcalancingo	Тлакскалансинго								short form: agents 2026-10-18
+3515862			Tepetlaoxtoc	Тепетлаоксток								short form: agents 2026-10-18
+3517190			Sta. María Xonacatepec	Санта М. Хонакатепек								short form: agents 2026-10-18
+3517270			Sta. Ma. Chimalhuacán	Санта-М.-Чималуакан								short form: agents 2026-10-18
+3517673			Sta. Catarina Ayotzingo	Айотсинго								short form: agents 2026-10-18
+3517685			Sta. Catarina del Monte	Санта Кат. дель Монте								short form: agents 2026-10-18
+3517742			Sta. Ana Chiautempan	Чьяутемпан								short form: agents 2026-10-18
+3517956			Tezompa	Тесомпа								short form: agents 2026-10-18
+3518140			Apetatitlán A. Carbajal	Апетатитлан								short form: agents 2026-10-18
+3518181			S. Nicolás de l. Ranchos	Сан Н. де лос Ранчос								short form: agents 2026-10-18
+3518352			S. Matias Tlalancaleca	Тлаланкалека								short form: agents 2026-10-18
+3518414			S. Martín de l. Pirámides	Сан-Мартин-де-л.-П.								short form: agents 2026-10-18
+3518542			S. Lorenzo Chiautzingo	Чиаутсинго								short form: agents 2026-10-18
+3519214			S. Gregorio Cuautzingo	Куаутсинго								short form: agents 2026-10-18
+3519250			San Fco. Tetlanohcan	Тетланокан								short form: agents 2026-10-18
+3519410			V. Mariano Matamoros	Мариано Матаморос								short form: agents 2026-10-18
+3530587			Ciudad Sahagún									short form: agents 2026-10-18
+3533404			Acolman	Аколман								short form: agents 2026-10-18
+3815201			Ahuashuatepec	Ауасуатепек								short form: agents 2026-10-18
+3815375			Magdalena Tlaltelulco	Тлалтелулко								short form: agents 2026-10-18
+3817648			Sta. María Huexoculco	Уексокулко								short form: agents 2026-10-18
+3817705			S. Jerónimo Amanalco	Сан-Херон.-Аманалко								short form: agents 2026-10-18
+3817729			Nexquipayac	Некскипаяк								short form: agents 2026-10-18
+3817759			San Lzo. Tlalmimilolpan	Тлалмимилолпан								short form: agents 2026-10-18
+3817790			Sta. Ana Tlachiahualpa	Тлачиауалпа								short form: agents 2026-10-18
+8858091			San Jerónimo 4 Vientos	Куатро-Вьентос								short form: agents 2026-10-18
+8858121			Tecámac	Текамак								short form: agents 2026-10-18
+8858157			Prof. C. Hank González	Проф. К. Анк Гонсалес								short form: agents 2026-10-18
+8858187			Sta. Catarina Ayometla	Айометла								short form: agents 2026-10-18
+8858211			S. Sebastián d. Aparicio	Сан-Себ.-д.-Апарисио								short form: agents 2026-10-18
+8858237			Granjas Ampl. Sta. Rosa	Гр.-Ампл.-Санта-Роса								short form: agents 2026-10-18
+8858268			Axocomanitla	Аксокоманитла								short form: agents 2026-10-18
+3523752			La Magdalena Tetela	Ла-Магдалена-Тетела								short form: agents 2026-10-18
+3530175			Coscomatepec	Коскоматепек								short form: agents 2026-10-18
+3815299			El Carmen Tequexquitla	Кармен-Текекскитла								short form: agents 2026-10-18
+3818673			Tlatlauquitepec									short form: agents 2026-10-18
+3523616			Manlio F. Altamirano	М. Ф. Альтамирано								short form: agents 2026-10-18
+8858135			Geovillas los Pinos	Хеовильяс-лос-Пинос								short form: agents 2026-10-18
+8858231			Arboledas San Ramón	Арболедас-Сан-Р.								short form: agents 2026-10-18
+13527055			Naval Sta. Guantanamo									short form: agents 2026-10-18
+3717560			St-Michel de l'Atalaye									short form: agents 2026-10-18
+3493174			Monte Cristi	Монте-Кристи								short form: agents 2026-10-18
+3493383			Sabaneta	Сабанета								short form: agents 2026-10-18
+3500367			Las Matas de Sta. Cruz									short form: agents 2026-10-18
+3492914			Stgo. de los Caballeros	Сантьяго								short form: agents 2026-10-18
+3493146			San Fco. de Macorís	Сан-Фр.-де-Макорис								short form: agents 2026-10-18
+13353676			Aurangabad Cantt.									short form: agents 2026-10-18
+4018436			S. Juanito de Escobedo	Сан-Хуанито-де-Эск.								short form: agents 2026-10-18
+4004275			Ixtlahuacán de los M.	Икстлауакан-де-л.-М.								short form: agents 2026-10-18
+8858129			Fracc. Real del Valle	Реал-дель-Валье								short form: agents 2026-10-18
+8858133			C. de Readapt. Social	Сентро-де-Реадапт.								short form: agents 2026-10-18
+8858144			Villas de la Hacienda	Вильяс-де-л.-Асьенда								short form: agents 2026-10-18
+8858179			Fracc. Rancho Alegre	Ранчо-Алегре								short form: agents 2026-10-18
+3980037			Vista Hermosa	Виста-Эрмоса								short form: agents 2026-10-18
+3986870			S. Ignacio Cerro Gordo	Сан-И.-Серро-Гордо								short form: agents 2026-10-18
+4018518			Angamacutiro	Ангамакутиро								short form: agents 2026-10-18
+3985248			S. Nicolás de los Agust.	Сан-Николас-де-л.-А.								short form: agents 2026-10-18
+8858117			La Providencia S. XXI	Ла-Пров.-Сигло-XXI								short form: agents 2026-10-18
+8858223			Villas del Álamo	Вильяс-дель-Аламо								short form: agents 2026-10-18
+8858227			Parque Urb. Napateco	Парке-Урб.-Напатеко								short form: agents 2026-10-18
+8858244			U. Minera 11 de Julio	Минера 11 де Хулио								short form: agents 2026-10-18
+3515011			Túxpam	Туспам								short form: agents 2026-10-18
+3542137			Río Guayabal									short form: agents 2026-10-18
+13100439			Makakilo / Kapolei									short form: agents 2026-10-18
+13645940			Makakilo-Makaīwa Hills									short form: agents 2026-10-18
+5848322			Diamond Hd / Kapahulu									short form: agents 2026-10-18
+7262734			MCB Hawaii	База КМП на Гавайях								short form: agents 2026-10-18
+9409823			Makiki / L. Punchbowl									short form: agents 2026-10-18
+10173805			JB Pearl Harbor Hickam									short form: agents 2026-10-18
+13100433			Aliamanu / Salt Lakes									short form: agents 2026-10-18
+13100434			Mililani Mauka									short form: agents 2026-10-18
+13645935			'Ewa Beach-Iroquois Pt.									short form: agents 2026-10-18
+3987402			Tlaltenango	Тлальтенанго								short form: agents 2026-10-18
+3979982			Yahualica de G. Gallo	Яуалика								short form: agents 2026-10-18
+4021296			Jesús Gómez Portugal	Х. Гомес Португаль								short form: agents 2026-10-18
+3986984			San Fco. del Rincón	Сан-Фр.-дель-Ринкон								short form: agents 2026-10-18
+8858096			Centro Fam. la Soledad	Сентро-Ф.-Соледад								short form: agents 2026-10-18
+3516764			S. Vicente Tancuayalab	Танкуаялаб								short form: agents 2026-10-18
+3986985			San Fco. de los Romo	Сан-Фр.-де-лос-Ромо								short form: agents 2026-10-18
+3982912		Соледад-де-Грасиано-Санчес	Soledad de G. Sánchez	Соледад								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3540885			S. Antonio de los Baños									short form: agents 2026-10-18
+13527308		Носса-Сеньора-ди-Фатима	Nossa Sra. de Fátima	Носса-С.-ди-Фатима				MAC				short form: agents 2026-10-18; review A5: agents 2026-10-18
+12719551			Tai Hang Estate (E & W)									short form: agents 2026-10-18
+12719836			Chong Chien Court									short form: agents 2026-10-18
+12746518			Chuk Yuen South Est.									short form: agents 2026-10-18
+12746538			Upper Wong Tai Sin Est.									short form: agents 2026-10-18
+12746539			Lower Wong Tai Sin Est.									short form: agents 2026-10-18
+8858221			Fracc. los Ángeles									short form: agents 2026-10-18
+4015633			Cañitas	Каньитас								short form: agents 2026-10-18
+13157075			Ahmadabad Cantt.									short form: agents 2026-10-18
+13353604			Vehicle Factory Area									short form: agents 2026-10-18
+8858101			Lic. Benito Juárez	Лисенсиадо Б. Хуарес								short form: agents 2026-10-18
+8858163			Gral. Ángel Flores	Хен. Анхель Флорес								short form: agents 2026-10-18
+8858251			Adolfo López Mateos	А. Лопес Матеос								short form: agents 2026-10-18
+4012344			Cuencamé									short form: agents 2026-10-18
+8669542			Estación Sta. Engracia	Ст. Санта-Энграсия								short form: agents 2026-10-18
+13118447			Mohd Bin Zayed City									short form: agents 2026-10-18
+7046010			Karachi Univ. Emp. CHS									short form: agents 2026-10-18
+1267154			Khajuraho Monuments									short form: agents 2026-10-18
+289716			Muaydhir R. Rashid									short form: agents 2026-10-18
+1262634			Pt. DDU Nagar									short form: agents 2026-10-18
+7302859			Lumding Rly. Colony									short form: agents 2026-10-18
+1264435			Bishunpur/Maharajganj									short form: agents 2026-10-18
+10821761			Tola Rampurwa									short form: agents 2026-10-18
+13156918			Dumari urf Damodarpur									short form: agents 2026-10-18
+13156904			New Bongaigaon									short form: agents 2026-10-18
+8858204			Villa Alberto Alvarado	Альберто Альварадо								short form: agents 2026-10-18
+8858173			Marte R. Gómez	Марте Р. Гомес								short form: agents 2026-10-18
+4013724			Camargo	Камарго								short form: agents 2026-10-18
+2509846			Valsequillo de G.C.									short form: agents 2026-10-18
+2511440			S. Bartolomé d. Tirajana									short form: agents 2026-10-18
+13156844			Lakhipathar									short form: agents 2026-10-18
+3970972			M. Alemán (La Doce)	М. Алеман (Ла-Досе)								short form: agents 2026-10-18
+4013377			Col. Emiliano Zapata	Кол. Эмилиано Сапата								short form: agents 2026-10-18
+2511230			S. Sebastián de Gomera	Сан-Себ.-де-ла-Гом.								short form: agents 2026-10-18
+2515270			Las Palmas de G.C.	Лас-Пальмас								short form: agents 2026-10-18
+13157006			Gharonda N. Bangar									short form: agents 2026-10-18
+7707961			Grand Bayou MHP	Гранд-Баю								short form: agents 2026-10-18
+13157159			Taraf Makhdum Zadgan									short form: agents 2026-10-18
+1268510			Kalagarh Proj. Colony									short form: agents 2026-10-18
+11131249			Aït Baha									short form: agents 2026-10-18
+8521444			Bandar Imam Khomeini									short form: agents 2026-10-18
+1166735			Chak 141/9-L									short form: agents 2026-10-18
+1167747			Chak 186/9-L									short form: agents 2026-10-18
+1169504			Chak 143/9-L									short form: agents 2026-10-18
+1172286			Chak 188/9-AL									short form: agents 2026-10-18
+1176606			Chak 153/9-L									short form: agents 2026-10-18
+1177064			Chak 31/11-L									short form: agents 2026-10-18
+1177116			Chak 140/9-L									short form: agents 2026-10-18
+1177498			Chak 139/9-L									short form: agents 2026-10-18
+1180359			Chak 187/9-L									short form: agents 2026-10-18
+1183592			Chak 103/7-R									short form: agents 2026-10-18
+1387846			Chak 138/9-L									short form: agents 2026-10-18
+1387847			Chak 142/9-L									short form: agents 2026-10-18
+11650805			Chak 185-A/9-L									short form: agents 2026-10-18
+11650814			Chak 190/9-AL									short form: agents 2026-10-18
+1169035			Chak 88/6-R									short form: agents 2026-10-18
+1175098			Chak 120/9-L									short form: agents 2026-10-18
+1177257			Chak 112/9-L									short form: agents 2026-10-18
+1177494			Chak 68/4-R									short form: agents 2026-10-18
+11538943			Chak 65-A Gugera Dy.									short form: agents 2026-10-18
+11539306			Chak 132/9-L									short form: agents 2026-10-18
+11539312			Chak 104/9-L									short form: agents 2026-10-18
+11539315			Chak 106/9-L									short form: agents 2026-10-18
+11539316			Chak 129/9-L									short form: agents 2026-10-18
+11539345			Chak 108/9-L									short form: agents 2026-10-18
+11539348			Chak 98/9-L									short form: agents 2026-10-18
+11539361			Chak 99/9-L									short form: agents 2026-10-18
+11539368			Chak 100/9-L									short form: agents 2026-10-18
+11539407			Chak 56/4-R									short form: agents 2026-10-18
+11539438			Chak 110/9-L									short form: agents 2026-10-18
+11539500			Chak 99/6-R									short form: agents 2026-10-18
+11539513			Chak 118/9-L									short form: agents 2026-10-18
+11539519			Chak 121/9-L									short form: agents 2026-10-18
+11539605			Chak 117/9-L									short form: agents 2026-10-18
+13609088			Pánlóngchéng Kāifāqū									short form: agents 2026-10-18
+3996737			R. Sánchez Taboada	Р. Санчес Табоада								short form: agents 2026-10-18
+8858215			B. García (El Zorrillo)	Бенито Гарсия								short form: agents 2026-10-18
+5523335			Homestead Meadows N	Сев. Хомстед-Медоус								short form: agents 2026-10-18
+5523336			Homestead Meadows S	Юж. Хомстед-Медоус								short form: agents 2026-10-18
+5530937			Socorro Mission No. 1	Сокорро-Мишен № 1								short form: agents 2026-10-18
+284890			Ar Ram-Dahiyat al Barid									short form: agents 2026-10-18
+1143901			Darweshan									short form: agents 2026-10-18
+1162572			Chak 575									short form: agents 2026-10-18
+13494590			Khambra									short form: agents 2026-10-18
+12492662	Mianzhu	Мяньчжу	Mianzhu	Мяньчжу								short form: agents 2026-10-18; review A5: agents 2026-10-18
+1799574			Nanzhang Chengguan									short form: agents 2026-10-18
+1785698			Yunmeng Chengguan									short form: agents 2026-10-18
+7261029			Casa de Oro-Mt. Helix	Каса-де-Оро-М.-Х.								short form: agents 2026-10-18
+8858111			Villa del Prado 2ª Secc.	Вилья-дель-Прадо 2								short form: agents 2026-10-18
+3979497			Dr. Alberto Oviedo Mota	Д-р А. Овьедо Мота								short form: agents 2026-10-18
+3979503			Col. V. Carranza	Кол. В. Карранса								short form: agents 2026-10-18
+3979505			Cd. Guadalupe Victoria									short form: agents 2026-10-18
+8858249			Cd. Coahuila (Km 57)	Коауила (км 57)								short form: agents 2026-10-18
+2268418			Estreito de C. de Lobos	Эштрейту								short form: agents 2026-10-18
+2265494			Nossa Sra. do Monte									short form: agents 2026-10-18
+2532405			Tlata des Loulad									short form: agents 2026-10-18
+2532412			Sebt Oulad Nemma									short form: agents 2026-10-18
+282783			Bani Zayd ash Sharqiya									short form: agents 2026-10-18
+8265524			Ka‘abiyya-Tabbash									short form: agents 2026-10-18
+1791406			Wenxian Chengguan									short form: agents 2026-10-18
+1804550			Langao Chengguan									short form: agents 2026-10-18
+1809610			Gucheng Chengguan									short form: agents 2026-10-18
+1786587			Yingshang Chengguan									short form: agents 2026-10-18
+1806651			Huoqiu Chengguan									short form: agents 2026-10-18
+1807645			Huaiyuan Chengguan									short form: agents 2026-10-18
+5344817			E. Rancho Dominguez									short form: agents 2026-10-18
+5407927			W. Rancho Dominguez									short form: agents 2026-10-18
+7262518			W. Whittier-Los Nietos	Уэст-Уиттиер-Лос-Н.								short form: agents 2026-10-18
+5391831			San Diego Country Est.	Сан-Диего-Кантри-Э.								short form: agents 2026-10-18
+1783956			Zhouqu Chengguan									short form: agents 2026-10-18
+1815188			Chengxian Chengguan									short form: agents 2026-10-18
+1802136			Lüeyang Chengguan									short form: agents 2026-10-18
+1804081			Liangdang Chengguan									short form: agents 2026-10-18
+1806788			Huixian Chengguan									short form: agents 2026-10-18
+1789427			Wacheng									short form: agents 2026-10-18
+1800764			Mengcheng Chengguan									short form: agents 2026-10-18
+1849183			Ureshino-shimojuku									short form: agents 2026-10-18
+1850627			Tanushimaru-toyoki									short form: agents 2026-10-18
+1852673			Setaka-takayanagi									short form: agents 2026-10-18
+1848717			Tosayamada-nakano									short form: agents 2026-10-18
+7260892			Village of Oak Creek	Виладж-оф-Оук-Крик								short form: agents 2026-10-18
+7260357			L. Murray of Richland	Лейк-Мюррей								short form: agents 2026-10-18
+2551836			El Caïd el Gueddari									short form: agents 2026-10-18
+2532421			Jorf el Mellah									short form: agents 2026-10-18
+11703548			Sidi Senoussi									short form: agents 2026-10-18
+1469706			Achin									short form: agents 2026-10-18
+1385128			Musa Banda									short form: agents 2026-10-18
+1813875			Tanchang Chengguan									short form: agents 2026-10-18
+1860335			Kamogata									short form: agents 2026-10-18
+1851935			Usazakiminami									short form: agents 2026-10-18
+1860704	Kakogawa		Kakogawa-honmachi									short form: agents 2026-10-18; review A5: agents 2026-10-18
+5476960			Los Ranchos de Albuq.	Лос-Ранчос								short form: agents 2026-10-18
+4474841			L. Norman of Catawba	Лейк-Норман								short form: agents 2026-10-18
+7260593			Pope Air Force Base	База ВВС Поуп								short form: agents 2026-10-18
+12718683			Bouizazarene Ihaddad.									short form: agents 2026-10-18
+2488616			Mehdia									short form: agents 2026-10-18
+41589			Mohandesi-ye Zerai									short form: agents 2026-10-18
+32909	Andisheh		Andisheh									short form: agents 2026-10-18; review A5: agents 2026-10-18
+7465130			Namju									short form: agents 2026-10-18
+32723			Istgah-e Garmsar									short form: agents 2026-10-18
+1798422	Puyang	Пуян	Puyang Chengguan									short form: agents 2026-10-18; review A5: agents 2026-10-18
+1848633			Yamazaki-nakabirose									short form: agents 2026-10-18
+7260929			Bonadelle Ranchos	Бонаделл-Ранчос								short form: agents 2026-10-18
+2518207			El Puerto de Sta. María	Эль-Пуэрто								short form: agents 2026-10-18
+2515493			Las Cabezas de S. Juan									short form: agents 2026-10-18
+2515812			La Línea	Ла-Линеа								short form: agents 2026-10-18
+1848447			Higashikumisaka									short form: agents 2026-10-18
+1859113			Kodamaminami									short form: agents 2026-10-18
+7262659			Tamalpais-Homestead	Тамалпаис-Х.-Вэлли								short form: agents 2026-10-18
+2263393			Messines									short form: agents 2026-10-18
+2261598			V. Real de Sto. António									short form: agents 2026-10-18
+2509946			Valencina									short form: agents 2026-10-18
+2511329			S. Juan de Aznalfarache	Сан-Хуан-д.-Аснальф.								short form: agents 2026-10-18
+2520869			Bollullos del Condado									short form: agents 2026-10-18
+2509545			Vva. del Río y Minas									short form: agents 2026-10-18
+2514553			Los Palacios y Villafca.									short form: agents 2026-10-18
+2517574			Fuente-Álamo									short form: agents 2026-10-18
+6355177			La Manga	Ла-Манга								short form: agents 2026-10-18
+2523330			S. Margherita di Belice									short form: agents 2026-10-18
+2523366			S. Caterina Villarmosa									short form: agents 2026-10-18
+2524145			Militello in V. di Catania									short form: agents 2026-10-18
+69018			Shanderman									short form: agents 2026-10-18
+13580001			20-solagii Istiklolijat									short form: agents 2026-10-18
+2110538			Yanagawa-saiwaicho									short form: agents 2026-10-18
+7261199			Lucas Vly-Marinwood	Лукас-В.-Маринвуд								short form: agents 2026-10-18
+4376444			Bellefontaine Nbrs.									short form: agents 2026-10-18
+13526888			14th St / Spring Rd									short form: agents 2026-10-18
+13526889			14th St / N. Bus Barn									short form: agents 2026-10-18
+13526892			Georgia Av/Walter Reed									short form: agents 2026-10-18
+13526899			Parks at Walter Reed	Паркс-эт-Уолтер-Рид								short form: agents 2026-10-18
+4139989			Pennsylvania Ave SE	Пенсильвания-ав. ЮВ								short form: agents 2026-10-18
+4351228			Chesapeake Ranch Est.									short form: agents 2026-10-18
+7258110			CRE-Drum Point	Чесапик-Ранч-Эст.								short form: agents 2026-10-18
+2263426			S. António da Charneca									short form: agents 2026-10-18
+2264181			Quinta de Sto. António									short form: agents 2026-10-18
+2263974			Reguengos	Регенгош								short form: agents 2026-10-18
+2509598			Villafca. de los Barros									short form: agents 2026-10-18
+2512730			Peñarroya	Пеньярроя								short form: agents 2026-10-18
+2521619			Argamasilla de Calatr.									short form: agents 2026-10-18
+2509555			Vva. del Arzobispo	Вильян.-д.-Арсобиспо								short form: agents 2026-10-18
+2511448			St. Antoni de Portmany									short form: agents 2026-10-18
+2525095			Castellammare d. Golfo									short form: agents 2026-10-18
+2525597			Barcellona P.G.	Барчеллона-П.-Г.								short form: agents 2026-10-18
+4527660			Washington C.H.									short form: agents 2026-10-18
+7258606			Fountainhead	Фаунтинхед-О.-Хиллс								short form: agents 2026-10-18
+4355322			Ft. George G. Mead Jct.	Форт-Мид-Джанкшен								short form: agents 2026-10-18
+7259124			Village Grn-Green Rdg	Виладж-Грин-Грин-Р.								short form: agents 2026-10-18
+2509597			Villafranca de los Cab.									short form: agents 2026-10-18
+148375			Sev.-Vostotchnyi Bank									short form: agents 2026-10-18
+12420886			Bingtuan 36 Tuan									short form: agents 2026-10-18
+5555083			Little Cottonwood Vly	Литл-Коттонвуд-К.-В.								short form: agents 2026-10-18
+7258271			Mercerville-Ham. Sq.	Мерсервилл-Г.-Сквер								short form: agents 2026-10-18
+2734585			Sto. António dos Olivais	Санту-А.-д.-Оливайш								short form: agents 2026-10-18
+3113910			Peñaranda	Пеньяранда								short form: agents 2026-10-18
+3110040			S.S. de los Reyes	Сан-Себ.-де-л.-Рейес								short form: agents 2026-10-18
+3110627			S. Fernando de Henares	Сан-Фернандо-де-Эн.								short form: agents 2026-10-18
+3110911			S. Agustín del Guadalix									short form: agents 2026-10-18
+3167742			S.Sebastiano al Vesuvio									short form: agents 2026-10-18
+3168209			S. Giuseppe Vesuviano									short form: agents 2026-10-18
+3168257			S. Giovanni a Teduccio									short form: agents 2026-10-18
+3179661			Castellammare									short form: agents 2026-10-18
+6534271			S. Egidio del M. Albino									short form: agents 2026-10-18
+8948776			P. del Galdo-S. Angelo									short form: agents 2026-10-18
+3167903			S. Pancrazio Salentino									short form: agents 2026-10-18
+3167997			San Marzano di S.G.									short form: agents 2026-10-18
+4922562			Lakes of the 4 Seasons	Лейкс-оф-зе-Фор-С.								short form: agents 2026-10-18
+7160204			Milford	Милфорд								short form: agents 2026-10-18
+7258782			Jefferson Vly-Yorktown	Дж.-Вэлли-Йорктаун								short form: agents 2026-10-18
+7257357			Conning Towers	К. Тауэрс-Наутилус-П.								short form: agents 2026-10-18
+7257726			N. Attleborough Center									short form: agents 2026-10-18
+3129371			Arroyo d. la Encomienda									short form: agents 2026-10-18
+3120012			La Almunia									short form: agents 2026-10-18
+3109451			St. Vicenç de Castellet									short form: agents 2026-10-18
+3109551			St. Joan de Vilatorrada									short form: agents 2026-10-18
+3109689			Santa Perpètua									short form: agents 2026-10-18
+3109764			Sta. M. de Palautordera									short form: agents 2026-10-18
+3109871			Sta. Eulàlia de Ronçana									short form: agents 2026-10-18
+3109981			Sta. Coloma de Gram.	Санта-Колома								short form: agents 2026-10-18
+3109982			Sta. Coloma de Farners									short form: agents 2026-10-18
+3109983			Sta. Coloma de Cervelló									short form: agents 2026-10-18
+3110881			S. Andreu de Llavaneres									short form: agents 2026-10-18
+3120619			L'Hospitalet de Llob.	Оспиталет								short form: agents 2026-10-18
+3183539		Ачилия-Кастель-Фузано-Остия-Антика	Acilia-Castel Fusano	Ачилиа								short form: agents 2026-10-18; review A5: agents 2026-10-18
+8394392			Tor San Lorenzo									short form: agents 2026-10-18
+8948733			La Massimina									short form: agents 2026-10-18
+3167561			S. Maria Capua Vetere	Санта-Мария-К.-В.								short form: agents 2026-10-18
+3167940			Sannicandro Garganico									short form: agents 2026-10-18
+3168388			S. Ferdinando di Puglia									short form: agents 2026-10-18
+7259621			West Bloomfield Twp.									short form: agents 2026-10-18
+11280527			VA Brockton Campus	ВА Бостон, Броктон								short form: agents 2026-10-18
+13286806			W. Camb./Harvard Sq.									short form: agents 2026-10-18
+4942975			Manchester by the Sea									short form: agents 2026-10-18
+3109642			Santiago	Сантьяго-де-Компост.								short form: agents 2026-10-18
+3110880			S. Andrés del Rabanedo	Сан-Андрес								short form: agents 2026-10-18
+3109535			Sto. Domingo de la Calz.	С.-Доминго-де-ла-К.								short form: agents 2026-10-18
+2978925			St-Laurent-de-la-Sal.									short form: agents 2026-10-18
+6533820			S. Cristòfol de les Fonts									short form: agents 2026-10-18
+3168550			S. Benedetto del Tronto	Сан-Бенедетто								short form: agents 2026-10-18
+8948754			Piattoni-Villa S. Antonio									short form: agents 2026-10-18
+601532			S. Turkmenbashy									short form: agents 2026-10-18
+2013362			V.-Aleksandrovskoye	Владимиро-Алекс.								short form: agents 2026-10-18
+12156827			Centennial									short form: agents 2026-10-18
+3109724			Sta. Marta de Ortigueira									short form: agents 2026-10-18
+3112721			As Pontes									short form: agents 2026-10-18
+2976600			St-Vincent-de-Tyrosse									short form: agents 2026-10-18
+3110044	San Sebastián		Donostia/San Sebastián									short form: agents 2026-10-18; review A5: agents 2026-10-18
+2977832			St-Orens-de-Gameville	Сент-Оренс								short form: agents 2026-10-18
+2968536			Villeneuve-lès-Maguel.									short form: agents 2026-10-18
+2981073			St-Clément-de-Rivière	Сен-Клеман-де-Рив.								short form: agents 2026-10-18
+2977214			St-Rémy-de-Provence	Сен-Реми-де-Пров.								short form: agents 2026-10-18
+2985934			Port-St-Louis-du-Rh.									short form: agents 2026-10-18
+2977947			St-Mitre-les-Remparts									short form: agents 2026-10-18
+2978100			St-Maximin-la-Ste-B.	Сен-Максимен								short form: agents 2026-10-18
+2978618			St-Mandrier-sur-Mer	Сен-Мандрие								short form: agents 2026-10-18
+3002443			Le Puy-Ste-Réparade	Ле-Пюи-С.-Репарад								short form: agents 2026-10-18
+3007401			La Penne-s.-Huveaune									short form: agents 2026-10-18
+3026227			Châteauneuf-les-Mart.									short form: agents 2026-10-18
+2982875			Roquebrune-s.-Argens									short form: agents 2026-10-18
+2982876			Roquebrune-C.-Martin	Рокебрюн-К.-Мартен								short form: agents 2026-10-18
+3168930			Rosignano Solvay									short form: agents 2026-10-18
+3169682			Ripa-Pozzi-Querceta-P.									short form: agents 2026-10-18
+3178670			Capanne-P.-Cinquale									short form: agents 2026-10-18
+8394282			Margine C.-Traversagna									short form: agents 2026-10-18
+3168498			S. Casciano Val di Pesa									short form: agents 2026-10-18
+3167559			S. Maria degli Angeli									short form: agents 2026-10-18
+3168240			S. Giov. in Marignano									short form: agents 2026-10-18
+8948749			Chiugiana-La Comm.									short form: agents 2026-10-18
+11895138			Sandaoling									short form: agents 2026-10-18
+2130166			Hamanaka									short form: agents 2026-10-18
+7259253			Ellsworth AFB	Авиабаза Элсуорт								short form: agents 2026-10-18
+2978072			St-Médard-en-Jalles	Сен-Медар-ан-Жаль								short form: agents 2026-10-18
+3036655			Artigues-p.-Bordeaux									short form: agents 2026-10-18
+2968755			Villefranche-de-Rgue									short form: agents 2026-10-18
+2977638			St-Paul-Trois-Châteaux									short form: agents 2026-10-18
+3020142			Entraigues-s.-l.-Sorgue									short form: agents 2026-10-18
+3163830			Granarolo dell'Emilia									short form: agents 2026-10-18
+3168239			S. Giovanni in Persiceto									short form: agents 2026-10-18
+6692061			Rastignano-C. di Sesto									short form: agents 2026-10-18
+8224091			Castrocaro Terme									short form: agents 2026-10-18
+491085			S.-Aleksandrovskoye	Солдато-Александр.								short form: agents 2026-10-18
+2129701			Kamiyubetsu Tonden									short form: agents 2026-10-18
+13680011			Dysart et al									short form: agents 2026-10-18
+6174516			Viscount Alexander Pk.									short form: agents 2026-10-18
+6139047			St-Sauveur-des-Monts									short form: agents 2026-10-18
+6139289			Valleyfield	Валлифилд								short form: agents 2026-10-18
+6091369			N.-D.-de-l'Île-Perrot									short form: agents 2026-10-18
+6137540			Saint-Bruno	Сен-Бруно-де-Монт.								short form: agents 2026-10-18
+6137733			Ste-Anne-de-Bellevue									short form: agents 2026-10-18
+6137753			Ste-Anne-des-Plaines									short form: agents 2026-10-18
+6138032			Ste-Marthe-sur-le-Lac	Сент-Март-сюр-ле-Л.								short form: agents 2026-10-18
+6138495			St-Jean-sur-Richelieu	Сен-Жан-с.-Ришелье								short form: agents 2026-10-18
+6138671		Сен-Луи-де-Тербон	St-Louis-de-Terreb.	Сен-Луи-де-Терреб.								short form: agents 2026-10-18; review A5: agents 2026-10-18
+11696024			St-Roch-de-l'Achigan									short form: agents 2026-10-18
+12626120			L'Île-Bizard–Ste-Genev.									short form: agents 2026-10-18
+13546319		Мерсье — Ошелага-Мезоннёв	Mercier–Hochelaga-M.	Мерсье–Ошлага-Мез.								short form: agents 2026-10-18; review A5: agents 2026-10-18
+13546322		Ривьер-де-Прери — Пуэнт-о-Трамбль	RDP–P.-aux-Trembles	Ривьер-де-Пр.–П.-о-Т.								short form: agents 2026-10-18; review A5: agents 2026-10-18
+13546323		Розмон — Ла-Петит-Патри	Rosemont–La P.-Patrie	Розмон-Ла-Петит-П.								short form: agents 2026-10-18; review A5: agents 2026-10-18
+13546324			Villeray–St-M.–Parc-Ex	Вильре–С.-М.–П.-Э.								short form: agents 2026-10-18
+2979941			St-Georges-de-Didon.									short form: agents 2026-10-18
+3035016			Barbezieux-St-Hilaire									short form: agents 2026-10-18
+2976542			St-Yrieix-sur-Charente	Сент-Ирье-с.-Шарант								short form: agents 2026-10-18
+2978997			St-Just-St-Rambert									short form: agents 2026-10-18
+2979371			St-Jean-Bonnefonds									short form: agents 2026-10-18
+2979984			St-Genis-les-Ollières									short form: agents 2026-10-18
+3004775			Chambon-Feugerolles									short form: agents 2026-10-18
+3027255			Champ.-au-Mont-d'Or									short form: agents 2026-10-18
+2979303			St-Jean-de-Maurienne									short form: agents 2026-10-18
+2979698			St-Gervais-les-Bains									short form: agents 2026-10-18
+3167945			Sannazzaro de' Burg.									short form: agents 2026-10-18
+3168463			San Colombano									short form: agents 2026-10-18
+6534413			Cadorago-Caslino al P.									short form: agents 2026-10-18
+6535115			Capiago-Intimiano									short form: agents 2026-10-18
+3167513			S. Ambrogio di Valpol.									short form: agents 2026-10-18
+3179415			Castiglione d. Stiviere									short form: agents 2026-10-18
+3167161			S. Zenone degli Ezzelini									short form: agents 2026-10-18
+3168030			S. Martino B. Albergo									short form: agents 2026-10-18
+3172979			Montecchio Maggiore									short form: agents 2026-10-18
+3181209			Caldogno-Ret.-Cresole									short form: agents 2026-10-18
+3181762			Borgoricco									short form: agents 2026-10-18
+6535594			S. Giorgio delle Pertiche									short form: agents 2026-10-18
+8948750			San Zeno-S. Giuseppe									short form: agents 2026-10-18
+8948769			Mandriola-S. Agostino									short form: agents 2026-10-18
+3164319			Vigonovo-Fontanafr.									short form: agents 2026-10-18
+3167448			Sant'Angelo di Piove									short form: agents 2026-10-18
+3173985			Marcon-Gaggio-Colm.									short form: agents 2026-10-18
+3176640			S. Vendemiano-Fossam.									short form: agents 2026-10-18
+3191024			Šentrupert	Шентруперт								short form: agents 2026-10-18
+488713			Staronizhestebliyevsk.	Старонижестебл.								short form: agents 2026-10-18
+7260679			Clarkston Hts-Vineland	Кларкстон-Гайтс-В.								short form: agents 2026-10-18
+7262495			W. Clarkston-Highland	Вест-Кларкстон-Гайл.								short form: agents 2026-10-18
+7261424			Helena Valley W Central	Хелена Вэлли Вест С.								short form: agents 2026-10-18
+7261423			Helena Valley SE									short form: agents 2026-10-18
+6137702			Ste-Agathe-des-Monts									short form: agents 2026-10-18
+6091422			N.-D.-des-Prairies									short form: agents 2026-10-18
+6137579			St-Charles-Borromée									short form: agents 2026-10-18
+6639619			Ste Catherine de la J.C.	Сент-Катрин-д.-л.-Ж.								short form: agents 2026-10-18
+7535681			St-Augustin-de-Desm.	Сент-Огюстен								short form: agents 2026-10-18
+11838437			Neufchâtel-E.–Lebourg.									short form: agents 2026-10-18
+7535693			St-Joseph-de-Beauce									short form: agents 2026-10-18
+2979539			St-Hilaire de Talmont									short form: agents 2026-10-18
+2979662			St-Gilles-Croix-de-Vie	Сен-Жиль-Кр.-де-Ви								short form: agents 2026-10-18
+2977365			St-Pourçain-sur-Sioule	Сен-Пурсен								short form: agents 2026-10-18
+3033685			Bellegarde-s.-Valserine	Бельгард-с.-Вальс.								short form: agents 2026-10-18
+2979072			St-Julien-en-Genevois	Сен-Жюльен-ан-Ж.								short form: agents 2026-10-18
+3181215			Caldaro									short form: agents 2026-10-18
+3218464			Finkenstein	Финкенштайн								short form: agents 2026-10-18
+2774326			Klagenfurt	Клагенфурт								short form: agents 2026-10-18
+3189403			Sv. Ana v Slov. Goricah									short form: agents 2026-10-18
+3195162			Miklavž na Dravskem P.	Миклавж								short form: agents 2026-10-18
+3196682			Lenart v Slov. Goricah	Ленарт								short form: agents 2026-10-18
+3199685			Sv. Trojica v Slov. Gor.									short form: agents 2026-10-18
+7261292			JB Lewis-McChord									short form: agents 2026-10-18
+7262110			Picnic Pt-N. Lynnwood	Пикник Пойнт-Норт Л.								short form: agents 2026-10-18
+7262660			Tanglewilde-Thompson	Тэнглвайлд-Томпс. П.								short form: agents 2026-10-18
+7262053			Otis Orchards-E. Farms	Отис-Орчардс-Ист-Ф.								short form: agents 2026-10-18
+2976984			St-Sébastien-sur-Loire	Сен-Себастьен								short form: agents 2026-10-18
+2977602			St-Philbert-de-Gd-Lieu									short form: agents 2026-10-18
+2979109			St-Julien-de-Concelles									short form: agents 2026-10-18
+2980259			St-Étienne-de-Montluc									short form: agents 2026-10-18
+2978658			St-Macaire-en-Mauges									short form: agents 2026-10-18
+2977308			St-Pryvé-St-Mesmin									short form: agents 2026-10-18
+2979316			St-Jean-de-la-Ruelle	Сен-Жан-де-л.-Рюэль								short form: agents 2026-10-18
+3010265			La Chapelle-St-Mesmin									short form: agents 2026-10-18
+3025324			Chevigny-St-Sauveur									short form: agents 2026-10-18
+6559224			Münstertal/Schwarzw.									short form: agents 2026-10-18
+2661014			Dietlikon (Dorf)									short form: agents 2026-10-18
+2847003			Rielasingen-Worbl.	Рилазинген-Ворблинг.								short form: agents 2026-10-18
+6295520			Winterthur (Kreis 1)									short form: agents 2026-10-18
+2884344			Kressbronn									short form: agents 2026-10-18
+2896263			Immenstaad	Имменштад (Бодензе)								short form: agents 2026-10-18
+2905604			Herrsching									short form: agents 2026-10-18
+2922530			Garmisch-Partenk.	Гармиш								short form: agents 2026-10-18
+2927339			Feldkirchen-Westerh.	Фельдкирхен-Вест.								short form: agents 2026-10-18
+2766922			Saalfelden	Зальфельден								short form: agents 2026-10-18
+2771619			Micheldorf in OÖ	Михельдорф								short form: agents 2026-10-18
+681845			Câmpulung Moldov.	Кымпулунг-Молдов.								short form: agents 2026-10-18
+2978351			St-Martin-des-Champs									short form: agents 2026-10-18
+2979415			St-Jacq.-de-la-Lande									short form: agents 2026-10-18
+2981629			St-Arnoult-en-Yvelines									short form: agents 2026-10-18
+2968529			Villeneuve-St-Georges									short form: agents 2026-10-18
+2974385			Soisy-s.-Montmorency	Суази-с.-Монморанси								short form: agents 2026-10-18
+2976780			St-Thibault-des-Vignes									short form: agents 2026-10-18
+2977197			St-Rémy-l.-Chevreuse									short form: agents 2026-10-18
+2977425			St-Pierre-lès-Nemours									short form: agents 2026-10-18
+2979752			St-Germain-lès-Corbeil	Сен-Жермен-ле-Корб.								short form: agents 2026-10-18
+2979755			St-Germain-l.-Arpajon	Сен-Жермен-лез-Арп.								short form: agents 2026-10-18
+2980169			St-Fargeau-Ponthierry									short form: agents 2026-10-18
+2980558			Ste-Genev.-des-Bois	Сент-Женевьев-де-Б.								short form: agents 2026-10-18
+2992404			Montigny-l.-Cormeilles									short form: agents 2026-10-18
+2992415			Montigny-le-Bretonn.	Монтиньи-ле-Брет.								short form: agents 2026-10-18
+3025509			Chennevières-s.-Marne									short form: agents 2026-10-18
+3029372			Paris 19 B.-Chaumont									short form: agents 2026-10-18
+3029374			Paris 18 B.-Montmartre									short form: agents 2026-10-18
+3034610			Paris 17 Batignolles-M.									short form: agents 2026-10-18
+3035228			Ballancourt-s.-Essonne									short form: agents 2026-10-18
+8533870			St-Quentin-en-Yvelines	Сен-Кантен-ан-Ивел.								short form: agents 2026-10-18
+2981716			St-André-les-Vergers									short form: agents 2026-10-18
+3027487			Châlons-en-Champ.									short form: agents 2026-10-18
+3007780			Laneuveville-d.-Nancy									short form: agents 2026-10-18
+3032275			Blénod-lès-Pont-à-M.									short form: agents 2026-10-18
+2980438			Ste-Marie-aux-Mines									short form: agents 2026-10-18
+2817220			Villingen-Schwenn.	Виллинген-Швеннинг.								short form: agents 2026-10-18
+2841619			St. Georgen im Schw.									short form: agents 2026-10-18
+2885888			Königsfeld i. Schwarzw.									short form: agents 2026-10-18
+2827216			Stetten a. Kalten Markt									short form: agents 2026-10-18
+2865086			Neuhausen a. d. Fildern	Нойхаузен (Фильд.)								short form: agents 2026-10-18
+2879185			Leinfelden-Echterd.	Лайнфельден-Эхтерд.								short form: agents 2026-10-18
+2921653			Geislingen a. d. Steige	Гайслинген (Штайге)								short form: agents 2026-10-18
+2854384			Pfaffenhofen a. d. Roth	Пфаффенхофен (Рот)								short form: agents 2026-10-18
+2903012			Höchstädt a. d. Donau	Хёхштедт (Донау)								short form: agents 2026-10-18
+2907851			Heidenheim a. d. Brenz	Хайденхайм (Бренц)								short form: agents 2026-10-18
+3205535			Höhenkirchen-Siegerts.	Хёэнкирхен-Зигертсб.								short form: agents 2026-10-18
+2843728			Rottenburg a. d. Laaber	Роттенбург (Лабер)								short form: agents 2026-10-18
+3206682			Mallersdorf-Pfaffenb.	Маллерсдорф-Пф.								short form: agents 2026-10-18
+2764175			Strasshof a. d. Nordb.	Штрассхоф (Нордбан)								short form: agents 2026-10-18
+3060291			Chorvátsky Grob									short form: agents 2026-10-18
+6137749			Ste-Anne-des-Monts									short form: agents 2026-10-18
+13527042			Saint Pierre du Bois									short form: agents 2026-10-18
+3019960			Équeurdreville-Hainn.	Экёрдревиль								short form: agents 2026-10-18
+2990056			N.-D.-de-Gravenchon	Н.-Д.-де-Граваншон								short form: agents 2026-10-18
+2980236			St-Étienne-du-Rouvray									short form: agents 2026-10-18
+2990064			N.-D.-de-Bondeville									short form: agents 2026-10-18
+2979010			St-Just-en-Chaussée									short form: agents 2026-10-18
+3023924			Conflans-Ste-Honorine	Конфлан								short form: agents 2026-10-18
+2815032			Waldfischbach	Вальдфишбах								short form: agents 2026-10-18
+3207512			Bruchmühlbach-Mies.									short form: agents 2026-10-18
+3207540			Schönenberg-Kübelb.	Шёненберг-Кюбельб.								short form: agents 2026-10-18
+2857803			Offenbach a. d. Queich	Оффенбах (Квайх)								short form: agents 2026-10-18
+2860400			Oberhausen-Rheinh.	Оберхаузен-Райнх.								short form: agents 2026-10-18
+2864054			Neustadt a. d. Weinstr.	Нойштадт (Вайнштр.)								short form: agents 2026-10-18
+2906268			Heppenheim (Bergstr.)									short form: agents 2026-10-18
+2933101			Eggenstein-Leopoldsh.	Эггенштайн-Леоп.								short form: agents 2026-10-18
+3272455			Dannstadt-Schauernh.									short form: agents 2026-10-18
+3272461			Linkenheim-Hochst.	Линкенхайм-Хохшт.								short form: agents 2026-10-18
+11670104			Hirschberg a. d. Bergstr.									short form: agents 2026-10-18
+2844056			Rothenburg o. d. Tauber	Ротенбург-на-Таубере								short form: agents 2026-10-18
+2844126			Röthenbach/Pegnitz	Рётенбах (Пегниц)								short form: agents 2026-10-18
+2864549			Neumarkt i. d. Oberpfalz									short form: agents 2026-10-18
+2864055			Neustadt a. d. Waldnaab	Нойштадт (Вальднаб)								short form: agents 2026-10-18
+3078288			Bystřice n. Pernštejnem	Бистршице-н.-П.								short form: agents 2026-10-18
+3076132			Frenštát p. Radhoštěm	Френштат-п.-Радг.								short form: agents 2026-10-18
+3036133			Aulnoy-l.-Valenciennes									short form: agents 2026-10-18
+2786638			St.-Katherina-Lombeek									short form: agents 2026-10-18
+2790796			Montignies-s.-Sambre									short form: agents 2026-10-18
+2800457			Chastre-Villeroux-Bl.									short form: agents 2026-10-18
+2800500			Chapelle-l.-Herlaimont									short form: agents 2026-10-18
+2802247			Berchem-Ste-Agathe									short form: agents 2026-10-18
+2787425			St-Georges-sur-Meuse									short form: agents 2026-10-18
+2791534			Mechelen a/d Maas									short form: agents 2026-10-18
+2953391			Bad Neuenahr-Ahrw.	Бад-Нойенар								short form: agents 2026-10-18
+2953436			Bad Homburg v. d. Höhe									short form: agents 2026-10-18
+2956715			Alzenau i. Unterfranken									short form: agents 2026-10-18
+2885829			Bad Königshofen i. Gr.	Бад-Кёнигсхофен								short form: agents 2026-10-18
+2902531			Hofheim i. Unterfranken									short form: agents 2026-10-18
+2948287			Bischofsheim i. d. Rhön	Бишофсхайм (Рён)								short form: agents 2026-10-18
+2953389			Bad Neustadt a. d. Saale	Бад-Нойштадт (Зале)								short form: agents 2026-10-18
+2835018			Schwarzenbach/Saale	Шварценбах (Зале)								short form: agents 2026-10-18
+3078837			Brandýs n. L.-St. Bol.	Брандис-Ст. Болеслав								short form: agents 2026-10-18
+3061284			Dvůr Králové n. Labem	Двур-Кралове-н.-Л.								short form: agents 2026-10-18
+3064122			Třebechovice p. O.	Требеховице-п.-Ор.								short form: agents 2026-10-18
+762863			Ostrowiec Św.	Островец								short form: agents 2026-10-18
+2127282			Aleksandrovsk-Sakh.	Александровск-Сах.								short form: agents 2026-10-18
+2750263			Nieuwerkerk a/d IJssel	Ньиверкерк								short form: agents 2026-10-18
+2786697			Sint-Gillis-bij-Denderm.	Синт-Гиллис-б.-Денд.								short form: agents 2026-10-18
+2789821			O.-L.-Vrouw-Waver									short form: agents 2026-10-18
+2865854			Neue Kol. Westhausen									short form: agents 2026-10-18
+2867252			Nachrodt-Wiblingw.	Нахродт-Виблингв.								short form: agents 2026-10-18
+11611211			Rombergpark-Lückl.									short form: agents 2026-10-18
+3207383			Schieder-Schwalenb.									short form: agents 2026-10-18
+8425959			Gądów-Popowice Płd.									short form: agents 2026-10-18
+8425966			Pilczyce-Koz.-Pop. Płn.									short form: agents 2026-10-18
+8425974			Powstańców Śląskich									short form: agents 2026-10-18
+8425981			Polanowice-Pośw.-Lig.									short form: agents 2026-10-18
+8425985			Przedm. Świdnickie									short form: agents 2026-10-18
+8425987			Biskupin-Sępolno-D.-B.									short form: agents 2026-10-18
+2634581			Wellesbourne									short form: agents 2026-10-18
+2749017			Ouderkerk a/d Amstel	Аудеркерк (Амстел)								short form: agents 2026-10-18
+2864058			Neustadt a. Rbge.	Нойштадт (Рюбенб.)								short form: agents 2026-10-18
+2895664			Isernhagen F.B.									short form: agents 2026-10-18
+2945358			Brandenburg a. d. Havel	Бранденбург (Хафель)								short form: agents 2026-10-18
+1488235			Ust-Charysh. Pristan	Усть-Чарышская Пр.								short form: agents 2026-10-18
+2942323			Buchholz i. d. Nordheide	Бухгольц (Нордхайде)								short form: agents 2026-10-18
+2122104			Petropavlovsk-Kamch.	Петропавловск-Камч.								short form: agents 2026-10-18
+8605012			Elmendorf AFB	Авиабаза Элмендорф								short form: agents 2026-10-18
+7647007				Барилоче								short form: agents 2026-10-18
+3855114				Хен.-Фернандес-Оро								short form: agents 2026-10-18
+8348012				Айвенго, Виктория								short form: agents 2026-10-18
+3872154				Сан-Хавьер								short form: agents 2026-10-18
+3362675				Пр.-Альфред-Хамлет								short form: agents 2026-10-18
+3836993				В.-Хен.-Сан-Мартин								short form: agents 2026-10-18
+3832734				Вилья-Хен.-Бельграно								short form: agents 2026-10-18
+3845073				Мальвинас-Архентин.								short form: agents 2026-10-18
+3449121				Сан-Франс.-ди-Паула								short form: agents 2026-10-18
+3837702				Катамарка								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3835869				Сантьяго-д.-Эстеро								short form: agents 2026-10-18
+3429866				Пресид.-де-ла-Плаза								short form: agents 2026-10-18
+3428708				Сан-Луис-д.-Пальмар								short form: agents 2026-10-18
+982701				Линдли								short form: agents 2026-10-18
+3836873				Тукуман								short form: agents 2026-10-18
+10630449		Саншайн-Кост		Саншайн-Кост								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3838564				Росарио де ла Фронт.								short form: agents 2026-10-18
+3438115				Фернандо-д.-ла-Мора								short form: agents 2026-10-18
+3836564				Жужуй								short form: agents 2026-10-18
+3836620				Оран								short form: agents 2026-10-18
+3460748				Итапесерика								short form: agents 2026-10-18
+3463422		Ферраз-ди-Васконселус		Феррас								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3871781				Сан-П.-де-Атакама								short form: agents 2026-10-18
+1079846				Амбохитрандриаман.								short form: agents 2026-10-18
+3904906				Санта-Крус								short form: agents 2026-10-18
+1064980				Фенуариву-Ацинан.								short form: agents 2026-10-18
+3905658				Сан-Игн.-де-Веласко								short form: agents 2026-10-18
+6316328		Агуас-Линдас-ди-Гояс		Агуас-Линдас								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3905660				Сан-Игн.-де-Моксос								short form: agents 2026-10-18
+3472441				Алту-Параизу								short form: agents 2026-10-18
+3928993				Каньете								short form: agents 2026-10-18
+3905007				Санта-Ана-д.-Якума								short form: agents 2026-10-18
+12157007		Санта-Анита — Лос-Фикус		Санта-Анита								short form: agents 2026-10-18; review A5: agents 2026-10-18
+12157013		Сан-Франсиско-де-Борха		Сан-Борха								short form: agents 2026-10-18; review A5: agents 2026-10-18
+4031110				Фале								short form: agents 2026-10-18
+3384987		Витория-ди-Санту-Антан		Витория-де-С.-Антан								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3387807				Серра-Негра-ду-Нор.								short form: agents 2026-10-18
+1624974				Танджунг-Б.-Каримун								short form: agents 2026-10-18
+3828545				Сан-Хосе-д.-Гуавиаре								short form: agents 2026-10-18
+13061022		Бандар-Махкота-Черас		Махкота-Черас								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3668454				Санта-Роса-д.-Кабаль								short form: agents 2026-10-18
+3627382				Санта-Э.-де-Уайрен								short form: agents 2026-10-18
+3687318				Кармен-де-Вибораль								short form: agents 2026-10-18
+1222387				Паданг-Масират								short form: agents 2026-10-18
+3628549				Сан-Ант.-дель-Тачира								short form: agents 2026-10-18
+3805673				Сан-Ферн.-де-Апуре								short form: agents 2026-10-18
+3647537				Кайкара								short form: agents 2026-10-18
+3701117				Сантьяго-д.-Верагуас								short form: agents 2026-10-18
+3621889				Сан-Исидро								short form: agents 2026-10-18
+3628053				Сан-Х.-де-л.-Моррос								short form: agents 2026-10-18
+3649408				Альтаграсия-де-Орит.								short form: agents 2026-10-18
+3627047				Санта-Тереса-д.-Туй								short form: agents 2026-10-18
+3583747				Готера								short form: agents 2026-10-18
+3516266				Тапачула								short form: agents 2026-10-18
+3517251				Уатулько								short form: agents 2026-10-18
+3522926				Мотосинтла								short form: agents 2026-10-18
+3532856				Хальтенанго								short form: agents 2026-10-18
+3589404				Санта-Крус-д.-Киче								short form: agents 2026-10-18
+3516948				Хамильтепек								short form: agents 2026-10-18
+3517669				Хукила								short form: agents 2026-10-18
+3515484				Тлаколула								short form: agents 2026-10-18
+3518117				Митла								short form: agents 2026-10-18
+3519480				Сан-Д.-Окотепек								short form: agents 2026-10-18
+3516846				Санто-Д.-Петапа								short form: agents 2026-10-18
+3532658				Иксталтепек								short form: agents 2026-10-18
+3517962				Тапанатепек								short form: agents 2026-10-18
+3526715				Сан-Ф.-Иксуатан								short form: agents 2026-10-18
+3530617				Синталапа								short form: agents 2026-10-18
+3816623				Револ.-Мексикана								short form: agents 2026-10-18
+3530367				Комитан								short form: agents 2026-10-18
+3816561				Пухилтик								short form: agents 2026-10-18
+3374165				Таррафал-де-Сан-Н.								short form: agents 2026-10-18
+3374218				Санта-Мария								short form: agents 2026-10-18
+3986553				Сан-Х.-де-Хуарес								short form: agents 2026-10-18
+3530870				Чильпансинго								short form: agents 2026-10-18
+3520935				Путла								short form: agents 2026-10-18
+3515442				Тлаликстак								short form: agents 2026-10-18
+3517254				Санта-М.-дель-Туле								short form: agents 2026-10-18
+3517517				Хохокотлан								short form: agents 2026-10-18
+3526593				Хальтипан								short form: agents 2026-10-18
+3516651				Симоховель								short form: agents 2026-10-18
+3515956				Теносике								short form: agents 2026-10-18
+3582662				Бенке-Вьехо								short form: agents 2026-10-18
+4019039				Ахучитлан-дель-Пр.								short form: agents 2026-10-18
+3531972				Буэнависта-де-Куэл.								short form: agents 2026-10-18
+3526657				Исукар								short form: agents 2026-10-18
+3526934				Квартал Сан-Мигель								short form: agents 2026-10-18
+8858178				Асумиатла								short form: agents 2026-10-18
+3514433				Ксочитлан-Т.-Сантос								short form: agents 2026-10-18
+3515735				Тетсойокан								short form: agents 2026-10-18
+3518439				Тлакоялко								short form: agents 2026-10-18
+3530032				Куапиакстла-де-Мад.								short form: agents 2026-10-18
+3518723				Тустепек								short form: agents 2026-10-18
+3532909				Аматлан-де-л.-Рейес								short form: agents 2026-10-18
+3823806				Хен.-Мигель-Алеман								short form: agents 2026-10-18
+8858140				Санта-Летисия								short form: agents 2026-10-18
+3825090				Х.-Диас-Коваррубиас								short form: agents 2026-10-18
+11839903				Иксуатлан-д.-Суресте								short form: agents 2026-10-18
+3516344				Тамулте де л. Сабанас								short form: agents 2026-10-18
+3500370				Лас-Матас								short form: agents 2026-10-18
+3492984				Эль-Сейбо								short form: agents 2026-10-18
+3493032				Сан-Педро-де-Макор.								short form: agents 2026-10-18
+5855809				Хав.-Парадайс-Парк								short form: agents 2026-10-18
+3982567				Тамасула-д.-Гордьяно								short form: agents 2026-10-18
+4006337				Ф.-Каррильо-Пуэрто								short form: agents 2026-10-18
+3980184				Санта-К.-дель-Кобре								short form: agents 2026-10-18
+3982693				Такамбаро								short form: agents 2026-10-18
+4012194				Куитсео								short form: agents 2026-10-18
+3996626				Мараватио								short form: agents 2026-10-18
+4026719				Сан-Н.-Гуадалупе								short form: agents 2026-10-18
+3514013				Санта-М.-Солотепек								short form: agents 2026-10-18
+3517293				Санта-М.-Ахолоапан								short form: agents 2026-10-18
+3517337				Ситендехе								short form: agents 2026-10-18
+3517731				Некстлалпан								short form: agents 2026-10-18
+3518135		Сан-Пабло-де-лас-Салинас		Сан П. де лас Салинас								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3518326				Сан-М.-Теночтитлан								short form: agents 2026-10-18
+3518379				Сан-М.-Икстакалко								short form: agents 2026-10-18
+3519535				Сан-П.-де-лос-Баньос								short form: agents 2026-10-18
+3519634				Сан-Б.-Окстотитлан								short form: agents 2026-10-18
+3526606				Экс-Ас.-де-Ксалпа								short form: agents 2026-10-18
+3529983				Сант.-Куаутлальпан								short form: agents 2026-10-18
+3532617				Атлакомулько								short form: agents 2026-10-18
+3532624				Лопес-Матеос								short form: agents 2026-10-18
+3533490				Акауалко								short form: agents 2026-10-18
+3818008				Янкуитлалпан								short form: agents 2026-10-18
+3827030				Сан-Л.-Тлакотепек								short form: agents 2026-10-18
+3827253				Тлалсилалкальи								short form: agents 2026-10-18
+3827254				Сан-М.-Отсакатипан								short form: agents 2026-10-18
+3827260				Сан-А.-Буенависта								short form: agents 2026-10-18
+3827276				Санта-М.-Нативитас								short form: agents 2026-10-18
+3827278				Сан-П.-Тлалтисапан								short form: agents 2026-10-18
+3827368				Сан-М.-Атараскильо								short form: agents 2026-10-18
+8858087				Тисатлальи								short form: agents 2026-10-18
+8858118				Ампл.-Сан-Матео								short form: agents 2026-10-18
+8858134				22 де Фебреро								short form: agents 2026-10-18
+8858207				Сан-Н.-Толентино								short form: agents 2026-10-18
+8858208				Санта-Крус-д.-Монте								short form: agents 2026-10-18
+8858267				Экс-Ас.-Санта-Инес								short form: agents 2026-10-18
+9513837				Сан-М.-Тотолтепек								short form: agents 2026-10-18
+3514597				Ксалмимилулко								short form: agents 2026-10-18
+3517231				Мойоцинго								short form: agents 2026-10-18
+3517265				Коронанго								short form: agents 2026-10-18
+3517832				Атенко								short form: agents 2026-10-18
+3518139				Атласалпан								short form: agents 2026-10-18
+3518407				Тесмелукан								short form: agents 2026-10-18
+3519290				Акваутла								short form: agents 2026-10-18
+3522454				Сан-Франс.-Окотлан								short form: agents 2026-10-18
+3531200				Чалько								short form: agents 2026-10-18
+3532899				Амекамека								short form: agents 2026-10-18
+3815382				Икстулко								short form: agents 2026-10-18
+3815415				Тласкала								short form: agents 2026-10-18
+3815453				Сан-Пабло-д.-Монте								short form: agents 2026-10-18
+3815455				Сан-И.-Буэн-Сусесо								short form: agents 2026-10-18
+3817610				Теуикститлан								short form: agents 2026-10-18
+3817639				Канделария-Тлапала								short form: agents 2026-10-18
+3817641				Уитсилсинго								short form: agents 2026-10-18
+3817649				Куаутлалпан								short form: agents 2026-10-18
+3817761				Ксолалпа								short form: agents 2026-10-18
+3817791				Текуаутитлан								short form: agents 2026-10-18
+3817809				Ахолоапан								short form: agents 2026-10-18
+8858092				Аскатепек								short form: agents 2026-10-18
+8858102				Теотиуакан								short form: agents 2026-10-18
+8858120				Тланалапан								short form: agents 2026-10-18
+8858137				Санта-М.-Сакатепек								short form: agents 2026-10-18
+3515906				Тепатлакско								short form: agents 2026-10-18
+3517246				Икстиюкан								short form: agents 2026-10-18
+3517831				Сан-Сальв.-эль-Секо								short form: agents 2026-10-18
+3530532				Санта-М.-Коатепек								short form: agents 2026-10-18
+3815278				Сан-Х.-Ксикотенкатл								short form: agents 2026-10-18
+8858255				Ринкон-Ситлалтепетл								short form: agents 2026-10-18
+3526993				Уатуско								short form: agents 2026-10-18
+3527869				Эмилио Карранса								short form: agents 2026-10-18
+8858175				Кол. Санта-Барбара								short form: agents 2026-10-18
+3493175		Пуэрто-Плата		Пуэрто-Плата								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3509382		Ла-Вега		Ла-Вега								short form: agents 2026-10-18; review A5: agents 2026-10-18
+4018435				Сан-Хуанито-де-Эск.								short form: agents 2026-10-18
+3981467				Тлахомулько								short form: agents 2026-10-18
+3984437				Санта-Крус-д.-Валье								short form: agents 2026-10-18
+3984444				Санта-Крус-де-л.-Фл.								short form: agents 2026-10-18
+3986165				Сан-Хосе-д.-Кастильо								short form: agents 2026-10-18
+3998858				Ла-Вента-д.-Астил.								short form: agents 2026-10-18
+4018043				Атемахак-де-Брис.								short form: agents 2026-10-18
+4019082				Ауалулько-де-Мерк.								short form: agents 2026-10-18
+8858167				Галаксия-Бонито								short form: agents 2026-10-18
+3981984				Тепатитлан								short form: agents 2026-10-18
+4013522				Кохуматлан								short form: agents 2026-10-18
+4015546				Капилья-д.-Гуадалупе								short form: agents 2026-10-18
+8858256				Сан-Франс.-де-Асис								short form: agents 2026-10-18
+3987310				Сан-Диего-де-Алех.								short form: agents 2026-10-18
+4004092				Хараль-д.-Прогресо								short form: agents 2026-10-18
+3985344				Сан-Мигель-Альенде								short form: agents 2026-10-18
+3991164				Керетаро								short form: agents 2026-10-18
+4029456				Санта-М.-Магдалена								short form: agents 2026-10-18
+9511750				Сан-Х.-д.-л.-Ольвера								short form: agents 2026-10-18
+3523127				Микскиауала								short form: agents 2026-10-18
+3519972				Тлаксиака								short form: agents 2026-10-18
+3532577				Атотонилько-эль-Гр.								short form: agents 2026-10-18
+3521168				Поса-Рика								short form: agents 2026-10-18
+3818580				Вилья-Л.-Карденас								short form: agents 2026-10-18
+8858195				Тенанго-де-л.-Флорес								short form: agents 2026-10-18
+3992996				Ла-Пеньита								short form: agents 2026-10-18
+3980799				Унион-де-Сан-Ант.								short form: agents 2026-10-18
+3985865				Сан-Хуан-де-л.-Лагос								short form: agents 2026-10-18
+3987591				Сан-Барт.-д.-Берриос								short form: agents 2026-10-18
+3987309				Сан-Д.-де-ла-Унион								short form: agents 2026-10-18
+3522302				Орисатлан								short form: agents 2026-10-18
+4006622				Эскуинапа								short form: agents 2026-10-18
+3985008				Сан-П.-Пьедра-Горда								short form: agents 2026-10-18
+4004024				Херес								short form: agents 2026-10-18
+3980175				Гонсалес Ортега								short form: agents 2026-10-18
+3536724				Сантьяго-де-л.-Вегас								short form: agents 2026-10-18
+3539560				Сан-Хосе-де-л.-Лахас								short form: agents 2026-10-18
+1269094				Джайнагар								short form: agents 2026-10-18
+3538803		Сан-Мигель-дель-Падрон		Сан-М.-дель-Падрон								short form: agents 2026-10-18; review A5: agents 2026-10-18
+3522531				Н.-Вилья-де-Падилья								short form: agents 2026-10-18
+4013723				Сьюд.-Конститусьон								short form: agents 2026-10-18
+3985301				Сан-М.-Сапотитлан								short form: agents 2026-10-18
+3976775				Г. Лейва Солано								short form: agents 2026-10-18
+3976785				А. Руис Кортинес								short form: agents 2026-10-18
+4019727				А. Руис Кортинес								short form: agents 2026-10-18
+4010155				Сан-Ант.-дель-Койоте								short form: agents 2026-10-18
+4005937				Сан-Педро-Гарса-Г.								short form: agents 2026-10-18
+4004867				Парраль								short form: agents 2026-10-18
+3981469				Тлауалило								short form: agents 2026-10-18
+3970558				Сан-И.-Рио-Муэрто								short form: agents 2026-10-18
+3970561				Франсиско Х. Мина								short form: agents 2026-10-18
+4013710				Х.-Марьяно-Хименес								short form: agents 2026-10-18
+3988430				Санта-Крус-д.-Росал.								short form: agents 2026-10-18
+2511180				Санта-Крус-де-ла-П.								short form: agents 2026-10-18
+2514651				Лос-Льянос								short form: agents 2026-10-18
+2511174				Санта-Крус								short form: agents 2026-10-18
+2515772				Ла-Матанса								short form: agents 2026-10-18
+2520760				Буэнависта								short form: agents 2026-10-18
+1397479				Дера-М.-Джамали								short form: agents 2026-10-18
+10263167		Бхалсва-Джахангирпур		Бхалсуа								short form: agents 2026-10-18; review A5: agents 2026-10-18
+4005777				В. Гомес-Фариас								short form: agents 2026-10-18
+4015700				Кананеа								short form: agents 2026-10-18
+3980207				Вилья-Аумада								short form: agents 2026-10-18
+353229	10th of Ramadan City			10-го Рамадана								short form: agents 2026-10-18; review A5: agents 2026-10-18
+360829				Эль-Махалла								short form: agents 2026-10-18
+4007503				Эль-Саусаль								short form: agents 2026-10-18
+8858094				Портикос-д.-Сан-Ант.								short form: agents 2026-10-18
+3985604				Сан-Л.-Рио-Колорадо								short form: agents 2026-10-18
+418723				Келишад-Судерджан								short form: agents 2026-10-18
+5380883				Палос-Вердес-Эст.								short form: agents 2026-10-18
+5388601				Роллинг-Хилс-Эст.								short form: agents 2026-10-18
+5386082				Р.-Санта-Маргарита								short form: agents 2026-10-18
+5495292				Т.-ор-Консекуэнсес								short form: agents 2026-10-18
+5363859				Ла-Каньяда								short form: agents 2026-10-18
+7261553				Ла-Кресента-Монтроз								short form: agents 2026-10-18
+4115429				Хот-Спрингс-Вил.								short form: agents 2026-10-18
+8535197				Новый Хештгерд								short form: agents 2026-10-18
+2511306				Санлукар								short form: agents 2026-10-18
+2516326				Херес								short form: agents 2026-10-18
+2519513				Чиклана								short form: agents 2026-10-18
+2509783				Вехер								short form: agents 2026-10-18
+2516315				Химена								short form: agents 2026-10-18
+2521665				Аркос								short form: agents 2026-10-18
+2511250				Сан-Педро-Алькант.								short form: agents 2026-10-18
+2511852				Ринкон-де-ла-Викт.								short form: agents 2026-10-18
+2476028				Типаса								short form: agents 2026-10-18
+99071		Новый Мосул		Новый Мосул			1					short form: agents 2026-10-18; review A5: agents 2026-10-18
+12217929				Бейвью-Хантерс-П.								short form: agents 2026-10-18
+3372472				Вила-Франка-ду-К.								short form: agents 2026-10-18
+2263377				Сан-Браш								short form: agents 2026-10-18
+2512950				Палос								short form: agents 2026-10-18
+2514287				Майрена-д.-Альхар.								short form: agents 2026-10-18
+2515679				Ла-Пальма-д.-Конд.								short form: agents 2026-10-18
+2513509				Морон								short form: agents 2026-10-18
+2518988				Куэвас-д.-Альманс.								short form: agents 2026-10-18
+2512581				Пилар-де-л.-Орадада								short form: agents 2026-10-18
+2523320				Санта-М.-ди-Ликодия								short form: agents 2026-10-18
+2523460				Сан-Джов.-ла-Пунта								short form: agents 2026-10-18
+6534276				Сант-Агата-ли-Батт.								short form: agents 2026-10-18
+322830		Айдын		Айдын								short form: agents 2026-10-18; review A5: agents 2026-10-18
+7258432				Оксон-Хилл								short form: agents 2026-10-18
+7259061				Сьютленд								short form: agents 2026-10-18
+2265432				Оливайш								short form: agents 2026-10-18
+2270978				Белен								short form: agents 2026-10-18
+2513143				Олива-д.-л.-Фронтера								short form: agents 2026-10-18
+2516325				Херес-де-лос-Кабал.								short form: agents 2026-10-18
+2509553				Вильян.-де-л.-Серена								short form: agents 2026-10-18
+2520875				Боланьос								short form: agents 2026-10-18
+2511162				Санта-Эулалия								short form: agents 2026-10-18
+2523347				Сант-Агата-ди-Мил.								short form: agents 2026-10-18
+4526225				Индиан-Хилл								short form: agents 2026-10-18
+2268313				Фазенд.-д.-Алмейрин								short form: agents 2026-10-18
+2509950				Валенсия-де-Алькант.								short form: agents 2026-10-18
+2513324				Навальмораль								short form: agents 2026-10-18
+2515619				Ла-Пуэбла-де-Монт.								short form: agents 2026-10-18
+2522131				Алькасар-де-Сан-Х.								short form: agents 2026-10-18
+2519752				Кастельон								short form: agents 2026-10-18
+7259295				База ВВС Гриссом								short form: agents 2026-10-18
+5102427				Парсиппани								short form: agents 2026-10-18
+5132015				Порт-Дж.-Стейшен								short form: agents 2026-10-18
+7258965				Сетаукет								short form: agents 2026-10-18
+2734484				Сан-Жуан-да-Мад.								short form: agents 2026-10-18
+2737046				Оливейра-ди-Азем.								short form: agents 2026-10-18
+2739723				Фейра								short form: agents 2026-10-18
+3129678				Аренас-де-Сан-П.								short form: agents 2026-10-18
+3110458				Сан-Лоренсо-де-Эск.								short form: agents 2026-10-18
+3104703				Вильявисиоса-де-Од.								short form: agents 2026-10-18
+3110360				Сан-Мартин-де-ла-В.								short form: agents 2026-10-18
+3116963				Мехорада								short form: agents 2026-10-18
+3117503				Мансанарес-эль-Р.								short form: agents 2026-10-18
+3118848				Лас-Росас								short form: agents 2026-10-18
+3127267				Кабанильяс								short form: agents 2026-10-18
+3110821				Ла-Рапита								short form: agents 2026-10-18
+3176059				Джульяно								short form: agents 2026-10-18
+6930979				Кэмптон-Хиллс								short form: agents 2026-10-18
+5175080				Вермилион-он-зе-Л.								short form: agents 2026-10-18
+2734434				Сан-Мамеде-де-Инф.								short form: agents 2026-10-18
+2741865				Кабесейраш								short form: agents 2026-10-18
+3105600				Вильяфранка-дель-П.								short form: agents 2026-10-18
+3120006				Л'Аметлья-дель-Валь.								short form: agents 2026-10-18
+3123329				Эль-Прат								short form: agents 2026-10-18
+3110643				Сан-Фелиу-де-Гиш.								short form: agents 2026-10-18
+3125800				Пладжа-де-Аро								short form: agents 2026-10-18
+2036713		Хуаньжэнь		Хуаньжэнь								short form: agents 2026-10-18; review A5: agents 2026-10-18
+4952355				Саффолк-Даунс								short form: agents 2026-10-18
+3123688				Эхеа								short form: agents 2026-10-18
+3039163				Сант-Жулия								short form: agents 2026-10-18
+3040051				Эскальдес								short form: agents 2026-10-18
+3170071				Порто-С.-Стефано								short form: agents 2026-10-18
+789629				Мак. Каменица								short form: agents 2026-10-18
+13562325				Им. Ашыра Какабаева								short form: agents 2026-10-18
+4979245				Саут-Портленд-Гард.								short form: agents 2026-10-18
+3118024				Лос-Корралес								short form: agents 2026-10-18
+3109800				Санта-Мария-де-Кай.								short form: agents 2026-10-18
+3109935				Санта-Крус-де-Бес.								short form: agents 2026-10-18
+2976879				Сен-Сюльпис-ла-П.								short form: agents 2026-10-18
+3006531				Ла-Сальветат-Сен-Ж.								short form: agents 2026-10-18
+3178402				Колле-Валь-д'Эльса								short form: agents 2026-10-18
+552562				Кардоникская								short form: agents 2026-10-18
+2013332				Вольно-Надеждинск.								short form: agents 2026-10-18
+6113355				Принс-Эдвард								short form: agents 2026-10-18
+2981173				Сен-Кристоль-лез-А.								short form: agents 2026-10-18
+3167595				Санта-Маргерита								short form: agents 2026-10-18
+785753				Смедер. Паланка								short form: agents 2026-10-18
+678817				Турну-Северин								short form: agents 2026-10-18
+13546316		Ле-Плато-Мон-Руаяль		Плато-Мон-Руаяль								short form: agents 2026-10-18; review A5: agents 2026-10-18
+2993277				Монистроль								short form: agents 2026-10-18
+3169056				Романо-ди-Ломбард.								short form: agents 2026-10-18
+3178203				Конкордия-Саджитт.								short form: agents 2026-10-18
+695740		Раздольное		Раздольное								short form: agents 2026-10-18; disputed area: the reader's language (owner 2026-10-18)
+2980107				Сен-Флоран-с.-Шер								short form: agents 2026-10-18
+2764786				Шпитталь (Драу)								short form: agents 2026-10-18
+2766359				Санкт-Файт (Глан)								short form: agents 2026-10-18
+3196049				Луковица								short form: agents 2026-10-18
+3202711				Церкле								short form: agents 2026-10-18
+3203338				Брезовица								short form: agents 2026-10-18
+3197226				Крижевци (Лютомер)								short form: agents 2026-10-18
+712160				Белгород-Днестр.								short form: agents 2026-10-18
+7261595				Лейк-Мортон-Беррид.								short form: agents 2026-10-18
+7262428				Юнион Х.-Новелти Х.								short form: agents 2026-10-18
+2925177				Фрайбург								short form: agents 2026-10-18
+2661842				Аффольтерн (Альбис)								short form: agents 2026-10-18
+2877336				Линденберг (Альгой)								short form: agents 2026-10-18
+3205690				Ульдинген-Мюльхоф.								short form: agents 2026-10-18
+2896261				Имменштадт (Альгой)								short form: agents 2026-10-18
+2812515				Вайльхайм								short form: agents 2026-10-18
+2867445				Мурнау								short form: agents 2026-10-18
+2766636				Санкт-Йоханн, Тироль								short form: agents 2026-10-18
+2769874				Оберндорф (Зальцб.)								short form: agents 2026-10-18
+2775541				Хопфгартен								short form: agents 2026-10-18
+690288				Вел. Александровка								short form: agents 2026-10-18
+707026				Каменка-Днепровск.								short form: agents 2026-10-18
+2968655				Вильмуассон								short form: agents 2026-10-18
+2977952				Сен-Мишель-с.-Орж								short form: agents 2026-10-18
+2989781				14-й округ Парижа								short form: agents 2026-10-18
+3017924				Фонтене-о-Роз								short form: agents 2026-10-18
+3012834				Илькирш								short form: agents 2026-10-18
+2804159				Циммерн (Ротвайль)								short form: agents 2026-10-18
+2821216				Триберг								short form: agents 2026-10-18
+2909523				Хаслах (Кинцигталь)								short form: agents 2026-10-18
+2811204				Вендлинген (Неккар)								short form: agents 2026-10-18
+2812509				Вайльхайм (Текк)								short form: agents 2026-10-18
+2819399				Унтерхаузен								short form: agents 2026-10-18
+2930080				Энинген								short form: agents 2026-10-18
+2827989				Штайнхайм (Альбух)								short form: agents 2026-10-18
+2854386				Пфаффенхофен								short form: agents 2026-10-18
+2864056				Нойштадт (Донау)								short form: agents 2026-10-18
+2864547				Ноймаркт-С.-Файт								short form: agents 2026-10-18
+2941216				Бургкирхен (Альц)								short form: agents 2026-10-18
+2776988				Хайнбург (Донау)								short form: agents 2026-10-18
+3058477				Нове-Место-н.-Вагом								short form: agents 2026-10-18
+3061188				Бановце-н.-Бебравоу								short form: agents 2026-10-18
+2955951				Анвайлер (Трифельс)								short form: agents 2026-10-18
+2875376				Людвигсхафен								short form: agents 2026-10-18
+2920329				Гинсхайм-Густавсб.								short form: agents 2026-10-18
+2933345				Эдинген-Неккархауз.								short form: agents 2026-10-18
+3272460				Мёрфельден-Вальд.								short form: agents 2026-10-18
+2824804				Зульцбах (Мурр)								short form: agents 2026-10-18
+2865560				Нойенштадт (Кохер)								short form: agents 2026-10-18
+2887736				Клингенберг (Майн)								short form: agents 2026-10-18
+2811909				Вайсенбург (Бавария)								short form: agents 2026-10-18
+2864057				Нойштадт (Айш)								short form: agents 2026-10-18
+6694210				Нойнкирхен (Бранд)								short form: agents 2026-10-18
+2864468				Нойнбург								short form: agents 2026-10-18
+3074975				Градец-н.-Моравици								short form: agents 2026-10-18
+3078286				Бистршице-п.-Гост.								short form: agents 2026-10-18
+3066651				Рожнов-п.-Радгоштем								short form: agents 2026-10-18
+3076123				Фридлант-н.-Остр.								short form: agents 2026-10-18
+3092517				Макув-Подхаляньск.								short form: agents 2026-10-18
+2977387				Сен-Поль-с.-Тернуаз								short form: agents 2026-10-18
+2786548				С.-Стевенс-Волюве								short form: agents 2026-10-18
+2828871				Штайнау (Штрасе)								short form: agents 2026-10-18
+2828723				Штайнбах-Халленб.								short form: agents 2026-10-18
+3073668				Клаштерец-н.-Огржи								short form: agents 2026-10-18
+3077751				Хлумец-н.-Цидлиноу								short form: agents 2026-10-18
+3069466				Нове-Место-н.-Мет.								short form: agents 2026-10-18
+759504				Сендзишув-Малоп.								short form: agents 2026-10-18
+2021851				Комсомольск-н/А								short form: agents 2026-10-18
+2653394				Чалфонт-Ст.-Джайлс								short form: agents 2026-10-18
+2637052				Станстед								short form: agents 2026-10-18
+2758012				Капелле								short form: agents 2026-10-18
+2786641				Синт-Кателейне-Вав.								short form: agents 2026-10-18
+2953336				Бад-Зоден-Алленд.								short form: agents 2026-10-18
+2907545				Хайлигенштадт								short form: agents 2026-10-18
+2939995				Клаусталь								short form: agents 2026-10-18
+2953459				Бад-Франкенхаузен								short form: agents 2026-10-18
+7284571				Айслебен								short form: agents 2026-10-18
+3090553				Новогруд-Бобжаньск.								short form: agents 2026-10-18
+3089684				Острув-Велькопольск.								short form: agents 2026-10-18
+3094852				Козмин-Велькоп.								short form: agents 2026-10-18
+3088972				Пётркув								short form: agents 2026-10-18
+3095277				Константынув-Лодз.								short form: agents 2026-10-18
+3104132				Александрув-Лодз.								short form: agents 2026-10-18
+2017945				Петровск-Забайк.								short form: agents 2026-10-18
+2636713				Стратфорд-на-Эйв.								short form: agents 2026-10-18
+2756619				Дриберген								short form: agents 2026-10-18
+2912618				Хаген-ам-Т.-Вальд								short form: agents 2026-10-18
+2852144				Пройс.-Ольдендорф								short form: agents 2026-10-18
+2953400				Бад-Мюндер								short form: agents 2026-10-18
+2885800				Кёнигслуттер								short form: agents 2026-10-18
+3094408				Кшиж-Велькопольск.								short form: agents 2026-10-18
+3098288				Гродзиск-Велькоп.								short form: agents 2026-10-18
+3085045				Сьрода-Велькоп.								short form: agents 2026-10-18
+3097594				Яновец-Велькоп.								short form: agents 2026-10-18
+3104133				Александрув-Куявск.								short form: agents 2026-10-18
+2656918				Эштон-ин-Мейкерф.								short form: agents 2026-10-18
+2878918				Лемзаль-Меллингшт.								short form: agents 2026-10-18
+3086153				Семпульно-Краеньск.								short form: agents 2026-10-18
+2012557				Железногорск-Илим.								short form: agents 2026-10-18
+690237		Великая Новосёлка										disputed area: the reader's language (owner 2026-10-18)
+689151	Nikolske	Володарское										disputed area: the reader's language (owner 2026-10-18)
+692759		Аэродром										disputed area: the reader's language (owner 2026-10-18)
+697302	Voznesenskyi District	Петровский район										disputed area: the reader's language (owner 2026-10-18)
+701845	Marinka											disputed area: the reader's language (owner 2026-10-18)
+705962		Трудовские										disputed area: the reader's language (owner 2026-10-18)
+709835	Dokuchaievsk											disputed area: the reader's language (owner 2026-10-18)
+713117		Авдотьино										disputed area: the reader's language (owner 2026-10-18)
+9644145	Lidiivka											disputed area: the reader's language (owner 2026-10-18)
+13561142	Bohodukhivskyi District	Будённовский район										disputed area: the reader's language (owner 2026-10-18)
+13561146	Rutchenkivskyi District	Кировский район										disputed area: the reader's language (owner 2026-10-18)
+13561149	Oleksandrivskyi District	Ленинский район										disputed area: the reader's language (owner 2026-10-18)
+13561150	Chumakivskyi District	Пролетарский район										disputed area: the reader's language (owner 2026-10-18)
+13561228		Текстильщик										disputed area: the reader's language (owner 2026-10-18)
+13580034		Правый Берег										disputed area: the reader's language (owner 2026-10-18)
+13607722	Tsentralnyi District	Центральный район										disputed area: the reader's language (owner 2026-10-18)
+13607723	Kalmiuskyi District	Кальмиусский район										disputed area: the reader's language (owner 2026-10-18)
+13607724	Livoberezhnyi District	Левобережный район										disputed area: the reader's language (owner 2026-10-18)
+13607725	Prymorskyi District	Приморский район										disputed area: the reader's language (owner 2026-10-18)
+13680663		Кальмиусский										disputed area: the reader's language (owner 2026-10-18)
+705186		Комсомольское										disputed area: the reader's language (owner 2026-10-18)
+707679	Ilovaisk											disputed area: the reader's language (owner 2026-10-18)
+713504	Amvrosiivka											disputed area: the reader's language (owner 2026-10-18)
+690771	Ukrainsk											disputed area: the reader's language (owner 2026-10-18)
+693065		Соцгород										disputed area: the reader's language (owner 2026-10-18)
+693468	Sloviansk											disputed area: the reader's language (owner 2026-10-18)
+696010		Путиловка										disputed area: the reader's language (owner 2026-10-18)
+698006	Panteleimonivka											disputed area: the reader's language (owner 2026-10-18)
+699751	New York	Новгородское										disputed area: the reader's language (owner 2026-10-18)
+702320	Makiivka											disputed area: the reader's language (owner 2026-10-18)
+704204		Красный Лиман										disputed area: the reader's language (owner 2026-10-18)
+704422		Красноармейск										disputed area: the reader's language (owner 2026-10-18)
+705104	Kostiantynivka											disputed area: the reader's language (owner 2026-10-18)
+705821		Кирово										disputed area: the reader's language (owner 2026-10-18)
+709354		Дзержинск										disputed area: the reader's language (owner 2026-10-18)
+710035		Димитров										disputed area: the reader's language (owner 2026-10-18)
+713122	Avdiivka											disputed area: the reader's language (owner 2026-10-18)
+713174		Артёмовск										disputed area: the reader's language (owner 2026-10-18)
+713544	Oleksiievo-Druzhkivka											disputed area: the reader's language (owner 2026-10-18)
+803770		Ветка										disputed area: the reader's language (owner 2026-10-18)
+9113068		Лозовский										disputed area: the reader's language (owner 2026-10-18)
+13561143	Yuzivskyi District	Ворошиловский район										disputed area: the reader's language (owner 2026-10-18)
+13561144	Kalynivskyi District	Калининский район										disputed area: the reader's language (owner 2026-10-18)
+13561145	Kyivskyi District	Киевский район										disputed area: the reader's language (owner 2026-10-18)
+13607653	Smolianskyi District	Куйбышевский район										disputed area: the reader's language (owner 2026-10-18)
+13607654	Tsentralno-Miskyi District	Центрально-Городской район										disputed area: the reader's language (owner 2026-10-18)
+13607656	Hruzkyi District	Кировский район										disputed area: the reader's language (owner 2026-10-18)
+13607657	Hirnytskyi District	Горняцкий район										disputed area: the reader's language (owner 2026-10-18)
+13607658	Berestovskyi District	Червоногвардейский район										disputed area: the reader's language (owner 2026-10-18)
+13645588	Soniachnyi											disputed area: the reader's language (owner 2026-10-18)
+13645589		Старый город										disputed area: the reader's language (owner 2026-10-18)
+13645595		Красногорка										disputed area: the reader's language (owner 2026-10-18)
+13645596		Лазурный										disputed area: the reader's language (owner 2026-10-18)
+13645597		Новый Свет										disputed area: the reader's language (owner 2026-10-18)
+13645598		Октябрьский										disputed area: the reader's language (owner 2026-10-18)
+13645603		Станкострой										disputed area: the reader's language (owner 2026-10-18)
+13680658		Соцгородок										disputed area: the reader's language (owner 2026-10-18)
+686956	Zymohiria											disputed area: the reader's language (owner 2026-10-18)
+688073		Юнокоммунаровск										disputed area: the reader's language (owner 2026-10-18)
+688148	Yenakiieve											disputed area: the reader's language (owner 2026-10-18)
+691374	Chystiakove											disputed area: the reader's language (owner 2026-10-18)
+691999												disputed area: the reader's language (owner 2026-10-18)
+692975	Kadiivka											disputed area: the reader's language (owner 2026-10-18)
+693469	Slovianoserbsk											disputed area: the reader's language (owner 2026-10-18)
+694410	Sieverne											disputed area: the reader's language (owner 2026-10-18)
+697276	Petrovo-Krasnosillia											disputed area: the reader's language (owner 2026-10-18)
+699956	Nyzhnia Krynka											disputed area: the reader's language (owner 2026-10-18)
+705809		Кировск										disputed area: the reader's language (owner 2026-10-18)
+706488	Khanzhenkove	Ханжёнково										disputed area: the reader's language (owner 2026-10-18)
+706756	Sofiivka											disputed area: the reader's language (owner 2026-10-18)
+711369	Brianka											disputed area: the reader's language (owner 2026-10-18)
+13607655	Khanzhonkivskyi District	Советский район										disputed area: the reader's language (owner 2026-10-18)
+13607719	Tsentralno-Miskyi District	Центрально-Городской район										disputed area: the reader's language (owner 2026-10-18)
+13607720	Kindrativskyi District	Калининский район										disputed area: the reader's language (owner 2026-10-18)
+13607721	Mykytivskyi District	Никитовский район										disputed area: the reader's language (owner 2026-10-18)
+13631346		Зугрэс-2										disputed area: the reader's language (owner 2026-10-18)
+688089		Юбилейное										disputed area: the reader's language (owner 2026-10-18)
+692953	Stanytsia Luhanska											disputed area: the reader's language (owner 2026-10-18)
+694725	Shchastia											disputed area: the reader's language (owner 2026-10-18)
+702148		Малая Вергунка										disputed area: the reader's language (owner 2026-10-18)
+709352	Liubymivka											disputed area: the reader's language (owner 2026-10-18)
+710548		Червонопартизанск										disputed area: the reader's language (owner 2026-10-18)
+711778		Большая Вергунка										disputed area: the reader's language (owner 2026-10-18)
+13607659	Shevchenkivskyi District	Ленинский район										disputed area: the reader's language (owner 2026-10-18)
+13607660	Verhunskyi District	Жовтневый район										disputed area: the reader's language (owner 2026-10-18)
+13607661	Vilkhivskyi District	Артёмовский район										disputed area: the reader's language (owner 2026-10-18)
+13607662	Kamianobridskyi District	Каменнобродский район										disputed area: the reader's language (owner 2026-10-18)
+13645605		Восточные кварталы										disputed area: the reader's language (owner 2026-10-18)
+704337		Краснореченское										disputed area: the reader's language (owner 2026-10-18)
+699311	Aidar											disputed area: the reader's language (owner 2026-10-18)
+2461677		Тишла										disputed area: the reader's language (owner 2026-10-18)
+2463161		Аусерд										disputed area: the reader's language (owner 2026-10-18)
+2462879	El Argoub	Эль-Аргуб										disputed area: the reader's language (owner 2026-10-18)
+9645313		Гельта-Земмур										disputed area: the reader's language (owner 2026-10-18)
+2463029		Буждур										disputed area: the reader's language (owner 2026-10-18)
+13608369	Mehaires	Мехайрис										disputed area: the reader's language (owner 2026-10-18)
+2461993		Эль-Марса										disputed area: the reader's language (owner 2026-10-18)
+443093	Katzrin											disputed area: the reader's language (owner 2026-10-18)
+1182637		Бхимбер										disputed area: the reader's language (owner 2026-10-18)
+1258670		Рамгарх										disputed area: the reader's language (owner 2026-10-18)
+1261607		Наваншахр										disputed area: the reader's language (owner 2026-10-18)
+1262160		Нагрота										disputed area: the reader's language (owner 2026-10-18)
+1266829	Khour	Кхаур										disputed area: the reader's language (owner 2026-10-18)
+1275466		Бишна										disputed area: the reader's language (owner 2026-10-18)
+1278373	Arnia	Арния										disputed area: the reader's language (owner 2026-10-18)
+1279126	Akhnoor	Акхнур										disputed area: the reader's language (owner 2026-10-18)
+1433078		Бхулвал										disputed area: the reader's language (owner 2026-10-18)
+1439850		Брахманан-ди-Бари										disputed area: the reader's language (owner 2026-10-18)
+1439870		Ратну-Чак										disputed area: the reader's language (owner 2026-10-18)
+1439894		Бирпур										disputed area: the reader's language (owner 2026-10-18)
+13353358		Бхор										disputed area: the reader's language (owner 2026-10-18)
+13353361		Кхор										disputed area: the reader's language (owner 2026-10-18)
+13353364		Ракх-Гади-Гарх										disputed area: the reader's language (owner 2026-10-18)
+13353372	R.S. Pura	Ранбир-Сингх-Пура										disputed area: the reader's language (owner 2026-10-18)
+13353373		Райпур-Домана										disputed area: the reader's language (owner 2026-10-18)
+13353374		Кантонмент Джамму										disputed area: the reader's language (owner 2026-10-18)
+1257545		Самба										disputed area: the reader's language (owner 2026-10-18)
+1258635		Рамнагар										disputed area: the reader's language (owner 2026-10-18)
+1276358	Bhaderwah	Бхадервах										disputed area: the reader's language (owner 2026-10-18)
+12519438		Виджайпур										disputed area: the reader's language (owner 2026-10-18)
+13353355	Basohli	Басохли										disputed area: the reader's language (owner 2026-10-18)
+13353359		Ратхиан										disputed area: the reader's language (owner 2026-10-18)
+13353362		Рехамбал										disputed area: the reader's language (owner 2026-10-18)
+171200		Букъата										disputed area: the reader's language (owner 2026-10-18)
+1165778		Сехнса										disputed area: the reader's language (owner 2026-10-18)
+1169027	Mirpur											disputed area: the reader's language (owner 2026-10-18)
+1177308		Хаджира										disputed area: the reader's language (owner 2026-10-18)
+1183992		Баг										disputed area: the reader's language (owner 2026-10-18)
+1386114		Кхай-Гала										disputed area: the reader's language (owner 2026-10-18)
+1386292		Чархой										disputed area: the reader's language (owner 2026-10-18)
+1386329		Исламгарх										disputed area: the reader's language (owner 2026-10-18)
+11467709		Чаксавари										disputed area: the reader's language (owner 2026-10-18)
+12524521		Аббаспур										disputed area: the reader's language (owner 2026-10-18)
+1167718	Poonch											disputed area: the reader's language (owner 2026-10-18)
+1173744		Кхуиратта										disputed area: the reader's language (owner 2026-10-18)
+1252765		Йечагам										disputed area: the reader's language (owner 2026-10-18)
+1254142	Charar-e-Sharief	Чарар-и-Шариф										disputed area: the reader's language (owner 2026-10-18)
+1254647	Thanamandi	Танаманди										disputed area: the reader's language (owner 2026-10-18)
+1258167	Reasi											disputed area: the reader's language (owner 2026-10-18)
+1258891	Rajouri											disputed area: the reader's language (owner 2026-10-18)
+1261675	Nowshera	Наушера										disputed area: the reader's language (owner 2026-10-18)
+1430152		Маджхиари										disputed area: the reader's language (owner 2026-10-18)
+10593072	Surankote	Суранкот										disputed area: the reader's language (owner 2026-10-18)
+10606880		Кралапур										disputed area: the reader's language (owner 2026-10-18)
+10867126		Фатехпур										disputed area: the reader's language (owner 2026-10-18)
+12519444		Чадура										disputed area: the reader's language (owner 2026-10-18)
+13353354		Талвара										disputed area: the reader's language (owner 2026-10-18)
+13353360		Сундербани										disputed area: the reader's language (owner 2026-10-18)
+13353363		Нагам										disputed area: the reader's language (owner 2026-10-18)
+13353368		Мехмуд-Пора										disputed area: the reader's language (owner 2026-10-18)
+13527012	Forward Kahuta	Форвард-Кахута										disputed area: the reader's language (owner 2026-10-18)
+1254198		Трал										disputed area: the reader's language (owner 2026-10-18)
+1258715		Рамбан										disputed area: the reader's language (owner 2026-10-18)
+1259102		Казигунд										disputed area: the reader's language (owner 2026-10-18)
+1265734		Кулгам										disputed area: the reader's language (owner 2026-10-18)
+1275692		Биджбехара										disputed area: the reader's language (owner 2026-10-18)
+1278103	Awantipora	Авантипора										disputed area: the reader's language (owner 2026-10-18)
+1279192	Aishmuqam	Айшмукам										disputed area: the reader's language (owner 2026-10-18)
+1279383	Achabal	Ачабал										disputed area: the reader's language (owner 2026-10-18)
+10655762		Присал										disputed area: the reader's language (owner 2026-10-18)
+10657182		Ярипур										disputed area: the reader's language (owner 2026-10-18)
+10657255		Патха-Деосар										disputed area: the reader's language (owner 2026-10-18)
+10677907		Бунджвах										disputed area: the reader's language (owner 2026-10-18)
+11185623		Кокернаг										disputed area: the reader's language (owner 2026-10-18)
+12519446		Дуру-Веринаг										disputed area: the reader's language (owner 2026-10-18)
+12519447		Шангус										disputed area: the reader's language (owner 2026-10-18)
+13353356		Ашмуджи-Хальса										disputed area: the reader's language (owner 2026-10-18)
+13353365		Сир-Хамдан										disputed area: the reader's language (owner 2026-10-18)
+13353367		Маттан										disputed area: the reader's language (owner 2026-10-18)
+13353369		Арвани										disputed area: the reader's language (owner 2026-10-18)
+13353371		Куимох										disputed area: the reader's language (owner 2026-10-18)
+1260942	Padum											disputed area: the reader's language (owner 2026-10-18)
+1177009		Хаттиан-Бала										disputed area: the reader's language (owner 2026-10-18)
+1254993		Тангдхар										disputed area: the reader's language (owner 2026-10-18)
+8990172		Гархи-Дупатта										disputed area: the reader's language (owner 2026-10-18)
+10944629	Athmuqam	Атмукам										disputed area: the reader's language (owner 2026-10-18)
+13353357		Науангабра										disputed area: the reader's language (owner 2026-10-18)
+1255478		Сумбал										disputed area: the reader's language (owner 2026-10-18)
+1255714	Sopore											disputed area: the reader's language (owner 2026-10-18)
+1255891		Согам										disputed area: the reader's language (owner 2026-10-18)
+1257857	Safapora	Сафапора										disputed area: the reader's language (owner 2026-10-18)
+1260050		Паттан										disputed area: the reader's language (owner 2026-10-18)
+1260618	Pampore	Пампур										disputed area: the reader's language (owner 2026-10-18)
+1264513		Магам										disputed area: the reader's language (owner 2026-10-18)
+1266646	Khrew	Кхрев										disputed area: the reader's language (owner 2026-10-18)
+1270439		Хандвара										disputed area: the reader's language (owner 2026-10-18)
+1270529		Хаджан										disputed area: the reader's language (owner 2026-10-18)
+1271729		Гандербал										disputed area: the reader's language (owner 2026-10-18)
+1277085	Baramulla											disputed area: the reader's language (owner 2026-10-18)
+1277358	Bandipora	Бандипора										disputed area: the reader's language (owner 2026-10-18)
+1277997	Budgam											disputed area: the reader's language (owner 2026-10-18)
+1429898	Badami Bagh	Бадами-Баг										disputed area: the reader's language (owner 2026-10-18)
+1430991	Soibugh											disputed area: the reader's language (owner 2026-10-18)
+1431227		Ватаргам										disputed area: the reader's language (owner 2026-10-18)
+9985574		Буна-Хир										disputed area: the reader's language (owner 2026-10-18)
+9985580		Гулгам										disputed area: the reader's language (owner 2026-10-18)
+10002798	Kupwara	Купвара										disputed area: the reader's language (owner 2026-10-18)
+10434244		Дарапур										disputed area: the reader's language (owner 2026-10-18)
+12519445		Бирвах										disputed area: the reader's language (owner 2026-10-18)
+13353366		Вайл										disputed area: the reader's language (owner 2026-10-18)
+13353370	Drugmulla	Другмулла										disputed area: the reader's language (owner 2026-10-18)
+13589597		Девер-Индер-Буг										disputed area: the reader's language (owner 2026-10-18)
+9782154		Чогламсар										disputed area: the reader's language (owner 2026-10-18)
+1176470		Джаглот										disputed area: the reader's language (owner 2026-10-18)
+1162311		Югу										disputed area: the reader's language (owner 2026-10-18)
+611583	Tkvarcheli	Ткуарчал										disputed area: the reader's language (owner 2026-10-18)
+612652		Очамчыра										disputed area: the reader's language (owner 2026-10-18)
+614613		Гал										disputed area: the reader's language (owner 2026-10-18)
+611847		Сухум										disputed area: the reader's language (owner 2026-10-18)
+614580	Tsandrypsh											disputed area: the reader's language (owner 2026-10-18)
+615912	New Athos											disputed area: the reader's language (owner 2026-10-18)
+689595	Viline											disputed area: the reader's language (owner 2026-10-18)
+701419		Мекензиевы Горы										disputed area: the reader's language (owner 2026-10-18)
+705008		Корабельная сторона										disputed area: the reader's language (owner 2026-10-18)
+706925		Камышовая бухта										disputed area: the reader's language (owner 2026-10-18)
+712796		Бартеньевка										disputed area: the reader's language (owner 2026-10-18)
+712969	Bakhchysarai											disputed area: the reader's language (owner 2026-10-18)
+697203	Pionerske											disputed area: the reader's language (owner 2026-10-18)
+701619	Massandra											disputed area: the reader's language (owner 2026-10-18)
+704972	Koreiz											disputed area: the reader's language (owner 2026-10-18)
+707240	Myrne											disputed area: the reader's language (owner 2026-10-18)
+710454	Chystenke											disputed area: the reader's language (owner 2026-10-18)
+688105	Yevpatoria											disputed area: the reader's language (owner 2026-10-18)
+697568	Pervomaiske											disputed area: the reader's language (owner 2026-10-18)
+704362	Krasnoperekopsk											disputed area: the reader's language (owner 2026-10-18)
+7039154	Novofedorivka											disputed area: the reader's language (owner 2026-10-18)
+686812	Zuia											disputed area: the reader's language (owner 2026-10-18)
+693062	Sovietskyi											disputed area: the reader's language (owner 2026-10-18)
+697396	Petrivka											disputed area: the reader's language (owner 2026-10-18)
+698652	Oktiabrske	Октябрьское										disputed area: the reader's language (owner 2026-10-18)
+700019	Nyzhnohirskyi											disputed area: the reader's language (owner 2026-10-18)
+700835	Molodizhne											disputed area: the reader's language (owner 2026-10-18)
+704381	Krasnohvardiiske											disputed area: the reader's language (owner 2026-10-18)
+707777	Hvardiiske											disputed area: the reader's language (owner 2026-10-18)
+708140		Грэсовский										disputed area: the reader's language (owner 2026-10-18)
+709334	Dzhankoi											disputed area: the reader's language (owner 2026-10-18)
+696291	Prymorskyi											disputed area: the reader's language (owner 2026-10-18)
+703261	Lenine											disputed area: the reader's language (owner 2026-10-18)
+705799	Kirovske											disputed area: the reader's language (owner 2026-10-18)
+709161	Feodosia											disputed area: the reader's language (owner 2026-10-18)
+713195		Аршинцево										disputed area: the reader's language (owner 2026-10-18)
+713203	Armiansk											disputed area: the reader's language (owner 2026-10-18)
+617486	Rîbnița											disputed area: the reader's language (owner 2026-10-18)
+618234	Grigoriopol											disputed area: the reader's language (owner 2026-10-18)
+5950268		Этобико										review A5: agents 2026-10-18
+8310663		Сентрал-Кост										review A5: agents 2026-10-18
+12358576		Ваньчжоу										review A5: agents 2026-10-18
+1586203		Кантхо										review A5: agents 2026-10-18
+349076		Шубра-эль-Хейма										review A5: agents 2026-10-18
+7602670	Zhucheng											review A5: agents 2026-10-18
+13527315		Санту-Антониу						MAC				review A5: agents 2026-10-18
+13527316								MAC				review A5: agents 2026-10-18
+13527318								MAC				review A5: agents 2026-10-18
+708953								RUS				review A5: agents 2026-10-18
+146732								CYP				review A5: agents 2026-10-18
+146661								CYP				review A5: agents 2026-10-18
+146768								CYP				review A5: agents 2026-10-18
+294630								ISR				review A5: agents 2026-10-18
+295130	Tayibe							ISR				review A5: agents 2026-10-18
+295571	Baqa al-Gharbiyye							ISR				review A5: agents 2026-10-18
+8141161								ISR				review A5: agents 2026-10-18
+8142386								ISR				review A5: agents 2026-10-18
+8141252	Bat Hefer											review A5: agents 2026-10-18
+13645768								IND				review A5: agents 2026-10-18
+7302858								IND				review A5: agents 2026-10-18
+145972								CYP				review A5: agents 2026-10-18
+292913	Al Ain											review A5: agents 2026-10-18
+11524601		Джебель-Али										review A5: agents 2026-10-18
+3351786		Баия-Фарта										review A5: agents 2026-10-18
+3351500		Каала										review A5: agents 2026-10-18
+13608165		Кима-Киеза										review A5: agents 2026-10-18
+11592397		Нова-Вида										review A5: agents 2026-10-18
+12170526		Вила-Флор										review A5: agents 2026-10-18
+3347019	Moçâmedes											review A5: agents 2026-10-18
+12594578	Las Heras	Лас-Эрас										review A5: agents 2026-10-18
+3836846		Сан-Николас-де-лос-Арройос										review A5: agents 2026-10-18
+10300648		Порт-Филлип										review A5: agents 2026-10-18
+1336134	Cox's Bazar											review A5: agents 2026-10-18
+11876505		Гулшан										review A5: agents 2026-10-18
+1195434		Майджди										review A5: agents 2026-10-18
+13589478		Мотиджхил										review A5: agents 2026-10-18
+1185098	Tongi											review A5: agents 2026-10-18
+2800931	Bruges											review A5: agents 2026-10-18
+2797656	Ghent											review A5: agents 2026-10-18
+385038	Riffa											review A5: agents 2026-10-18
+290247	Hamad Town											review A5: agents 2026-10-18
+6316298		Асаиландия										review A5: agents 2026-10-18
+12432982		Агуас-Кларас										review A5: agents 2026-10-18
+3471196		Баже										review A5: agents 2026-10-18
+12426999		Байрру-да-Пенья										review A5: agents 2026-10-18
+3406545		Балсас										review A5: agents 2026-10-18
+3470858		Барбасена										review A5: agents 2026-10-18
+7290718		Барра-да-Тижука										review A5: agents 2026-10-18
+3470073		Бенту-Гонсалвис										review A5: agents 2026-10-18
+3405006		Браганса										review A5: agents 2026-10-18
+3468562		Касапава										review A5: agents 2026-10-18
+3468403		Кашоэйринья										review A5: agents 2026-10-18
+3468215		Кайейрас										review A5: agents 2026-10-18
+3403741		Камаражиби										review A5: agents 2026-10-18
+3403642		Кампина-Гранди										review A5: agents 2026-10-18
+3467717		Кампу-Моуран										review A5: agents 2026-10-18
+3467693		Кампус-дус-Гойтаказис										review A5: agents 2026-10-18
+3466954		Кариасика										review A5: agents 2026-10-18
+3466696		Каталан										review A5: agents 2026-10-18
+3402429		Каукая										review A5: agents 2026-10-18
+3465284		Котия										review A5: agents 2026-10-18
+3465059		Кубатан										review A5: agents 2026-10-18
+3464305		Эмбу-дас-Артис										review A5: agents 2026-10-18
+3463690		Эунаполис										review A5: agents 2026-10-18
+6317123		Фазенда-Риу-Гранди										review A5: agents 2026-10-18
+3463478		Фейра-ди-Сантана										review A5: agents 2026-10-18
+3463011		Франка										review A5: agents 2026-10-18
+3462996		Франсиску-Белтран										review A5: agents 2026-10-18
+3462980		Франсиску-Морату										review A5: agents 2026-10-18
+3462964		Франку-да-Роша										review A5: agents 2026-10-18
+3460974		Итабаяна										review A5: agents 2026-10-18
+3460644		Итакуакесетуба										review A5: agents 2026-10-18
+3460523		Итуютаба										review A5: agents 2026-10-18
+3925033		Жи-Парана										review A5: agents 2026-10-18
+3397154		Жуазейру										review A5: agents 2026-10-18
+6317464		Лауру-ди-Фрейтас										review A5: agents 2026-10-18
+3458662		Леми										review A5: agents 2026-10-18
+11427402		Луис-Эдуарду-Магальяйнс										review A5: agents 2026-10-18
+3458329		Лузиания										review A5: agents 2026-10-18
+3457692		Марилия										review A5: agents 2026-10-18
+3457001		Можи-дас-Крузис										review A5: agents 2026-10-18
+3456223		Носа-Сеньора-ду-Сокорру										review A5: agents 2026-10-18
+3456117		Нова-Серрана										review A5: agents 2026-10-18
+6317781		Нову-Гама										review A5: agents 2026-10-18
+6317837		Пасу-ду-Лумиар										review A5: agents 2026-10-18
+3393008		Паринтинс										review A5: agents 2026-10-18
+3454847		Пасус										review A5: agents 2026-10-18
+3453535		Пиракуара										review A5: agents 2026-10-18
+13512576		Плану-Пилоту										review A5: agents 2026-10-18
+3452073		Кеймадус										review A5: agents 2026-10-18
+13450916		Реканту-дас-Эмас										review A5: agents 2026-10-18
+12432977		Риашу-Фунду II										review A5: agents 2026-10-18
+3451353		Рибейран-дас-Невис										review A5: agents 2026-10-18
+3451329		Рибейран-Пирис										review A5: agents 2026-10-18
+3451234		Риу-Клару										review A5: agents 2026-10-18
+3451205		Риу-дас-Острас										review A5: agents 2026-10-18
+3451138		Риу-Гранди										review A5: agents 2026-10-18
+3450594		Салту										review A5: agents 2026-10-18
+12432979		Самамбая										review A5: agents 2026-10-18
+3450404		Санта-Барбара-д'Оэсти										review A5: agents 2026-10-18
+3450144		Санта-Лузия										review A5: agents 2026-10-18
+12432973		Санта-Мария										review A5: agents 2026-10-18
+3389321		Санта-Рита										review A5: agents 2026-10-18
+3449948		Сантана-ди-Парнаиба										review A5: agents 2026-10-18
+3449521		Санту-Антониу-ди-Жезус										review A5: agents 2026-10-18
+3388847		Сан-Феликс-ду-Шингу										review A5: agents 2026-10-18
+3448742		Сан-Жозе										review A5: agents 2026-10-18
+3388441		Сан-Жозе-ди-Рибамар										review A5: agents 2026-10-18
+3448031		Сапукая-ду-Сул										review A5: agents 2026-10-18
+3447854		Сенадор-Канеду										review A5: agents 2026-10-18
+3447651		Сертанзинью										review A5: agents 2026-10-18
+6318694		Симойнс-Филью										review A5: agents 2026-10-18
+6318714		Сорризу										review A5: agents 2026-10-18
+3447186		Табоан-да-Серра										review A5: agents 2026-10-18
+6318738		Тангара-да-Серра										review A5: agents 2026-10-18
+6318755		Тейшейра-ди-Фрейтас										review A5: agents 2026-10-18
+3385935		Тукуруи										review A5: agents 2026-10-18
+6318856		Валпараизу-ди-Гояс										review A5: agents 2026-10-18
+3445451		Варзеа-Гранди										review A5: agents 2026-10-18
+3445446		Варзеа-Паулиста										review A5: agents 2026-10-18
+3445162		Веспазиану										review A5: agents 2026-10-18
+3924679		Вильена										review A5: agents 2026-10-18
+3444866		Воторантин										review A5: agents 2026-10-18
+6094835		Оттава-Саут										review A5: agents 2026-10-18
+13546317		Виль-Мари										review A5: agents 2026-10-18
+6325494	Quebec City											review A5: agents 2026-10-18
+2317397	Bandundu											review A5: agents 2026-10-18
+922083		Чиленге										review A5: agents 2026-10-18
+8521334		Нкайи										review A5: agents 2026-10-18
+11947989		Вилья-Мерседес										review A5: agents 2026-10-18
+2038679		Ачэн										review A5: agents 2026-10-18
+2038670		Айгунь										review A5: agents 2026-10-18
+1529641	Aral											review A5: agents 2026-10-18
+1818020		Аньлю										review A5: agents 2026-10-18
+1803886		Аньнин										review A5: agents 2026-10-18
+1817990		Аньцю										review A5: agents 2026-10-18
+1785294		Аньян										review A5: agents 2026-10-18
+1817441		Байша										review A5: agents 2026-10-18
+1909733		Банань										review A5: agents 2026-10-18
+13308659		Центр Баоаня										review A5: agents 2026-10-18
+1816865		Башань										review A5: agents 2026-10-18
+1816858	Dongfang											review A5: agents 2026-10-18
+11838258		Баян-Нур										review A5: agents 2026-10-18
+1816790		Бэйбэй										review A5: agents 2026-10-18
+2037201	Beizhen											review A5: agents 2026-10-18
+1816329		Бишань										review A5: agents 2026-10-18
+1816265		Бошань										review A5: agents 2026-10-18
+1815669		Чанлэ										review A5: agents 2026-10-18
+1815477		Чанъюань										review A5: agents 2026-10-18
+13527052	Lhasa	Лхаса										review A5: agents 2026-10-18
+1814915		Чэнцяо										review A5: agents 2026-10-18
+1793036	Tengzhou											review A5: agents 2026-10-18
+1786640		Чэнчжун										review A5: agents 2026-10-18
+1814928	Chongfu											review A5: agents 2026-10-18
+12159964		Чунцзо										review A5: agents 2026-10-18
+1813812		Даньшуй										review A5: agents 2026-10-18
+1813344		Даукоу										review A5: agents 2026-10-18
+12446699		Да-Хинган-Лин										review A5: agents 2026-10-18
+1812990		Дэнчжоу										review A5: agents 2026-10-18
+6559683		Дойлунгдэчэн										review A5: agents 2026-10-18
+1812621	Haiyang											review A5: agents 2026-10-18
+1812521		Дунхай										review A5: agents 2026-10-18
+2037620		Дунлин										review A5: agents 2026-10-18
+1812228		Дунтай										review A5: agents 2026-10-18
+1812101		Дунъин										review A5: agents 2026-10-18
+6642286		Эчжоу										review A5: agents 2026-10-18
+1811729	Enping											review A5: agents 2026-10-18
+1811619		Эчжоу										review A5: agents 2026-10-18
+7304020		Фэнхуан										review A5: agents 2026-10-18
+1808872		Фуань										review A5: agents 2026-10-18
+1811028		Фуцзи										review A5: agents 2026-10-18
+1810724	Gangu	Ганьгу										review A5: agents 2026-10-18
+1529435		Кульджа										review A5: agents 2026-10-18
+6958503		Гунхэюн										review A5: agents 2026-10-18
+1212405	Ashuganj											review A5: agents 2026-10-18
+1192366	Naogaon	Наогаон										review A5: agents 2026-10-18
+1193745		Нагар-Налуакот										review A5: agents 2026-10-18
+13452524		Росон										review A5: agents 2026-10-18
+3449324		Сан-Каэтану-ду-Сул										review A5: agents 2026-10-18
+3447212		Сузану										review A5: agents 2026-10-18
+3449319		Сан-Карлус										review A5: agents 2026-10-18
+3446370		Толеду										review A5: agents 2026-10-18
+3465927		Коломбу										review A5: agents 2026-10-18
+3459342		Лагарту										review A5: agents 2026-10-18
+3395449		Марангуапи										review A5: agents 2026-10-18
+3404817		Бревис										review A5: agents 2026-10-18
+3463140		Формоза										review A5: agents 2026-10-18
+3407882		Алтамира										review A5: agents 2026-10-18
+3880980		Майпу										review A5: agents 2026-10-18
+1818116		Аньбу										review A5: agents 2026-10-18
+2038650		Аньда										review A5: agents 2026-10-18
+1813425		Датунь										review A5: agents 2026-10-18
+1809879		Гуаншуй										review A5: agents 2026-10-18
+1809408		Гулинь										review A5: agents 2026-10-18
+1809380		Гунань										review A5: agents 2026-10-18
+1809077		Хайкоу										review A5: agents 2026-10-18
+1809062		Хаймэнь										review A5: agents 2026-10-18
+1808950		Ханьфэн										review A5: agents 2026-10-18
+1808931		Ханьгу										review A5: agents 2026-10-18
+1808916		Ханьцзя										review A5: agents 2026-10-18
+12358476		Хэчи										review A5: agents 2026-10-18
+1808747		Хэцунь										review A5: agents 2026-10-18
+1997228		Хэдун										review A5: agents 2026-10-18
+1808612		Хэцзян										review A5: agents 2026-10-18
+2036920		Хэншань										review A5: agents 2026-10-18
+1806881		Хуэйчэн										review A5: agents 2026-10-18
+8416933		Хуэйсин										review A5: agents 2026-10-18
+2036671		Хулань										review A5: agents 2026-10-18
+11694038		Хочэн										review A5: agents 2026-10-18
+1885823		Цзянъю										review A5: agents 2026-10-18
+7303248		Цзяшань										review A5: agents 2026-10-18
+1805962		Цзяван										review A5: agents 2026-10-18
+1805935		Цзяцзы										review A5: agents 2026-10-18
+1805857		Цзеши										review A5: agents 2026-10-18
+1790251		Цзиньфэн										review A5: agents 2026-10-18
+1805543		Цзинчжи										review A5: agents 2026-10-18
+13608000		Цзиньшань										review A5: agents 2026-10-18
+2036403		Цзюпу										review A5: agents 2026-10-18
+1804252		Лэчэн										review A5: agents 2026-10-18
+2035669		Ляньхэ										review A5: agents 2026-10-18
+2036434		Ляньшань										review A5: agents 2026-10-18
+1803590		Линьцан										review A5: agents 2026-10-18
+1803567		Линьфэнь										review A5: agents 2026-10-18
+1803364		Линьцюй										review A5: agents 2026-10-18
+1803352		Линьшуй										review A5: agents 2026-10-18
+1803334		Линьси										review A5: agents 2026-10-18
+10020191		Лючжи										review A5: agents 2026-10-18
+8416218		Личжи										review A5: agents 2026-10-18
+2035970		Лунцзян										review A5: agents 2026-10-18
+1801909		Лоцзян										review A5: agents 2026-10-18
+1801401		Мацзе										review A5: agents 2026-10-18
+13512502		Мэнцзы										review A5: agents 2026-10-18
+1800175		Наньбинь										review A5: agents 2026-10-18
+8544703		Наньчуань										review A5: agents 2026-10-18
+1800130		Наньцунь										review A5: agents 2026-10-18
+8417607		Наньцзинь										review A5: agents 2026-10-18
+2035644		Наньпяо										review A5: agents 2026-10-18
+1913126		Наньтоу										review A5: agents 2026-10-18
+1799389		Нинъэр										review A5: agents 2026-10-18
+8403616		Пайлоу										review A5: agents 2026-10-18
+2035513		Паньшань										review A5: agents 2026-10-18
+1798713		Пиншань										review A5: agents 2026-10-18
+8406214		Саньхэ										review A5: agents 2026-10-18
+1796421		Шахэчэн										review A5: agents 2026-10-18
+1796134		Шанцю										review A5: agents 2026-10-18
+1795860		Шаошань										review A5: agents 2026-10-18
+1795857		Шаоу										review A5: agents 2026-10-18
+1916862		Шицзе										review A5: agents 2026-10-18
+12324556		Шицзуйшань										review A5: agents 2026-10-18
+12450887		Шуанлунху										review A5: agents 2026-10-18
+8403612		Тайбай										review A5: agents 2026-10-18
+1793424		Тангу										review A5: agents 2026-10-18
+1793419		Танхэ										review A5: agents 2026-10-18
+6958518		Таньтоу										review A5: agents 2026-10-18
+1913154		Таньчжоу										review A5: agents 2026-10-18
+1793092		Таочжоу										review A5: agents 2026-10-18
+1797091		Тунжэнь										review A5: agents 2026-10-18
+1791765		Ваньшэн										review A5: agents 2026-10-18
+8505006		Вэньшань										review A5: agents 2026-10-18
+1789703		Сячжэнь										review A5: agents 2026-10-18
+1788816		Синьцзи										review A5: agents 2026-10-18
+1788492		Синьчжай										review A5: agents 2026-10-18
+1788268		Сюлинь										review A5: agents 2026-10-18
+2033574		Сюаньхуа										review A5: agents 2026-10-18
+1787901		Сюньчан										review A5: agents 2026-10-18
+1787828		Сюйюн										review A5: agents 2026-10-18
+8417605		Янчэн										review A5: agents 2026-10-18
+1787188		Яньцзя										review A5: agents 2026-10-18
+1786778		Ечжоу										review A5: agents 2026-10-18
+12324302		Иду										review A5: agents 2026-10-18
+1786676		Има										review A5: agents 2026-10-18
+12358616		Иньтай										review A5: agents 2026-10-18
+1797632		Ичжоу										review A5: agents 2026-10-18
+1786395		Юнъань										review A5: agents 2026-10-18
+1786378		Юнчуань										review A5: agents 2026-10-18
+12277239		Юньлун										review A5: agents 2026-10-18
+1784712		Чжэндин										review A5: agents 2026-10-18
+1784617		Чжэньпин										review A5: agents 2026-10-18
+1784580		Чжэньчжоу										review A5: agents 2026-10-18
+1784554		Чжичэн										review A5: agents 2026-10-18
+1784393		Чжунхэ										review A5: agents 2026-10-18
+1784178		Чжоуцунь										review A5: agents 2026-10-18
+1783903		Чжуцзин										review A5: agents 2026-10-18
+1783700		Цзытун										review A5: agents 2026-10-18
+12548253		Хулун-Буир										review A5: agents 2026-10-18
+13512708		Ньингчи										review A5: agents 2026-10-18
+1794209		Пуэр										review A5: agents 2026-10-18
+1281105		Юйшу										review A5: agents 2026-10-18
+1787824		Туншань										review A5: agents 2026-10-18
+1798425		Пуцзян										review A5: agents 2026-10-18
+1794806		Хуэйнун										review A5: agents 2026-10-18
+6648023		Шуйфу										review A5: agents 2026-10-18
+12022102		Тумшук										review A5: agents 2026-10-18
+8054802		Шилин-Хото										review A5: agents 2026-10-18
+1802875	Liuyang	Люян										review A5: agents 2026-10-18
+1281019	Hotan											review A5: agents 2026-10-18
+2036670	Fularji											review A5: agents 2026-10-18
+1529651	Altay											review A5: agents 2026-10-18
+1803331	Linxia											review A5: agents 2026-10-18
+12492660	Longling	Лунлин										review A5: agents 2026-10-18
+2036109	Liaoyuan											review A5: agents 2026-10-18
+1280570	Ruili											review A5: agents 2026-10-18
+1800234	Danzhou											review A5: agents 2026-10-18
+1799471	Haidong											review A5: agents 2026-10-18
+12492669	Pingwu	Пинъу										review A5: agents 2026-10-18
+1798473	Chibi	Чиби										review A5: agents 2026-10-18
+1803367	Linqing											review A5: agents 2026-10-18
+1279891	Tengchong											review A5: agents 2026-10-18
+1795196	Tongchuan											review A5: agents 2026-10-18
+1791748	Wanzhou	Ваньчжоу										review A5: agents 2026-10-18
+2034135	Wudan											review A5: agents 2026-10-18
+2033824	Xilinhot											review A5: agents 2026-10-18
+1529363	Kuqa											review A5: agents 2026-10-18
+1785710	Jinghong											review A5: agents 2026-10-18
+1809412	Yongkang	Юнкан										review A5: agents 2026-10-18
+3688928		Бельо										review A5: agents 2026-10-18
+3688452		Буэнавентура										review A5: agents 2026-10-18
+3682281		Фунса										review A5: agents 2026-10-18
+3682028	Girardot	Хирардот										review A5: agents 2026-10-18
+3675657		Майкао										review A5: agents 2026-10-18
+3674453		Монтерия										review A5: agents 2026-10-18
+3673164		Пальмира										review A5: agents 2026-10-18
+3672328		Пьедекуэста										review A5: agents 2026-10-18
+3667905		Соача										review A5: agents 2026-10-18
+3568342		Арройо-Наранхо										review A5: agents 2026-10-18
+3547398		Матансас										review A5: agents 2026-10-18
+3545064		Пальма-Сориано										review A5: agents 2026-10-18
+3537906		Санта-Клара										review A5: agents 2026-10-18
+2950349		Бергиш-Гладбах										review A5: agents 2026-10-18
+2624652	Aarhus											review A5: agents 2026-10-18
+7874116		Санто-Доминго-Оэсте										review A5: agents 2026-10-18
+2505854		Баб-Эззуар										review A5: agents 2026-10-18
+2498766		Эль-Ашир										review A5: agents 2026-10-18
+2486690	M'Sila											review A5: agents 2026-10-18
+2482908		Руиба										review A5: agents 2026-10-18
+3658192	Durán											review A5: agents 2026-10-18
+13680148		Эд-Давахи										review A5: agents 2026-10-18
+361179		Эль-Хавамидия										review A5: agents 2026-10-18
+360890		Эль-Хусус										review A5: agents 2026-10-18
+360716		Эль-Матария										review A5: agents 2026-10-18
+12451089	Obour	Эль-Обур										review A5: agents 2026-10-18
+13680149		Эз-Зухур										review A5: agents 2026-10-18
+358600	Nasser											review A5: agents 2026-10-18
+3109453		Баракальдо										review A5: agents 2026-10-18
+2518794		Дос-Эрманас										review A5: agents 2026-10-18
+2518559		Эльче										review A5: agents 2026-10-18
+3104499	Vitoria-Gasteiz											review A5: agents 2026-10-18
+2510911	Seville											review A5: agents 2026-10-18
+3108288		Таррагона										review A5: agents 2026-10-18
+345149	Adigrat											review A5: agents 2026-10-18
+343749	Arabi											review A5: agents 2026-10-18
+343370	Asella											review A5: agents 2026-10-18
+343137	Hawassa											review A5: agents 2026-10-18
+339708	Debre Markos											review A5: agents 2026-10-18
+339686		Дэбрэ-Табор										review A5: agents 2026-10-18
+338998	Dila											review A5: agents 2026-10-18
+338832		Дыре-Дауа										review A5: agents 2026-10-18
+334609	Hosaena											review A5: agents 2026-10-18
+334227	Shire											review A5: agents 2026-10-18
+331180	Mekelle											review A5: agents 2026-10-18
+330118	Nekemte											review A5: agents 2026-10-18
+12278193	Marne-la-Vallée	Марн-ла-Валле										review A5: agents 2026-10-18
+2990363		Ним										review A5: agents 2026-10-18
+10942183		Жугао										review A5: agents 2026-10-18
+1789137		Синьди										review A5: agents 2026-10-18
+11777624		Арчуэй										review A5: agents 2026-10-18
+2643097		Мансфилд										review A5: agents 2026-10-18
+2638703		Сент-Питерс										review A5: agents 2026-10-18
+2641674	Newcastle-under-Lyme											review A5: agents 2026-10-18
+2298330		Медина-Эстейтс										review A5: agents 2026-10-18
+2294308		Туифу-Прасо										review A5: agents 2026-10-18
+2422488		Камайен										review A5: agents 2026-10-18
+2416402		Камсар										review A5: agents 2026-10-18
+2417786		Манеа										review A5: agents 2026-10-18
+3587923		Вилья-Каналес										review A5: agents 2026-10-18
+1931681		Виктория										review A5: agents 2026-10-18
+1819607		Коулун-Сити										review A5: agents 2026-10-18
+1818920		Сатхинь										review A5: agents 2026-10-18
+1818953		Самсёйпоу										review A5: agents 2026-10-18
+1818673		Тайпоу										review A5: agents 2026-10-18
+1818209		Чхюньвань										review A5: agents 2026-10-18
+1818446		Тхюньмунь										review A5: agents 2026-10-18
+1818304		Вонтайсинь										review A5: agents 2026-10-18
+1818225		Юньлон										review A5: agents 2026-10-18
+3600026	Puerto Cortés											review A5: agents 2026-10-18
+3728474		Кап-Аитьен										review A5: agents 2026-10-18
+3726786		Дельмас										review A5: agents 2026-10-18
+3726540		Дессалин										review A5: agents 2026-10-18
+3719028		Петьонвиль										review A5: agents 2026-10-18
+3718962	Petit-Goâve											review A5: agents 2026-10-18
+1651226		Арджавинангун										review A5: agents 2026-10-18
+1651112		Астанаджапура										review A5: agents 2026-10-18
+1650234		Банджар										review A5: agents 2026-10-18
+1650227		Банджаран										review A5: agents 2026-10-18
+1650217		Банджарбару										review A5: agents 2026-10-18
+1650077		Баньюванги										review A5: agents 2026-10-18
+1649593		Батураджа										review A5: agents 2026-10-18
+1647149		Чиамис										review A5: agents 2026-10-18
+1647383		Чиампеа										review A5: agents 2026-10-18
+1647003		Чибинонг										review A5: agents 2026-10-18
+1646698		Чикампек										review A5: agents 2026-10-18
+1646678		Чикаранг										review A5: agents 2026-10-18
+1985663		Чикупа										review A5: agents 2026-10-18
+1646559		Чилачап										review A5: agents 2026-10-18
+1646494	Cileungsi	Чилеунгси										review A5: agents 2026-10-18
+1646492		Чилеуньи										review A5: agents 2026-10-18
+1646448		Чимахи										review A5: agents 2026-10-18
+1646194		Чипутат										review A5: agents 2026-10-18
+1646034		Читеуреуп										review A5: agents 2026-10-18
+2057087		Купанг										review A5: agents 2026-10-18
+1638063		Лембанг										review A5: agents 2026-10-18
+1637510		Лоа-Джанан										review A5: agents 2026-10-18
+1633034		Палу										review A5: agents 2026-10-18
+1214189		Перчут										review A5: agents 2026-10-18
+1627253		Сидоарджо										review A5: agents 2026-10-18
+261745	Heraklion											review A5: agents 2026-10-18
+255683	Patras											review A5: agents 2026-10-18
+295432	Beit Shemesh											review A5: agents 2026-10-18
+294751	Holon											review A5: agents 2026-10-18
+293725	Rehovot											review A5: agents 2026-10-18
+293703	Rishon LeZion											review A5: agents 2026-10-18
+1279228		Ахмаднагар										review A5: agents 2026-10-18
+7279599		Айроли										review A5: agents 2026-10-18
+13157160		Амбала-Садар										review A5: agents 2026-10-18
+7302861		Ашокнагар-Калянгарх										review A5: agents 2026-10-18
+1277799	Bahraich											review A5: agents 2026-10-18
+1277780		Байдьябати										review A5: agents 2026-10-18
+1277240		Бансбария										review A5: agents 2026-10-18
+1277100	Barrackpore											review A5: agents 2026-10-18
+1276320		Бхадрешвар										review A5: agents 2026-10-18
+1275984		Бхетия										review A5: agents 2026-10-18
+7279747		Бхивади										review A5: agents 2026-10-18
+1274693	Chandrapur											review A5: agents 2026-10-18
+1274767	Chandausi	Чандауси										review A5: agents 2026-10-18
+1274213		Чилакалурупет										review A5: agents 2026-10-18
+12495083		Чирмири										review A5: agents 2026-10-18
+1272243	Dum Dum	Дум-Дум										review A5: agents 2026-10-18
+1273467	Darjeeling											review A5: agents 2026-10-18
+1273292		Дели-Кантонмент										review A5: agents 2026-10-18
+1273241		Деогхар										review A5: agents 2026-10-18
+13156932		Динапур-Низамат										review A5: agents 2026-10-18
+1273581	Danapur											review A5: agents 2026-10-18
+1273687	Dahod											review A5: agents 2026-10-18
+1272805	Dholpur											review A5: agents 2026-10-18
+1271976	Faizabad											review A5: agents 2026-10-18
+8740017		Гадаг-Бетагери										review A5: agents 2026-10-18
+7302833		Гаджувака										review A5: agents 2026-10-18
+11679708		Гундупалайям										review A5: agents 2026-10-18
+1269920		Хубли										review A5: agents 2026-10-18
+1269834		Ичалкаранджи										review A5: agents 2026-10-18
+1268936	Jhunjhunu											review A5: agents 2026-10-18
+1269280		Джамурия										review A5: agents 2026-10-18
+1270752		Гулбарга										review A5: agents 2026-10-18
+12165956		Каллакуричи										review A5: agents 2026-10-18
+13645699		Канпур-Кантонмент										review A5: agents 2026-10-18
+1266928		Кхаргон										review A5: agents 2026-10-18
+1266607		Хурджа										review A5: agents 2026-10-18
+10263153		Кирари-Сулеманнагар		Кирари-Сулеман.								review A5: agents 2026-10-18
+1266489		Кишангандж										review A5: agents 2026-10-18
+1275004		Калькутта										review A5: agents 2026-10-18
+11500546		Куриччи										review A5: agents 2026-10-18
+7302826		Лал-Бахадур-Нагар										review A5: agents 2026-10-18
+10834495		Мадхурампур-Дехри										review A5: agents 2026-10-18
+1264111	Malerkotla											review A5: agents 2026-10-18
+7302828		Малкаджгири										review A5: agents 2026-10-18
+1262775	Morbi											review A5: agents 2026-10-18
+1262710	Motihari											review A5: agents 2026-10-18
+1262395	Katni											review A5: agents 2026-10-18
+1261913		Нанглой-Джат										review A5: agents 2026-10-18
+8441115	Neemuch	Нимач										review A5: agents 2026-10-18
+1261162	Nabarangpur											review A5: agents 2026-10-18
+11127930		Пхусро										review A5: agents 2026-10-18
+7279595		Питхампур										review A5: agents 2026-10-18
+1259395		Порбандар										review A5: agents 2026-10-18
+1259163	Purulia											review A5: agents 2026-10-18
+7302845		Кутбуллапур										review A5: agents 2026-10-18
+1258831	Rajnandgaon											review A5: agents 2026-10-18
+1258916		Раджапалаям										review A5: agents 2026-10-18
+1258662	Ramagundam											review A5: agents 2026-10-18
+1258470		Ранигандж										review A5: agents 2026-10-18
+13308246		Руркела										review A5: agents 2026-10-18
+1258109		Робертсонпет										review A5: agents 2026-10-18
+1258315		Руркела										review A5: agents 2026-10-18
+1257845	Sagar											review A5: agents 2026-10-18
+1256728	Shahjahanpur											review A5: agents 2026-10-18
+12501195		Шахувади										review A5: agents 2026-10-18
+13157013		Султанпур-Маджра										review A5: agents 2026-10-18
+1255344	Suryapet	Сурьяпет										review A5: agents 2026-10-18
+1254745	Theni	Тени										review A5: agents 2026-10-18
+1254757	Tenali											review A5: agents 2026-10-18
+1253880	Uluberia	Улуберия										review A5: agents 2026-10-18
+1253744		Уппал-Калан										review A5: agents 2026-10-18
+1253315		Веджалпур										review A5: agents 2026-10-18
+11101593		Тунчхун										review A5: agents 2026-10-18
+2296606	Obuasi											review A5: agents 2026-10-18
+2294665	Teshie											review A5: agents 2026-10-18
+2419533		Киндия										review A5: agents 2026-10-18
+13631407	Abu al-Khasib	Абу-эль-Хасиб										review A5: agents 2026-10-18
+387345		Абу-Гарак										review A5: agents 2026-10-18
+99106		Эль-Мадина										review A5: agents 2026-10-18
+99100		Эль-Махмудия										review A5: agents 2026-10-18
+91057		Эш-Шаркат										review A5: agents 2026-10-18
+98156		Бахарка										review A5: agents 2026-10-18
+96994	Duhok											review A5: agents 2026-10-18
+95005	Kalar											review A5: agents 2026-10-18
+99226	Iskandariya											review A5: agents 2026-10-18
+92511		Калат-Суккар										review A5: agents 2026-10-18
+92615	Qaladiza											review A5: agents 2026-10-18
+96833	Khabat	Хабат										review A5: agents 2026-10-18
+445694	Akre											review A5: agents 2026-10-18
+126972	Khoy											review A5: agents 2026-10-18
+124878		Мераге					1					review A5: agents 2026-10-18
+400771		Мохаммадшехр										review A5: agents 2026-10-18
+13405749		Насимшехр										review A5: agents 2026-10-18
+118063	Sabzevar											review A5: agents 2026-10-18
+121801	Urmia											review A5: agents 2026-10-18
+6653052	Sadra	Садра										review A5: agents 2026-10-18
+6663569	Pardisan	Пардисан										review A5: agents 2026-10-18
+135423		Шахруд										review A5: agents 2026-10-18
+3181554		Брешиа										review A5: agents 2026-10-18
+2523083	Syracuse	Сиракузы										review A5: agents 2026-10-18
+3165243		Тренто										review A5: agents 2026-10-18
+1864518		Тёфу										review A5: agents 2026-10-18
+1864416		Дайто										review A5: agents 2026-10-18
+2130203		Хатинохе										review A5: agents 2026-10-18
+11611628		Хигасикуруме										review A5: agents 2026-10-18
+1862752		Хигасиосака										review A5: agents 2026-10-18
+1848445	Yatsushiro											review A5: agents 2026-10-18
+11837657		Итикава										review A5: agents 2026-10-18
+1859913		Касивара										review A5: agents 2026-10-18
+6825498		Каватинагано										review A5: agents 2026-10-18
+1859146		Коти										review A5: agents 2026-10-18
+11611930		Кодайра										review A5: agents 2026-10-18
+1858445	Kuki											review A5: agents 2026-10-18
+1857470	Hakusan	Хакусан										review A5: agents 2026-10-18
+6822137	Misato											review A5: agents 2026-10-18
+11612347		Нарасино										review A5: agents 2026-10-18
+1853303		Сага										review A5: agents 2026-10-18
+6940394		Сайтама										review A5: agents 2026-10-18
+1853008	Sanda											review A5: agents 2026-10-18
+1907301	Toda											review A5: agents 2026-10-18
+11612583		Сюнан										review A5: agents 2026-10-18
+1851604		Сока										review A5: agents 2026-10-18
+11611487		Татикава										review A5: agents 2026-10-18
+11612537		Токай										review A5: agents 2026-10-18
+1850034	Tondabayashi	Тондабаяси										review A5: agents 2026-10-18
+6822099		Цутиура										review A5: agents 2026-10-18
+1848382	Higashiomi	Хигасиоми										review A5: agents 2026-10-18
+8299780		Джуджа										review A5: agents 2026-10-18
+185131		Мвала										review A5: agents 2026-10-18
+189723		Онгата-Ронгаи										review A5: agents 2026-10-18
+1878458	Ch'ŏngdan	Чхондан										review A5: agents 2026-10-18
+1879490	Chaeryŏng	Чэрён										review A5: agents 2026-10-18
+2043837		Хесан										review A5: agents 2026-10-18
+1876124		Каннён										review A5: agents 2026-10-18
+1876105		Кансон										review A5: agents 2026-10-18
+1873014	Paech'ŏn	Пэчхон										review A5: agents 2026-10-18
+1950953		Пэкхак										review A5: agents 2026-10-18
+1870648	Sinch'ŏn	Синчхон										review A5: agents 2026-10-18
+1869446	Songnim											review A5: agents 2026-10-18
+1869012		Сунчхон										review A5: agents 2026-10-18
+1868144		Токчхон										review A5: agents 2026-10-18
+1867429		Ыллюль										review A5: agents 2026-10-18
+1846898		Анъян										review A5: agents 2026-10-18
+1846052	Jinju											review A5: agents 2026-10-18
+1892823		Тонхэ										review A5: agents 2026-10-18
+11101805		Кодже										review A5: agents 2026-10-18
+1842966		Киджан										review A5: agents 2026-10-18
+1842936		Кимпхо										review A5: agents 2026-10-18
+1948005		Кванмён										review A5: agents 2026-10-18
+1843702		Ичхон										review A5: agents 2026-10-18
+11695689		Чонып										review A5: agents 2026-10-18
+1840898		Пхаджу										review A5: agents 2026-10-18
+1838343		Пхёнтхэк										review A5: agents 2026-10-18
+11523293		Седжон										review A5: agents 2026-10-18
+1897000		Соннам										review A5: agents 2026-10-18
+1833788		Ыйджонбу										review A5: agents 2026-10-18
+1833105	Wonju											review A5: agents 2026-10-18
+1832743		Ёджу										review A5: agents 2026-10-18
+248460		Хурайбат-эс-Сук										review A5: agents 2026-10-18
+1516589	Jezkazgan											review A5: agents 2026-10-18
+278913	Nabatieh	Эн-Набатия										review A5: agents 2026-10-18
+1230089		Пита-Котте										review A5: agents 2026-10-18
+2219701		Эль-Аджайлат										review A5: agents 2026-10-18
+2219936		Эль-Джумайль										review A5: agents 2026-10-18
+10374934		Айт-Меллуль										review A5: agents 2026-10-18
+2548830	Fquih Ben Salah	Фких-Бен-Салах										review A5: agents 2026-10-18
+2558545	Al Hoceima											review A5: agents 2026-10-18
+2556272		Беррешид										review A5: agents 2026-10-18
+2554006		Бускура										review A5: agents 2026-10-18
+2552615		Дар-Буазза										review A5: agents 2026-10-18
+2549979	El Kelaa des Sraghna	Эль-Келаа-де-Срагна										review A5: agents 2026-10-18
+10920963		Сале-эль-Джадида										review A5: agents 2026-10-18
+2455914		Калабан-Коро										review A5: agents 2026-10-18
+1319364	Kengtung	Чёнгтун										review A5: agents 2026-10-18
+1308318	Muse	Мусе										review A5: agents 2026-10-18
+13589383	Mingala Taungnyunt											review A5: agents 2026-10-18
+1290596		Таунгу										review A5: agents 2026-10-18
+1285693	Nyaungshwe											review A5: agents 2026-10-18
+1321937		Инсейн										review A5: agents 2026-10-18
+8740157		Хлайнтая										review A5: agents 2026-10-18
+1309937		Пьин-У-Луин										review A5: agents 2026-10-18
+1821263		Тайпа										review A5: agents 2026-10-18
+933945		Вакоа										review A5: agents 2026-10-18
+3533462	Acapulco											review A5: agents 2026-10-18
+3523466	Matamoros											review A5: agents 2026-10-18
+3522790	Naucalpan											review A5: agents 2026-10-18
+3515715	Texcoco											review A5: agents 2026-10-18
+4018390	Apodaca											review A5: agents 2026-10-18
+4013720	Delicias											review A5: agents 2026-10-18
+4005867	General Escobedo	Хенераль-Эскобедо										review A5: agents 2026-10-18
+4018400		Апацинган										review A5: agents 2026-10-18
+3827606		Буэнависта										review A5: agents 2026-10-18
+4003757		Сьюдад-Бенито-Хуарес		Сьюд.-Бенито-Хуарес								review A5: agents 2026-10-18
+3530569		Коакалько										review A5: agents 2026-10-18
+3515431		Тлальнепантла										review A5: agents 2026-10-18
+3827414		Уискилукан										review A5: agents 2026-10-18
+3827598		Охо-де-Агуа										review A5: agents 2026-10-18
+3984583		Санта-Катарина										review A5: agents 2026-10-18
+13118145		Бандар-Букит-Раджа										review A5: agents 2026-10-18
+13118272		Бандар-Сери-Алам										review A5: agents 2026-10-18
+13118229		Бандар-Тасик-Путери										review A5: agents 2026-10-18
+13118277		Бандар-Утама										review A5: agents 2026-10-18
+11054399		Букит-Бинтанг										review A5: agents 2026-10-18
+13118362		Букит-Джалил										review A5: agents 2026-10-18
+13118225		Букит-Рахман-Путра										review A5: agents 2026-10-18
+1769014		Иджок										review A5: agents 2026-10-18
+10063567		Искандар-Путери										review A5: agents 2026-10-18
+10941913		Каджанг										review A5: agents 2026-10-18
+1771023		Кампунг-Бару-Субанг										review A5: agents 2026-10-18
+1762110		Кампунг-Кангкар-Теберау										review A5: agents 2026-10-18
+1732724		Кампунг-Ларкин-Лама										review A5: agents 2026-10-18
+1732721		Кампунг-Пасир-Гуданг-Бару										review A5: agents 2026-10-18
+1764160		Кампунг-Сунгай-Ара										review A5: agents 2026-10-18
+12514556		Кота-Дамансара										review A5: agents 2026-10-18
+6847550		Кота-Куала-Муда										review A5: agents 2026-10-18
+1735572		Куала-Край										review A5: agents 2026-10-18
+1732676		Куала-Кубу-Бахару										review A5: agents 2026-10-18
+1732750		Масай										review A5: agents 2026-10-18
+12750654		Муким-Пулай										review A5: agents 2026-10-18
+2112312							1					review A5: agents 2026-10-18
+1857144							1					review A5: agents 2026-10-18
+1841246							1					review A5: agents 2026-10-18
+193627							1					review A5: agents 2026-10-18
+90532							1					review A5: agents 2026-10-18
+412800		Сабах-эс-Салим										review A5: agents 2026-10-18
+1874533	Man'gyŏngdae											review A5: agents 2026-10-18
+1736372		Пасир-Мас										review A5: agents 2026-10-18
+1735545		Пасир-Путех										review A5: agents 2026-10-18
+13100478		Пая-Терубонг										review A5: agents 2026-10-18
+7795834		Селаянг-Бару-Утара										review A5: agents 2026-10-18
+1744246		Сери-Кембанган										review A5: agents 2026-10-18
+7792200		Сери-Манджунг										review A5: agents 2026-10-18
+13118091		Сетиа-Алам										review A5: agents 2026-10-18
+1735153		Сунгай-Булох										review A5: agents 2026-10-18
+1735498		Сунгай-Петани										review A5: agents 2026-10-18
+12557764		Таман-Петалинг										review A5: agents 2026-10-18
+1735093		Тасек-Глугор										review A5: agents 2026-10-18
+12750606		Вангса-Маджу										review A5: agents 2026-10-18
+1045512		Гурве										review A5: agents 2026-10-18
+1028079		Рессану-Гарсия										review A5: agents 2026-10-18
+2566636		Аджегунле										review A5: agents 2026-10-18
+2566696		Аковонджо										review A5: agents 2026-10-18
+12129605		Чаквама										review A5: agents 2026-10-18
+2344082	Ikorodu											review A5: agents 2026-10-18
+2344053		Эде										review A5: agents 2026-10-18
+2343983		Эфон-Алайе										review A5: agents 2026-10-18
+2343093		Эсук-Орон										review A5: agents 2026-10-18
+2338385		Иджеро-Экити										review A5: agents 2026-10-18
+2338287		Икере-Экити										review A5: agents 2026-10-18
+2338106		Икот-Экпене										review A5: agents 2026-10-18
+2337313		Иреве										review A5: agents 2026-10-18
+2337207		Исе-Экити										review A5: agents 2026-10-18
+10276592		Огбиа										review A5: agents 2026-10-18
+2327143		Окигве										review A5: agents 2026-10-18
+2759879	Almere	Алмере										review A5: agents 2026-10-18
+1283581	Birgunj											review A5: agents 2026-10-18
+8411054		Мадхьяпур-Тхими										review A5: agents 2026-10-18
+3708306		Хуан-Диас										review A5: agents 2026-10-18
+12157008		Сан-Мартин										review A5: agents 2026-10-18
+1721281		Кабуяо										review A5: agents 2026-10-18
+1721168		Кадис										review A5: agents 2026-10-18
+1719274		Канделария										review A5: agents 2026-10-18
+1717641		Кавите										review A5: agents 2026-10-18
+7090983		Коммонуэлт										review A5: agents 2026-10-18
+1712531		Гигинто										review A5: agents 2026-10-18
+1712051		Гуйонг										review A5: agents 2026-10-18
+1711718		Химамайлан										review A5: agents 2026-10-18
+1710141		Холо										review A5: agents 2026-10-18
+1684269	Tagum											review A5: agents 2026-10-18
+13118244		Мандалуйонг										review A5: agents 2026-10-18
+1701966		Мандалуйонг										review A5: agents 2026-10-18
+1701537		Маноло-Фортич										review A5: agents 2026-10-18
+1680116	Valencia											review A5: agents 2026-10-18
+1697497		Норсагарай										review A5: agents 2026-10-18
+1695462		Панди										review A5: agents 2026-10-18
+1694781		Параньяке										review A5: agents 2026-10-18
+1693239		Пларидель										review A5: agents 2026-10-18
+7391141		Побласьон										review A5: agents 2026-10-18
+1692520		Пулонг-Санта-Крус										review A5: agents 2026-10-18
+1689510		Сан-Хосе										review A5: agents 2026-10-18
+1689056		Сан-Матео										review A5: agents 2026-10-18
+1688253		Санта-Крус										review A5: agents 2026-10-18
+1683877		Талисай										review A5: agents 2026-10-18
+1683881		Талисай										review A5: agents 2026-10-18
+1683013		Танса										review A5: agents 2026-10-18
+1680102		Валенсуэла										review A5: agents 2026-10-18
+11250625		Арифвала										review A5: agents 2026-10-18
+1332083		Бахавалнагар										review A5: agents 2026-10-18
+1182092		Буревала										review A5: agents 2026-10-18
+1175748		Чак-Джхумра										review A5: agents 2026-10-18
+1180942		Чуниан										review A5: agents 2026-10-18
+1180752		Даджал										review A5: agents 2026-10-18
+1179660		Докри										review A5: agents 2026-10-18
+1179406		Эминабад										review A5: agents 2026-10-18
+1174376		Гархи-Хайро										review A5: agents 2026-10-18
+1176997		Хавели-Лакха										review A5: agents 2026-10-18
+1176358		Джалалпур-Пирвала										review A5: agents 2026-10-18
+1172915		Кот-Радха-Кишан										review A5: agents 2026-10-18
+1171502		Майлси										review A5: agents 2026-10-18
+1171305		Малир-Кантонмент										review A5: agents 2026-10-18
+1170989		Манджханд										review A5: agents 2026-10-18
+1170157		Модел-Таун										review A5: agents 2026-10-18
+1168412		Пано-Акил										review A5: agents 2026-10-18
+1182829		Пхул-Нагар										review A5: agents 2026-10-18
+1168021		Пинди-Бхаттиан										review A5: agents 2026-10-18
+1167648		Кадирпур-Ран										review A5: agents 2026-10-18
+1167386		Раджа-Джанг										review A5: agents 2026-10-18
+1166652	Sadiqabad											review A5: agents 2026-10-18
+1166547		Сахивал										review A5: agents 2026-10-18
+1166146		Сангла-Хилл										review A5: agents 2026-10-18
+1165221	Sheikhupura											review A5: agents 2026-10-18
+1164970		Шуджаабад										review A5: agents 2026-10-18
+1164776		Синджхоро										review A5: agents 2026-10-18
+1163964		Тандо-Баго										review A5: agents 2026-10-18
+1162813	Vehari											review A5: agents 2026-10-18
+1170486	Mian Channu											review A5: agents 2026-10-18
+776103	Białołęka											review A5: agents 2026-10-18
+3086800		Руда-Слёнска										review A5: agents 2026-10-18
+107781		Эз-Зульфи										review A5: agents 2026-10-18
+103369		Биша										review A5: agents 2026-10-18
+11670045		Сабт-эль-Алая										review A5: agents 2026-10-18
+101760		Султана										review A5: agents 2026-10-18
+101732		Унайза										review A5: agents 2026-10-18
+379302	Geneina	Эль-Генейна										review A5: agents 2026-10-18
+1884365		Анг-Мо-Кио										review A5: agents 2026-10-18
+1884382		Бедок										review A5: agents 2026-10-18
+1881955		Джуронг-Уэст										review A5: agents 2026-10-18
+1880574		Кампонг-Пасир-Рис										review A5: agents 2026-10-18
+1884386		Квинстаун										review A5: agents 2026-10-18
+1880283		Сембаванг										review A5: agents 2026-10-18
+7289760		Сенгканг										review A5: agents 2026-10-18
+1880159		Улу-Бедок										review A5: agents 2026-10-18
+1882155		Ишунь										review A5: agents 2026-10-18
+60149		Эль-Дибир										review A5: agents 2026-10-18
+2244386		Тивауан										review A5: agents 2026-10-18
+13060482		Багонг-Силанг										review A5: agents 2026-10-18
+7090987		Багонг-Силанган										review A5: agents 2026-10-18
+2244799		Тиес-Нонес										review A5: agents 2026-10-18
+363807		Винеджок										review A5: agents 2026-10-18
+63400	Abudwak											review A5: agents 2026-10-18
+1282931	Lalitpur											review A5: agents 2026-10-18
+1157290		Баничанг										review A5: agents 2026-10-18
+1618177		Банкхлонгправет										review A5: agents 2026-10-18
+1613549		Бансамэдам										review A5: agents 2026-10-18
+8355932		Бангбон										review A5: agents 2026-10-18
+1619532		Бангкапи										review A5: agents 2026-10-18
+7026720		Бангкхэ										review A5: agents 2026-10-18
+1619485		Бангкхунтхиан										review A5: agents 2026-10-18
+6845329		Бангсы										review A5: agents 2026-10-18
+1619460		Бангкокной										review A5: agents 2026-10-18
+7026776		Бынгкум										review A5: agents 2026-10-18
+7026787		Чомтхонг										review A5: agents 2026-10-18
+6694101		Диндэнг										review A5: agents 2026-10-18
+1610538		Кабинбури										review A5: agents 2026-10-18
+1609899		Кхлонглуанг										review A5: agents 2026-10-18
+13494069		Кхлонгсамва										review A5: agents 2026-10-18
+6908641		Кхлонгтей										review A5: agents 2026-10-18
+7026833		Лакси										review A5: agents 2026-10-18
+6957690		Латкрабанг										review A5: agents 2026-10-18
+7026837		Латпхрао										review A5: agents 2026-10-18
+1608258		Нонгчок										review A5: agents 2026-10-18
+1608236		Нонгкхэм										review A5: agents 2026-10-18
+1608048		Паккрет										review A5: agents 2026-10-18
+1607782		Пхасичарен										review A5: agents 2026-10-18
+1607508		Пхрапрадэнг										review A5: agents 2026-10-18
+7026886		Саймай										review A5: agents 2026-10-18
+1606291		Симахапхот										review A5: agents 2026-10-18
+7026898		Суанлуанг										review A5: agents 2026-10-18
+1605843		Талингчан										review A5: agents 2026-10-18
+1605403		Тхонбури										review A5: agents 2026-10-18
+7026999		Тхунгкхру										review A5: agents 2026-10-18
+7027001		Вангтхонгланг										review A5: agents 2026-10-18
+11204413		Эль-Мурудж										review A5: agents 2026-10-18
+2467243		Сакиет-эд-Даир										review A5: agents 2026-10-18
+2467242		Сакиет-эз-Зит										review A5: agents 2026-10-18
+2473164	Sidi Hassine	Сиди-Хассин										review A5: agents 2026-10-18
+2464915		Сус										review A5: agents 2026-10-18
+2464960	La Soukra	Ла-Сукра										review A5: agents 2026-10-18
+2473247	Ariana											review A5: agents 2026-10-18
+752850		Адапазары										review A5: agents 2026-10-18
+298435		Арсуз										review A5: agents 2026-10-18
+745169	İnegöl											review A5: agents 2026-10-18
+745028		Измит										review A5: agents 2026-10-18
+11238838		Меркезефенди										review A5: agents 2026-10-18
+298333	Şanlıurfa											review A5: agents 2026-10-18
+298033		Вираншехир										review A5: agents 2026-10-18
+1993459		Чжанхуа										review A5: agents 2026-10-18
+1679136	Changhua											review A5: agents 2026-10-18
+1667982	Tamsui											review A5: agents 2026-10-18
+1678228		Цзилун										review A5: agents 2026-10-18
+1671444		Нэйли										review A5: agents 2026-10-18
+1665221		Юнкан										review A5: agents 2026-10-18
+155101	Makambako											review A5: agents 2026-10-18
+703845	Kryvyi Rih											review A5: agents 2026-10-18
+700569	Mykolaiv											review A5: agents 2026-10-18
+689558	Vinnytsia											review A5: agents 2026-10-18
+687700	Zaporizhzhia											review A5: agents 2026-10-18
+712451	Berdiansk											review A5: agents 2026-10-18
+709932	Kamianske											review A5: agents 2026-10-18
+234179		Бунамвая										review A5: agents 2026-10-18
+232713		Каджанси										review A5: agents 2026-10-18
+4684724		Сайпресс										review A5: agents 2026-10-18
+4619947		Ист-Чаттануга										review A5: agents 2026-10-18
+4756955		Ист-Хамптон										review A5: agents 2026-10-18
+4300488		Мидс										review A5: agents 2026-10-18
+4333190		Метери-Террас										review A5: agents 2026-10-18
+4903976		Норт-Пеория										review A5: agents 2026-10-18
+4839745		Норт-Стамфорд										review A5: agents 2026-10-18
+12541728		Саут-Фултон										review A5: agents 2026-10-18
+5317071		Темпе-Джанкшен										review A5: agents 2026-10-18
+7289169		Трай-Ситис										review A5: agents 2026-10-18
+1513604	Khiva											review A5: agents 2026-10-18
+1215957	Termez											review A5: agents 2026-10-18
+1512979	Kokand											review A5: agents 2026-10-18
+1512473	Urgench											review A5: agents 2026-10-18
+1513886	Jizzakh											review A5: agents 2026-10-18
+1514588	Andijan											review A5: agents 2026-10-18
+1513243	Margilan											review A5: agents 2026-10-18
+3487903		Альто-Баринас										review A5: agents 2026-10-18
+3638371		Ла-Консепсьон										review A5: agents 2026-10-18
+3633677		Лос-Растрохос										review A5: agents 2026-10-18
+3630932		Пало-Негро										review A5: agents 2026-10-18
+3629672	Puerto La Cruz											review A5: agents 2026-10-18
+3628489		Сан-Карлос-дель-Сулия		Сан-Карлос-д.-Сулия								review A5: agents 2026-10-18
+1594308		Аннён										review A5: agents 2026-10-18
+7289846		Бадинь										review A5: agents 2026-10-18
+1588129		Бави										review A5: agents 2026-10-18
+1568737		Бадон										review A5: agents 2026-10-18
+1586989		Буонхо										review A5: agents 2026-10-18
+1587759		Биньтхюи										review A5: agents 2026-10-18
+1591440		Баккуанг										review A5: agents 2026-10-18
+13405933		Бактыльем										review A5: agents 2026-10-18
+1588060		Бенкат										review A5: agents 2026-10-18
+1587976		Бенче										review A5: agents 2026-10-18
+1586551		Кайлэй										review A5: agents 2026-10-18
+1585489		Тилинь										review A5: agents 2026-10-18
+1585281		Тю										review A5: agents 2026-10-18
+1585317		Тёнтхань										review A5: agents 2026-10-18
+1586296		Канзуок										review A5: agents 2026-10-18
+8616113		Каузяй										review A5: agents 2026-10-18
+1586357	Cẩm Phả	Камфа										review A5: agents 2026-10-18
+1584784		Кодо										review A5: agents 2026-10-18
+1583518		Зиан										review A5: agents 2026-10-18
+9871722		Зялам										review A5: agents 2026-10-18
+1581755		Зязай										review A5: agents 2026-10-18
+1581461		Говап										review A5: agents 2026-10-18
+8616127		Хайбачынг										review A5: agents 2026-10-18
+8616124		Хоанкьем										review A5: agents 2026-10-18
+13562438		Хоангмай										review A5: agents 2026-10-18
+12217184	Lâm Hà	Ламха										review A5: agents 2026-10-18
+8657105		Хоакыонг										review A5: agents 2026-10-18
+9081327		Хоатхань										review A5: agents 2026-10-18
+1581331		Хайтяу										review A5: agents 2026-10-18
+1580400		Хонгнгы										review A5: agents 2026-10-18
+1579018		Кьенан										review A5: agents 2026-10-18
+1578163		Киань										review A5: agents 2026-10-18
+1564064		Лонгбьен										review A5: agents 2026-10-18
+9075789		Лонгкхань										review A5: agents 2026-10-18
+1575627		Лонгсюен										review A5: agents 2026-10-18
+1576633		Лангшон										review A5: agents 2026-10-18
+1574155		Михао										review A5: agents 2026-10-18
+1572532		Нгишон										review A5: agents 2026-10-18
+9534547		Нгабай										review A5: agents 2026-10-18
+1571951		Ниньхоа										review A5: agents 2026-10-18
+1570863		Фонгдьен										review A5: agents 2026-10-18
+12253704		Фукуок										review A5: agents 2026-10-18
+1570357		Фуми										review A5: agents 2026-10-18
+1570656		Фукйен										review A5: agents 2026-10-18
+13589354		Фойен										review A5: agents 2026-10-18
+9645086	District 3	Район 3										review A5: agents 2026-10-18
+9645071	District 4	Район 4										review A5: agents 2026-10-18
+9645085	District 10	Район 10										review A5: agents 2026-10-18
+9645084	District 11	Район 11										review A5: agents 2026-10-18
+9645073	District 5	Район 5										review A5: agents 2026-10-18
+9645072	District 6	Район 6										review A5: agents 2026-10-18
+12166273	Đức Thịnh	Дыктхинь										review A5: agents 2026-10-18
+1568212		Шадек										review A5: agents 2026-10-18
+1568142		Шамшон										review A5: agents 2026-10-18
+1567148		Тамки										review A5: agents 2026-10-18
+8656376		Тханькхе										review A5: agents 2026-10-18
+8616118		Тханьсуан										review A5: agents 2026-10-18
+12382296		Тхуанан										review A5: agents 2026-10-18
+1565047	Thuận Thành	Тхуантхань										review A5: agents 2026-10-18
+8594709	Bà Rịa	Бариа										review A5: agents 2026-10-18
+13513037	Sông Công	Шонгконг										review A5: agents 2026-10-18
+1566319		Тхайнгуен										review A5: agents 2026-10-18
+1590900	Thuận Châu	Тхуантяу										review A5: agents 2026-10-18
+1582497	Đông Triều	Донгчьеу										review A5: agents 2026-10-18
+1584242	Đại Từ	Дайты										review A5: agents 2026-10-18
+1565136		Тхотнот										review A5: agents 2026-10-18
+1565157		Тхойлай										review A5: agents 2026-10-18
+1563926		Чавинь										review A5: agents 2026-10-18
+1563287		Туенкуанг										review A5: agents 2026-10-18
+1567069		Танан										review A5: agents 2026-10-18
+1567032		Тантяу										review A5: agents 2026-10-18
+1566566		Тэйхо										review A5: agents 2026-10-18
+13680023		Тыонгмай										review A5: agents 2026-10-18
+1564555		Тиньбьен										review A5: agents 2026-10-18
+1562773		Виньтяу										review A5: agents 2026-10-18
+1562693		Виньлонг										review A5: agents 2026-10-18
+1560565		Суанлок										review A5: agents 2026-10-18
+1560037		Йенвинь										review A5: agents 2026-10-18
+1582926	Đông Hà	Донгха										review A5: agents 2026-10-18
+1571644		Омон										review A5: agents 2026-10-18
+1583478		Дьенбан										review A5: agents 2026-10-18
+1582173	Đức Trọng	Дыкчонг										review A5: agents 2026-10-18
+1582436		Донгсоай										review A5: agents 2026-10-18
+1582190		Дыкфо										review A5: agents 2026-10-18
+8764562		Дипслут										review A5: agents 2026-10-18
+1005646		Эмбаленхле										review A5: agents 2026-10-18
+11204106		Этватва										review A5: agents 2026-10-18
+1004866		Эватон										review A5: agents 2026-10-18
+11204237		Айвори-Парк										review A5: agents 2026-10-18
+11205248		Мотеруэлл										review A5: agents 2026-10-18
+967476		Оркни										review A5: agents 2026-10-18
+6951112		Сомерсет-Уэст										review A5: agents 2026-10-18
+944986		Фандербейлпарк										review A5: agents 2026-10-18
+13132725		Чунга										review A5: agents 2026-10-18
+911148		Китве										review A5: agents 2026-10-18
+1568574	Quy Nhon											review A5: agents 2026-10-18
+1584071	Đà Lạt											review A5: agents 2026-10-18

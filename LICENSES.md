@@ -113,3 +113,25 @@ The earthquake counts and event lists under `stats/` are derived from the **USGS
 
 Each event is assigned to a country with this dataset's ADM0 / ADM1 outlines (Natural Earth, public domain); see the
 README, "Area history statistics".
+
+## Place names pack (`places/`)
+
+The place-names pack (`places-core.sqlite.gz`, `places-detail.sqlite.gz`, release tags `bundle-places-*`) is licensed
+under **Creative Commons Attribution 4.0 (CC BY 4.0)**, because GeoNames' attribution travels with it. No share-alike.
+Credit line (also `meta.attribution` of both files):
+
+> Place names: GeoNames (https://www.geonames.org), CC BY 4.0, filtered, renamed and converted by The Shelter. Seas,
+> oceans, countries and provinces: Natural Earth (public domain). Some names: Wikidata (CC0).
+
+- **Towns:** GeoNames `cities1000` / `cities5000` and `alternateNamesV2` (https://www.geonames.org), **CC BY 4.0**.
+  Filtered (population, feature codes), joined to this dataset's outlines, renamed (curated overrides) and converted.
+- **Seas and oceans:** Natural Earth 10m `geography_marine_polys` 5.2.0: **public domain**; names curated by The
+  Shelter.
+- **Neutral zones and assignment areas:** Natural Earth 10m `admin_0_disputed_areas` and this dataset's ADM1 outlines
+  (Natural Earth): **public domain**.
+- **Countries and provinces:** this dataset's ADM0 and ADM1 outlines (Natural Earth): **public domain**.
+- **Names:** Wikidata labels and the few figures the overrides take from Wikidata (a population): **CC0**.
+
+The pack uses no OpenStreetMap, geoBoundaries or NeoFeoda data: of this dataset it reads the ADM0 and ADM1 outlines
+(Natural Earth) only, never the ADM2 districts (geoBoundaries, CC BY-SA); `places/verify.mjs` check 12 checks it. The
+inputs are listed with their sha256 in `places/sources.lock.json`.

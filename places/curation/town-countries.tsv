@@ -1,0 +1,28 @@
+# Town countries: a town takes GeoNames' country (its country code as the bundle's country, countries.tsv iso2), unless
+# a row here keeps the country of the outline the town lies in (final architecture 2.1; owner decisions Q1/Q2). A row
+# applies to the towns GeoNames files under `cc` whose outline country (the land function at the town: an assignment
+# area, the country and province outlines, else the nearest outline within 22 km) is `country`, inside `within` (a
+# zone or assignment key) when set. verify.mjs check 13 lists every town whose country differs from GeoNames' and fails
+# on one no row (or a places-overrides.tsv adm0) explains. A town whose outline country differs from its own keeps the
+# outline's as adm0_alt, so rule E still names it on that land (a border town inside a neighbour's simplified outline).
+cc	country	within	note
+UA	RUS	zone:crimea	Crimea and Sevastopol: the bundle's (Natural Earth de facto) Russia; the header shows the zone "Crimea"
+SY	ISR	zone:golan-heights	The Golan Heights: the bundle's Israel; the header shows the zone
+EH	MAR	zone:western-sahara	The Moroccan-administered part of Western Sahara: the bundle's Morocco; the header shows the zone
+IL	PSE	assign:palestine	Israeli settlements in the West Bank and East Jerusalem: Palestine (Q2)
+SO	SOL		Somaliland: a country of its own in the bundle (CountryName names it)
+CY	CYN		Northern Cyprus: a country of its own in the bundle (CountryName names it)
+KZ	KAB		The Baikonur Cosmodrome: a country of its own in the bundle
+CU	USG		Guantanamo Bay naval base: a country of its own in the bundle
+CY	ESB		Dhekelia: a UK Sovereign Base Area, a country of its own in the bundle
+GB	ESB		Dhekelia: a UK Sovereign Base Area, a country of its own in the bundle
+YT	FRA		Mayotte: GeoNames' own country code; the bundle's France
+RE	FRA		Reunion: GeoNames' own country code; the bundle's France
+GP	FRA		Guadeloupe: GeoNames' own country code; the bundle's France
+MQ	FRA		Martinique: GeoNames' own country code; the bundle's France
+GF	FRA		French Guiana: GeoNames' own country code; the bundle's France
+BQ	NLD		Bonaire, Sint Eustatius, Saba: GeoNames' own country code; the bundle's Netherlands
+TK	NZL		Tokelau: GeoNames' own country code; the bundle's New Zealand
+SJ	NOR		Svalbard: GeoNames' own country code; the bundle's Norway
+CC	IOA		Cocos (Keeling) Islands: the bundle's Indian Ocean Territories
+CX	IOA		Christmas Island: the bundle's Indian Ocean Territories

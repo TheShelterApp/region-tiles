@@ -1,0 +1,472 @@
+# Province name overrides, by pack key (adm1:<bundle id>). Empty cells keep Natural Earth's name.
+key	name_en	name_ru	short_en	short_ru	note
+adm1:RUS.83	Crimea	Крым			The neutral name inside zone:crimea (NE: "Autonomous Republic of Crimea" / Russian "Avtonomnaya Respublika Krym")
+adm1:RUS.64	Altai Krai	Алтайский край			NE 5.1.2 names RU-ALT (Altai Krai) "Altai Republic", like RU-AL
+adm1:RUS.29	Moscow Oblast	Московская область			NE's name_en "Moscow" is also the city's (RUS.30)
+adm1:UKR.13	Kyiv Oblast	Киевская область			NE's names equal the city's (UKR.24)
+adm1:USA.44	District of Columbia	Округ Колумбия			NE's name equals the state's (USA.7 Washington)
+adm1:BLR.6	Minsk Region	Минская область			NE's name_en equals the city's (BLR.7)
+adm1:KAZ.11	Almaty Region	Алматинская область			NE's name_en equals the city's (KAZ.15)
+adm1:UZB.13	Tashkent Region	Ташкентская область			NE's name_en equals the city's (UZB.14)
+adm1:BGR.9	Sofia Province	Софийская область			NE's name_en equals the city's (BGR.8)
+adm1:HRV.10	Zagreb County	Загребская жупания			NE's name_en equals the city's (HRV.11)
+adm1:MOZ.10	Maputo Province	Провинция Мапуту			NE's name_en equals the city's (MOZ.11)
+adm1:TWN.13	Chiayi County	Уезд Цзяи			NE's name_en equals the city's (TWN.14)
+adm1:TWN.5	Hsinchu County	Уезд Синьчжу			NE's name_en equals the city's (TWN.4)
+adm1:TUR.17		Афьонкарахисар			NE's Russian name carries the type word ("il")
+adm1:TUR.60		Кырыккале			NE's Russian name carries the type word ("il")
+adm1:TUR.67		Мардин			NE's Russian name carries the type word ("il")
+adm1:AIA.1	Anguilla	Ангилья			NE's unnamed sliver ("AIA+99?"): the country's name
+adm1:ATA.2	Antarctica	Антарктида			NE's unnamed sliver ("ATA+99?"): the country's name
+adm1:COL.1	Colombia	Колумбия			NE's unnamed sliver ("COL+99?"): the country's name
+adm1:KIR.2	Kiribati	Кирибати			NE's unnamed sliver ("KIR+99?"): the country's name
+adm1:MEX.1	Mexico	Мексика			NE's unnamed sliver ("MEX+99?"): the country's name
+adm1:RUS.1	Russia	Россия			NE's unnamed sliver ("RUS+99?"): the country's name
+adm1:VEN.1	Venezuela	Венесуэла			NE's unnamed sliver ("VEN+99?"): the country's name
+adm1:ARE.4		Фуджейра			NE has no Russian name
+adm1:ARE.6		Сайх-Мудайра			NE has no Russian name
+adm1:ASM.1		Восточный округ			NE has no Russian name
+adm1:ASM.2		Острова Мануа			NE has no Russian name
+adm1:HKG.3	Eastern District	Восточный район			NE has no Russian name; review A5: agents 2026-10-18
+adm1:MDG.5		Андруй			NE has no Russian name
+adm1:CHN.3			Guangxi	Гуанси	Short form of the autonomous region
+adm1:CHN.10			Tibet	Тибет	Short form of the autonomous region
+adm1:CHN.11			Xinjiang	Синьцзян	Short form of the autonomous region
+adm1:CHN.13			Ningxia	Нинся	Short form of the autonomous region
+adm1:RUS.61			Khanty-Mansi AO	ХМАО — Югра	Short form
+adm1:RUS.47			Yamalo-Nenets AO	ЯНАО	Short form
+adm1:RUS.9			Chukotka	Чукотка	Short form
+adm1:RUS.46			Nenets AO	НАО	Short form
+adm1:RUS.79	Jewish Autonomous Oblast		Jewish AO	ЕАО	Short form; review A5: agents 2026-10-18
+adm1:RUS.7	North Ossetia-Alania	Северная Осетия — Алания	North Ossetia	Северная Осетия	NE: "Republic of North Ossetia-Alania"
+adm1:PAN.10	Bocas del Toro				NE's name_en "comarca Ngabe-Bugle" carries the type word; review A5: agents 2026-10-18
+adm1:PNG.8	Bougainville				NE's name_en "of Bougainville"
+adm1:TJK.3	Districts of Republican Subordination	Районы республиканского подчинения			NE's name_en starts in lower case; review A5: agents 2026-10-18
+adm1:AFG.13	Daykundi	Дайкунди			review A5: agents 2026-10-18
+adm1:AFG.28	Panjshir	Панджшер			review A5: agents 2026-10-18
+adm1:AZE.58	Lachin	Лачинский район			review A5: agents 2026-10-18
+adm1:AZE.32		Ленкоранский район			review A5: agents 2026-10-18
+adm1:AZE.60	Shusha	Шушинский район			review A5: agents 2026-10-18
+adm1:AZE.76		Шуша			review A5: agents 2026-10-18
+adm1:ECU.17	Tungurahua	Тунгурауа			review A5: agents 2026-10-18
+adm1:ECU.18	Napo	Напо			review A5: agents 2026-10-18
+adm1:ERI.2	Maekel	Маэкель			review A5: agents 2026-10-18
+adm1:ERI.3	Northern Red Sea	Сэмиэн-Кэй-Бахри			review A5: agents 2026-10-18
+adm1:ERI.4	Anseba	Ансэба			review A5: agents 2026-10-18
+adm1:ERI.5	Debub	Дэбуб			review A5: agents 2026-10-18
+adm1:GUY.1	East Berbice-Corentyne	Ист-Бербис-Корентайн			review A5: agents 2026-10-18
+adm1:GUY.3	Upper Demerara-Berbice	Аппер-Демерара-Бербис			review A5: agents 2026-10-18
+adm1:GUY.4	Upper Takutu-Upper Essequibo	Аппер-Такуту-Аппер-Эссекибо			review A5: agents 2026-10-18
+adm1:GUY.6	Cuyuni-Mazaruni	Куюни-Мазаруни			review A5: agents 2026-10-18
+adm1:GUY.7	Demerara-Mahaica	Демерара-Махайка			review A5: agents 2026-10-18
+adm1:GUY.8	Essequibo Islands-West Demerara	Эссекибо-Айлендс-Уэст-Демерара			review A5: agents 2026-10-18
+adm1:GUY.10	Pomeroon-Supenaam	Померун-Супенаам			review A5: agents 2026-10-18
+adm1:FRO.1	Faroe Islands	Фарерские острова			review A5: agents 2026-10-18
+adm1:GGY.1	Guernsey	Гернси			review A5: agents 2026-10-18
+adm1:GBR.103	Wirral	Уиррал			review A5: agents 2026-10-18
+adm1:GBR.192	St Helens	Сент-Хеленс			review A5: agents 2026-10-18
+adm1:GBR.87	Cookstown	Кукстаун			review A5: agents 2026-10-18
+adm1:ITA.10	Genoa	Генуя			review A5: agents 2026-10-18
+adm1:ITA.102	South Tyrol	Южный Тироль			review A5: agents 2026-10-18
+adm1:CIV.17	Moyen-Comoé	Муайен-Комоэ			review A5: agents 2026-10-18
+adm1:LBY.14		Триполи			review A5: agents 2026-10-18
+adm1:BIH.16		Сараево-Романия			review A5: agents 2026-10-18
+adm1:BIH.1	Canton 10	Герцегбосанский кантон			review A5: agents 2026-10-18
+adm1:BTN.11	Sarpang	Сарпанг			review A5: agents 2026-10-18
+adm1:DOM.16	Elías Piña	Элиас-Пинья			review A5: agents 2026-10-18
+adm1:KAZ.16	Astana	Астана			review A5: agents 2026-10-18
+adm1:FSM.2		Чуук			review A5: agents 2026-10-18
+adm1:FSM.4		Косраэ			review A5: agents 2026-10-18
+adm1:HUN.17		Чонград-Чанад			review A5: agents 2026-10-18
+adm1:CHN.29		Цзилинь			review A5: agents 2026-10-18
+adm1:LKA.1		Канди			review A5: agents 2026-10-18
+adm1:CZE.2	Plzeň	Пльзеньский край			review A5: agents 2026-10-18
+adm1:KHM.11	Kampong Speu				review A5: agents 2026-10-18
+adm1:BRA.10	Federal District				review A5: agents 2026-10-18
+adm1:COL.8	San Andrés and Providencia				review A5: agents 2026-10-18
+adm1:DEU.4	Bremen				review A5: agents 2026-10-18
+adm1:DNK.4	Capital Region of Denmark				review A5: agents 2026-10-18
+adm1:FRA.80	Pyrénées-Atlantiques				review A5: agents 2026-10-18
+adm1:GBR.183	City of London				review A5: agents 2026-10-18
+adm1:GRC.6	Thessaly				review A5: agents 2026-10-18
+adm1:GRC.11	Central Macedonia				review A5: agents 2026-10-18
+adm1:HRV.8	Primorje-Gorski Kotar				review A5: agents 2026-10-18
+adm1:BLR.3	Mogilev				review A5: agents 2026-10-18
+adm1:COM.2	Grande Comore	Нгазиджа			review A5: agents 2026-10-18
+adm1:BMU.2	St. George's	Сент-Джорджес			review A5: agents 2026-10-18
+adm1:BMU.7		Сент-Джорджес			review A5: agents 2026-10-18
+adm1:HKG.18	Islands District				review A5: agents 2026-10-18
+adm1:IOA.1	Cocos Islands				review A5: agents 2026-10-18
+adm1:DOM.29	National District				review A5: agents 2026-10-18
+adm1:AZE.74	Shirvan				review A5: agents 2026-10-18
+adm1:CZE.3	South Moravian Region	Южноморавский край			review A5: agents 2026-10-18
+adm1:CZE.8	South Bohemian Region				review A5: agents 2026-10-18
+adm1:CZE.11	Central Bohemian Region				review A5: agents 2026-10-18
+adm1:CZE.14	Moravian-Silesian Region				review A5: agents 2026-10-18
+adm1:AIA.2		Блоуинг-Пойнт			review A5: agents 2026-10-18
+adm1:AIA.4		Джордж-Хилл			review A5: agents 2026-10-18
+adm1:AIA.11		Стони-Граунд			review A5: agents 2026-10-18
+adm1:AIA.8		Сэнди-Граунд			review A5: agents 2026-10-18
+adm1:AIA.14		Валли			review A5: agents 2026-10-18
+adm1:ARE.3		Фуджейра			review A5: agents 2026-10-18
+adm1:ASM.3		Атолл Роз			review A5: agents 2026-10-18
+adm1:ASM.4		Остров Суэйнс			review A5: agents 2026-10-18
+adm1:ASM.5		Западный округ			review A5: agents 2026-10-18
+adm1:ATA.1		Антарктида			review A5: agents 2026-10-18
+adm1:AZE.19		Аджикабульский район			review A5: agents 2026-10-18
+adm1:AZE.12		Товузский район			review A5: agents 2026-10-18
+adm1:AZE.46		Зердабский район			review A5: agents 2026-10-18
+adm1:AZE.48		Балакенский район			review A5: agents 2026-10-18
+adm1:AZE.42		Сумгаит			review A5: agents 2026-10-18
+adm1:BDI.2		Карузи			review A5: agents 2026-10-18
+adm1:BEN.3		Коллин			review A5: agents 2026-10-18
+adm1:BEN.4		Атлантик			review A5: agents 2026-10-18
+adm1:BFA.19		Пассоре			review A5: agents 2026-10-18
+adm1:BFA.21		Сангие			review A5: agents 2026-10-18
+adm1:BFA.36		Туй			review A5: agents 2026-10-18
+adm1:BHR.3		Центральная мухафаза			review A5: agents 2026-10-18
+adm1:BHS.3		Западный Большой Багама			review A5: agents 2026-10-18
+adm1:BHS.18		Северная Эльютера			review A5: agents 2026-10-18
+adm1:BHS.19		Центральная Эльютера			review A5: agents 2026-10-18
+adm1:BHS.20		Южная Эльютера			review A5: agents 2026-10-18
+adm1:BMU.11		Уорик			review A5: agents 2026-10-18
+adm1:BRB.1		Крайст-Черч			review A5: agents 2026-10-18
+adm1:BRB.3		Сент-Джордж			review A5: agents 2026-10-18
+adm1:BRB.8		Сент-Майкл			review A5: agents 2026-10-18
+adm1:CIV.4		Дикс-Юит-Монтань			review A5: agents 2026-10-18
+adm1:CIV.16		Муайен-Кавалли			review A5: agents 2026-10-18
+adm1:COK.10		Манихики			review A5: agents 2026-10-18
+adm1:CPV.2		Сан-Филипи			review A5: agents 2026-10-18
+adm1:CPV.8		Санта-Круш			review A5: agents 2026-10-18
+adm1:CPV.13		Прая			review A5: agents 2026-10-18
+adm1:CPV.20		Порту-Нову			review A5: agents 2026-10-18
+adm1:CPV.22		Паул			review A5: agents 2026-10-18
+adm1:CZE.4		Злинский край			review A5: agents 2026-10-18
+adm1:DJI.1		Али-Сабих			review A5: agents 2026-10-18
+adm1:DJI.6		Таджура			review A5: agents 2026-10-18
+adm1:DMA.1		Приход Сент-Эндрю			review A5: agents 2026-10-18
+adm1:DMA.5		Приход Сент-Джозеф			review A5: agents 2026-10-18
+adm1:DOM.20		Монсеньор-Ноуэль			review A5: agents 2026-10-18
+adm1:DZA.25		Шлеф			review A5: agents 2026-10-18
+adm1:ETH.4		Регион народов и народностей юга			review A5: agents 2026-10-18
+adm1:FIN.8		Южная Остроботния			review A5: agents 2026-10-18
+adm1:FIN.14		Южное Саво			review A5: agents 2026-10-18
+adm1:GAB.3		Волё-Нтем			review A5: agents 2026-10-18
+adm1:GAB.5		Нгунье			review A5: agents 2026-10-18
+adm1:GBR.197		Лидс			review A5: agents 2026-10-18
+adm1:GBR.225		Брэкнелл-Форест			review A5: agents 2026-10-18
+adm1:GBR.232		Острова Силли			review A5: agents 2026-10-18
+adm1:GHA.1		Северная область			review A5: agents 2026-10-18
+adm1:GHA.2		Верхняя Восточная область			review A5: agents 2026-10-18
+adm1:GHA.6		Центральная область			review A5: agents 2026-10-18
+adm1:GHA.8		Западная область			review A5: agents 2026-10-18
+adm1:GIN.20		Префектура Кундара			review A5: agents 2026-10-18
+adm1:GMB.5		Западный округ			review A5: agents 2026-10-18
+adm1:GNQ.1		Аннобон			review A5: agents 2026-10-18
+adm1:GRD.6		Приход Сент-Марк			review A5: agents 2026-10-18
+adm1:HKG.1		Центральный и Западный район			review A5: agents 2026-10-18
+adm1:HKG.7		Шамшуйпоу			review A5: agents 2026-10-18
+adm1:HRV.6		Карловацкая жупания			review A5: agents 2026-10-18
+adm1:HRV.20		Меджимурская жупания			review A5: agents 2026-10-18
+adm1:HTI.8		Северный департамент			review A5: agents 2026-10-18
+adm1:HTI.10		Юго-Восточный департамент			review A5: agents 2026-10-18
+adm1:IDN.18		Острова Риау			review A5: agents 2026-10-18
+adm1:IND.19		Мегхалая			review A5: agents 2026-10-18
+adm1:ISL.4		Нордюрланд-Вестра			review A5: agents 2026-10-18
+adm1:ISR.4		Северный округ			review A5: agents 2026-10-18
+adm1:JAM.7		Уэстморленд			review A5: agents 2026-10-18
+adm1:JAM.9		Портленд			review A5: agents 2026-10-18
+adm1:JAM.10		Сент-Анн			review A5: agents 2026-10-18
+adm1:JAM.13		Сент-Эндрю			review A5: agents 2026-10-18
+adm1:JAM.14		Сент-Томас			review A5: agents 2026-10-18
+adm1:JPN.3		Симанэ			review A5: agents 2026-10-18
+adm1:JPN.10		Эхимэ			review A5: agents 2026-10-18
+adm1:KGZ.8		Ошская область			review A5: agents 2026-10-18
+adm1:KNA.1		Крайст-Черч-Никола-Таун			review A5: agents 2026-10-18
+adm1:KNA.8		Сент-Мэри-Кайон			review A5: agents 2026-10-18
+adm1:LAO.8		Провинция Вьентьян			review A5: agents 2026-10-18
+adm1:LBR.8		Гранд-Басса			review A5: agents 2026-10-18
+adm1:LBY.5		Эш-Шати			review A5: agents 2026-10-18
+adm1:LBY.7		Мурзук			review A5: agents 2026-10-18
+adm1:LBY.20		Эль-Кубба			review A5: agents 2026-10-18
+adm1:LKA.4		Ампара			review A5: agents 2026-10-18
+adm1:LKA.6		Полоннарува			review A5: agents 2026-10-18
+adm1:LKA.7		Тринкомали			review A5: agents 2026-10-18
+adm1:LKA.12		Джафна			review A5: agents 2026-10-18
+adm1:LKA.24		Гампаха			review A5: agents 2026-10-18
+adm1:LSO.1		Береа			review A5: agents 2026-10-18
+adm1:LTU.1		Алитусский уезд			review A5: agents 2026-10-18
+adm1:LVA.4		Резекненский край			review A5: agents 2026-10-18
+adm1:LVA.10		Даугавпилсский край			review A5: agents 2026-10-18
+adm1:LVA.13		Елгавский край			review A5: agents 2026-10-18
+adm1:LVA.7		Валкский край			review A5: agents 2026-10-18
+adm1:AND.7		Сант-Жулия-де-Лория			review A5: agents 2026-10-18
+adm1:AND.2		Ла-Массана			review A5: agents 2026-10-18
+adm1:ARG.7	Buenos Aires Province	Провинция Буэнос-Айрес			review A5: agents 2026-10-18
+adm1:HKG.11		Шатхинь			review A5: agents 2026-10-18
+adm1:LVA.99	Cēsis	Цесисский край			review A5: agents 2026-10-18
+adm1:LVA.100	Smiltene	Смилтенский край			review A5: agents 2026-10-18
+adm1:LVA.101	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.102	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.103	Madona	Мадонский край			review A5: agents 2026-10-18
+adm1:LVA.104	Madona	Мадонский край			review A5: agents 2026-10-18
+adm1:LVA.105	Cēsis	Цесисский край			review A5: agents 2026-10-18
+adm1:LVA.106	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.107	Cēsis	Цесисский край			review A5: agents 2026-10-18
+adm1:LVA.108	Madona	Мадонский край			review A5: agents 2026-10-18
+adm1:LVA.109	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.110	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.111	Cēsis	Цесисский край			review A5: agents 2026-10-18
+adm1:LVA.112	Cēsis	Цесисский край			review A5: agents 2026-10-18
+adm1:LVA.113	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.114	Valmiera Municipality	Валмиерский край			review A5: agents 2026-10-18
+adm1:LVA.115	Cēsis	Цесисский край			review A5: agents 2026-10-18
+adm1:LVA.116	Smiltene	Смилтенский край			review A5: agents 2026-10-18
+adm1:LVA.117	Smiltene	Смилтенский край			review A5: agents 2026-10-18
+adm1:LVA.118	Varakļāni	Вараклянский край			review A5: agents 2026-10-18
+adm1:LVA.119	Ventspils Municipality	Вентспилсский край			review A5: agents 2026-10-18
+adm1:LVA.44	Jēkabpils Municipality	Екабпилсский край			review A5: agents 2026-10-18
+adm1:LVA.29	Kuldīga	Кулдигский край			review A5: agents 2026-10-18
+adm1:LVA.30	Saldus	Салдусский край			review A5: agents 2026-10-18
+adm1:LVA.31	Kuldīga	Кулдигский край			review A5: agents 2026-10-18
+adm1:LVA.32	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.33	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.34	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.35	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.36	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.37	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.38	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.39	South Kurzeme	Южно-Курземский край			review A5: agents 2026-10-18
+adm1:LVA.40	Talsi	Талсинский край			review A5: agents 2026-10-18
+adm1:LVA.41	Talsi	Талсинский край			review A5: agents 2026-10-18
+adm1:LVA.42	Talsi	Талсинский край			review A5: agents 2026-10-18
+adm1:LVA.43	Aizkraukle	Айзкраукльский край			review A5: agents 2026-10-18
+adm1:LVA.45	Jēkabpils Municipality	Екабпилсский край			review A5: agents 2026-10-18
+adm1:LVA.46	Jēkabpils Municipality	Екабпилсский край			review A5: agents 2026-10-18
+adm1:LVA.47	Aizkraukle	Айзкраукльский край			review A5: agents 2026-10-18
+adm1:LVA.48	Aizkraukle	Айзкраукльский край			review A5: agents 2026-10-18
+adm1:LVA.50	Aizkraukle	Айзкраукльский край			review A5: agents 2026-10-18
+adm1:LVA.51	Aizkraukle	Айзкраукльский край			review A5: agents 2026-10-18
+adm1:LVA.52	Jēkabpils Municipality	Екабпилсский край			review A5: agents 2026-10-18
+adm1:LVA.53	Jēkabpils Municipality	Екабпилсский край			review A5: agents 2026-10-18
+adm1:LVA.54	Bauska	Бауский край			review A5: agents 2026-10-18
+adm1:LVA.55	Bauska	Бауский край			review A5: agents 2026-10-18
+adm1:LVA.56	Jelgava Municipality	Елгавский край			review A5: agents 2026-10-18
+adm1:LVA.57	Bauska	Бауский край			review A5: agents 2026-10-18
+adm1:LVA.58	Dobele	Добельский край			review A5: agents 2026-10-18
+adm1:LVA.59	Dobele	Добельский край			review A5: agents 2026-10-18
+adm1:LVA.60	Balvi	Балвский край			review A5: agents 2026-10-18
+adm1:LVA.61	Balvi	Балвский край			review A5: agents 2026-10-18
+adm1:LVA.62	Balvi	Балвский край			review A5: agents 2026-10-18
+adm1:LVA.63	Ludza	Лудзенский край			review A5: agents 2026-10-18
+adm1:LVA.64	Ludza	Лудзенский край			review A5: agents 2026-10-18
+adm1:LVA.65	Ludza	Лудзенский край			review A5: agents 2026-10-18
+adm1:LVA.66	Krāslava	Краславский край			review A5: agents 2026-10-18
+adm1:LVA.67	Preiļi	Прейльский край			review A5: agents 2026-10-18
+adm1:LVA.68	Augšdaugava	Аугшдаугавский край			review A5: agents 2026-10-18
+adm1:LVA.70	Preiļi	Прейльский край			review A5: agents 2026-10-18
+adm1:LVA.71	Preiļi	Прейльский край			review A5: agents 2026-10-18
+adm1:LVA.72	Rēzekne Municipality	Резекненский край			review A5: agents 2026-10-18
+adm1:LVA.74	Limbaži	Лимбажский край			review A5: agents 2026-10-18
+adm1:LVA.75	Mārupe	Марупский край			review A5: agents 2026-10-18
+adm1:LVA.76	Ķekava	Кекавский край			review A5: agents 2026-10-18
+adm1:LVA.77	Ādaži	Адажский край			review A5: agents 2026-10-18
+adm1:LVA.78	Tukums	Тукумсский край			review A5: agents 2026-10-18
+adm1:LVA.79	Ropaži	Ропажский край			review A5: agents 2026-10-18
+adm1:LVA.80	Ogre	Огрский край			review A5: agents 2026-10-18
+adm1:LVA.81	Sigulda	Сигулдский край			review A5: agents 2026-10-18
+adm1:LVA.82	Tukums	Тукумсский край			review A5: agents 2026-10-18
+adm1:LVA.84	Tukums	Тукумсский край			review A5: agents 2026-10-18
+adm1:LVA.85	Ogre	Огрский край			review A5: agents 2026-10-18
+adm1:LVA.87	Sigulda	Сигулдский край			review A5: agents 2026-10-18
+adm1:LVA.88	Ogre	Огрский край			review A5: agents 2026-10-18
+adm1:LVA.89	Sigulda	Сигулдский край			review A5: agents 2026-10-18
+adm1:LVA.93	Limbaži	Лимбажский край			review A5: agents 2026-10-18
+adm1:LVA.96	Saulkrasti	Саулкрастский край			review A5: agents 2026-10-18
+adm1:LVA.98	Ropaži	Ропажский край			review A5: agents 2026-10-18
+adm1:NOR.7	Trøndelag	Трёнделаг			review A5: agents 2026-10-18
+adm1:NOR.21	Trøndelag	Трёнделаг			review A5: agents 2026-10-18
+adm1:NOR.9	Vestland	Вестланн			review A5: agents 2026-10-18
+adm1:NOR.11	Vestland	Вестланн			review A5: agents 2026-10-18
+adm1:NOR.8	Agder	Агдер			review A5: agents 2026-10-18
+adm1:NOR.12	Agder	Агдер			review A5: agents 2026-10-18
+adm1:NOR.15	Innlandet	Иннландет			review A5: agents 2026-10-18
+adm1:NOR.16	Innlandet	Иннландет			review A5: agents 2026-10-18
+adm1:VNM.11	Lào Cai	Лаокай			review A5: agents 2026-10-18
+adm1:VNM.12	Phú Thọ	Футхо			review A5: agents 2026-10-18
+adm1:VNM.13	Haiphong	Хайфон			review A5: agents 2026-10-18
+adm1:VNM.18	Phú Thọ	Футхо			review A5: agents 2026-10-18
+adm1:VNM.20	Ninh Bình	Ниньбинь			review A5: agents 2026-10-18
+adm1:VNM.21	Ninh Bình	Ниньбинь			review A5: agents 2026-10-18
+adm1:VNM.23	Bắc Ninh	Бакнинь			review A5: agents 2026-10-18
+adm1:VNM.24	Hưng Yên	Хынгйен			review A5: agents 2026-10-18
+adm1:VNM.27	Quảng Trị	Куангчи			review A5: agents 2026-10-18
+adm1:VNM.32	Khánh Hòa	Кханьхоа			review A5: agents 2026-10-18
+adm1:VNM.33	Đắk Lắk	Даклак			review A5: agents 2026-10-18
+adm1:VNM.34	Ho Chi Minh City	Хошимин			review A5: agents 2026-10-18
+adm1:VNM.35	Đồng Tháp	Донгтхап			review A5: agents 2026-10-18
+adm1:VNM.36	Lâm Đồng	Ламдонг			review A5: agents 2026-10-18
+adm1:VNM.37	Đồng Nai	Донгнай			review A5: agents 2026-10-18
+adm1:VNM.38	Gia Lai	Зялай			review A5: agents 2026-10-18
+adm1:VNM.39	Quảng Ngãi	Куангнгай			review A5: agents 2026-10-18
+adm1:VNM.40	Da Nang	Дананг			review A5: agents 2026-10-18
+adm1:VNM.45	Ho Chi Minh City	Хошимин			review A5: agents 2026-10-18
+adm1:VNM.46	Lâm Đồng	Ламдонг			review A5: agents 2026-10-18
+adm1:VNM.52	An Giang	Анзянг			review A5: agents 2026-10-18
+adm1:VNM.53	Tây Ninh	Тэйнинь			review A5: agents 2026-10-18
+adm1:VNM.54	Vĩnh Long	Виньлонг			review A5: agents 2026-10-18
+adm1:VNM.55	Cần Thơ	Кантхо			review A5: agents 2026-10-18
+adm1:VNM.56	Cà Mau	Камау			review A5: agents 2026-10-18
+adm1:VNM.58	Cần Thơ	Кантхо			review A5: agents 2026-10-18
+adm1:VNM.59	Vĩnh Long	Виньлонг			review A5: agents 2026-10-18
+adm1:VNM.62	Tuyên Quang	Туенкуанг			review A5: agents 2026-10-18
+adm1:VNM.4	Thái Nguyên	Тхайнгуен			review A5: agents 2026-10-18
+adm1:VNM.15	Hưng Yên	Хынгйен			review A5: agents 2026-10-18
+adm1:VNM.47	Đồng Nai	Донгнай			review A5: agents 2026-10-18
+adm1:VNM.43	Huế	Хюэ			review A5: agents 2026-10-18
+adm1:VNM.51	Ho Chi Minh City				review A5: agents 2026-10-18
+adm1:MDA.14	Gagauzia	Гагаузия			review A5: agents 2026-10-18
+adm1:MDA.20		Каларашский район			review A5: agents 2026-10-18
+adm1:MDA.32	Rîbnița	Рыбницкий район			review A5: agents 2026-10-18
+adm1:MAR.2	Fès-Boulemane				review A5: agents 2026-10-18
+adm1:MAR.7		Рабат-Сале-Земмур-Заер			review A5: agents 2026-10-18
+adm1:MAR.11	Souss-Massa-Drâa				review A5: agents 2026-10-18
+adm1:MAR.16		Уэд-Эд-Дахаб			review A5: agents 2026-10-18
+adm1:MDV.21		Адду			review A5: agents 2026-10-18
+adm1:MDG.1	Alaotra-Mangoro	Алаотра-Мангоро			review A5: agents 2026-10-18
+adm1:MDG.3	Analamanga	Аналаманга			review A5: agents 2026-10-18
+adm1:MDG.4	Analanjirofo	Аналанджирофо			review A5: agents 2026-10-18
+adm1:MDG.9	Atsinanana	Ацинанана			review A5: agents 2026-10-18
+adm1:MDG.12	Bongolava	Бонголава			review A5: agents 2026-10-18
+adm1:MDG.16	Itasy	Итаси			review A5: agents 2026-10-18
+adm1:MDG.21	Vakinankaratra	Вакинанкаратра			review A5: agents 2026-10-18
+adm1:MDG.7		Ацимо-Андрефана			review A5: agents 2026-10-18
+adm1:MDG.8		Ацимо-Ацинанана			review A5: agents 2026-10-18
+adm1:MDG.14		Верхняя Мациатра			review A5: agents 2026-10-18
+adm1:MDG.15		Ихоромбе			review A5: agents 2026-10-18
+adm1:MEX.23	Mexico City				review A5: agents 2026-10-18
+adm1:MEX.27		Штат Мехико			review A5: agents 2026-10-18
+adm1:MKD.7	Petrovec	Петровец			review A5: agents 2026-10-18
+adm1:MKD.56		Центар-Жупа			review A5: agents 2026-10-18
+adm1:MKD.22	Kičevo	Кичево			review A5: agents 2026-10-18
+adm1:MKD.55	Kičevo	Кичево			review A5: agents 2026-10-18
+adm1:MKD.58	Kičevo	Кичево			review A5: agents 2026-10-18
+adm1:MKD.61	Kičevo	Кичево			review A5: agents 2026-10-18
+adm1:MLI.6	Sikasso				review A5: agents 2026-10-18
+adm1:MLT.27	Ħaż-Żebbuġ				review A5: agents 2026-10-18
+adm1:MLT.18		Сан-Джванн			review A5: agents 2026-10-18
+adm1:MLT.53		Кренди			review A5: agents 2026-10-18
+adm1:MNP.4	Northern Islands	Северные острова			review A5: agents 2026-10-18
+adm1:MRT.8		Гидимака			review A5: agents 2026-10-18
+adm1:MUS.11		Катр-Борн			review A5: agents 2026-10-18
+adm1:MUS.2		Бо-Бассен — Роз-Хилл			review A5: agents 2026-10-18
+adm1:MWI.1	Karonga	Каронга			review A5: agents 2026-10-18
+adm1:MWI.11		Лилонгве			review A5: agents 2026-10-18
+adm1:MWI.12		Мангочи			review A5: agents 2026-10-18
+adm1:MWI.21		Нсандже			review A5: agents 2026-10-18
+adm1:MWI.6		Нкотакота			review A5: agents 2026-10-18
+adm1:NAM.13		Замбези			review A5: agents 2026-10-18
+adm1:NAM.11		Каванго			review A5: agents 2026-10-18
+adm1:NCL.1		Острова Луайоте			review A5: agents 2026-10-18
+adm1:NIC.2		Рио-Сан-Хуан			review A5: agents 2026-10-18
+adm1:NIC.3		Южное Карибское побережье			review A5: agents 2026-10-18
+adm1:NIC.7		Северное Карибское побережье			review A5: agents 2026-10-18
+adm1:NPL.12	Kosi Zone	Коси			review A5: agents 2026-10-18
+adm1:NRU.8		Эва			review A5: agents 2026-10-18
+adm1:NRU.6		Уабоэ			review A5: agents 2026-10-18
+adm1:NRU.12		Анибаре			review A5: agents 2026-10-18
+adm1:OMN.3	Ash Sharqiyah South	Южная Эш-Шаркия			review A5: agents 2026-10-18
+adm1:OMN.11		Южная Эль-Батина			review A5: agents 2026-10-18
+adm1:OMN.6		Северная Эль-Батина			review A5: agents 2026-10-18
+adm1:PAK.2		Азад-Кашмир			review A5: agents 2026-10-18
+adm1:PAK.3		Столичная территория Исламабад			review A5: agents 2026-10-18
+adm1:PAK.5	Khyber Pakhtunkhwa	Хайбер-Пахтунхва			review A5: agents 2026-10-18
+adm1:PAN.9		Гуна-Яла			review A5: agents 2026-10-18
+adm1:PER.7	Cusco				review A5: agents 2026-10-18
+adm1:PER.14	Huánuco				review A5: agents 2026-10-18
+adm1:PER.26	Lima Region	Регион Лима			review A5: agents 2026-10-18
+adm1:PHL.35	Mountain Province				review A5: agents 2026-10-18
+adm1:PHL.71		Давао-де-Оро			review A5: agents 2026-10-18
+adm1:PHL.72	Surigao del Norte	Северный Суригао			review A5: agents 2026-10-18
+adm1:PHL.80	Zamboanga City	Замбоанга			review A5: agents 2026-10-18
+adm1:PHL.101		Мандалуйонг			review A5: agents 2026-10-18
+adm1:PHL.102	Manila	Манила			review A5: agents 2026-10-18
+adm1:PHL.106		Валенсуэла			review A5: agents 2026-10-18
+adm1:PHL.109		Сан-Хуан			review A5: agents 2026-10-18
+adm1:PHL.112		Пасай			review A5: agents 2026-10-18
+adm1:PHL.114	Las Piñas				review A5: agents 2026-10-18
+adm1:PHL.81	Cebu City				review A5: agents 2026-10-18
+adm1:PHL.85	Iloilo City				review A5: agents 2026-10-18
+adm1:PHL.86	Cotabato City				review A5: agents 2026-10-18
+adm1:PRK.11		Расон			review A5: agents 2026-10-18
+adm1:PYF.4		Острова Тубуаи			review A5: agents 2026-10-18
+adm1:QAT.7		Эд-Даайен			review A5: agents 2026-10-18
+adm1:SDN.5	West Darfur				review A5: agents 2026-10-18
+adm1:SGP.1	Central Singapore	Центральный Сингапур			review A5: agents 2026-10-18
+adm1:SGP.2	South West				review A5: agents 2026-10-18
+adm1:SGP.4	North East				review A5: agents 2026-10-18
+adm1:SGP.5	South East				review A5: agents 2026-10-18
+adm1:SPM.1	Saint-Pierre	Сен-Пьер			review A5: agents 2026-10-18
+adm1:SRB.15	Pomoravlje				review A5: agents 2026-10-18
+adm1:SSD.6		Джонглей			review A5: agents 2026-10-18
+adm1:SVN.7		Загорье-об-Сави			review A5: agents 2026-10-18
+adm1:SVN.12	Gorenja Vas–Poljane				review A5: agents 2026-10-18
+adm1:SVN.42		Моравске-Топлице			review A5: agents 2026-10-18
+adm1:SVN.46		Свети-Юрий-об-Шчавници			review A5: agents 2026-10-18
+adm1:SVN.57		Доброва-Полхов-Градец			review A5: agents 2026-10-18
+adm1:SVN.63		Луче			review A5: agents 2026-10-18
+adm1:SVN.95		Мирна-Печ			review A5: agents 2026-10-18
+adm1:SVN.107		Подчетртек			review A5: agents 2026-10-18
+adm1:SVN.114		Чреншовци			review A5: agents 2026-10-18
+adm1:SVN.121		Велика-Полана			review A5: agents 2026-10-18
+adm1:SVN.126		Цанкова			review A5: agents 2026-10-18
+adm1:SVN.127		Горня-Радгона			review A5: agents 2026-10-18
+adm1:SVN.129		Пуцонци			review A5: agents 2026-10-18
+adm1:SVN.134	Krško				review A5: agents 2026-10-18
+adm1:SVN.144		Горни-Град			review A5: agents 2026-10-18
+adm1:SVN.150		Иванчна-Горица			review A5: agents 2026-10-18
+adm1:SVN.182		Шентьерней			review A5: agents 2026-10-18
+adm1:SYC.14	Grand'Anse Mahé				review A5: agents 2026-10-18
+adm1:SYC.22		Пор-Гло			review A5: agents 2026-10-18
+adm1:SYC.23		Сен-Луи			review A5: agents 2026-10-18
+adm1:SYR.15	UNDOF Zone				review A5: agents 2026-10-18
+adm1:TCA.1		Средний Кайкос			review A5: agents 2026-10-18
+adm1:TCD.5		Вади-Фира			review A5: agents 2026-10-18
+adm1:THA.70		Саконнакхон			review A5: agents 2026-10-18
+adm1:THA.73		Накхонпханом			review A5: agents 2026-10-18
+adm1:THA.77		Бынгкан			review A5: agents 2026-10-18
+adm1:TJK.4	Sughd	Согдийская область			review A5: agents 2026-10-18
+adm1:TKM.3		Дашогузский велаят			review A5: agents 2026-10-18
+adm1:TTO.7		Майаро-Рио-Кларо			review A5: agents 2026-10-18
+adm1:TZA.30		Нджомбе			review A5: agents 2026-10-18
+adm1:UGA.45		Букво			review A5: agents 2026-10-18
+adm1:UGA.68	Kiruhura	Кирухура			review A5: agents 2026-10-18
+adm1:UGA.42		Кьенджоджо			review A5: agents 2026-10-18
+adm1:UGA.110		Бухведжу			review A5: agents 2026-10-18
+adm1:USG.1	Guantanamo Bay Naval Base	Гуантанамо			review A5: agents 2026-10-18
+adm1:VEN.18	La Guaira	Ла-Гуайра			review A5: agents 2026-10-18
+adm1:VEN.19	Capital District				review A5: agents 2026-10-18
+adm1:VEN.5	Mérida				review A5: agents 2026-10-18
+adm1:VEN.6	Táchira				review A5: agents 2026-10-18
+adm1:XKX.13		Косово-Поле			review A5: agents 2026-10-18
+adm1:XKX.17	Pristina	Приштина			review A5: agents 2026-10-18
+adm1:XKX.22	Kamenica	Каменица			review A5: agents 2026-10-18
+adm1:XKX.23	Prizren	Призрен			review A5: agents 2026-10-18
+adm1:XKX.24		Драгаш			review A5: agents 2026-10-18
+adm1:XKX.28	Uroševac/Ferizaj				review A5: agents 2026-10-18
+adm1:YEM.12		Эд-Дали			review A5: agents 2026-10-18
+adm1:YEM.16	Sanaa Governorate	Мухафаза Сана			review A5: agents 2026-10-18
+adm1:ZMB.5		Восточная провинция			review A5: agents 2026-10-18
+adm1:VEN.21	Guárico				review A5: agents 2026-10-18
+adm1:TTO.3	Diego Martin				review A5: agents 2026-10-18
+adm1:TTO.4	Siparia				review A5: agents 2026-10-18
+adm1:TTO.6	Sangre Grande				review A5: agents 2026-10-18
+adm1:TTO.11	Penal-Debe				review A5: agents 2026-10-18
+adm1:TTO.13	Tunapuna-Piarco				review A5: agents 2026-10-18
+adm1:SVN.130		Раденци			review A5: agents 2026-10-18
+adm1:SVN.123		Марковци			review A5: agents 2026-10-18
+adm1:SVN.128		Горни-Петровци			review A5: agents 2026-10-18
+adm1:VCT.3		Сент-Эндрю			review A5: agents 2026-10-18
+adm1:QAT.2		Эр-Райян			review A5: agents 2026-10-18
+adm1:QAT.3		Эль-Вакра			review A5: agents 2026-10-18
+adm1:QAT.5		Эш-Шамаль			review A5: agents 2026-10-18

@@ -1,0 +1,28 @@
+{
+  "parts": [
+    {
+      "inflated_bytes": 720896,
+      "name": "core",
+      "sha256": "96ba9172f85e964f6ce4f8f9e2f58277f084fcfc7e83b211e4368cf0fe0b66e9",
+      "size_bytes": 518536,
+      "urls": [
+        "https://cdn.jsdelivr.net/gh/TheShelterApp/region-tiles@bundle-places-1.0.0/places/dist/1.0.0/places-core.sqlite.gz",
+        "https://github.com/TheShelterApp/region-tiles/releases/download/bundle-places-1.0.0/places-core.sqlite.gz",
+        "https://raw.githubusercontent.com/TheShelterApp/region-tiles/bundle-places-1.0.0/places/dist/1.0.0/places-core.sqlite.gz"
+      ]
+    },
+    {
+      "inflated_bytes": 6832128,
+      "name": "detail",
+      "sha256": "d8084974e0a6639b58a751ffda557d8e0f28325654021f0abd9c121655c1261d",
+      "size_bytes": 3842180,
+      "urls": [
+        "https://cdn.jsdelivr.net/gh/TheShelterApp/region-tiles@bundle-places-1.0.0/places/dist/1.0.0/places-detail.sqlite.gz",
+        "https://github.com/TheShelterApp/region-tiles/releases/download/bundle-places-1.0.0/places-detail.sqlite.gz",
+        "https://raw.githubusercontent.com/TheShelterApp/region-tiles/bundle-places-1.0.0/places/dist/1.0.0/places-detail.sqlite.gz"
+      ]
+    }
+  ],
+  "schema": 1,
+  "version": "1.0.0"
+}

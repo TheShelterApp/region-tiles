@@ -1,0 +1,260 @@
+# The regions bundle's countries with the iOS app's tables, copied for the reference resolver (resolve.mjs).
+# iso2: CountryName.iso2ByISO3 (empty = not ISO-recognised: never the nearest-country answer). world: WorldRegion.members
+# (the case name; the coordinate rules of WorldRegion.overseasRegion live in resolve.mjs). catalog: 1 = named by the
+# MainFeature catalog, not the system (CountryName.catalogNamedISO3). The iOS release gate checks these against the app.
+id	name	iso2	world	catalog
+ABW	Aruba	AW	northAmerica	
+AFG	Afghanistan	AF	southAsia	
+AGO	Angola	AO	tropicalAfrica	
+AIA	Anguilla	AI	northAmerica	
+ALB	Albania	AL	easternEurope	
+ALD	Aland	AX	westernEurope	
+AND	Andorra	AD	westernEurope	
+ARE	United Arab Emirates	AE	westernAsia	
+ARG	Argentina	AR	southAmerica	
+ARM	Armenia	AM	westernAsia	
+ASM	American Samoa	AS	oceania	
+ATA	Antarctica	AQ	antarctica	
+ATC	Ashmore and Cartier Islands		oceania	1
+ATF	French Southern and Antarctic Lands	TF	antarctica	
+ATG	Antigua and Barbuda	AG	northAmerica	
+AUS	Australia	AU	oceania	
+AUT	Austria	AT	westernEurope	
+AZE	Azerbaijan	AZ	westernAsia	
+BDI	Burundi	BI	tropicalAfrica	
+BEL	Belgium	BE	westernEurope	
+BEN	Benin	BJ	tropicalAfrica	
+BFA	Burkina Faso	BF	tropicalAfrica	
+BGD	Bangladesh	BD	southAsia	
+BGR	Bulgaria	BG	easternEurope	
+BHR	Bahrain	BH	westernAsia	
+BHS	The Bahamas	BS	northAmerica	
+BIH	Bosnia and Herzegovina	BA	easternEurope	
+BJN	Bajo Nuevo Bank (Petrel Is.)		northAmerica	1
+BLM	Saint Barthelemy	BL	northAmerica	
+BLR	Belarus	BY	easternEurope	
+BLZ	Belize	BZ	northAmerica	
+BMU	Bermuda	BM	northAmerica	
+BOL	Bolivia	BO	southAmerica	
+BRA	Brazil	BR	southAmerica	
+BRB	Barbados	BB	northAmerica	
+BRN	Brunei	BN	southEastAsia	
+BTN	Bhutan	BT	southAsia	
+BWA	Botswana	BW	tropicalAfrica	
+CAF	Central African Republic	CF	tropicalAfrica	
+CAN	Canada	CA	northAmerica	
+CHE	Switzerland	CH	westernEurope	
+CHL	Chile	CL	southAmerica	
+CHN	China	CN	eastAsia	1
+CIV	Ivory Coast	CI	tropicalAfrica	
+CLP	Clipperton Island	CP	northAmerica	
+CMR	Cameroon	CM	tropicalAfrica	
+CNM	Cyprus No Mans Area		westernAsia	1
+COD	Democratic Republic of the Congo	CD	tropicalAfrica	
+COG	Republic of the Congo	CG	tropicalAfrica	
+COK	Cook Islands	CK	oceania	
+COL	Colombia	CO	southAmerica	
+COM	Comoros	KM	tropicalAfrica	
+CPV	Cabo Verde	CV	tropicalAfrica	
+CRI	Costa Rica	CR	northAmerica	
+CSI	Coral Sea Islands		oceania	1
+CUB	Cuba	CU	northAmerica	
+CUW	Curaçao	CW	northAmerica	
+CYM	Cayman Islands	KY	northAmerica	
+CYN	Northern Cyprus		westernAsia	1
+CYP	Cyprus	CY	westernAsia	
+CZE	Czechia	CZ	easternEurope	
+DEU	Germany	DE	westernEurope	
+DJI	Djibouti	DJ	tropicalAfrica	
+DMA	Dominica	DM	northAmerica	
+DNK	Denmark	DK	westernEurope	
+DOM	Dominican Republic	DO	northAmerica	
+DZA	Algeria	DZ	northAfrica	
+ECU	Ecuador	EC	southAmerica	
+EGY	Egypt	EG	northAfrica	
+ERI	Eritrea	ER	tropicalAfrica	
+ESB	Dhekelia Sovereign Base Area		westernAsia	1
+ESH	Western Sahara	EH	northAfrica	
+ESP	Spain	ES	westernEurope	
+EST	Estonia	EE	easternEurope	
+ETH	Ethiopia	ET	tropicalAfrica	
+FIN	Finland	FI	westernEurope	
+FJI	Fiji	FJ	oceania	
+FLK	Falkland Islands	FK	southAmerica	
+FRA	France	FR	westernEurope	
+FRO	Faroe Islands	FO	westernEurope	
+FSM	Federated States of Micronesia	FM	oceania	
+GAB	Gabon	GA	tropicalAfrica	
+GBR	United Kingdom	GB	westernEurope	
+GEO	Georgia	GE	westernAsia	
+GGY	Guernsey	GG	westernEurope	
+GHA	Ghana	GH	tropicalAfrica	
+GIB	Gibraltar	GI	westernEurope	
+GIN	Guinea	GN	tropicalAfrica	
+GMB	Gambia	GM	tropicalAfrica	
+GNB	Guinea-Bissau	GW	tropicalAfrica	
+GNQ	Equatorial Guinea	GQ	tropicalAfrica	
+GRC	Greece	GR	westernEurope	
+GRD	Grenada	GD	northAmerica	
+GRL	Greenland	GL	northAmerica	
+GTM	Guatemala	GT	northAmerica	
+GUM	Guam	GU	oceania	
+GUY	Guyana	GY	southAmerica	
+HKG	Hong Kong S.A.R.	HK	eastAsia	
+HMD	Heard Island and McDonald Islands	HM	antarctica	
+HND	Honduras	HN	northAmerica	
+HRV	Croatia	HR	easternEurope	
+HTI	Haiti	HT	northAmerica	
+HUN	Hungary	HU	easternEurope	
+IDN	Indonesia	ID	southEastAsia	
+IMN	Isle of Man	IM	westernEurope	
+IND	India	IN	southAsia	
+IOA	Indian Ocean Territories		oceania	1
+IOT	British Indian Ocean Territory	IO	southAsia	
+IRL	Ireland	IE	westernEurope	
+IRN	Iran	IR	westernAsia	
+IRQ	Iraq	IQ	westernAsia	
+ISL	Iceland	IS	westernEurope	
+ISR	Israel	IL	westernAsia	
+ITA	Italy	IT	westernEurope	
+JAM	Jamaica	JM	northAmerica	
+JEY	Jersey	JE	westernEurope	
+JOR	Jordan	JO	westernAsia	
+JPN	Japan	JP	eastAsia	
+KAB	Baykonur Cosmodrome		centralAsia	1
+KAS	Siachen Glacier		southAsia	1
+KAZ	Kazakhstan	KZ	centralAsia	
+KEN	Kenya	KE	tropicalAfrica	
+KGZ	Kyrgyzstan	KG	centralAsia	
+KHM	Cambodia	KH	southEastAsia	
+KIR	Kiribati	KI	oceania	
+KNA	Saint Kitts and Nevis	KN	northAmerica	
+KOR	South Korea	KR	eastAsia	
+KWT	Kuwait	KW	westernAsia	
+LAO	Laos	LA	southEastAsia	
+LBN	Lebanon	LB	westernAsia	
+LBR	Liberia	LR	tropicalAfrica	
+LBY	Libya	LY	northAfrica	
+LCA	Saint Lucia	LC	northAmerica	
+LIE	Liechtenstein	LI	westernEurope	
+LKA	Sri Lanka	LK	southAsia	
+LSO	Lesotho	LS	tropicalAfrica	
+LTU	Lithuania	LT	easternEurope	
+LUX	Luxembourg	LU	westernEurope	
+LVA	Latvia	LV	easternEurope	
+MAC	Macao S.A.R	MO	eastAsia	
+MAF	Saint Martin	MF	northAmerica	
+MAR	Morocco	MA	northAfrica	
+MCO	Monaco	MC	westernEurope	
+MDA	Moldova	MD	easternEurope	
+MDG	Madagascar	MG	tropicalAfrica	
+MDV	Maldives	MV	southAsia	
+MEX	Mexico	MX	northAmerica	
+MHL	Marshall Islands	MH	oceania	
+MKD	Macedonia	MK	easternEurope	
+MLI	Mali	ML	tropicalAfrica	
+MLT	Malta	MT	westernEurope	
+MMR	Myanmar	MM	southEastAsia	
+MNE	Montenegro	ME	easternEurope	
+MNG	Mongolia	MN	eastAsia	
+MNP	Northern Mariana Islands	MP	oceania	
+MOZ	Mozambique	MZ	tropicalAfrica	
+MRT	Mauritania	MR	tropicalAfrica	
+MSR	Montserrat	MS	northAmerica	
+MUS	Mauritius	MU	tropicalAfrica	
+MWI	Malawi	MW	tropicalAfrica	
+MYS	Malaysia	MY	southEastAsia	
+NAM	Namibia	NA	tropicalAfrica	
+NCL	New Caledonia	NC	oceania	
+NER	Niger	NE	tropicalAfrica	
+NFK	Norfolk Island	NF	oceania	
+NGA	Nigeria	NG	tropicalAfrica	
+NIC	Nicaragua	NI	northAmerica	
+NIU	Niue	NU	oceania	
+NLD	Netherlands	NL	westernEurope	
+NOR	Norway	NO	westernEurope	
+NPL	Nepal	NP	southAsia	
+NRU	Nauru	NR	oceania	
+NZL	New Zealand	NZ	oceania	
+OMN	Oman	OM	westernAsia	
+PAK	Pakistan	PK	southAsia	
+PAN	Panama	PA	northAmerica	
+PCN	Pitcairn Islands	PN	oceania	
+PER	Peru	PE	southAmerica	
+PGA	Spratly Islands		southEastAsia	1
+PHL	Philippines	PH	southEastAsia	
+PLW	Palau	PW	oceania	
+PNG	Papua New Guinea	PG	oceania	
+POL	Poland	PL	easternEurope	
+PRI	Puerto Rico	PR	northAmerica	
+PRK	North Korea	KP	eastAsia	
+PRT	Portugal	PT	westernEurope	
+PRY	Paraguay	PY	southAmerica	
+PSE	Palestine	PS	westernAsia	
+PYF	French Polynesia	PF	oceania	
+QAT	Qatar	QA	westernAsia	
+ROU	Romania	RO	easternEurope	
+RUS	Russia	RU	easternEurope	
+RWA	Rwanda	RW	tropicalAfrica	
+SAU	Saudi Arabia	SA	westernAsia	
+SCR	Scarborough Reef		southEastAsia	1
+SDN	Sudan	SD	northAfrica	
+SEN	Senegal	SN	tropicalAfrica	
+SER	Serranilla Bank		northAmerica	1
+SGP	Singapore	SG	southEastAsia	
+SGS	South Georgia and the Islands	GS	southAmerica	
+SHN	Saint Helena	SH	tropicalAfrica	
+SLB	Solomon Islands	SB	oceania	
+SLE	Sierra Leone	SL	tropicalAfrica	
+SLV	El Salvador	SV	northAmerica	
+SMR	San Marino	SM	westernEurope	
+SOL	Somaliland		tropicalAfrica	1
+SOM	Somalia	SO	tropicalAfrica	
+SPM	Saint Pierre and Miquelon	PM	northAmerica	
+SRB	Republic of Serbia	RS	easternEurope	
+SSD	South Sudan	SS	tropicalAfrica	
+STP	Sao Tome and Principe	ST	tropicalAfrica	
+SUR	Suriname	SR	southAmerica	
+SVK	Slovakia	SK	easternEurope	
+SVN	Slovenia	SI	easternEurope	
+SWE	Sweden	SE	westernEurope	
+SWZ	Swaziland	SZ	tropicalAfrica	
+SXM	Sint Maarten	SX	northAmerica	
+SYC	Seychelles	SC	tropicalAfrica	
+SYR	Syria	SY	westernAsia	
+TCA	Turks and Caicos Islands	TC	northAmerica	
+TCD	Chad	TD	tropicalAfrica	
+TGO	Togo	TG	tropicalAfrica	
+THA	Thailand	TH	southEastAsia	
+TJK	Tajikistan	TJ	centralAsia	
+TKM	Turkmenistan	TM	centralAsia	
+TLS	East Timor	TL	southEastAsia	
+TON	Tonga	TO	oceania	
+TTO	Trinidad and Tobago	TT	northAmerica	
+TUN	Tunisia	TN	northAfrica	
+TUR	Turkey	TR	westernAsia	
+TUV	Tuvalu	TV	oceania	
+TWN	Taiwan	TW	eastAsia	
+TZA	United Republic of Tanzania	TZ	tropicalAfrica	
+UGA	Uganda	UG	tropicalAfrica	
+UKR	Ukraine	UA	easternEurope	
+UMI	United States Minor Outlying Islands	UM	oceania	
+URY	Uruguay	UY	southAmerica	
+USA	United States of America	US	northAmerica	
+USG	US Naval Base Guantanamo Bay		northAmerica	1
+UZB	Uzbekistan	UZ	centralAsia	
+VAT	Vatican	VA	westernEurope	
+VCT	Saint Vincent and the Grenadines	VC	northAmerica	
+VEN	Venezuela	VE	southAmerica	
+VGB	British Virgin Islands	VG	northAmerica	
+VIR	United States Virgin Islands	VI	northAmerica	
+VNM	Vietnam	VN	southEastAsia	
+VUT	Vanuatu	VU	oceania	
+WLF	Wallis and Futuna	WF	oceania	
+WSB	Akrotiri Sovereign Base Area		westernAsia	1
+WSM	Samoa	WS	oceania	
+XKX	Kosovo	XK	easternEurope	
+YEM	Yemen	YE	westernAsia	
+ZAF	South Africa	ZA	tropicalAfrica	
+ZMB	Zambia	ZM	tropicalAfrica	
+ZWE	Zimbabwe	ZW	tropicalAfrica	

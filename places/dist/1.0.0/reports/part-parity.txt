@@ -1,0 +1,312 @@
+Part parity: 305 differences between core alone and core + detail on the 100000-point lattice; 44 where core alone shows a zone, a water over land, another country or another part of the world, 0 of them not accepted.
+  265	the band measured to a province outline
+  22	land only by a province outline
+  18	the outlines disagree (the province and the towns decide)
+
+Each line: the accepted-diffs.md entry (tier lat,lon core-key full-key), the kind, what core alone shows.
+
+listed   - `parity globe 80.4738,62.8494 sea:1159115861 region:centralAsia`	the band measured to a province outline
+listed   - `parity regional 80.4738,62.8494 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 80.2750,90.5746 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 78.6811,97.5467 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 78.6287,-104.8835 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 78.2400,-114.3555 sea:1159115017 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 78.2400,-114.3555 sea:1159115017 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 78.1951,-94.2934 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 78.0559,103.4007 sea:1159117771 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 77.8691,98.6647 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 77.7497,-116.1645 sea:1159115017 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 77.7497,-116.1645 sea:1159115017 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 77.5037,89.1926 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 77.2572,72.0575 sea:1159115017 region:centralAsia`	the band measured to a province outline
+listed   - `parity globe 77.1950,-77.8493 sea:1159115483 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 77.1950,-77.8493 sea:1159115483 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 77.0817,67.3215 sea:1159115861 region:centralAsia`	the band measured to a province outline
+listed   - `parity regional 77.0817,67.3215 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 77.0255,139.9069 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 76.9339,95.0467 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 76.5098,-96.7934 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 76.3099,141.0250 sea:1159117337 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 76.0461,143.9520 sea:1159117337 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 75.9561,-123.4005 sea:1159115359 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 75.9561,-123.4005 sea:1159115359 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 75.7219,-88.0123 sea:1159119795 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 75.3775,145.0700 sea:1159117337 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 74.8862,150.9240 sea:1159117337 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 74.6464,153.8511 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 74.4785,116.6539 sea:1159116253 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 74.2658,152.0421 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity globe 74.1144,62.3216 sea:1159115017 region:centralAsia`	the band measured to a province outline
+listed   - `parity regional 74.0684,134.9070 sea:1159116253 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 73.8940,150.2331 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 73.7869,125.4349 sea:1159116253 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 73.3935,143.6880 sea:1159117337 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 73.0835,69.2936 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 73.0324,56.8946 sea:1159116231 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 72.9658,-125.4734 sea:1159115359 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 72.9658,-125.4734 sea:1159115359 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 72.9072,137.1430 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity globe 72.8994,52.1586 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 72.8994,52.1586 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 72.7751,132.4070 sea:1159115017 region:eastAsia`	the band measured to a province outline
+accepted - `parity regional 72.7211,-102.4843 sea:1159116661 adm0:CAN`	land only by a province outline; core alone shows a water over land
+accepted - `parity regional 72.6556,75.1477 sea:1159119119 adm0:RUS`	land only by a province outline; core alone shows a water over land
+listed   - `parity globe 72.2941,178.3853 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 72.1739,-101.3663 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 72.0657,-73.6411 sea:1159115483 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 72.0657,-73.6411 sea:1159115483 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 72.0136,51.4676 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 72.0136,51.4676 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 71.7886,159.4412 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 71.6935,134.6430 sea:1159118193 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 71.5590,-177.5697 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 71.5590,-177.5697 sea:1159115017 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 71.4434,-97.3212 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 71.1185,175.8853 sea:1159115017 region:eastAsia`	the band measured to a province outline
+listed   - `parity globe 70.9985,171.1493 sea:1159115017 region:eastAsia`	the band measured to a province outline
+accepted - `parity regional 70.9247,178.8123 sea:1159116037 adm0:RUS`	land only by a province outline; core alone shows a water over land
+accepted - `parity regional 70.7815,56.6306 sea:1159115861 adm0:RUS`	land only by a province outline; core alone shows a water over land
+listed   - `parity globe 70.4740,54.8216 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 70.4740,54.8216 sea:1159115861 adm0:RUS`	the band measured to a province outline
+accepted - `parity regional 70.4158,-127.5464 sea:1159117223 adm0:CAN`	land only by a province outline; core alone shows a water over land
+accepted - `parity globe 69.8993,31.1415 region:westernEurope region:easternEurope`	the band measured to a province outline; core alone shows another part of the world
+accepted - `parity regional 69.8993,31.1415 adm0:NOR adm0:RUS`	the band measured to a province outline; core alone shows another country
+listed   - `parity regional 69.8327,-98.7032 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 69.6013,166.8403 sea:1159117337 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 69.5783,49.3946 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 69.5783,49.3946 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 69.5389,-100.5122 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 69.3302,59.9847 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 69.3302,59.9847 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 69.0880,-66.9330 sea:1159116205 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 69.0431,58.1757 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 69.0431,58.1757 sea:1159115861 adm0:RUS`	the band measured to a province outline
+accepted - `parity regional 68.8708,-76.4050 sea:1159118111 adm0:CAN`	land only by a province outline; core alone shows a water over land
+listed   - `parity regional 68.7883,-101.2032 sea:1159116661 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 68.7187,43.9676 sea:1159115861 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 68.7187,43.9676 sea:1159115861 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 68.1636,40.3496 sea:1159116395 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 66.7440,-163.4624 sea:1159118029 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 66.3353,-77.3599 sea:1159115017 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 66.3296,-162.3444 sea:1159118029 adm0:USA`	the band measured to a province outline
+listed   - `parity regional 65.5261,-75.1239 sea:1159118111 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 65.3909,-177.2434 sea:1159120779 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 64.9245,-63.4158 sea:1159116205 adm0:CAN`	the band measured to a province outline
+accepted - `parity regional 64.8165,36.8948 sea:1159116395 adm0:RUS`	land only by a province outline; core alone shows a water over land
+listed   - `parity globe 64.5379,-62.2978 sea:1159115483 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 64.4634,-172.0804 sea:1779502735 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 64.2621,-161.4903 sea:1159118005 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 63.4840,-86.6689 sea:1159115441 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 63.4840,-86.6689 sea:1159115441 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 63.4251,-163.9903 sea:1159118005 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 63.3381,-168.7263 sea:1159117319 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 63.3381,-168.7263 sea:1159117319 adm0:USA`	the band measured to a province outline
+listed   - `parity regional 63.3228,-63.6797 sea:1159116205 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 63.1624,-40.6906 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 63.1624,-40.6906 sea:1159115057 adm0:GRL`	the band measured to a province outline
+listed   - `parity globe 63.1168,-85.5508 sea:1159115441 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 63.1168,-85.5508 sea:1159115441 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 63.1117,-170.5353 sea:1159117319 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 63.1117,-170.5353 sea:1159117319 adm0:USA`	the band measured to a province outline
+listed   - `parity regional 62.7016,-76.7698 sea:1159116501 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 62.3588,179.3017 sea:1159117319 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 62.3588,179.3017 sea:1159117319 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 61.1647,-69.3707 sea:1159116501 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 60.5692,160.0937 sea:1159117159 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 60.5017,-172.1812 sea:1159117319 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 60.5017,-172.1812 sea:1159117319 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 59.8565,169.9927 sea:1159117319 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 59.8565,169.9927 sea:1159117319 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 59.7812,27.7490 sea:1159116517 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 59.7790,165.2567 sea:1159118803 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 59.1475,147.4307 sea:1159115541 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 59.1475,147.4307 sea:1159115541 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 59.1006,155.0937 sea:1159115541 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 59.1006,155.0937 sea:1159115541 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 58.9025,153.2847 sea:1159115541 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 58.9025,153.2847 sea:1159115541 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 58.7056,151.4757 sea:1159115541 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 58.7056,151.4757 sea:1159115541 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 57.9570,156.6388 sea:1159117159 adm0:RUS`	the band measured to a province outline
+accepted - `parity regional 56.2707,-134.6578 sea:1159115079 adm0:USA`	land only by a province outline; core alone shows a water over land
+listed   - `parity globe 56.1368,163.3469 sea:1159115079 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 56.1368,163.3469 sea:1159115079 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 55.9214,-158.3379 sea:1159115503 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 55.9214,-158.3379 sea:1159115503 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 55.6748,-79.8984 sea:1159115441 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 55.6748,-79.8984 sea:1159115441 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 54.4561,142.3299 sea:1159115541 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 54.4561,142.3299 sea:1159115541 adm0:RUS`	the band measured to a province outline
+listed   - `parity regional 54.1771,-131.5676 sea:1159120441 adm0:CAN`	the band measured to a province outline
+accepted - `parity regional 54.1067,138.7119 sea:1159115541 adm0:RUS`	land only by a province outline; core alone shows a water over land
+listed   - `parity globe 54.0032,-133.3766 sea:1159115079 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 54.0032,-133.3766 sea:1159115079 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 53.0852,160.3191 sea:1159115079 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 53.0852,160.3191 sea:1159115079 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 52.9253,-169.0287 sea:1159117319 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 52.9253,-169.0287 sea:1159117319 adm0:USA`	the band measured to a province outline
+accepted - `parity regional 52.2875,-131.4045 sea:1159115079 adm0:CAN`	land only by a province outline; core alone shows a water over land
+accepted - `parity regional 52.0651,32.0194 adm0:UKR adm0:RUS`	land only by a province outline; core alone shows another country
+listed   - `parity globe 52.0241,177.1902 sea:1159117319 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 52.0241,177.1902 sea:1159117319 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 51.9850,-175.1467 sea:1159117319 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 51.9850,-175.1467 sea:1159117319 adm0:USA`	the band measured to a province outline
+accepted - `parity regional 51.5315,34.2555 adm0:UKR adm0:RUS`	land only by a province outline; core alone shows another country
+listed   - `parity globe 50.3763,-128.3144 sea:1159115079 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 50.3763,-128.3144 sea:1159115079 adm0:CAN`	the band measured to a province outline
+accepted - `parity globe 50.1863,47.5086 region:centralAsia region:easternEurope`	the outlines disagree (the province and the towns decide); core alone shows another part of the world
+accepted - `parity regional 50.1863,47.5086 adm0:KAZ adm0:RUS`	the outlines disagree (the province and the towns decide); core alone shows another country
+accepted - `parity regional 50.0647,38.0366 adm0:UKR adm0:RUS`	land only by a province outline; core alone shows another country
+accepted - `parity globe 49.9292,48.6267 region:centralAsia region:easternEurope`	land only by a province outline; core alone shows another part of the world
+accepted - `parity regional 49.9292,48.6267 adm0:KAZ adm0:RUS`	land only by a province outline; core alone shows another country
+listed   - `parity globe 49.6842,-55.3019 sea:1159115419 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 49.6842,-55.3019 sea:1159115419 adm0:CAN`	the band measured to a province outline
+accepted - `parity regional 49.5339,112.8580 adm0:MNG adm0:RUS`	land only by a province outline; core alone shows another country
+listed   - `parity globe 49.1330,144.6282 sea:1159115541 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 49.1330,144.6282 sea:1159115541 adm0:RUS`	the band measured to a province outline
+accepted - `parity globe 49.0787,87.3689 region:eastAsia region:centralAsia`	land only by a province outline; core alone shows another part of the world
+accepted - `parity regional 49.0787,87.3689 adm0:CHN adm0:RUS`	land only by a province outline; core alone shows another country
+accepted - `parity regional 49.0490,-94.9991 adm0:CAN adm0:USA`	the outlines disagree (the province and the towns decide); core alone shows another country
+accepted - `parity regional 47.5622,134.2013 adm0:CHN adm0:RUS`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 47.4180,-57.6388 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 47.4180,-57.6388 sea:1159115057 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 46.8755,-60.1387 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 46.8755,-60.1387 sea:1159115057 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 46.6914,-54.2847 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 46.6914,-54.2847 sea:1159115057 adm0:CAN`	the band measured to a province outline
+accepted - `parity regional 46.5246,16.4917 adm0:HUN adm0:SVN`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 46.4514,-53.1667 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 46.4514,-53.1667 sea:1159115057 adm0:CAN`	the band measured to a province outline
+listed   - `parity globe 46.2472,-59.7117 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 46.2472,-59.7117 sea:1159115057 adm0:CAN`	the band measured to a province outline
+listed   - `parity regional 45.8773,142.0275 sea:1159118231 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 44.7690,47.3070 sea:1159115461 region:easternEurope`	the band measured to a province outline
+listed   - `parity regional 44.7690,47.3070 sea:1159115461 adm0:RUS`	the band measured to a province outline
+accepted - `parity regional 43.8387,19.3179 adm0:SRB adm0:BIH`	land only by a province outline; core alone shows another country
+accepted - `parity globe 42.6930,44.9701 region:westernAsia region:easternEurope`	the outlines disagree (the province and the towns decide); core alone shows another part of the world
+accepted - `parity regional 42.6930,44.9701 adm0:GEO adm0:RUS`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 42.6104,132.8816 sea:1159115305 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 42.6104,132.8816 sea:1159115305 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 42.5964,-69.5485 sea:1159115057 region:northAmerica`	the band measured to a province outline
+listed   - `parity globe 42.4720,131.0726 sea:1159115305 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 42.4720,131.0726 sea:1159115305 adm0:RUS`	the band measured to a province outline
+listed   - `parity globe 42.1018,-124.5717 sea:1159115079 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 42.1018,-124.5717 sea:1159115079 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 41.0297,10.8631 sea:1159115321 region:westernEurope`	the band measured to a province outline
+listed   - `parity globe 38.0384,-26.0079 sea:1159115057 region:westernEurope`	the band measured to a province outline
+listed   - `parity regional 38.0384,-26.0079 sea:1159115057 adm0:PRT`	the band measured to a province outline
+accepted - `parity regional 37.9628,-75.6041 sea:1159117043 adm0:USA`	land only by a province outline; core alone shows a water over land
+listed   - `parity globe 37.8292,-24.8899 sea:1159115057 region:westernEurope`	the band measured to a province outline
+listed   - `parity regional 37.8292,-24.8899 sea:1159115057 adm0:PRT`	the band measured to a province outline
+accepted - `parity regional 37.6380,126.1350 adm0:KOR adm0:PRK`	the band measured to a province outline; core alone shows another country
+listed   - `parity globe 34.7956,-120.8291 sea:1159115079 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 34.7956,-120.8291 sea:1159115079 adm0:USA`	the band measured to a province outline
+accepted - `parity regional 34.1755,7.6336 adm0:DZA adm0:TUN`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 29.9544,49.3652 sea:1159115597 region:westernAsia`	the band measured to a province outline
+listed   - `parity regional 29.9544,49.3652 sea:1159115597 adm0:IRN`	the band measured to a province outline
+accepted - `parity regional 29.5333,-5.6580 adm0:DZA adm0:MAR`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 28.9909,-94.9515 sea:1159115399 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 28.9909,-94.9515 sea:1159115399 adm0:USA`	the band measured to a province outline
+accepted - `parity regional 27.2407,88.0067 adm0:NPL adm0:IND`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 26.5072,124.9400 sea:1159115079 region:eastAsia`	the band measured to a province outline
+listed   - `parity globe 26.4509,55.2816 sea:1159115597 region:westernAsia`	the band measured to a province outline
+listed   - `parity regional 26.4509,55.2816 sea:1159115597 adm0:IRN`	the band measured to a province outline
+listed   - `parity globe 26.4073,50.5456 sea:1159115597 region:westernAsia`	the band measured to a province outline
+listed   - `parity regional 26.4073,50.5456 sea:1159115597 adm0:BHR`	the band measured to a province outline
+listed   - `parity globe 26.0254,125.3670 sea:1159115079 region:eastAsia`	the band measured to a province outline
+accepted - `parity regional 26.0242,-97.1252 adm0:MEX adm0:USA`	the band measured to a province outline; core alone shows another country
+listed   - `parity globe 25.7287,124.6760 sea:1159115079 region:eastAsia`	the band measured to a province outline
+listed   - `parity regional 25.7287,124.6760 sea:1159116027 adm0:JPN`	the band measured to a province outline
+listed   - `parity globe 25.3768,54.3267 sea:1159115597 region:westernAsia`	the band measured to a province outline
+listed   - `parity regional 25.3768,54.3267 sea:1159115597 adm0:ARE`	the band measured to a province outline
+listed   - `parity globe 24.7872,52.9447 sea:1159115597 region:westernAsia`	the band measured to a province outline
+listed   - `parity regional 24.7872,52.9447 sea:1159115597 adm0:ARE`	the band measured to a province outline
+listed   - `parity regional 24.4620,-110.0522 sea:1159116479 adm0:MEX`	the band measured to a province outline
+accepted - `parity regional 23.7076,92.1140 adm0:IND adm0:BGD`	land only by a province outline; core alone shows another country
+accepted - `parity globe 22.6729,103.5582 region:eastAsia region:southEastAsia`	the outlines disagree (the province and the towns decide); core alone shows another part of the world
+accepted - `parity regional 22.6729,103.5582 adm0:CHN adm0:VNM`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 21.7582,-158.2042 sea:1159115079 region:oceania`	the band measured to a province outline
+listed   - `parity regional 21.7582,-158.2042 sea:1159115079 adm0:USA`	the band measured to a province outline
+listed   - `parity globe 20.7083,-86.5737 sea:1159115379 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 20.7083,-86.5737 sea:1159115379 adm0:MEX`	the band measured to a province outline
+listed   - `parity globe 17.3249,-62.4042 sea:1159115379 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 17.3249,-62.4042 sea:1159115379 adm0:KNA`	the band measured to a province outline
+listed   - `parity globe 17.0263,-22.9710 sea:1159115057 region:tropicalAfrica`	the band measured to a province outline
+listed   - `parity regional 17.0263,-22.9710 sea:1159115057 adm0:CPV`	the band measured to a province outline
+listed   - `parity globe 16.5869,42.3785 sea:1159115521 region:westernAsia`	the band measured to a province outline
+listed   - `parity regional 16.5869,42.3785 sea:1159115521 adm0:SAU`	the band measured to a province outline
+listed   - `parity globe 16.2023,39.8785 sea:1159115521 region:tropicalAfrica`	the band measured to a province outline
+listed   - `parity regional 16.2023,39.8785 sea:1159115521 adm0:ERI`	the band measured to a province outline
+accepted - `parity regional 13.4190,-11.8915 adm0:SEN adm0:MLI`	land only by a province outline; core alone shows another country
+listed   - `parity globe 11.1028,125.9425 sea:1159115197 region:southEastAsia`	the band measured to a province outline
+listed   - `parity regional 11.1028,125.9425 sea:1159115197 adm0:PHL`	the band measured to a province outline
+accepted - `parity globe 9.5362,33.8851 region:tropicalAfrica region:northAfrica`	the outlines disagree (the province and the towns decide); core alone shows another part of the world
+accepted - `parity regional 9.5362,33.8851 adm0:SSD adm0:SDN`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity regional 8.8698,123.3417 sea:1159120253 adm0:PHL`	the band measured to a province outline
+listed   - `parity regional 8.5302,93.1165 sea:1159115987 adm0:IND`	the band measured to a province outline
+listed   - `parity globe 7.9466,-82.9704 sea:1159115079 region:northAmerica`	the band measured to a province outline
+listed   - `parity regional 7.9466,-82.9704 sea:1159115079 adm0:PAN`	the band measured to a province outline
+accepted - `parity regional 6.7842,9.8403 adm0:NGA adm0:CMR`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 5.8538,98.6058 sea:1159115123 region:southEastAsia`	the band measured to a province outline
+accepted - `parity regional 0.9219,-65.5476 adm0:VEN adm0:BRA`	the outlines disagree (the province and the towns decide); core alone shows another country
+accepted - `parity regional 0.7179,-69.1656 adm0:COL adm0:BRA`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe 0.4601,-89.9186 sea:1159115079 region:southAmerica`	the band measured to a province outline
+listed   - `parity regional 0.4601,-89.9186 sea:1159115079 adm0:ECU`	the band measured to a province outline
+listed   - `parity regional -2.1164,147.5349 sea:1159116735 adm0:PNG`	the band measured to a province outline
+listed   - `parity globe -2.9997,-171.4867 sea:1159115079 region:oceania`	the band measured to a province outline
+listed   - `parity regional -2.9997,-171.4867 sea:1159115079 adm0:KIR`	the band measured to a province outline
+listed   - `parity regional -3.4588,111.6189 sea:1159115959 adm0:IDN`	the band measured to a province outline
+listed   - `parity globe -6.4104,156.5414 sea:1159115079 region:oceania`	the band measured to a province outline
+listed   - `parity regional -6.4104,156.5414 sea:1159115079 adm0:SLB`	the band measured to a province outline
+listed   - `parity regional -7.6193,127.1704 sea:1159115717 adm0:IDN`	the band measured to a province outline
+listed   - `parity globe -7.6436,134.8334 sea:1159115123 region:southEastAsia`	the band measured to a province outline
+listed   - `parity regional -8.7771,114.9344 sea:1159120135 adm0:IDN`	the band measured to a province outline
+listed   - `parity globe -8.8258,130.2605 sea:1159115123 region:southEastAsia`	the band measured to a province outline
+listed   - `parity regional -9.0079,118.9795 sea:1779574983 adm0:IDN`	the band measured to a province outline
+listed   - `parity regional -9.0322,126.6425 sea:1159116101 adm0:TLS`	the band measured to a province outline
+listed   - `parity globe -16.2847,167.0545 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -16.2847,167.0545 sea:1159115219 adm0:VUT`	the band measured to a province outline
+listed   - `parity globe -16.3408,149.9194 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -16.3408,149.9194 sea:1159115219 adm0:CSI`	the band measured to a province outline
+listed   - `parity regional -16.3742,40.1368 sea:1159115771 adm0:MOZ`	the band measured to a province outline
+listed   - `parity globe -16.4782,123.3123 sea:1159115123 region:oceania`	the band measured to a province outline
+listed   - `parity regional -16.4782,123.3123 sea:1159115123 adm0:AUS`	the band measured to a province outline
+listed   - `parity globe -16.7436,50.0359 sea:1159115123 region:tropicalAfrica`	the band measured to a province outline
+listed   - `parity regional -16.7436,50.0359 sea:1159115123 adm0:MDG`	the band measured to a province outline
+listed   - `parity globe -17.6301,148.2735 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -17.6301,148.2735 sea:1159115219 adm0:CSI`	the band measured to a province outline
+accepted - `parity regional -18.0008,20.6648 adm0:AGO adm0:NAM`	the outlines disagree (the province and the towns decide); core alone shows another country
+listed   - `parity globe -20.8848,166.5889 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -20.8848,166.5889 sea:1159115219 adm0:NCL`	the band measured to a province outline
+listed   - `parity globe -21.4734,152.8079 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity globe -21.6509,153.9259 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -21.6509,153.9259 sea:1159115219 adm0:CSI`	the band measured to a province outline
+listed   - `parity globe -22.2947,155.4710 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -22.2947,155.4710 sea:1159115219 adm0:CSI`	the band measured to a province outline
+listed   - `parity globe -22.3851,113.5378 sea:1159115123 region:oceania`	the band measured to a province outline
+listed   - `parity regional -22.3851,113.5378 sea:1159115123 adm0:AUS`	the band measured to a province outline
+listed   - `parity globe -30.5913,153.2588 sea:1159115219 region:oceania`	the band measured to a province outline
+listed   - `parity regional -30.5913,153.2588 sea:1159115219 adm0:AUS`	the band measured to a province outline
+listed   - `parity globe -34.5712,20.9764 sea:1159115123 region:tropicalAfrica`	the band measured to a province outline
+listed   - `parity regional -34.5712,20.9764 sea:1159115123 adm0:ZAF`	the band measured to a province outline
+listed   - `parity globe -52.1416,-75.3039 sea:1159115079 region:southAmerica`	the band measured to a province outline
+listed   - `parity regional -52.1416,-75.3039 sea:1159115079 adm0:CHL`	the band measured to a province outline
+listed   - `parity globe -53.2860,-43.1066 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity globe -53.5630,-41.9886 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity regional -53.5630,-41.9886 sea:1159115811 adm0:SGS`	the band measured to a province outline
+listed   - `parity globe -53.8417,-40.8706 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity globe -54.0149,-42.6796 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity globe -54.2967,-41.5615 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity globe -54.7985,-34.5895 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity regional -54.7985,-34.5895 sea:1159115057 adm0:SGS`	the band measured to a province outline
+listed   - `parity globe -55.5550,-34.1624 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity globe -55.6768,-63.6966 sea:1159115057 region:southAmerica`	the band measured to a province outline
+listed   - `parity globe -64.4953,101.0708 sea:1159115037 region:antarctica`	the band measured to a province outline
+listed   - `parity globe -66.3381,-66.2351 sea:1159115037 region:antarctica`	the band measured to a province outline
+listed   - `parity regional -66.3381,-66.2351 sea:1159115037 adm0:ATA`	the band measured to a province outline
+listed   - `parity regional -66.6426,109.5879 sea:1159118683 adm0:ATA`	the band measured to a province outline
+listed   - `parity globe -67.5375,151.9482 sea:1159115037 region:antarctica`	the band measured to a province outline
+listed   - `parity regional -68.8772,70.3178 sea:1159118669 adm0:ATA`	the band measured to a province outline
+listed   - `parity regional -76.9289,-153.6572 sea:1159117531 adm0:ATA`	the band measured to a province outline
+listed   - `parity globe -78.5534,-163.8202 sea:1159115615 region:antarctica`	the band measured to a province outline
+listed   - `parity regional -78.5534,-163.8202 sea:1159115615 adm0:ATA`	the band measured to a province outline

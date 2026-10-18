@@ -1,0 +1,9 @@
+# Assignment areas (core, layer 4): land whose country the regions bundle's simplified country outlines get wrong where
+# a policy draws the line. The first area by rank holding a point gives its country, before the country and province
+# outlines (owner decision Q2, 2026-10-17: East Jerusalem and the West Bank -> the system name for PS; the bundle's
+# 24-vertex Palestine outline covers West Jerusalem, and its province ISR.6 covers East Jerusalem).
+# source: adm1:<bundle province>=<its bundle name, spaces as _> (the bundle's rings) or ne:<BRK_A3> (Natural Earth 10m
+# admin_0_disputed_areas, Douglas-Peucker 0.001 deg). country: a bundle country id.
+key	country	rank	name_en	source	note
+assign:palestine	PSE	1	Palestine (East Jerusalem, the West Bank, Gaza)	ne:B98 ne:B99 ne:B79 ne:B78 adm1:PSE.2=West_Bank adm1:PSE.1=Gaza_Strip	NE's East Jerusalem (B98), Mount Scopus (B99) and the no man's lands of Jerusalem (B79) and Latrun (B78), all claimed by Palestine; the bundle's West Bank and Gaza provinces
+assign:israel-jerusalem	ISR	2	Israel (the Jerusalem district west of the 1949 line)	adm1:ISR.6=Jerusalem	The rest of the bundle's Jerusalem district (West Jerusalem: the Knesset, the central bus station, Kiryat HaYovel)
