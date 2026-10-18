@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "id": "CYM",
   "name": "Cayman Islands",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 59,
+  "total": 61,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,4,1,1,0,1,0,2,2,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,1,1,1,0,3,0,0,0,2,0,6,0,1,0,3,1,0,0,0,1,12,1,1,1,1,0,2]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,4,1,1,0,1,0,2,2,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,1,1,1,0,3,0,0,0,2,0,6,0,1,0,3,1,0,0,0,1,12,1,1,1,1,0,2]
   },
   "largest": [
     {"id":"us60007idc","time":"2020-01-28T19:10:24Z","mag":7.7,"place":"123 km NNW of Lucea, Jamaica","lat":19.419,"lon":-78.756,"depth":14.9},
@@ -19,9 +19,11 @@
     {"id":"iscgem891339","time":"1954-12-10T13:00:29Z","mag":6.1,"place":"192 km SSW of George Town, Cayman Islands","lat":17.601,"lon":-81.834,"depth":15},
     {"id":"iscgem875082","time":"1962-07-25T04:37:47Z","mag":6.1,"place":"55 km S of Bodden Town, Cayman Islands","lat":18.776,"lon":-81.27,"depth":20},
     {"id":"us60007iig","time":"2020-01-28T21:55:16Z","mag":6.1,"place":"55 km SE of East End, Cayman Islands","lat":18.946,"lon":-80.741,"depth":10},
+    {"id":"iscgem910544","time":"1925-06-14T22:28:21Z","mag":6.06,"place":"174 km SSW of George Town, Cayman Islands","lat":17.94,"lon":-82.23,"depth":10},
     {"id":"usp0006zsj","time":"1995-06-27T10:09:58Z","mag":6,"place":"61 km SW of George Town, Cayman Islands","lat":18.835,"lon":-81.719,"depth":10},
     {"id":"usp000d3zr","time":"2004-09-09T16:33:21Z","mag":6,"place":"170 km S of George Town, Cayman Islands","lat":17.759,"lon":-81.55,"depth":25.2},
     {"id":"usp000h6bt","time":"2010-01-19T14:23:38Z","mag":5.9,"place":"46 km SE of East End, Cayman Islands","lat":19.004,"lon":-80.804,"depth":10},
+    {"id":"iscgem905025","time":"1934-07-10T01:02:08Z","mag":5.89,"place":"59 km SE of East End, Cayman Islands","lat":18.974,"lon":-80.672,"depth":15},
     {"id":"usp0004vw2","time":"1991-08-26T10:01:59Z","mag":5.8,"place":"45 km SSE of East End, Cayman Islands","lat":18.959,"lon":-80.877,"depth":10},
     {"id":"us10003yjy","time":"2015-11-16T00:39:33Z","mag":5.8,"place":"166 km SSW of George Town, Cayman Islands","lat":17.84,"lon":-81.822,"depth":6.7},
     {"id":"usp000b4q2","time":"2002-05-21T06:02:59Z","mag":5.7,"place":"176 km SSW of George Town, Cayman Islands","lat":17.779,"lon":-81.911,"depth":10},
@@ -31,9 +33,7 @@
     {"id":"us6000fv9g","time":"2021-10-16T18:27:28Z","mag":5.4,"place":"73 km SSW of George Town, Cayman Islands","lat":18.701,"lon":-81.705,"depth":10},
     {"id":"usp00026f7","time":"1984-08-16T03:09:49Z","mag":5.3,"place":"149 km SSW of George Town, Cayman Islands","lat":17.965,"lon":-81.687,"depth":10},
     {"id":"usp0009jd3","time":"1999-12-02T10:29:47Z","mag":5.3,"place":"173 km SSW of George Town, Cayman Islands","lat":17.809,"lon":-81.911,"depth":10},
-    {"id":"usp0000jp7","time":"1976-09-29T09:52:33Z","mag":5.2,"place":"49 km SE of East End, Cayman Islands","lat":19.013,"lon":-80.751,"depth":33},
-    {"id":"usp0000t03","time":"1978-02-16T14:55:30Z","mag":5.2,"place":"169 km SSW of George Town, Cayman Islands","lat":17.809,"lon":-81.789,"depth":33},
-    {"id":"usp000ad32","time":"2001-04-12T07:50:53Z","mag":5.2,"place":"89 km SSW of George Town, Cayman Islands","lat":18.548,"lon":-81.71,"depth":10}
+    {"id":"usp0000jp7","time":"1976-09-29T09:52:33Z","mag":5.2,"place":"49 km SE of East End, Cayman Islands","lat":19.013,"lon":-80.751,"depth":33}
   ],
   "recent": [
     {"id":"us6000tgd1","time":"2026-07-28T13:42:18Z","mag":4.5,"place":"39 km S of East End, Cayman Islands","lat":18.947,"lon":-81.1,"depth":10},

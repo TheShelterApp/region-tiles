@@ -2,21 +2,23 @@
   "schemaVersion": 1,
   "id": "TTO",
   "name": "Trinidad and Tobago",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 126,
+  "total": 128,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1,1,1,0,3,0,1,0,31,2,3,1,3,1,4,0,2,20,0,1,0,3,1,1,2,2,3,1,4,4,1,1,0,1,2,0,4,4,3,1,3,1,2,0,0,0,2]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,1,1,1,0,3,0,1,0,31,2,3,1,3,1,4,0,2,20,0,1,0,3,1,1,2,2,3,1,4,4,1,1,0,1,2,0,4,4,3,1,3,1,2,0,0,0,2]
   },
   "largest": [
     {"id":"usp0003dsq","time":"1988-03-10T06:17:23Z","mag":6.7,"place":"62 km ESE of Sangre Grande, Trinidad and Tobago","lat":10.402,"lon":-60.587,"depth":56.2},
     {"id":"usp000810j","time":"1997-04-22T09:31:23Z","mag":6.7,"place":"18 km WSW of Scarborough, Trinidad and Tobago","lat":11.112,"lon":-60.892,"depth":5},
+    {"id":"iscgem16958068","time":"1910-01-23T18:49:23Z","mag":6.53,"place":"144 km ENE of Scarborough, Trinidad and Tobago","lat":11.583,"lon":-59.474,"depth":10},
     {"id":"usp0006c06","time":"1994-05-03T16:36:43Z","mag":6.2,"place":"46 km E of Rio Claro, Trinidad and Tobago","lat":10.241,"lon":-60.758,"depth":36},
+    {"id":"iscgem911897","time":"1922-05-11T06:45:30Z","mag":6.1,"place":"57 km ENE of Scarborough, Trinidad and Tobago","lat":11.463,"lon":-60.29,"depth":15},
     {"id":"iscgem891322","time":"1954-12-04T18:31:13Z","mag":6.1,"place":"23 km N of Paradise, Trinidad and Tobago","lat":10.863,"lon":-61.374,"depth":49},
     {"id":"usp0007zuq","time":"1997-04-02T06:14:31Z","mag":6.1,"place":"33 km NW of Scarborough, Trinidad and Tobago","lat":11.412,"lon":-60.942,"depth":45},
     {"id":"usp000eu2n","time":"2006-09-29T13:08:26Z","mag":6.1,"place":"30 km NW of Petit Valley, Trinidad and Tobago","lat":10.876,"lon":-61.756,"depth":53},
@@ -31,9 +33,7 @@
     {"id":"usp000810m","time":"1997-04-22T10:11:44Z","mag":5.6,"place":"29 km SW of Scarborough, Trinidad and Tobago","lat":11.029,"lon":-60.957,"depth":5},
     {"id":"usp00027xu","time":"1984-10-05T10:30:50Z","mag":5.5,"place":"83 km NE of Scarborough, Trinidad and Tobago","lat":11.69,"lon":-60.173,"depth":58},
     {"id":"usp0003eaf","time":"1988-03-25T16:20:47Z","mag":5.5,"place":"64 km ESE of Rio Claro, Trinidad and Tobago","lat":10.176,"lon":-60.604,"depth":56},
-    {"id":"usp000806d","time":"1997-04-08T17:11:53Z","mag":5.5,"place":"15 km SSW of Scarborough, Trinidad and Tobago","lat":11.049,"lon":-60.785,"depth":5},
-    {"id":"usp00081qd","time":"1997-05-04T01:44:50Z","mag":5.5,"place":"31 km WSW of Scarborough, Trinidad and Tobago","lat":11.027,"lon":-60.975,"depth":5},
-    {"id":"usp000eu32","time":"2006-09-29T18:23:05Z","mag":5.5,"place":"26 km WNW of Petit Valley, Trinidad and Tobago","lat":10.814,"lon":-61.758,"depth":52}
+    {"id":"usp000806d","time":"1997-04-08T17:11:53Z","mag":5.5,"place":"15 km SSW of Scarborough, Trinidad and Tobago","lat":11.049,"lon":-60.785,"depth":5}
   ],
   "recent": [
     {"id":"us7000t1wn","time":"2026-07-20T09:45:08Z","mag":5.2,"place":"17 km NE of Scarborough, Trinidad and Tobago","lat":11.309,"lon":-60.64,"depth":73.1},

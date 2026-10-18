@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "id": "GRL",
   "name": "Greenland",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 313,
+  "total": 320,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,3,0,2,0,0,0,0,2,0,0,0,0,0,1,2,0,5,1,0,0,3,1,0,0,0,0,0,0,0,0,0,0,0,3,3,2,1,0,7,2,2,1,3,2,5,5,5,7,8,4,0,0,1,5,3,5,5,7,5,3,5,8,5,3,8,7,5,7,7,4,11,9,6,3,11,10,7,2,8,5,9,7,7,5,13,7,4,13,3]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,1,1,0,0,3,0,2,0,0,0,0,2,0,0,0,0,0,1,2,0,5,1,0,0,3,1,0,0,0,0,0,0,0,0,0,0,0,3,3,2,1,0,7,2,2,1,3,2,5,5,5,7,8,4,0,0,1,5,3,5,5,7,5,3,5,8,5,3,8,7,5,7,7,4,11,9,6,3,11,10,7,2,8,5,9,7,7,5,13,7,4,13,3]
   },
   "largest": [
     {"id":"usp000gupr","time":"2009-03-06T10:50:29Z","mag":6.5,"place":"north of Svalbard","lat":80.324,"lon":-1.853,"depth":9},
@@ -19,8 +19,10 @@
     {"id":"iscgem899180","time":"1945-11-08T10:02:43Z","mag":6.05,"place":"near the north coast of Greenland","lat":81.444,"lon":-15.45,"depth":15},
     {"id":"iscgemsup889157","time":"1955-01-25T14:50:10Z","mag":6.03,"place":"north of Svalbard","lat":80.633,"lon":-1.308,"depth":15},
     {"id":"iscgem899179","time":"1945-11-08T09:05:28Z","mag":5.87,"place":"near the north coast of Greenland","lat":81.669,"lon":-15.025,"depth":15},
+    {"id":"iscgem904548","time":"1935-09-30T19:00:48Z","mag":5.81,"place":"north of Svalbard","lat":84.21,"lon":-0.552,"depth":15},
     {"id":"us6000hmv1","time":"2022-05-21T07:01:22Z","mag":5.8,"place":"north of Svalbard","lat":84.238,"lon":0.585,"depth":10},
     {"id":"us7000qctd","time":"2025-07-15T17:15:55Z","mag":5.8,"place":"near the north coast of Greenland","lat":83.27,"lon":-33.136,"depth":8},
+    {"id":"iscgem909823","time":"1926-04-24T08:56:29Z","mag":5.7,"place":"north of Svalbard","lat":82.098,"lon":-5.947,"depth":10},
     {"id":"iscgem708631","time":"1976-09-16T03:26:54Z","mag":5.7,"place":"north of Svalbard","lat":84.308,"lon":0.317,"depth":10},
     {"id":"usp0007h7v","time":"1996-05-11T04:38:40Z","mag":5.7,"place":"north of Svalbard","lat":80.578,"lon":-2.271,"depth":29.1},
     {"id":"usp0009av2","time":"1999-07-01T02:08:02Z","mag":5.7,"place":"256 km WSW of Olonkinbyen, Svalbard and Jan Mayen","lat":70.28,"lon":-15.351,"depth":10},
@@ -29,15 +31,13 @@
     {"id":"usp00036je","time":"1987-07-11T06:15:51Z","mag":5.6,"place":"near the north coast of Greenland","lat":82.229,"lon":-17.556,"depth":10},
     {"id":"usp0005y9y","time":"1993-08-10T19:36:20Z","mag":5.6,"place":"near the north coast of Greenland","lat":83.066,"lon":-27.533,"depth":10},
     {"id":"usp000dun3","time":"2005-07-06T08:24:41Z","mag":5.6,"place":"Jan Mayen Island region","lat":69.004,"lon":-16.637,"depth":10},
+    {"id":"iscgem904791","time":"1934-02-13T09:51:46Z","mag":5.57,"place":"268 km W of Olonkinbyen, Svalbard and Jan Mayen","lat":70.895,"lon":-16.066,"depth":10},
     {"id":"iscgem884578","time":"1958-06-18T01:15:05Z","mag":5.56,"place":"Jan Mayen Island region","lat":69.006,"lon":-16.722,"depth":15},
-    {"id":"iscgem708644","time":"1976-09-16T05:13:07Z","mag":5.56,"place":"north of Svalbard","lat":84.155,"lon":-0.966,"depth":10},
-    {"id":"iscgem708639","time":"1976-09-16T04:13:17Z","mag":5.55,"place":"north of Svalbard","lat":84.19,"lon":1.093,"depth":10},
-    {"id":"iscgem890981","time":"1954-08-21T07:19:51Z","mag":5.53,"place":"256 km WSW of Olonkinbyen, Svalbard and Jan Mayen","lat":70.595,"lon":-15.61,"depth":15},
-    {"id":"iscgem708637","time":"1976-09-16T04:03:07Z","mag":5.53,"place":"north of Svalbard","lat":84.317,"lon":1.057,"depth":24.9}
+    {"id":"iscgem708644","time":"1976-09-16T05:13:07Z","mag":5.56,"place":"north of Svalbard","lat":84.155,"lon":-0.966,"depth":10}
   ],
   "recent": [
-    {"id":"us6000ty57","time":"2026-09-28T13:22:39Z","mag":5.4,"place":"north of Svalbard","lat":82.639,"lon":-7.192,"depth":10},
-    {"id":"us6000txr0","time":"2026-09-26T02:52:55Z","mag":4.5,"place":"Iceland region","lat":68.857,"lon":-16.955,"depth":10},
+    {"id":"us6000ty57","time":"2026-09-28T13:22:39Z","mag":5.4,"place":"north of Svalbard","lat":82.587,"lon":-7.44,"depth":10},
+    {"id":"us6000txr0","time":"2026-09-26T02:52:56Z","mag":4.8,"place":"Iceland region","lat":68.889,"lon":-17.022,"depth":10},
     {"id":"us7000sqdu","time":"2026-06-03T19:19:18Z","mag":4.8,"place":"north of Svalbard","lat":83.852,"lon":-2.359,"depth":10},
     {"id":"us6000rpwe","time":"2025-11-23T03:03:26Z","mag":4.8,"place":"20 km NNW of Tasiilaq, Greenland","lat":65.789,"lon":-37.771,"depth":10},
     {"id":"us6000rs98","time":"2025-11-15T20:27:15Z","mag":4.5,"place":"north of Svalbard","lat":82.102,"lon":-5.433,"depth":10},

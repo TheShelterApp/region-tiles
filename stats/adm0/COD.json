@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "id": "COD",
   "name": "Democratic Republic of the Congo",
-  "since": "1936-01-01T00:00:00Z",
-  "until": "2026-10-06T00:00:00Z",
+  "since": "1500-01-01T00:00:00Z",
+  "until": "2026-10-17T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 281,
+  "total": 284,
   "histogram": {
-    "startYear": 1936,
-    "counts": [0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,2,1,0,3,1,1,0,0,0,3,1,1,0,0,0,1,4,2,2,3,4,1,4,2,10,7,12,11,3,5,1,3,1,3,3,7,5,2,5,0,6,9,6,12,4,17,7,0,4,5,4,6,5,3,2,7,6,0,6,3,3,5,10,6,9,4,6,5,4,1]
+    "startYear": 1500,
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,2,1,0,3,1,1,0,0,0,3,1,1,0,0,0,1,4,2,2,3,4,1,4,2,10,7,12,11,3,5,1,3,1,3,3,7,5,2,5,0,6,9,6,12,4,17,7,0,4,5,4,6,5,3,2,7,6,0,6,3,3,5,10,6,9,4,6,5,4,1]
   },
   "largest": [
+    {"id":"iscgem16958124","time":"1910-12-13T11:37:36Z","mag":6.9,"place":"39 km WSW of Karema, Tanzania","lat":-7.018,"lon":30.138,"depth":15},
     {"id":"iscgem849400","time":"1966-03-20T01:42:53Z","mag":6.6,"place":"22 km N of Margherita, Uganda","lat":0.743,"lon":29.84,"depth":29.9},
     {"id":"iscgem880379","time":"1960-09-22T09:05:38Z","mag":6.54,"place":"19 km SW of Uvira, Democratic Republic of the Congo","lat":-3.536,"lon":29.031,"depth":13.7},
+    {"id":"iscgem911871","time":"1922-04-16T13:07:19Z","mag":6.49,"place":"149 km W of Kigoma, Tanzania","lat":-4.875,"lon":28.278,"depth":15},
     {"id":"usp0005dur","time":"1992-09-11T03:57:26Z","mag":6.4,"place":"29 km W of Kabalo, Democratic Republic of the Congo","lat":-6.087,"lon":26.651,"depth":10.8},
     {"id":"iscgem880380","time":"1960-09-22T09:14:59Z","mag":6.35,"place":"16 km N of Uvira, Democratic Republic of the Congo","lat":-3.25,"lon":29.16,"depth":15},
     {"id":"usp000bf6u","time":"2002-10-24T06:08:37Z","mag":6.2,"place":"34 km SW of Goma, Democratic Republic of the Congo","lat":-1.884,"lon":29.004,"depth":11},
@@ -31,9 +33,7 @@
     {"id":"us10002zzn","time":"2015-08-07T01:25:02Z","mag":5.8,"place":"37 km N of Cyangugu, Rwanda","lat":-2.141,"lon":28.897,"depth":11},
     {"id":"iscgem874336","time":"1962-03-08T21:38:34Z","mag":5.78,"place":"29 km SW of Uvira, Democratic Republic of the Congo","lat":-3.571,"lon":28.935,"depth":10},
     {"id":"iscgem884318","time":"1958-05-05T06:31:46Z","mag":5.75,"place":"125 km WSW of Nchelenge, Zambia","lat":-9.681,"lon":27.646,"depth":45},
-    {"id":"iscgem877673","time":"1961-11-12T02:15:18Z","mag":5.75,"place":"13 km SSW of Beni, Democratic Republic of the Congo","lat":0.375,"lon":29.436,"depth":30},
-    {"id":"usp00078u1","time":"1995-12-11T17:54:39Z","mag":5.7,"place":"29 km SW of Kabalo, Democratic Republic of the Congo","lat":-6.224,"lon":26.714,"depth":10},
-    {"id":"iscgem886805","time":"1957-07-05T15:32:10Z","mag":5.62,"place":"166 km NE of Kindu, Democratic Republic of the Congo","lat":-1.71,"lon":26.777,"depth":15}
+    {"id":"iscgem877673","time":"1961-11-12T02:15:18Z","mag":5.75,"place":"13 km SSW of Beni, Democratic Republic of the Congo","lat":0.375,"lon":29.436,"depth":30}
   ],
   "recent": [
     {"id":"us6000s9ze","time":"2026-02-02T03:08:10Z","mag":4.5,"place":"61 km W of Ntungamo, Uganda","lat":-0.975,"lon":29.107,"depth":11.9},

@@ -8,14 +8,16 @@ import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
-  parseCSV, eventsFromCSV, halfYearPages, fetchPage, comcatCount, baseParams, pageMustHaveRows, setRequestIntervalForTests,
+  parseCSV, eventsFromCSV, pagesFor, eraSegments, fetchPage, comcatCount, baseParams, pageMustHaveRows, setRequestIntervalForTests,
 } from './comcat.mjs';
 import { makeAssigner, polygonsOf, loadRegions, levelForMagnitude } from './assign.mjs';
 import { aggregate, histogramYears, formatJSON, yearStart } from './aggregate.mjs';
-import { plausibilityProblems, readPublished, windowCountProblem } from './plausibility.mjs';
+import {
+  comparison, countsFrom, earlierEventsProblem, plausibilityProblems, readPublished, windowCountProblem,
+} from './plausibility.mjs';
 import { judge } from './build-stats.mjs';
 import { VERIFY_OUTCOME, windowCheck, WINDOW_SAMPLE } from './verify-stats.mjs';
-import { STATS_DIR, STATS_INDEX, SCHEMA_VERSION, TOP_LARGEST, TOP_RECENT } from './config.mjs';
+import { SINCE, STATS_DIR, STATS_INDEX, SCHEMA_VERSION, TOP_LARGEST, TOP_RECENT } from './config.mjs';
 import { INDEX_DIR } from '../../config.mjs';
 
 test('CSV: quoted commas, doubled quotes, CRLF', () => {
@@ -41,13 +43,50 @@ test('ComCat CSV rows become events; incomplete and non-earthquake rows are drop
   );
 });
 
-test('half-year pages are contiguous and cut at 1 January / 1 July', () => {
-  const pages = halfYearPages('1936-01-01T00:00:00.000Z', '2026-10-06T00:00:00.000Z');
+test('pages since 1936 are half-years, contiguous and cut at 1 January / 1 July', () => {
+  const pages = pagesFor('1936-01-01T00:00:00.000Z', '2026-10-06T00:00:00.000Z');
   assert.equal(pages.length, 182);
   assert.equal(pages[0].start, '1936-01-01T00:00:00.000Z');
   assert.equal(pages[0].end, '1936-07-01T00:00:00.000Z');
   assert.equal(pages.at(-1).end, '2026-10-06T00:00:00.000Z');
   for (let i = 1; i < pages.length; i++) assert.equal(pages[i].start, pages[i - 1].end);
+});
+
+test('pages by era: one page before 1900, a year a page to 1935, half-years since; none spans two eras', () => {
+  const pages = pagesFor('1500-01-01T00:00:00.000Z', '2026-10-17T00:00:00.000Z');
+  assert.equal(pages.length, 1 + 36 + 182);
+  assert.deepEqual(pages[0], { start: '1500-01-01T00:00:00.000Z', end: '1900-01-01T00:00:00.000Z' });
+  assert.deepEqual(pages[1], { start: '1900-01-01T00:00:00.000Z', end: '1901-01-01T00:00:00.000Z' });
+  assert.deepEqual(pages[36], { start: '1935-01-01T00:00:00.000Z', end: '1936-01-01T00:00:00.000Z' });
+  assert.deepEqual(pages[37], { start: '1936-01-01T00:00:00.000Z', end: '1936-07-01T00:00:00.000Z' });
+  assert.equal(pages.at(-1).end, '2026-10-17T00:00:00.000Z');
+  for (let i = 1; i < pages.length; i++) assert.equal(pages[i].start, pages[i - 1].end);
+  // A window that starts or ends inside an era's page is cut there, and at the era starts.
+  assert.deepEqual(pagesFor('1568-03-05T00:00:00.000Z', '1902-03-01T00:00:00.000Z').map((p) => [p.start.slice(0, 10), p.end.slice(0, 10)]), [
+    ['1568-03-05', '1900-01-01'], ['1900-01-01', '1901-01-01'], ['1901-01-01', '1902-01-01'], ['1902-01-01', '1902-03-01'],
+  ]);
+  assert.deepEqual(pagesFor('2026-03-01T00:00:00.000Z', '2026-10-17T00:00:00.000Z').map((p) => p.start.slice(0, 10)), ['2026-03-01', '2026-07-01']);
+});
+
+test('the empty-page rule follows the era: 100 years before 1900, a year to 1935, 7 days since', () => {
+  const must = (a, b) => pageMustHaveRows(`${a}T00:00:00.000Z`, `${b}T00:00:00.000Z`);
+  assert.equal(must('1500-01-01', '1900-01-01'), true);
+  assert.equal(must('1800-01-01', '1899-01-01'), false, 'under 100 years before 1900 may be empty');
+  assert.equal(must('1900-01-01', '1901-01-01'), true);
+  assert.equal(must('1935-07-01', '1936-01-01'), false, 'half a year of 1900-1935 may be empty');
+  assert.equal(must('1936-01-01', '1936-01-08'), true);
+  assert.equal(must('2026-07-01', '2026-07-03'), false);
+});
+
+test('the window count runs per era: a full window in three, an incremental one in one', () => {
+  assert.deepEqual(eraSegments('1500-01-01T00:00:00.000Z', '2026-10-17T00:00:00.000Z'), [
+    { start: '1500-01-01T00:00:00.000Z', end: '1900-01-01T00:00:00.000Z' },
+    { start: '1900-01-01T00:00:00.000Z', end: '1936-01-01T00:00:00.000Z' },
+    { start: '1936-01-01T00:00:00.000Z', end: '2026-10-17T00:00:00.000Z' },
+  ]);
+  assert.deepEqual(eraSegments('2025-01-01T00:00:00.000Z', '2026-10-17T00:00:00.000Z'), [
+    { start: '2025-01-01T00:00:00.000Z', end: '2026-10-17T00:00:00.000Z' },
+  ]);
 });
 
 // Two square "countries" 2 degrees wide, one with a "province", on the equator.
@@ -235,6 +274,9 @@ test('published files: schema, totals and ordering', { skip: !existsSync(STATS_I
     assert.equal(doc.total, doc.histogram.counts.reduce((a, b) => a + b, 0), f);
     assert.equal(doc.total, index.countries[doc.id], f);
     assert.equal(doc.until, index.until);
+    // The histogram starts at the window's year (1500), whatever the country's first event (SHLTR-120).
+    assert.equal(doc.since, index.since);
+    assert.equal(doc.histogram.startYear, new Date(index.since).getUTCFullYear(), f);
     for (let i = 1; i < doc.largest.length; i++) assert.ok(doc.largest[i - 1].mag >= doc.largest[i].mag, f);
     for (let i = 1; i < doc.recent.length; i++) assert.ok(doc.recent[i - 1].time >= doc.recent[i].time, f);
     assert.ok(Buffer.byteLength(JSON.stringify(doc)) < 16 * 1024, `${f} is small`);
@@ -429,7 +471,10 @@ test('build: a window short of ComCat\'s own count fails before any write', { sk
   const { r, unchanged } = runBuildWithStub(`
     let n = 0;
     globalThis.fetch = async (url) => {
-      if (String(url).includes('/count?')) return new Response('{"count":15000}', { status: 200 });
+      if (String(url).includes('/count?')) {
+        // Nothing before SINCE; 15,000 in the window.
+        return new Response(String(url).includes('starttime=0001-') ? '{"count":0}' : '{"count":15000}', { status: 200 });
+      }
       const start = new URL(String(url)).searchParams.get('starttime');
       n++;
       return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + n + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
@@ -445,13 +490,14 @@ test('build: a shrunken catalogue that agrees with its /count fails on the drop;
   // One event per half-year page, and a /count that agrees with it: the window check passes, the increment cannot prove
   // its lists and falls back to a full run, so only the comparison with the published files can stop the build.
   const stub = `
-    import { halfYearPages, setRequestIntervalForTests } from ${JSON.stringify(new URL('./comcat.mjs', import.meta.url).href)};
+    import { pagesFor, setRequestIntervalForTests } from ${JSON.stringify(new URL('./comcat.mjs', import.meta.url).href)};
     setRequestIntervalForTests(0);
     globalThis.fetch = async (url) => {
       const u = new URL(String(url));
       const start = u.searchParams.get('starttime');
       if (u.pathname.endsWith('/count')) {
-        return new Response(JSON.stringify({ count: halfYearPages(start, u.searchParams.get('endtime')).length }), { status: 200 });
+        const count = start.startsWith('0001-') ? 0 : pagesFor(start, u.searchParams.get('endtime')).length;
+        return new Response(JSON.stringify({ count }), { status: 200 });
       }
       return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + start.slice(0, 10) + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
     };
@@ -459,9 +505,12 @@ test('build: a shrunken catalogue that agrees with its /count fails on the drop;
   const refused = runBuildWithStub(stub);
   assert.equal(refused.r.status, 1, refused.r.stdout + refused.r.stderr);
   assert.match(refused.r.stdout, /▶ full \(--full\): /);
-  const counts = [...refused.r.stdout.matchAll(/▶ ComCat \/count of the window: (\d+), downloaded (\d+)/g)];
-  assert.equal(counts.length, 2, 'the increment, then the full run');
-  for (const [, comcat, downloaded] of counts) assert.equal(downloaded, comcat, 'the window check passes');
+  const counts = [...refused.r.stdout.matchAll(/▶ ComCat \/count of (\S+) → (\S+): (\d+), downloaded (\d+)/g)];
+  const eras = eraSegments(SINCE, JSON.parse(readFileSync(STATS_INDEX, 'utf8')).until).length;
+  assert.equal(counts.length, 1 + eras, 'the increment (one era), then the full run (one count per era)');
+  // One event at each page's start; ComCat's /count is inclusive at the end, so an era's download also holds the next
+  // era's first event.
+  for (const [, , , comcat, downloaded] of counts) assert.ok(Number(downloaded) >= Number(comcat), 'the window check passes');
   assert.match(refused.r.stderr, /not plausible, nothing written:\n {2}- the global total drops from \d+ to \d+ /);
   assert.ok(refused.unchanged, 'the published files are unchanged');
 
@@ -469,6 +518,65 @@ test('build: a shrunken catalogue that agrees with its /count fails on the drop;
   assert.equal(accepted.r.status, 0, accepted.r.stdout + accepted.r.stderr);
   assert.match(accepted.r.stdout, /⚠ accepted \(--accept-drop\): the global total drops/);
   assert.equal(accepted.unchanged, false, 'written under --accept-drop');
+});
+
+// SHLTR-120: a window opened earlier (SINCE moved back) keeps the drop checks over the previous window's years.
+test('comparison: a window opened earlier is compared over the previous window\'s years', () => {
+  const at = (iso) => Date.parse(iso);
+  const filter = { minMagnitude: 4.5, eventType: 'earthquake', untilMs: at('2026-10-17T00:00:00Z') };
+  const previous = { since: '1936-01-01T00:00:00Z', until: '2026-10-06T00:00:00Z', minMagnitude: 4.5, eventType: 'earthquake' };
+  assert.deepEqual(comparison(previous, { ...filter, sinceMs: at('1500-01-01T00:00:00Z') }), { comparable: true, fromYear: 1936 });
+  assert.deepEqual(comparison(previous, { ...filter, sinceMs: at('1936-01-01T00:00:00Z') }), { comparable: true, fromYear: 1936 });
+  assert.deepEqual(comparison({ ...previous, since: '1500-01-01T00:00:00Z' }, { ...filter, sinceMs: at('1500-01-01T00:00:00Z') }), { comparable: true, fromYear: 1500 });
+  // A later start, another floor, an earlier cutoff or no previous files: not compared.
+  assert.equal(comparison({ ...previous, since: '1500-01-01T00:00:00Z' }, { ...filter, sinceMs: at('1936-01-01T00:00:00Z') }).comparable, false);
+  assert.equal(comparison({ ...previous, minMagnitude: 5 }, { ...filter, sinceMs: at('1500-01-01T00:00:00Z') }).comparable, false);
+  assert.equal(comparison(previous, { ...filter, sinceMs: at('1500-01-01T00:00:00Z'), untilMs: at('2026-01-01T00:00:00Z') }).comparable, false);
+  assert.deepEqual(comparison(null, { ...filter, sinceMs: at('1500-01-01T00:00:00Z') }), { comparable: false, fromYear: 1500 });
+
+  // The new build from 1500 counted over 1934-1936 and compared from 1936: the new years add nothing to the check, a
+  // drop in the old ones still fails.
+  const h = (counts) => ({ startYear: 1934, counts });
+  const published = { total: 60, countries: { AAA: 40, BBB: 10 }, years: new Map([[1936, 60]]) };
+  const grown = countsFrom({ countries: { AAA: h([5, 5, 40]), BBB: h([0, 3, 10]) }, unassigned: h([1, 1, 10]) }, 1936);
+  assert.deepEqual(grown, { total: 60, countries: { AAA: 40, BBB: 10 }, years: new Map([[1936, 60]]) });
+  assert.deepEqual(plausibilityProblems({ previous: published, next: grown, comparable: true, sameAssignment: true }), []);
+  const shrunk = countsFrom({ countries: { AAA: h([50, 50, 4]), BBB: h([0, 3, 10]) }, unassigned: h([1, 1, 10]) }, 1936);
+  const problems = plausibilityProblems({ previous: published, next: shrunk, comparable: true, sameAssignment: true });
+  assert.equal(problems.length, 3, problems.join('\n'));
+  assert.match(problems[0], /global total drops from 60 to 24/);
+  assert.match(problems[1], /1936: 60 → 24/);
+  assert.match(problems[2], /AAA 40 → 4/);
+  // Over the whole window the shrunken build would have looked larger than the published one.
+  assert.equal(countsFrom({ countries: { AAA: h([50, 50, 4]), BBB: h([0, 3, 10]) }, unassigned: h([1, 1, 10]) }, 1934).total, 129);
+});
+
+test('the window starts at the catalogue\'s earliest year: an earthquake ComCat lists before SINCE is a problem', () => {
+  assert.equal(SINCE, '1500-01-01T00:00:00Z', 'the century before ComCat\'s earliest earthquake (1568-01-01, Moodus)');
+  assert.equal(earlierEventsProblem({ count: 0, since: SINCE }), null);
+  assert.match(earlierEventsProblem({ count: 2, since: SINCE }), /lists 2 earthquake\(s\) of the filter before 1500-01-01T00:00:00Z: .*Move SINCE/);
+});
+
+test('build: an earthquake ComCat lists before SINCE fails before any write', { skip: !existsSync(STATS_INDEX) }, () => {
+  // Pages and the window's /count agree (one event a page); only the count before SINCE is wrong.
+  const { r, unchanged } = runBuildWithStub(`
+    import { pagesFor, setRequestIntervalForTests } from ${JSON.stringify(new URL('./comcat.mjs', import.meta.url).href)};
+    setRequestIntervalForTests(0);
+    globalThis.fetch = async (url) => {
+      const u = new URL(String(url));
+      const start = u.searchParams.get('starttime');
+      if (u.pathname.endsWith('/count')) {
+        const count = start.startsWith('0001-') ? 2 : pagesFor(start, u.searchParams.get('endtime')).length;
+        return new Response(JSON.stringify({ count }), { status: 200 });
+      }
+      return new Response(${JSON.stringify(CSV_HEADER)} + '\\n' + start.slice(0, 19) + '.000Z,35.0,140.0,10,5.1,mb,,,,,us,stub' + start.slice(0, 10) + ',2026-01-01T00:00:00.000Z,"x",earthquake\\n', { status: 200 });
+    };
+  `);
+  assert.equal(r.status, 1, r.stdout + r.stderr);
+  assert.match(r.stdout, /▶ incremental: /);
+  assert.match(r.stdout, /▶ ComCat \/count before 1500-01-01T00:00:00Z: 2/);
+  assert.match(r.stderr, /not plausible, nothing written:\n {2}- ComCat lists 2 earthquake\(s\) of the filter before 1500-01-01T00:00:00Z/);
+  assert.ok(unchanged, 'the published files are unchanged');
 });
 
 // ---- R16-FOLLOWUPS (4): the refresh workflow's bounded verification before the push -----------------------------------
