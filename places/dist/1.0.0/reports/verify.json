@@ -1,0 +1,103 @@
+{
+  "results": [
+    {
+      "detail": "",
+      "id": 0,
+      "ms": 11,
+      "name": "meta matches the pointer and the tables",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "id": 1,
+      "ms": 642,
+      "name": "round trip of every geometry",
+      "ok": true
+    },
+    {
+      "detail": "255 countries vertex for vertex, 4596 provinces within half a quantum",
+      "id": 2,
+      "ms": 94,
+      "name": "country and province outlines equal the regions bundle",
+      "ok": true
+    },
+    {
+      "detail": "71118 water points, 687 in nested features (reports/water-nesting.txt), 0 conflicting overlaps, 38 gaps (0.053 %)",
+      "id": 3,
+      "ms": 290,
+      "name": "the marine layer is a partition (nesting only along parent chains)",
+      "ok": true
+    },
+    {
+      "detail": "336 waters; 0 chain errors, 0 disagree with NE oceanbasin, 29 with adjacency (reports/water-parents.txt)",
+      "id": 4,
+      "ms": 22,
+      "name": "water parents end in an ocean and agree with Natural Earth and adjacency",
+      "ok": true
+    },
+    {
+      "detail": "5197 areas and 69750 towns",
+      "id": 5,
+      "ms": 45,
+      "name": "name hygiene",
+      "ok": true
+    },
+    {
+      "detail": "362/362",
+      "id": 6,
+      "ms": 12,
+      "name": "golden points",
+      "ok": true
+    },
+    {
+      "detail": "no previous release given (first release); 100000 points x 3 tiers written to reports/lattice.tsv.gz (3 s)",
+      "id": 7,
+      "ms": 0,
+      "name": "lattice regression against the previous release",
+      "ok": true
+    },
+    {
+      "detail": "305 differences (265 the band measured to a province outline, 22 land only by a province outline, 18 the outlines disagree (the province and the towns decide)), 0 not accepted (reports/part-parity.txt)",
+      "id": 8,
+      "ms": 693,
+      "name": "part parity (core alone vs core + detail)",
+      "ok": true
+    },
+    {
+      "detail": "8 zones",
+      "id": 9,
+      "ms": 1,
+      "name": "zones and countries have a part of the world",
+      "ok": true
+    },
+    {
+      "detail": "core 96ba9172f85e, detail d8084974e0a6",
+      "id": 10,
+      "ms": 2229,
+      "name": "reproducibility (a second build, same sha256)",
+      "ok": true
+    },
+    {
+      "detail": "core 518536 B gz (<= 1,000,000), detail 3842180 B gz (<= 5000000), 69750 towns (<= 200,000)",
+      "id": 11,
+      "ms": 0,
+      "name": "size and row budgets",
+      "ok": true
+    },
+    {
+      "detail": "bundle levels read: 0, 1",
+      "id": 12,
+      "ms": 1,
+      "name": "licences and attribution",
+      "ok": true
+    },
+    {
+      "detail": "413 towns listed (reports/town-countries.md)",
+      "id": 13,
+      "ms": 215,
+      "name": "town countries against GeoNames",
+      "ok": true
+    }
+  ],
+  "version": "1.0.0"
+}

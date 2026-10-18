@@ -1,0 +1,14 @@
+nested (a water inside its ancestor): 687 lattice points; conflicts: 0
+593	Atlantic Ocean + Sargasso Sea
+46	Drake Passage + South Atlantic Ocean
+16	Drake Passage + Southern Ocean
+15	Bothnian Sea + Gulf of Bothnia
+7	Bothnian Bay + Gulf of Bothnia
+3	English Channel + Strait of Dover
+2	Bohai Sea + Liaodong Bay
+1	Salish Sea + Strait of Georgia
+1	Salish Sea + Strait of Juan de Fuca
+1	La Pérouse Strait + Sea of Japan
+1	Bab-el-Mandeb + Red Sea
+1	Indian Ocean + Mozambique Channel
+
