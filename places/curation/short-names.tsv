@@ -11,10 +11,247 @@ adm0:SGS	South Georgia	Южная Георгия	System name: South Georgia & So
 adm0:HMD	Heard Island	Остров Херд	System name: Heard & McDonald Islands / острова Херд и Макдональд
 adm0:IOT	Chagos	Чагос	System name: British Indian Ocean Territory / Британская территория в Индийском океане
 adm0:ATF	French Southern Lands	ФЮАТ	System name: French Southern Territories / Французские Южные территории
-adm0:UMI	US Outlying Islands	Внешние острова США	System name: U.S. Outlying Islands / Внешние малые острова (США)
+adm0:UMI	US Outlying Islands	Внешние малые о-ва	System name: U.S. Outlying Islands / Внешние малые острова (США); agents 2026-10-18
 adm0:TCA	Turks & Caicos	Тёркс и Кайкос	System name: Turks & Caicos Islands / о-ва Тёркс и Кайкос
 adm0:PNG	Papua New Guinea	Папуа — Новая Гвинея	System name (ru): Папуа — Новая Гвинея
 adm0:ARE	UAE	ОАЭ	System name: United Arab Emirates / ОАЭ
 adm0:KNA	St. Kitts & Nevis	Сент-Китс и Невис	System name: St. Kitts & Nevis
 adm0:STP	São Tomé	Сан-Томе	System name: São Tomé & Príncipe / Сан-Томе и Принсипи
 adm0:DOM	Dominican Rep.	Доминикана	System name: Dominican Republic / Доминиканская Республика
+adm0:ATC	Ashmore and Cartier Is.	О-ва Ашмор и Картье	agents 2026-10-18
+adm0:BJN	Bajo Nuevo Bank		agents 2026-10-18
+adm0:CNM		Буферная зона ООН	agents 2026-10-18
+adm0:CSI		О-ва Кораллового м.	agents 2026-10-18
+adm0:ESB	Dhekelia Sov. Base Area		agents 2026-10-18
+adm0:GNQ		Экв. Гвинея	agents 2026-10-18
+adm0:IOA		Терр. в Индийском ок.	agents 2026-10-18
+adm0:MNP	Northern Mariana Is.	Сев. Марианские о-ва	agents 2026-10-18
+adm0:PSE		Палестинские терр.	agents 2026-10-18
+adm0:PYF		Франц. Полинезия	agents 2026-10-18
+adm0:USA		США	agents 2026-10-18
+adm0:USG	Guantanamo Bay	База ВМС Гуантанамо	agents 2026-10-18
+adm0:VGB		Брит. Виргинские о-ва	agents 2026-10-18
+adm0:VIR		Виргинские о-ва США	agents 2026-10-18
+adm0:WSB	Akrotiri Sovereign Base		agents 2026-10-18
+adm0:ZAF		ЮАР	agents 2026-10-18
+adm1:ARE.1	Ras Al Khaimah		agents 2026-10-18
+adm1:ARE.2	Umm Al Quwain		agents 2026-10-18
+adm1:ATC.1	Ashmore and Cartier Is.	О-ва Ашмор и Картье	agents 2026-10-18
+adm1:ATF.3	Amsterdam & St. Paul	О-ва Сен-Поль и Амст.	agents 2026-10-18
+adm1:ATF.4	Scattered Islands		agents 2026-10-18
+adm1:AUS.5	Australian Capital Terr.	Австрал. столич. терр.	agents 2026-10-18
+adm1:BIH.4	West Herzegovina	Западная Герцеговина	agents 2026-10-18
+adm1:BIH.5	Herzegovina-Neretva	Герцег.-Неретвенский	agents 2026-10-18
+adm1:BIH.9	Bosnian Podrinje	Босн.-Подринский	agents 2026-10-18
+adm1:CHE.8	Appenzell A.Rh.	Аппенц.-Ауссерроден	agents 2026-10-18
+adm1:CHL.3	Magallanes	Магальянес	agents 2026-10-18
+adm1:COL.8	San Andrés Islands	Сан-Андрес и Провид.	agents 2026-10-18
+adm1:CPV.10	S. Lourenço dos Órgãos	Сан-Лоренсу	agents 2026-10-18
+adm1:CPV.12	Rib. Grande de Santiago	Рибейра-Гр.-Сантьяго	agents 2026-10-18
+adm1:ECU.24	Santo Domingo	Санто-Доминго	agents 2026-10-18
+adm1:FRA.9	Alpes-de-H.-Provence	Альпы Верх. Прованса	agents 2026-10-18
+adm1:GBR.226	Windsor & Maidenhead		agents 2026-10-18
+adm1:GBR.230	Cheshire W. & Chester	Зап. Чешир и Честер	agents 2026-10-18
+adm1:GBR.40	Bath & NE Somerset	Бат и С.-В. Сомерсет	agents 2026-10-18
+adm1:GBR.65	Hammersmith & Fulham		agents 2026-10-18
+adm1:GBR.68	Kensington & Chelsea		agents 2026-10-18
+adm1:GBR.71	Richmond		agents 2026-10-18
+adm1:GBR.85	Dungannon & S. Tyrone	Данганнон и Ю. Тирон	agents 2026-10-18
+adm1:GEO.4	Samegrelo-Z. Svaneti	Самегрело-З. Сванети	agents 2026-10-18
+adm1:GEO.8	Racha-Lechkhumi	Рача-Лечхуми	agents 2026-10-18
+adm1:GRC.13	E. Macedonia & Thrace	Вост. Макед. и Фракия	agents 2026-10-18
+adm1:GRD.1	Carriacou & Petite Mart.	Карриаку	agents 2026-10-18
+adm1:GUY.4	U. Demerara-Berbice	Ап.-Демерара-Бербис	agents 2026-10-18
+adm1:HKG.1	Central and Western	Центральный и зап.	agents 2026-10-18
+adm1:HMD.1	Heard and McDonald Is.	Херд и Макдональд	agents 2026-10-18
+adm1:HUN.15	Szabolcs-Szatmár-B.	Сабольч-Сатмар-Б.	agents 2026-10-18
+adm1:IND.12	DNH and Daman & Diu	Д. и Н.-Х., Даман и Диу	agents 2026-10-18
+adm1:IND.15	Andaman and Nicobar	Андам. и Никоб. о-ва	agents 2026-10-18
+adm1:IOT.1	Brit. Indian Ocean Terr.	Брит. терр. в Инд. ок.	agents 2026-10-18
+adm1:IRL.11	Dún Laoghaire–Rathd.		agents 2026-10-18
+adm1:IRN.1	Kohgiluyeh & B.-Ahmad	Кохгилуйе и Бойерах.	agents 2026-10-18
+adm1:IRN.10	Chaharmahal-Bakhtiari	Чехармехаль и Бахт.	agents 2026-10-18
+adm1:KNA.1	Christ Ch. Nichola Town	Крайст-Чёрч-Н.-Таун	agents 2026-10-18
+adm1:KNA.13	St. Thomas Middle Is.	Сент-Томас-Мидл-А.	agents 2026-10-18
+adm1:KNA.3	St. George Basseterre		agents 2026-10-18
+adm1:KNA.4	St. George Gingerland	Джинджерланд	agents 2026-10-18
+adm1:MAR.12	Marrakesh-Tensift-El H.	Марракеш-Тенсифт-Х.	agents 2026-10-18
+adm1:MAR.3	Taza-Al Hoceïma-Taou.	Таза-Хосейма-Таунат	agents 2026-10-18
+adm1:MAR.4	Gharb-Chrarda-Béni H.	Гарб-Шрарда-Б.-Хсен	agents 2026-10-18
+adm1:MAR.7	Rabat-Salé-Zem.-Zaër	Рабат-Сале-З.-Заер	agents 2026-10-18
+adm1:MNP.4	Northern Marianas	Сев. Марианские о-ва	agents 2026-10-18
+adm1:PAK.3	Islamabad Capital Terr.	Фед. столичная терр.	agents 2026-10-18
+adm1:PAK.5	Fed. Admin. Tribal Areas	Терр. племён фед. упр.	agents 2026-10-18
+adm1:PAN.12	Emberá-Wounaan		agents 2026-10-18
+adm1:POL.11	Świętokrzyskie	Свентокшиское воев.	agents 2026-10-18
+adm1:POL.14	Podkarpackie	Подкарпатское воев.	agents 2026-10-18
+adm1:POL.16	Lesser Poland	Малопольское воев.	agents 2026-10-18
+adm1:POL.3	Lower Silesian Voiv.	Нижнесилезск. воев.	agents 2026-10-18
+adm1:POL.4	West Pomeranian Voiv.	Зап.-Поморское воев.	agents 2026-10-18
+adm1:POL.6	Greater Poland	Великопольское воев.	agents 2026-10-18
+adm1:POL.7	Kuyavian-Pomeranian	Куявско-Поморское	agents 2026-10-18
+adm1:RUS.4	Karachay-Cherkessia		agents 2026-10-18
+adm1:SGP.2	South West CDC		agents 2026-10-18
+adm1:SGS.1	South Georgia	Южная Георгия	agents 2026-10-18
+adm1:SPM.1	St. Pierre and Miquelon		agents 2026-10-18
+adm1:SVN.119	Sveti Andraž		agents 2026-10-18
+adm1:SVN.12	Gorenja vas-Poljane		agents 2026-10-18
+adm1:SVN.57	Dobrova-Polhov Gradec	Доброва-Полхов Гр.	agents 2026-10-18
+adm1:SVN.81	Miklavž na Dr. Polju	Миклавж-на-Др. Полю	agents 2026-10-18
+adm1:TCA.3	Providenciales	Провиденсьялес	agents 2026-10-18
+adm1:TCA.4	South & East Caicos	Вост. и Юж. Кайкос	agents 2026-10-18
+adm1:THA.37	Ayutthaya		agents 2026-10-18
+adm1:TJK.3	Republican Subord.	Р-ны респ. подчин.	short form: 2026-10-18 gate fix
+adm1:TTO.10	Couva-Tabaquite-Talp.	Кува-Табак.-Тальпаро	agents 2026-10-18
+adm1:TTO.11	Penal-Debe		agents 2026-10-18
+adm1:TTO.13	Tunapuna-Piarco		agents 2026-10-18
+adm1:TTO.3	Diego Martin		agents 2026-10-18
+adm1:TTO.4	Siparia		agents 2026-10-18
+adm1:TTO.6	Sangre Grande		agents 2026-10-18
+adm1:AND.7		Сан-Джулия	agents 2026-10-18
+adm1:ARG.16		Сантьяго-д.-Эстеро	agents 2026-10-18
+adm1:AUS.2		Терр. Джервис-Бей	agents 2026-10-18
+adm1:AZE.24		Джебраильский р-н	agents 2026-10-18
+adm1:AZE.25		Джалилабадский р-н	agents 2026-10-18
+adm1:AZE.35		Нефтечалинский р-н	agents 2026-10-18
+adm1:AZE.47		Агджабединский р-н	agents 2026-10-18
+adm1:AZE.7		Кельбаджарский р-н	agents 2026-10-18
+adm1:BEL.3		Брюссельский регион	agents 2026-10-18
+adm1:BEL.4		Фламандск. Брабант	agents 2026-10-18
+adm1:BEN.4		Атлантическая пров.	agents 2026-10-18
+adm1:BGR.14		Обл. Велико-Тырново	agents 2026-10-18
+adm1:BHR.3		Центральное губерн.	agents 2026-10-18
+adm1:BIH.2		Унско-Санский кант.	agents 2026-10-18
+adm1:BIH.3		Среднебоснийский	agents 2026-10-18
+adm1:BIH.7		Зеницко-Добойский	agents 2026-10-18
+adm1:BWA.3		Северо-Зап. округ	agents 2026-10-18
+adm1:BWA.9		Северо-Вост. округ	agents 2026-10-18
+adm1:CAN.13		О. Принца Эдуарда	agents 2026-10-18
+adm1:CHE.26		Аппенц.-Иннерроден	agents 2026-10-18
+adm1:CHN.32		Парасельские о-ва	agents 2026-10-18
+adm1:COD.1		Экваториальная пров.	agents 2026-10-18
+adm1:CPV.18		Таррафал-де-Сан-Н.	agents 2026-10-18
+adm1:CPV.4		Санта-Кат.-до-Фого	agents 2026-10-18
+adm1:CPV.9		Сан-Сальвадор-до-М.	agents 2026-10-18
+adm1:CZE.13		Краловеградецкий кр.	agents 2026-10-18
+adm1:CZE.14		Моравскосилезский	agents 2026-10-18
+adm1:CZE.3		Южно-Моравский кр.	agents 2026-10-18
+adm1:DEU.1		Сев. Рейн-Вестфалия	agents 2026-10-18
+adm1:DNK.1		Центр. Ютландия	agents 2026-10-18
+adm1:DOM.26		М.-Тринидад-Санчес	agents 2026-10-18
+adm1:DOM.7		Сан-Педро-де-Макор.	agents 2026-10-18
+adm1:ESP.41		Санта-Крус-де-Тенер.	agents 2026-10-18
+adm1:ETH.4		Регион Народов юга	agents 2026-10-18
+adm1:FLK.1		Фолклендские о-ва	agents 2026-10-18
+adm1:FRA.80		Атлантич. Пиренеи	agents 2026-10-18
+adm1:GBR.118		Восточный Йоркшир	agents 2026-10-18
+adm1:GBR.132		Дамфрис и Галловей	agents 2026-10-18
+adm1:GBR.220		Центр. Бедфордшир	agents 2026-10-18
+adm1:GBR.52		С.-В. Линкольншир	agents 2026-10-18
+adm1:GBR.53		Сев. Линкольншир	agents 2026-10-18
+adm1:GIN.20		Префектура Кундара	agents 2026-10-18
+adm1:GIN.8		Преф. Дингирайе	agents 2026-10-18
+adm1:GRC.11		Центр. Македония	agents 2026-10-18
+adm1:GRC.14		Южные Эгейские о-ва	agents 2026-10-18
+adm1:GRC.8		Сев. Эгейские о-ва	agents 2026-10-18
+adm1:HRV.1		Дубровницко-Неретв.	agents 2026-10-18
+adm1:HRV.13		Бродско-Посавская	agents 2026-10-18
+adm1:HRV.14		Осиецко-Бараньская	agents 2026-10-18
+adm1:HRV.15		Пожеж.-Славонская	agents 2026-10-18
+adm1:HRV.16		Вуковарско-Сремская	agents 2026-10-18
+adm1:HRV.17		Вировит.-Подравская	agents 2026-10-18
+adm1:HRV.18		Беловар.-Билогорская	agents 2026-10-18
+adm1:HRV.19		Копривницко-Криж.	agents 2026-10-18
+adm1:HRV.2		Шибенско-Книнская	agents 2026-10-18
+adm1:HRV.20		Меджумурская жуп.	agents 2026-10-18
+adm1:HRV.21		Вараждинская жуп.	agents 2026-10-18
+adm1:HRV.3		Сплит.-Далматинская	agents 2026-10-18
+adm1:HRV.5		Крапинско-Загорская	agents 2026-10-18
+adm1:HRV.7		Лицко-Сеньская жуп.	agents 2026-10-18
+adm1:HRV.8		Приморско-Горанская	agents 2026-10-18
+adm1:HRV.9		Сисац.-Мославинская	agents 2026-10-18
+adm1:HTI.10		Юго-Восточный деп.	agents 2026-10-18
+adm1:HTI.3		Северо-Зап. деп.	agents 2026-10-18
+adm1:HTI.6		Центральный деп.	agents 2026-10-18
+adm1:HTI.7		Северо-Вост. деп.	agents 2026-10-18
+adm1:HTI.8		Северный деп. Гаити	agents 2026-10-18
+adm1:HTI.9		Западный деп.	agents 2026-10-18
+adm1:HUN.14		Боршод-А.-Земплен	agents 2026-10-18
+adm1:IDN.15		Вост. Нуса-Тенгара	agents 2026-10-18
+adm1:IDN.2		Вост. Калимантан	agents 2026-10-18
+adm1:IDN.30		Зап. Нуса-Тенгара	agents 2026-10-18
+adm1:IDN.31		Юго-Вост. Сулавеси	agents 2026-10-18
+adm1:IDN.32		Центр. Сулавеси	agents 2026-10-18
+adm1:IRN.21		Зап. Азербайджан	agents 2026-10-18
+adm1:IRN.22		Вост. Азербайджан	agents 2026-10-18
+adm1:IRN.29		Систан-Белуджистан	agents 2026-10-18
+adm1:ISR.4		Сев. округ Израиля	agents 2026-10-18
+adm1:ITA.102		Трентино-А.-Адидже	agents 2026-10-18
+adm1:ITA.48		Барлетта-Андрия-Т.	agents 2026-10-18
+adm1:ITA.80		Вербано-Кузио-Осс.	agents 2026-10-18
+adm1:KAZ.10		Вост.-Казахст. обл.	agents 2026-10-18
+adm1:KAZ.5		Западно-Казахст. обл.	agents 2026-10-18
+adm1:KEN.1		Прибрежная пров.	agents 2026-10-18
+adm1:KEN.2		Центральная пров.	agents 2026-10-18
+adm1:KGZ.6		Джалал-Абад. обл.	agents 2026-10-18
+adm1:KNA.14		Тринити-Палметто-П.	agents 2026-10-18
+adm1:KNA.2		Сент-Энн-Сэнди-П.	agents 2026-10-18
+adm1:KNA.5		Сент-Джеймс-Уинд.	agents 2026-10-18
+adm1:LBY.14		Таджура	agents 2026-10-18
+adm1:LBY.16		Джебель-эль-Ахдар	agents 2026-10-18
+adm1:MDA.33		Шолданештский р-н	agents 2026-10-18
+adm1:MDA.38		Штефан-Водский р-н	agents 2026-10-18
+adm1:MEX.3		Юж. Ниж. Калифорния	agents 2026-10-18
+adm1:MKD.80		Македон.-Каменица	agents 2026-10-18
+adm1:NIC.3		Атлантический Юж.	agents 2026-10-18
+adm1:NIC.7		Атлантический Сев.	agents 2026-10-18
+adm1:OMN.6		Северная Аль-Батина	agents 2026-10-18
+adm1:PHL.80		П-ов Замбоанга	agents 2026-10-18
+adm1:PNG.12		Центральная пров.	agents 2026-10-18
+adm1:PNG.13		Вост. Новая Британия	agents 2026-10-18
+adm1:PNG.20		Зап. Новая Британия	agents 2026-10-18
+adm1:PNG.8		Авт. регион Бугенвиль	agents 2026-10-18
+adm1:POL.13		Люблинское воев.	agents 2026-10-18
+adm1:POL.15		Опольское воев.	agents 2026-10-18
+adm1:POL.5		Любушское воев.	agents 2026-10-18
+adm1:POL.8		Силезское воев.	agents 2026-10-18
+adm1:POL.9		Лодзинское воев.	agents 2026-10-18
+adm1:PSE.2		Зап. берег р. Иордан	agents 2026-10-18
+adm1:RUS.43		Респ. Башкортостан	agents 2026-10-18
+adm1:SAU.8		Худуд-эш-Шамалия	agents 2026-10-18
+adm1:SLB.3		Центральная пров.	agents 2026-10-18
+adm1:SLV.11		Деп. Сан-Висенте	agents 2026-10-18
+adm1:SRB.2		Южно-Банатский окр.	agents 2026-10-18
+adm1:SRB.3		Ср.-Банатский окр.	agents 2026-10-18
+adm1:SRB.7		Западно-Бачский окр.	agents 2026-10-18
+adm1:SRB.8		Северно-Бачский окр.	agents 2026-10-18
+adm1:SRB.9		Сев.-Банатский окр.	agents 2026-10-18
+adm1:SSD.10		Восточная Экватория	agents 2026-10-18
+adm1:SSD.4		Центр. Экватория	agents 2026-10-18
+adm1:SVK.2		Банска-Бистрицкий	agents 2026-10-18
+adm1:SVN.137		Церкле-на-Гореньск.	agents 2026-10-18
+adm1:SVN.46		Св. Юрий-об-Шчавн.	agents 2026-10-18
+adm1:SYR.15		Зона СООННР	agents 2026-10-18
+adm1:TJK.1		Горный Бадахшан	agents 2026-10-18
+adm1:TZA.3		Занзибар Центр.-Юж.	agents 2026-10-18
+adm1:UKR.5		Ивано-Франков. обл.	agents 2026-10-18
+adm1:UZB.6		Кашкадарьин. обл.	agents 2026-10-18
+adm1:UZB.7		Сурхандарьин. обл.	agents 2026-10-18
+adm1:VEN.20		Федер. владения	agents 2026-10-18
+adm1:VGB.1		Брит. Виргинские о-ва	agents 2026-10-18
+adm1:VNM.4		Северо-Вост. Вьетнам	agents 2026-10-18
+adm1:VNM.47		Юго-Вост. Вьетнам	agents 2026-10-18
+adm1:XKX.22		Косовско-Помор. окр.	agents 2026-10-18
+adm1:ZAF.1		Северо-Капская пров.	agents 2026-10-18
+adm1:ZAF.3		Сев.-Зап. провинция	agents 2026-10-18
+adm1:ZAF.9		Вост.-Капская пров.	agents 2026-10-18
+adm1:ZMB.3		Центральная пров.	agents 2026-10-18
+adm1:ZMB.7		Сев.-Зап. провинция	agents 2026-10-18
+adm1:ZWE.10		Зап. Машоналенд	agents 2026-10-18
+adm1:ZWE.3		Сев. Матабелеленд	agents 2026-10-18
+adm1:ZWE.5		Вост. Машоналенд	agents 2026-10-18
+adm1:ZWE.7		Юж. Матабелеленд	agents 2026-10-18
+adm1:AZE.19		Аджикабульский р-н	short form: 2026-10-18 gate fix
+adm1:BIH.1		Кантон 10	short form: 2026-10-18 gate fix (the canton's official number)
+adm1:GUY.1		Ист-Бербис	short form: 2026-10-18 gate fix
+adm1:USG.1	Guantanamo Base		short form: 2026-10-18 gate fix

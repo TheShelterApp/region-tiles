@@ -31,7 +31,7 @@ fuchu-tokyo	35.6689	139.4776	regional		adm0:JPN			a Tama city keeps its name
 fuchu-tokyo	35.6689	139.4776	city		place:11611632	Fuchu	Футю	a Tama city keeps its name
 chofu	35.6506	139.5407	globe	5000	region:eastAsia			a Tama city keeps its name
 chofu	35.6506	139.5407	regional		adm0:JPN			a Tama city keeps its name
-chofu	35.6506	139.5407	city		place:1864518	Chofu	Чофу	a Tama city keeps its name
+chofu	35.6506	139.5407	city		place:1864518	Chofu	Тёфу	a Tama city keeps its name
 kawasaki	35.52056	139.71722	globe	5000	region:eastAsia			a separate municipality next to Tokyo keeps its name
 kawasaki	35.52056	139.71722	regional		adm0:JPN			a separate municipality next to Tokyo keeps its name
 kawasaki	35.52056	139.71722	city		place:1859642	Kawasaki	Кавасаки	a separate municipality next to Tokyo keeps its name
@@ -106,7 +106,7 @@ tokyo-bay	35.45	139.85	regional		adm0:JPN			a city's bay: Yokohama within its ur
 tokyo-bay	35.45	139.85	city		place:1848354	Yokohama	Иокогама	a city's bay: Yokohama within its urban reach at the city tier
 sukhumi	43.003	41.019	globe	5000	region:westernAsia			zone:abkhazia
 sukhumi	43.003	41.019	regional		zone:abkhazia	Abkhazia	Абхазия	zone:abkhazia
-sukhumi	43.003	41.019	city		place:611847	Sukhumi	Сухуми	zone:abkhazia
+sukhumi	43.003	41.019	city		place:611847	Sukhumi	Сухум	zone:abkhazia
 tskhinvali	42.2276	43.9686	globe	5000	region:westernAsia			zone:south-ossetia
 tskhinvali	42.2276	43.9686	regional		zone:south-ossetia	South Ossetia	Южная Осетия	zone:south-ossetia
 tskhinvali	42.2276	43.9686	city		place:611403	Tskhinvali	Цхинвал	zone:south-ossetia
@@ -124,7 +124,7 @@ aksai-chin	35	79	regional		zone:kashmir	Kashmir	Кашмир	zone:kashmir, expli
 aksai-chin	35	79	city		zone:kashmir	Kashmir	Кашмир	zone:kashmir, explicit part of the world (South Asia) for the Chinese-administered part
 katzrin	32.9925	35.6912	globe	5000	region:westernAsia			zone:golan-heights
 katzrin	32.9925	35.6912	regional		zone:golan-heights	Golan Heights	Голанские высоты	zone:golan-heights
-katzrin	32.9925	35.6912	city		place:443093	Qatzrin	Кацрин	zone:golan-heights
+katzrin	32.9925	35.6912	city		place:443093	Katzrin	Кацрин	zone:golan-heights
 kunashir	44.0306	145.8556	globe	5000	region:eastAsia			zone:kuril-islands
 kunashir	44.0306	145.8556	regional		zone:kuril-islands	Kuril Islands	Курильские острова	zone:kuril-islands
 kunashir	44.0306	145.8556	city		place:2119447	Yuzhno-Kurilsk	Южно-Курильск	the Kuril zone shows its town (Yuzhno-Kurilsk joins Sakhalin by the province outline); the regional tier shows the zone
@@ -316,7 +316,7 @@ r4-pristina	42.6629	21.1655	regional		adm0:XKX			R4 point (disputed): Pristina (
 r4-pristina	42.6629	21.1655	city		place:786714	Pristina	Приштина	R4 point (disputed): Pristina (Kosovo)
 r4-sukhumi	43.0015	41.0234	globe	5000	region:westernAsia			R4 point (disputed): Sukhumi (Abkhazia)
 r4-sukhumi	43.0015	41.0234	regional		zone:abkhazia	Abkhazia	Абхазия	R4 point (disputed): Sukhumi (Abkhazia)
-r4-sukhumi	43.0015	41.0234	city		place:611847	Sukhumi	Сухуми	R4 point (disputed): Sukhumi (Abkhazia)
+r4-sukhumi	43.0015	41.0234	city		place:611847	Sukhumi	Сухум	R4 point (disputed): Sukhumi (Abkhazia)
 r4-tskhinvali	42.2257	43.97	globe	5000	region:westernAsia			R4 point (disputed): Tskhinvali (South Ossetia)
 r4-tskhinvali	42.2257	43.97	regional		zone:south-ossetia	South Ossetia	Южная Осетия	R4 point (disputed): Tskhinvali (South Ossetia)
 r4-tskhinvali	42.2257	43.97	city		place:611403	Tskhinvali	Цхинвал	R4 point (disputed): Tskhinvali (South Ossetia)
@@ -325,7 +325,7 @@ r4-stepanakert	39.8153	46.752	regional		adm0:AZE			R4 point (disputed): Stepanak
 r4-stepanakert	39.8153	46.752	city		place:146970	Khankendi	Ханкенди	R4 point (disputed): Stepanakert / Khankendi (Karabakh)
 r4-golan	33	35.75	globe	5000	region:westernAsia			R4 point (disputed): Golan Heights
 r4-golan	33	35.75	regional		zone:golan-heights	Golan Heights	Голанские высоты	R4 point (disputed): Golan Heights
-r4-golan	33	35.75	city		place:443093	Qatzrin	Кацрин	R4 point (disputed): Golan Heights
+r4-golan	33	35.75	city		place:443093	Katzrin	Кацрин	R4 point (disputed): Golan Heights
 r4-jerusalem	31.778	35.2354	globe	5000	region:westernAsia			R4 point (disputed): Jerusalem Old City (East Jerusalem)
 r4-jerusalem	31.778	35.2354	regional		adm0:PSE			R4 point (disputed): Jerusalem Old City (East Jerusalem)
 r4-jerusalem	31.778	35.2354	city		place:281184	Jerusalem	Иерусалим	R4 point (disputed): Jerusalem Old City (East Jerusalem)

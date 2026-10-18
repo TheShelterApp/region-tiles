@@ -43,7 +43,7 @@ sea:1159115615	1159115615	Ross Sea	sea	1	Ross Sea	Море Росса			sea:1159
 sea:1159115305	1159115305	Sea of Japan	sea	1	Sea of Japan	Японское море			sea:1159115079		1		Q27092	NE basin: North Pacific Ocean / Sea of Japan
 sea:1159115541	1159115541	Sea of Okhotsk	sea	1	Sea of Okhotsk	Охотское море			sea:1159115079		1		Q41602	NE basin: North Pacific Ocean / Sea of Okhotsk
 sea:1779567447	1779567447	Somov Sea	sea	1	Somov Sea	Море Сомова			sea:1159115037				Q1404920	NE basin: Southern Ocean / Southern Ocean
-sea:1159115273	1159115273	South China Sea	sea	1	South China Sea	Южно-Китайское море			sea:1159115079		1		Q37660	NE basin: South East Asia Seas / South China Sea
+sea:1159115273	1159115273	South China Sea	sea	1	South China Sea	Южно-Китайское море		Южно-Китайское м.	sea:1159115079		1		Q37660	NE basin: South East Asia Seas / South China Sea
 sea:1779567331	1779567331	Strait of Sicily	sea	1	Strait of Sicily	Сицилийский пролив			sea:1159115321				Q206975	NE basin: Mediterranean Region / Eastern Mediterranean Basin
 sea:1159115233	1159115233	Tasman Sea	sea	1	Tasman Sea	Тасманово море			sea:1159115099		1		Q33254	NE basin: South Pacific Ocean / Tasman Sea
 sea:1159115579	1159115579	Weddell Sea	sea	1	Weddell Sea	Море Уэдделла			sea:1159115037		1		Q173343	NE basin: Southern Ocean / Weddell Sea
@@ -86,7 +86,7 @@ sea:1159116205	1159116205	Davis Strait	strait	2	Davis Strait	Пролив Дей
 sea:1159115729	1159115729	Luzon Strait	strait	2	Luzon Strait	Лусонский пролив			sea:1159115273				Q908741	NE basin: South East Asia Seas / South China Sea
 sea:1159116431	1159116431	James Bay	bay	3	James Bay	Залив Джеймс			sea:1159115441				Q223810	NE basin: Arctic Ocean / Hudson Bay
 sea:1159116535	1159116535	English Channel	channel	3	English Channel	Ла-Манш			sea:1159115057				Q34640	NE basin: North Atlantic Ocean / English Channel
-sea:1159116479	1159116479	Golfo de California	gulf	3	Gulf of California	Калифорнийский залив			sea:1159115079				Q132811	NE basin: North Pacific Ocean / Golfo de California
+sea:1159116479	1159116479	Golfo de California	gulf	3	Gulf of California	Калифорнийский залив		Калифорнийский зал.	sea:1159115079				Q132811	NE basin: North Pacific Ocean / Golfo de California
 sea:1159116315	1159116315	Great Australian Bight	gulf	3	Great Australian Bight	Большой Австралийский залив	Australian Bight	Австралийский залив	sea:1159115123				Q186733	NE basin: Indian Ocean / Great Australian Bight
 sea:1159116333	1159116333	Gulf of Aden	gulf	3	Gulf of Aden	Аденский залив			sea:1159115343				Q41837	NE basin: Indian Ocean / Gulf of Aden
 sea:1159116589	1159116589	Gulf of Bothnia	gulf	3	Gulf of Bothnia	Ботнический залив			sea:1159115831				Q122574	NE basin: Baltic Sea / Gulf of Bothnia
@@ -142,7 +142,7 @@ sea:1159116907	1159116907	Korea Strait	strait	4	Korea Strait	Корейский 
 sea:1159116881	1159116881	Makassar Strait	strait	4	Makassar Strait	Макасарский пролив			sea:1159115635				Q194477	NE basin: South East Asia Seas / Makassar Strait
 sea:1779574965	1779574965	Malacca Strait	strait	4	Malacca Strait	Малаккский пролив			sea:1159115987				Q48359	NE basin: South East Asia Seas / Strait of Malacca
 sea:1159116861	1159116861	Singapore Strait	strait	4	Singapore Strait	Сингапурский пролив			sea:1159115273				Q205655	NE basin: South East Asia Seas / Strait of Singapore
-sea:1159117067	1159117067	Strait of Gibraltar	strait	4	Strait of Gibraltar	Гибралтарский пролив			sea:1779567343				Q36124	NE basin: Mediterranean Region / Western Mediterranean Basin
+sea:1159117067	1159117067	Strait of Gibraltar	strait	4	Strait of Gibraltar	Гибралтарский пролив		Гибралтарский прол.	sea:1779567343				Q36124	NE basin: Mediterranean Region / Western Mediterranean Basin
 sea:1159116625	1159116625	Straits of Florida	strait	4	Straits of Florida	Флоридский пролив			sea:1159115057				Q232912	NE basin: North Atlantic Ocean / Straits of Florida
 sea:1159116947	1159116947	Taiwan Strait	strait	4	Taiwan Strait	Тайваньский пролив			sea:1159116027				Q127031	NE basin: North Pacific Ocean / Taiwan Strait
 sea:1159118573	1159118573	Bahía Blanca	bay	5	Bahía Blanca	Залив Баия-Бланка			sea:1159115149					NE basin: South Atlantic Ocean / South Atlantic Ocean
@@ -196,7 +196,7 @@ sea:1159118989	1159118989	Gulf of Sakhalin	gulf	5	Sakhalin Gulf	Сахалинс
 sea:1159118407	1159118407	Gulf of Sidra	gulf	5	Gulf of Sidra	Залив Сидра			sea:1159115321				Q187274	NE basin: Mediterranean Region / Eastern Mediterranean Basin
 sea:1159118193	1159118193	Gulf of Yana	gulf	5	Yana Bay	Янский залив			sea:1159116253				Q2363133	NE basin: Arctic Ocean / Laptev Sea
 sea:1159118871	1159118871	Gulf St. Vincent	gulf	5	Gulf St Vincent	Залив Сент-Винсент			sea:1159115123				Q1323629	NE basin: Indian Ocean / INDIAN OCEAN
-sea:1159118959	1159118959	Joseph Bonaparte Gulf	gulf	5	Joseph Bonaparte Gulf	Залив Жозеф-Бонапарт			sea:1159116101				Q1706655	NE basin: Indian Ocean / Timor Sea
+sea:1159118959	1159118959	Joseph Bonaparte Gulf	gulf	5	Joseph Bonaparte Gulf	Залив Жозеф-Бонапарт		Зал. Жозеф-Бонапарт	sea:1159116101				Q1706655	NE basin: Indian Ocean / Timor Sea
 sea:1159118803	1159118803	Karaginskiy Gulf	gulf	5	Karaginsky Gulf	Карагинский залив			sea:1159117319				Q2391874	NE basin: North Pacific Ocean / Bering Sea
 sea:1159117867	1159117867	Kronotskiy Gulf	gulf	5	Kronotsky Gulf	Кроноцкий залив			sea:1159115079				Q2326240	NE basin: North Pacific Ocean / North Pacific Ocean
 sea:1159117505	1159117505	Wrigley Gulf	gulf	5	Wrigley Gulf	Залив Ригли			sea:1159115037				Q281638	NE basin: Southern Ocean / Southern Ocean
@@ -243,8 +243,8 @@ sea:1159119271	1159119271	Delaware Bay	bay	7	Delaware Bay	Делавэрский
 sea:1159117391	1159117391	Franklin Bay	bay	7	Franklin Bay	Залив Франклина			sea:1159116661				Q5491299	NE basin: Arctic Ocean / The North Western Passages
 sea:1159119663	1159119663	Hadley Bay	bay	7	Hadley Bay	Залив Хадли			sea:1159116661					NE basin: Arctic Ocean / The North Western Passages
 sea:1159117665	1159117665	Hamilton Inlet	bay	7	Hamilton Inlet	Залив Гамильтон			sea:1159115419					NE basin: North Atlantic Ocean / North Atlantic Ocean
-sea:1159119247	1159119247	Massachusetts Bay	bay	7	Massachusetts Bay	Массачусетский залив			sea:1159117021				Q959127	NE basin: North Atlantic Ocean / North Atlantic Ocean
-sea:1159120643	1159120643	Mecklenburger Bucht	bay	7	Bay of Mecklenburg	Мекленбургская бухта			sea:1159115831				Q317006	NE basin: Baltic Sea / Central Baltic Sea
+sea:1159119247	1159119247	Massachusetts Bay	bay	7	Massachusetts Bay	Массачусетский залив		Массачусетский зал.	sea:1159117021				Q959127	NE basin: North Atlantic Ocean / North Atlantic Ocean
+sea:1159120643	1159120643	Mecklenburger Bucht	bay	7	Bay of Mecklenburg	Мекленбургская бухта		Мекленбургская бух.	sea:1159115831				Q317006	NE basin: Baltic Sea / Central Baltic Sea
 sea:1159120705	1159120705	Monterey Bay	bay	7	Monterey Bay	Залив Монтерей			sea:1159115079				Q584588	NE basin: North Pacific Ocean / North Pacific Ocean
 sea:1159120685	1159120685	San Francisco Bay	bay	7	San Francisco Bay	Залив Сан-Франциско			sea:1159115079				Q232264	NE basin: North Pacific Ocean / North Pacific Ocean
 sea:1159119155	1159119155	Dardanelles	channel	7	Dardanelles	Дарданеллы			sea:1159119181			1	Q6514	NE basin: Mediterranean Region / Sea of Marmara
@@ -277,8 +277,8 @@ sea:1159120609	1159120609	Øresund	sound	7	Øresund	Эресунн			sea:1159115
 sea:1159119327	1159119327	Pamlico Sound	sound	7	Pamlico Sound	Залив Памлико			sea:1159115057				Q2033236	NE basin: North Atlantic Ocean / North Atlantic Ocean
 sea:1159119867	1159119867	Peacock Sound	sound	7	Peacock Sound	Пролив Пикок			sea:1159115037				Q1618810	NE basin: Southern Ocean / Southern Ocean
 sea:1159119599	1159119599	Prince ALbert Sound	sound	7	Prince Albert Sound	Пролив Принца Альберта		Пр. Принца Альберта	sea:1159116661				Q7243787	NE basin: Arctic Ocean / The North Western Passages
-sea:1159118537	1159118537	Prince William Sound	sound	7	Prince William Sound	Залив Принца Вильгельма		Зал. Принца Вильгельма	sea:1159115503				Q631282	NE basin: North Pacific Ocean / Gulf of Alaska
-sea:1159116679	1159116679	Queen Charlotte Sound	sound	7	Queen Charlotte Sound	Залив Королевы Шарлотты		Зал. Королевы Шарлотты	sea:1159115079				Q2565098	NE basin: North Pacific Ocean / Coastal Waters of Southeast Al
+sea:1159118537	1159118537	Prince William Sound	sound	7	Prince William Sound	Залив Принца Вильгельма		Залив Пр. Вильгельма	sea:1159115503				Q631282	NE basin: North Pacific Ocean / Gulf of Alaska
+sea:1159116679	1159116679	Queen Charlotte Sound	sound	7	Queen Charlotte Sound	Залив Королевы Шарлотты		Залив Кор. Шарлотты	sea:1159115079				Q2565098	NE basin: North Pacific Ocean / Coastal Waters of Southeast Al
 sea:1159118853	1159118853	Bab el Mandeb	strait	7	Bab-el-Mandeb	Баб-эль-Мандебский пролив		Баб-эль-Мандеб	sea:1159115521				Q83318	NE basin: Indian Ocean / Bab el Mandeb
 sea:1159118281	1159118281	Cook Strait	strait	7	Cook Strait	Пролив Кука			sea:1159115233				Q5023	NE basin: South Pacific Ocean / Tasman Sea
 sea:1159118213	1159118213	Dmitriy Laptev Strait	strait	7	Dmitry Laptev Strait	Пролив Дмитрия Лаптева		Пр. Дмитрия Лаптева	sea:1159117337				Q1149827	NE basin: Arctic Ocean / East Siberian Sea
@@ -328,12 +328,12 @@ sea:1159119491	1159119491	Stettiner Haff	lagoon	8	Szczecin Lagoon	Щецинск
 sea:1159120335	1159120335	Samar Sea	sea	8	Samar Sea	Море Самар			sea:1159115197				Q392623	NE basin: North Pacific Ocean / Philippine Sea
 sea:1159120401	1159120401	Visayan Sea	sea	8	Visayan Sea	Море Висаян			sea:1159115197				Q474708	NE basin: North Pacific Ocean / Philippine Sea
 sea:1159119565	1159119565	Minto Inlet	sound	8	Minto Inlet	Залив Минто			sea:1159116661					NE basin: Arctic Ocean / The North Western Passages
-sea:1779502737	1779502737	Puget Sound	sound	8	Puget Sound	Залив Пьюджет-Саунд			sea:1159120759				Q604141	NE basin: North Pacific Ocean / Salish Sea
+sea:1779502737	1779502737	Puget Sound	sound	8	Puget Sound	Залив Пьюджет-Саунд		Зал. Пьюджет-Саунд	sea:1159120759				Q604141	NE basin: North Pacific Ocean / Salish Sea
 sea:1159119901	1159119901	Seno de Skyring	sound	8	Skyring Sound	Залив Скайринг			sea:1159118553				Q7450889	NE basin: South Pacific Ocean / Estrecho de Magellanes
 sea:1159119915	1159119915	Seno Otway	sound	8	Otway Sound	Залив Отуэй			sea:1159118553				Q4169149	NE basin: South Pacific Ocean / Estrecho de Magellanes
 sea:1159119367	1159119367	Smith Sound	sound	8	Smith Sound	Пролив Смит			sea:1159115079				Q7545320	NE basin: North Pacific Ocean / Coastal Waters of Southeast Al
 sea:1159120015	1159120015	Matochkin Shar Strait	strait	8	Matochkin Shar	Маточкин Шар			sea:1159116231				Q908356	NE basin: Arctic Ocean / Kara Sea
-sea:1159119407	1159119407	Queen Charlotte Strait	strait	8	Queen Charlotte Strait	Пролив Королевы Шарлотты	Q. Charlotte Strait	Пр. Королевы Шарлотты	sea:1159115079				Q1796011	NE basin: North Pacific Ocean / Coastal Waters of Southeast Al
+sea:1159119407	1159119407	Queen Charlotte Strait	strait	8	Queen Charlotte Strait	Пролив Королевы Шарлотты	Q. Charlotte Strait	Прол. Кор. Шарлотты	sea:1159115079				Q1796011	NE basin: North Pacific Ocean / Coastal Waters of Southeast Al
 sea:1159120201	1159120201	Selat Dampier	strait	8	Dampier Strait	Пролив Дампир			sea:1159120109				Q3233971	NE basin: South East Asia Seas / Halmahera Sea
 sea:1159120591	1159120591	Canal do Norte	channel	9	Canal do Norte	Канал-ду-Норти			sea:1159115149					NE basin: South Atlantic Ocean / South Atlantic Ocean
 sea:1159120555	1159120555	Canal Perigoso	channel	9	Canal Perigoso	Канал-Перигозу			sea:1159115149					NE basin: South Atlantic Ocean / South Atlantic Ocean
