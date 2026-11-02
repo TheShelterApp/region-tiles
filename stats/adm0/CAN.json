@@ -3,7 +3,7 @@
   "id": "CAN",
   "name": "Canada",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,9 +36,9 @@
     {"id":"ott18701020163000000","time":"1870-10-20T16:30:00Z","mag":6.6,"place":"Near Baie-Saint-Paul, Quebec, Canada","lat":47.4,"lon":-70.5,"depth":null}
   ],
   "recent": [
-    {"id":"us6000ty43","time":"2026-09-28T09:13:39Z","mag":5.2,"place":"190 km WSW of Port McNeill, Canada","lat":50.171,"lon":-129.679,"depth":10},
-    {"id":"us6000ty2u","time":"2026-09-28T04:41:21Z","mag":5.4,"place":"231 km WSW of Port McNeill, Canada","lat":50.053,"lon":-130.221,"depth":10},
-    {"id":"us6000ty27","time":"2026-09-28T02:53:43Z","mag":4.9,"place":"193 km WSW of Port McNeill, Canada","lat":50.279,"lon":-129.772,"depth":10},
+    {"id":"us6000ty43","time":"2026-09-28T09:13:39Z","mag":5.2,"place":"192 km WSW of Port McNeill, Canada","lat":50.112,"lon":-129.682,"depth":10},
+    {"id":"us6000ty2u","time":"2026-09-28T04:41:23Z","mag":5.4,"place":"207 km WSW of Port McNeill, Canada","lat":50.208,"lon":-129.944,"depth":10},
+    {"id":"us6000ty27","time":"2026-09-28T02:53:43Z","mag":4.8,"place":"195 km WSW of Port McNeill, Canada","lat":50.252,"lon":-129.792,"depth":10},
     {"id":"us6000thej","time":"2026-08-01T04:49:00Z","mag":5.6,"place":"215 km SW of Port McNeill, Canada","lat":49.439,"lon":-129.511,"depth":10},
     {"id":"us7000t1w2","time":"2026-07-20T06:41:29Z","mag":5.6,"place":"214 km SW of Port McNeill, Canada","lat":49.498,"lon":-129.562,"depth":10},
     {"id":"us7000s2vg","time":"2026-03-07T20:29:22Z","mag":4.7,"place":"243 km E of Pond Inlet, Canada","lat":73.126,"lon":-70.668,"depth":10},

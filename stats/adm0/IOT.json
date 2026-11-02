@@ -3,7 +3,7 @@
   "id": "IOT",
   "name": "British Indian Ocean Territory",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,9 +36,9 @@
     {"id":"usp00036a2","time":"1987-07-03T18:03:59Z","mag":5.7,"place":"Chagos Archipelago region","lat":-6.786,"lon":72.247,"depth":26}
   ],
   "recent": [
-    {"id":"us6000u1rh","time":"2026-10-12T11:28:43Z","mag":5.4,"place":"Mid-Indian Ridge","lat":-8.873,"lon":67.391,"depth":10},
+    {"id":"us6000u1rh","time":"2026-10-12T11:28:43Z","mag":5.4,"place":"Mid-Indian Ridge","lat":-8.902,"lon":67.462,"depth":10},
     {"id":"us6000u0rr","time":"2026-10-07T14:59:25Z","mag":5.2,"place":"Chagos Archipelago region","lat":-6.677,"lon":72.355,"depth":10},
-    {"id":"us6000u01m","time":"2026-10-06T15:12:09Z","mag":4.7,"place":"Chagos Archipelago region","lat":-6.686,"lon":72.295,"depth":10},
+    {"id":"us6000u01m","time":"2026-10-06T15:12:09Z","mag":4.7,"place":"Chagos Archipelago region","lat":-6.678,"lon":72.322,"depth":10},
     {"id":"us7000tg9y","time":"2026-09-05T10:54:04Z","mag":4.6,"place":"Mid-Indian Ridge","lat":-9.009,"lon":67.474,"depth":10},
     {"id":"us6000tay7","time":"2026-07-08T13:01:10Z","mag":5.3,"place":"Chagos Archipelago region","lat":-6.488,"lon":68.726,"depth":10},
     {"id":"us7000spsk","time":"2026-05-30T16:05:27Z","mag":4.5,"place":"Chagos Archipelago region","lat":-5.243,"lon":68.716,"depth":10},

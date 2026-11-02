@@ -3,7 +3,7 @@
   "id": "SLV",
   "name": "El Salvador",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,7 +36,7 @@
     {"id":"usp000d8uu","time":"2004-11-20T22:01:45Z","mag":6.3,"place":"34 km SW of Acajutla, El Salvador","lat":13.376,"lon":-90.056,"depth":40.6}
   ],
   "recent": [
-    {"id":"us6000u1n6","time":"2026-10-11T23:20:35Z","mag":4.5,"place":"103 km SSW of La Libertad, El Salvador","lat":12.658,"lon":-89.763,"depth":35},
+    {"id":"us6000u1n6","time":"2026-10-11T23:20:35Z","mag":4.5,"place":"104 km S of Acajutla, El Salvador","lat":12.646,"lon":-89.783,"depth":35},
     {"id":"us7000td5l","time":"2026-08-31T18:56:28Z","mag":4.6,"place":"117 km SSW of Chirilagua, El Salvador","lat":12.203,"lon":-88.448,"depth":35},
     {"id":"us6000tkcb","time":"2026-08-13T00:30:05Z","mag":5.5,"place":"50 km SSW of Intipucá, El Salvador","lat":12.752,"lon":-88.165,"depth":71.9},
     {"id":"us6000th2y","time":"2026-07-30T20:14:26Z","mag":4.5,"place":"93 km S of La Libertad, El Salvador","lat":12.646,"lon":-89.335,"depth":35},

@@ -3,7 +3,7 @@
   "id": "AZE",
   "name": "Azerbaijan",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,7 +36,7 @@
     {"id":"iscgemsup902661","time":"1938-09-06T13:28:20Z","mag":5.43,"place":"50 km NNE of Bilajer, Azerbaijan","lat":40.971,"lon":50.305,"depth":35}
   ],
   "recent": [
-    {"id":"us6000tysk","time":"2026-10-01T10:51:42Z","mag":4.5,"place":"8 km ENE of Zaqatala, Azerbaijan","lat":41.67,"lon":46.729,"depth":10},
+    {"id":"us6000tysk","time":"2026-10-01T10:51:42Z","mag":4.5,"place":"13 km NNE of Mamrux, Azerbaijan","lat":41.659,"lon":46.802,"depth":10},
     {"id":"us6000tkrg","time":"2026-08-14T16:56:14Z","mag":4.9,"place":"20 km WSW of Divichibazar, Azerbaijan","lat":41.126,"lon":48.761,"depth":10},
     {"id":"us7000ssg4","time":"2026-06-12T11:13:12Z","mag":4.9,"place":"6 km SSW of Qutqashen, Azerbaijan","lat":40.923,"lon":47.826,"depth":65},
     {"id":"us6000spiw","time":"2026-04-12T18:46:00Z","mag":4.7,"place":"62 km E of Lankaran, Azerbaijan","lat":38.676,"lon":49.561,"depth":10},

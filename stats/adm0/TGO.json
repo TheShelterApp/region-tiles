@@ -3,7 +3,7 @@
   "id": "TGO",
   "name": "Togo",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",

@@ -3,7 +3,7 @@
   "id": "MMR",
   "name": "Myanmar",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,10 +36,10 @@
     {"id":"us10006gbf","time":"2016-08-24T10:34:54Z","mag":6.8,"place":"26 km W of Chauk, Myanmar","lat":20.923,"lon":94.569,"depth":82}
   ],
   "recent": [
-    {"id":"us6000u1nr","time":"2026-10-12T01:28:20Z","mag":4.8,"place":"56 km E of Yairipok, India","lat":24.72,"lon":94.602,"depth":78.2},
-    {"id":"us6000u0p3","time":"2026-10-07T03:29:21Z","mag":4.5,"place":"65 km NNE of Mawlaik, Burma (Myanmar)","lat":24.197,"lon":94.621,"depth":109.9},
+    {"id":"us6000u4f5","time":"2026-10-23T17:06:25Z","mag":4.6,"place":"91 km ESE of Tuensang, India","lat":25.93,"lon":95.655,"depth":116.7},
+    {"id":"us6000u0p3","time":"2026-10-07T03:29:21Z","mag":4.5,"place":"65 km NNE of Mawlaik, Burma (Myanmar)","lat":24.202,"lon":94.619,"depth":112.1},
     {"id":"us6000tzh0","time":"2026-10-04T05:55:07Z","mag":4.6,"place":"125 km WNW of Chauk, Burma (Myanmar)","lat":21.444,"lon":93.757,"depth":59.6},
-    {"id":"us6000tzdp","time":"2026-10-03T18:12:46Z","mag":4.9,"place":"72 km NE of Sittwe, Burma (Myanmar)","lat":20.606,"lon":93.399,"depth":35},
+    {"id":"us6000tzdp","time":"2026-10-03T18:12:50Z","mag":4.8,"place":"85 km NE of Sittwe, Burma (Myanmar)","lat":20.672,"lon":93.493,"depth":64.4},
     {"id":"us6000tz6z","time":"2026-10-02T16:55:33Z","mag":4.5,"place":"58 km S of Mawlaik, Burma (Myanmar)","lat":23.114,"lon":94.424,"depth":106.7},
     {"id":"us6000tmwk","time":"2026-08-23T03:44:56Z","mag":4.6,"place":"38 km ENE of Tharyarwady, Burma (Myanmar)","lat":17.79,"lon":96.126,"depth":10},
     {"id":"us6000ti5u","time":"2026-08-05T00:11:57Z","mag":4.8,"place":"56 km WSW of Monywa, Burma (Myanmar)","lat":21.89,"lon":94.638,"depth":104.9},

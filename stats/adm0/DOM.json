@@ -3,7 +3,7 @@
   "id": "DOM",
   "name": "Dominican Republic",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,7 +36,7 @@
     {"id":"iscgem769608","time":"1972-09-19T01:36:50Z","mag":6.16,"place":"10 km SSE of Joba Arriba, Dominican Republic","lat":19.482,"lon":-70.229,"depth":10}
   ],
   "recent": [
-    {"id":"us6000ty0q","time":"2026-09-27T21:49:47Z","mag":4.8,"place":"7 km WSW of Guaymate, Dominican Republic","lat":18.564,"lon":-69.041,"depth":113},
+    {"id":"us6000ty0q","time":"2026-09-27T21:49:47Z","mag":4.8,"place":"8 km WSW of Guaymate, Dominican Republic","lat":18.548,"lon":-69.05,"depth":111.2},
     {"id":"pr2026177000","time":"2026-06-26T16:06:49Z","mag":5,"place":"51 km S of Boca de Yuma, Dominican Republic","lat":17.918,"lon":-68.522,"depth":82},
     {"id":"us6000rich","time":"2025-10-20T19:13:46Z","mag":4.7,"place":"16 km NW of San José de Ocoa, Dominican Republic","lat":18.638,"lon":-70.625,"depth":10},
     {"id":"pr2025217000","time":"2025-08-05T09:23:51Z","mag":5.7,"place":"38 km SE of Boca de Yuma, Dominican Republic","lat":18.167,"lon":-68.323,"depth":168},

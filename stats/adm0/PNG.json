@@ -3,15 +3,15 @@
   "id": "PNG",
   "name": "Papua New Guinea",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 16835,
+  "total": 16851,
   "histogram": {
     "startYear": 1500,
-    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,0,0,4,4,6,0,1,2,0,1,7,1,0,3,4,11,5,6,1,1,2,3,3,13,8,9,6,12,10,8,5,17,15,12,10,13,14,5,7,8,6,7,10,6,3,7,9,4,7,12,12,9,4,8,7,18,12,12,7,7,18,28,29,12,28,27,17,27,88,48,166,163,226,166,149,147,151,138,201,146,215,225,282,184,308,247,202,208,223,327,257,183,253,284,194,214,315,739,278,403,383,289,364,472,370,266,228,344,308,287,354,667,514,468,320,636,352,303,318,289,374,310,455,241]
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,0,0,4,4,6,0,1,2,0,1,7,1,0,3,4,11,5,6,1,1,2,3,3,13,8,9,6,12,10,8,5,17,15,12,10,13,14,5,7,8,6,7,10,6,3,7,9,4,7,12,12,9,4,8,7,18,12,12,7,7,18,28,29,12,28,27,17,27,88,48,166,163,226,166,149,147,151,138,201,146,215,225,282,184,308,247,202,208,223,327,257,183,253,284,194,214,315,739,278,403,383,289,364,472,370,266,228,344,308,287,354,667,514,468,320,636,352,303,318,289,374,310,455,257]
   },
   "largest": [
     {"id":"iscgem912783","time":"1919-05-06T19:41:13Z","mag":8.15,"place":"1919 Papua New Guinea Earthquake","lat":-4.806,"lon":153.859,"depth":35},
@@ -36,25 +36,25 @@
     {"id":"usp000bbpf","time":"2002-09-08T18:44:23Z","mag":7.6,"place":"68 km ESE of Aitape, Papua New Guinea","lat":-3.302,"lon":142.945,"depth":13}
   ],
   "recent": [
+    {"id":"us7000tu5q","time":"2026-10-30T03:04:17Z","mag":5.1,"place":"97 km NNE of Finschhafen, Papua New Guinea","lat":-5.814,"lon":148.315,"depth":116.3},
+    {"id":"us7000ttw5","time":"2026-10-29T03:26:42Z","mag":5.7,"place":"82 km NE of Kiunga, Papua New Guinea","lat":-5.699,"lon":141.902,"depth":10},
+    {"id":"us6000u4tq","time":"2026-10-25T10:30:27Z","mag":5.4,"place":"33 km ESE of Ambunti, Papua New Guinea","lat":-4.364,"lon":143.084,"depth":72.3},
+    {"id":"us6000u4s5","time":"2026-10-25T03:29:10Z","mag":5.2,"place":"63 km NNE of Lae, Papua New Guinea","lat":-6.174,"lon":147.166,"depth":80.8},
+    {"id":"us6000u473","time":"2026-10-22T20:05:04Z","mag":5,"place":"153 km S of Kokopo, Papua New Guinea","lat":-5.728,"lon":152.265,"depth":10},
+    {"id":"us6000u417","time":"2026-10-22T05:23:58Z","mag":4.8,"place":"89 km S of Kokopo, Papua New Guinea","lat":-5.154,"lon":152.324,"depth":45},
+    {"id":"us6000u3m7","time":"2026-10-20T14:20:49Z","mag":4.5,"place":"111 km S of Kokopo, Papua New Guinea","lat":-5.346,"lon":152.145,"depth":57.4},
+    {"id":"us6000u3ic","time":"2026-10-19T22:42:47Z","mag":4.9,"place":"29 km S of Kokopo, Papua New Guinea","lat":-4.608,"lon":152.277,"depth":90.9},
+    {"id":"us6000u38g","time":"2026-10-18T22:31:43Z","mag":5.1,"place":"127 km SSE of Kokopo, Papua New Guinea","lat":-5.439,"lon":152.62,"depth":10},
+    {"id":"us6000u38b","time":"2026-10-18T22:06:14Z","mag":4.7,"place":"152 km SSW of Kokopo, Papua New Guinea","lat":-5.661,"lon":151.872,"depth":10},
+    {"id":"us7000ttpw","time":"2026-10-18T07:37:26Z","mag":4.6,"place":"104 km SW of Panguna, Papua New Guinea","lat":-6.96,"lon":154.789,"depth":10},
+    {"id":"us6000u32r","time":"2026-10-18T00:28:29Z","mag":4.8,"place":"31 km SE of Kainantu, Papua New Guinea","lat":-6.51,"lon":146.049,"depth":124.1},
     {"id":"us6000u27u","time":"2026-10-14T06:27:06Z","mag":4.9,"place":"121 km S of Kokopo, Papua New Guinea","lat":-5.443,"lon":152.262,"depth":35},
-    {"id":"us6000u271","time":"2026-10-14T02:59:27Z","mag":4.7,"place":"128 km S of Kokopo, Papua New Guinea","lat":-5.496,"lon":152.394,"depth":10},
-    {"id":"us6000u26u","time":"2026-10-14T02:12:14Z","mag":4.6,"place":"75 km E of Kokopo, Papua New Guinea","lat":-4.449,"lon":152.944,"depth":10},
-    {"id":"us6000u24c","time":"2026-10-13T18:45:03Z","mag":6,"place":"126 km S of Kokopo, Papua New Guinea","lat":-5.483,"lon":152.136,"depth":20.8},
+    {"id":"us6000u271","time":"2026-10-14T02:59:27Z","mag":4.7,"place":"124 km S of Kokopo, Papua New Guinea","lat":-5.464,"lon":152.332,"depth":10},
+    {"id":"us6000u26u","time":"2026-10-14T02:12:14Z","mag":4.6,"place":"73 km E of Kokopo, Papua New Guinea","lat":-4.347,"lon":152.935,"depth":10},
+    {"id":"us6000u44j","time":"2026-10-13T21:47:07Z","mag":4.6,"place":"126 km SSE of Kokopo, Papua New Guinea","lat":-5.454,"lon":152.531,"depth":10},
+    {"id":"us6000u44f","time":"2026-10-13T21:10:15Z","mag":4.5,"place":"129 km S of Kokopo, Papua New Guinea","lat":-5.507,"lon":152.426,"depth":10},
+    {"id":"us6000u24c","time":"2026-10-13T18:45:03Z","mag":6,"place":"128 km S of Kokopo, Papua New Guinea","lat":-5.496,"lon":152.15,"depth":21.8},
     {"id":"us6000u23d","time":"2026-10-13T16:28:15Z","mag":5.1,"place":"123 km S of Kokopo, Papua New Guinea","lat":-5.445,"lon":152.103,"depth":37},
-    {"id":"us6000u21s","time":"2026-10-13T14:36:12Z","mag":5.3,"place":"129 km S of Kokopo, Papua New Guinea","lat":-5.51,"lon":152.128,"depth":29.8},
-    {"id":"us6000u1fa","time":"2026-10-10T15:10:20Z","mag":4.6,"place":"51 km NNW of Rabaul, Papua New Guinea","lat":-3.767,"lon":151.983,"depth":10},
-    {"id":"us6000u1dy","time":"2026-10-10T09:42:58Z","mag":4.6,"place":"31 km SE of Vanimo, Papua New Guinea","lat":-2.885,"lon":141.496,"depth":30.4},
-    {"id":"us6000u19v","time":"2026-10-09T20:20:09Z","mag":4.7,"place":"121 km S of Kokopo, Papua New Guinea","lat":-5.431,"lon":152.11,"depth":50.5},
-    {"id":"us6000u0te","time":"2026-10-07T17:36:13Z","mag":4.6,"place":"48 km SSW of Angoram, Papua New Guinea","lat":-4.447,"lon":143.856,"depth":101.5},
-    {"id":"us6000tzvn","time":"2026-10-06T08:45:26Z","mag":4.9,"place":"55 km ESE of Kokopo, Papua New Guinea","lat":-4.477,"lon":152.752,"depth":20.6},
-    {"id":"us6000tztg","time":"2026-10-05T22:48:52Z","mag":4.8,"place":"141 km WNW of Panguna, Papua New Guinea","lat":-5.803,"lon":154.317,"depth":134.8},
-    {"id":"us6000tzic","time":"2026-10-04T11:09:47Z","mag":4.6,"place":"121 km SW of Kokopo, Papua New Guinea","lat":-5.044,"lon":151.426,"depth":162.1},
-    {"id":"us6000tzfv","time":"2026-10-04T01:38:46Z","mag":4.9,"place":"21 km NE of Lae, Papua New Guinea","lat":-6.592,"lon":147.135,"depth":94.2},
-    {"id":"us6000tzdj","time":"2026-10-03T17:24:12Z","mag":4.6,"place":"76 km NNE of Lae, Papua New Guinea","lat":-6.05,"lon":147.168,"depth":81.9},
-    {"id":"us6000tz8b","time":"2026-10-02T20:26:02Z","mag":4.6,"place":"67 km ESE of Kokopo, Papua New Guinea","lat":-4.565,"lon":152.836,"depth":86.7},
-    {"id":"us6000tz0x","time":"2026-10-02T11:14:14Z","mag":5,"place":"63 km SW of Panguna, Papua New Guinea","lat":-6.637,"lon":155.014,"depth":38.3},
-    {"id":"us6000tyit","time":"2026-09-30T08:15:17Z","mag":5.1,"place":"121 km S of Kokopo, Papua New Guinea","lat":-5.435,"lon":152.133,"depth":28},
-    {"id":"us6000txv7","time":"2026-09-26T21:49:28Z","mag":4.9,"place":"74 km ESE of Kokopo, Papua New Guinea","lat":-4.715,"lon":152.833,"depth":67.7},
-    {"id":"us6000txtc","time":"2026-09-26T14:08:18Z","mag":5.6,"place":"72 km ESE of Kokopo, Papua New Guinea","lat":-4.629,"lon":152.861,"depth":69.5}
+    {"id":"us6000u21s","time":"2026-10-13T14:36:12Z","mag":5.3,"place":"129 km S of Kokopo, Papua New Guinea","lat":-5.51,"lon":152.128,"depth":29.8}
   ]
 }

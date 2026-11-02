@@ -3,7 +3,7 @@
   "id": "ALB",
   "name": "Albania",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
@@ -36,7 +36,7 @@
     {"id":"iscgem904776","time":"1934-02-04T09:35:24Z","mag":5.77,"place":"7 km WNW of Rrogozhinë, Albania","lat":41.101,"lon":19.576,"depth":15}
   ],
   "recent": [
-    {"id":"us7000tcvf","time":"2026-08-29T22:35:22Z","mag":4.8,"place":"8 km ENE of Himarë, Albania","lat":40.136,"lon":19.836,"depth":10},
+    {"id":"us7000tcvf","time":"2026-08-29T22:35:22Z","mag":4.6,"place":"8 km NE of Himarë, Albania","lat":40.148,"lon":19.831,"depth":10},
     {"id":"us6000m3k3","time":"2024-01-13T23:17:52Z","mag":4.5,"place":"7 km NE of Lushnjë, Albania","lat":40.983,"lon":19.769,"depth":28.6},
     {"id":"us7000kstr","time":"2023-09-02T06:17:53Z","mag":4.5,"place":"10 km NNW of Leskovik, Albania","lat":40.246,"lon":20.572,"depth":10},
     {"id":"us7000jm3h","time":"2023-03-23T03:30:41Z","mag":4.5,"place":"9 km NNW of Ersekë, Albania","lat":40.41,"lon":20.626,"depth":10},

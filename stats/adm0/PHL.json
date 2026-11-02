@@ -3,15 +3,15 @@
   "id": "PHL",
   "name": "Philippines",
   "since": "1500-01-01T00:00:00Z",
-  "until": "2026-10-17T00:00:00Z",
+  "until": "2026-11-02T00:00:00Z",
   "minMagnitude": 4.5,
   "eventType": "earthquake",
   "source": "USGS ANSS Comprehensive Earthquake Catalog (ComCat)",
   "attribution": "Earthquake data: U.S. Geological Survey, ANSS Comprehensive Earthquake Catalog (ComCat).",
-  "total": 13631,
+  "total": 13648,
   "histogram": {
     "startYear": 1500,
-    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,3,4,8,1,0,2,2,1,11,0,5,2,8,9,7,2,3,6,3,6,11,9,17,12,27,6,11,10,9,16,16,11,9,12,8,11,4,12,7,3,6,1,7,7,5,5,4,6,3,11,9,9,9,7,6,3,2,6,7,10,21,15,8,28,19,43,27,37,129,65,170,208,187,123,143,232,150,131,142,175,131,133,174,168,233,369,254,206,177,152,384,520,182,164,175,155,141,214,237,209,199,234,233,307,158,201,225,432,284,297,172,224,204,193,478,284,247,364,754,364,388,529]
+    "counts": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,3,4,8,1,0,2,2,1,11,0,5,2,8,9,7,2,3,6,3,6,11,9,17,12,27,6,11,10,9,16,16,11,9,12,8,11,4,12,7,3,6,1,7,7,5,5,4,6,3,11,9,9,9,7,6,3,2,6,7,10,21,15,8,28,19,43,27,37,129,65,170,208,187,123,143,232,150,131,142,175,131,133,174,168,233,369,254,206,177,152,384,520,182,164,175,155,141,214,237,209,199,234,233,307,158,201,225,432,284,297,172,224,204,193,478,284,247,364,754,364,388,546]
   },
   "largest": [
     {"id":"iscgem913230","time":"1918-08-15T12:18:24Z","mag":8.3,"place":"1918 Mindanao, Philippines Earthquake","lat":5.538,"lon":123.994,"depth":20},
@@ -36,25 +36,25 @@
     {"id":"usp000297p","time":"1984-11-20T08:15:16Z","mag":7.5,"place":"45 km SW of Sarangani, Philippines","lat":5.167,"lon":125.124,"depth":202.2}
   ],
   "recent": [
+    {"id":"us7000tuqy","time":"2026-11-01T18:42:57Z","mag":4.6,"place":"101 km SW of Basco, Philippines","lat":19.763,"lon":121.328,"depth":38.5},
+    {"id":"us7000tub8","time":"2026-10-30T17:06:26Z","mag":4.6,"place":"7 km NE of Tago, Philippines","lat":9.059,"lon":126.283,"depth":10},
+    {"id":"us7000tu7k","time":"2026-10-30T10:24:11Z","mag":4.5,"place":"104 km ENE of Barcelona, Philippines","lat":8.373,"lon":127.362,"depth":10},
+    {"id":"us7000ttxn","time":"2026-10-29T07:31:30Z","mag":5.4,"place":"114 km ENE of Barcelona, Philippines","lat":8.468,"lon":127.427,"depth":10},
+    {"id":"us7000ttw3","time":"2026-10-29T03:19:05Z","mag":5.8,"place":"110 km ENE of Barcelona, Philippines","lat":8.364,"lon":127.42,"depth":10},
+    {"id":"us7000ttw2","time":"2026-10-29T03:17:54Z","mag":5.4,"place":"113 km ENE of Barcelona, Philippines","lat":8.37,"lon":127.443,"depth":10},
+    {"id":"us7000ttnq","time":"2026-10-28T12:14:49Z","mag":4.9,"place":"1 km WSW of Butulan, Philippines","lat":5.607,"lon":125.418,"depth":10},
+    {"id":"us7000ttmz","time":"2026-10-28T09:32:56Z","mag":4.8,"place":"29 km SSW of Sarangani, Philippines","lat":5.151,"lon":125.388,"depth":84.3},
+    {"id":"us7000ttlc","time":"2026-10-28T01:11:54Z","mag":5.2,"place":"6 km NW of Balangonan, Philippines","lat":5.608,"lon":125.305,"depth":45.9},
+    {"id":"us7000ttkk","time":"2026-10-27T23:43:51Z","mag":5.1,"place":"7 km N of Balangonan, Philippines","lat":5.64,"lon":125.354,"depth":57.8},
+    {"id":"us7000tth4","time":"2026-10-27T16:07:53Z","mag":4.9,"place":"70 km WNW of Callaguip, Philippines","lat":18.271,"lon":119.851,"depth":10},
+    {"id":"us6000u4m9","time":"2026-10-24T11:48:08Z","mag":4.7,"place":"72 km S of Basco, Philippines","lat":19.805,"lon":122.087,"depth":10},
+    {"id":"us6000u4h0","time":"2026-10-23T21:41:04Z","mag":4.6,"place":"73 km ENE of Kinablangan, Philippines","lat":7.916,"lon":127.181,"depth":10},
+    {"id":"us6000u4b3","time":"2026-10-23T09:09:36Z","mag":4.5,"place":"18 km WNW of Bantogon, Philippines","lat":6.568,"lon":123.869,"depth":591.3},
+    {"id":"us6000u3t6","time":"2026-10-21T08:37:41Z","mag":5.2,"place":"68 km NE of Cabatuan, Philippines","lat":13.03,"lon":125.59,"depth":10},
+    {"id":"us6000u3k7","time":"2026-10-20T06:04:19Z","mag":4.6,"place":"7 km SE of San Julian, Philippines","lat":11.707,"lon":125.505,"depth":10},
     {"id":"us6000u2pp","time":"2026-10-16T12:18:25Z","mag":4.7,"place":"10 km SE of Lamitan, Philippines","lat":6.027,"lon":125.779,"depth":10},
     {"id":"us6000u2p2","time":"2026-10-16T09:13:44Z","mag":4.9,"place":"31 km ENE of Kinablangan, Philippines","lat":7.839,"lon":126.799,"depth":73.7},
-    {"id":"us6000u21y","time":"2026-10-13T15:21:44Z","mag":4.8,"place":"8 km SE of Sarangani, Philippines","lat":5.348,"lon":125.518,"depth":65.7},
-    {"id":"us6000u1zc","time":"2026-10-13T06:01:24Z","mag":4.7,"place":"124 km N of Pagudpud, Philippines","lat":19.685,"lon":120.705,"depth":10},
-    {"id":"us6000u14r","time":"2026-10-09T09:17:18Z","mag":4.6,"place":"17 km NNE of Santa Cruz, Philippines","lat":13.221,"lon":120.777,"depth":10},
-    {"id":"us6000u0x4","time":"2026-10-08T08:07:59Z","mag":5.5,"place":"17 km SW of Burias, Philippines","lat":5.601,"lon":125.152,"depth":52.1},
-    {"id":"us6000u0t4","time":"2026-10-07T16:42:49Z","mag":4.7,"place":"44 km E of Sarangani, Philippines","lat":5.433,"lon":125.864,"depth":114.6},
-    {"id":"us6000tz1q","time":"2026-10-02T15:10:19Z","mag":4.8,"place":"78 km WSW of San Nicolas, Philippines","lat":14.589,"lon":119.45,"depth":10},
-    {"id":"us6000tyq7","time":"2026-10-01T05:34:10Z","mag":5.3,"place":"42 km WSW of Palimbang, Philippines","lat":6.052,"lon":123.834,"depth":10},
-    {"id":"us6000tygz","time":"2026-09-30T02:30:42Z","mag":4.5,"place":"96 km SSE of Sarangani, Philippines","lat":4.586,"lon":125.761,"depth":139.7},
-    {"id":"us6000tygs","time":"2026-09-30T01:34:05Z","mag":4.8,"place":"10 km SE of Mamburao, Philippines","lat":13.162,"lon":120.67,"depth":10},
-    {"id":"us6000tyf0","time":"2026-09-29T20:45:50Z","mag":4.7,"place":"48 km N of Dicabisagan, Philippines","lat":17.523,"lon":122.447,"depth":10},
-    {"id":"us6000ty3w","time":"2026-09-28T08:16:13Z","mag":4.7,"place":"65 km E of Pilar, Philippines","lat":9.959,"lon":126.686,"depth":10},
-    {"id":"us6000ty1l","time":"2026-09-28T00:54:42Z","mag":4.9,"place":"40 km W of Palauig, Philippines","lat":15.408,"lon":119.525,"depth":10},
-    {"id":"us6000twys","time":"2026-09-22T20:34:43Z","mag":4.7,"place":"19 km ENE of Union, Philippines","lat":9.799,"lon":126.285,"depth":10},
-    {"id":"us6000ty69","time":"2026-09-22T16:59:19Z","mag":4.6,"place":"3 km NW of Babo-Pangulo, Philippines","lat":15.108,"lon":120.499,"depth":143.4},
-    {"id":"us7000tj3v","time":"2026-09-22T06:48:09Z","mag":4.6,"place":"18 km ENE of Nailong, Philippines","lat":11.09,"lon":124.202,"depth":10},
-    {"id":"us7000tj21","time":"2026-09-22T00:08:04Z","mag":4.8,"place":"67 km N of Namuac, Philippines","lat":19.222,"lon":121.104,"depth":10},
-    {"id":"us6000txlj","time":"2026-09-21T00:08:39Z","mag":4.6,"place":"56 km S of Sarangani, Philippines","lat":4.894,"lon":125.449,"depth":10},
-    {"id":"us6000txlb","time":"2026-09-20T15:37:53Z","mag":4.6,"place":"2 km S of Buenavista, Philippines","lat":9.095,"lon":126.157,"depth":87.2}
+    {"id":"us6000u2er","time":"2026-10-15T04:41:12Z","mag":4.6,"place":"67 km N of Namuac, Philippines","lat":19.218,"lon":121.253,"depth":10},
+    {"id":"us6000u21y","time":"2026-10-13T15:21:44Z","mag":4.8,"place":"8 km SE of Sarangani, Philippines","lat":5.348,"lon":125.518,"depth":65.7}
   ]
 }
